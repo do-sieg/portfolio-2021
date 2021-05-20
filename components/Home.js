@@ -1,4 +1,5 @@
 import { useLangContext } from "../utils/lang";
+import PageLayout from "./PageLayout";
 import Timeline from "./Timeline";
 
 export default function Home() {
@@ -9,9 +10,9 @@ export default function Home() {
 
 
     return (
-        <div>
+        <PageLayout>
             Home {pageLang}
             <Timeline />
-        </div>
+        </PageLayout>
     );
 }
