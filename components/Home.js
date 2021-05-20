@@ -5,6 +5,8 @@ export default function Home() {
 
     const pageLang = useLangContext();
 
+    // hook de chargement de termes
+
 
     return (
         <div>
