@@ -6,6 +6,7 @@
 // cartes avec nom, icone pour types (projet, mission, expérience, diplome)
 // + pays sur carte
 // + commentaire sur la carte
+// + lien sur la carte
 
 
 

@@ -4,7 +4,7 @@ export default function PageLayout({ children }) {
     return (
         <>
             <header>HEADER</header>
-            {children}
+            <main>{children}</main>
             <footer>FOOTER</footer>
         </>
     );
