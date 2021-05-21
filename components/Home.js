@@ -1,4 +1,5 @@
 import { useLangContext } from "../utils/lang";
+import Link from "next/link";
 import PageLayout from "./PageLayout";
 import Timeline from "./Timeline";
 
@@ -11,8 +12,15 @@ export default function Home() {
 
     return (
         <PageLayout>
-            Home {pageLang}
-            <Timeline />
+            DESCRIPTION {pageLang}
+
+            <div>
+                <Link href="/dev"><a>DEV</a></Link>
+                <Link href="/tutoring"><a>MENT</a></Link>
+                <Link href="/translation"><a>TRAD</a></Link>
+            </div>
+
+            {/* <Timeline /> */}
         </PageLayout>
     );
 }

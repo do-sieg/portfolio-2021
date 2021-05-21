@@ -1,3 +1,5 @@
+import { FaGraduationCap, FaRocket, FaSuitcase } from 'react-icons/fa';
+
 
 // données en dur ici dans un premier temps, puis json
 // voir la disposition
@@ -29,21 +31,47 @@ const events = [
     },
 ];
 
+function EventCard({ data }) {
+
+    function renderTypeIcon(type) {
+        switch (type) {
+            case "project":
+                return <FaRocket />;
+                break;
+            case "job":
+                return <FaSuitcase />;
+                break;
+            case "diploma":
+                return <FaGraduationCap />;
+                break;
+            default:
+                break;
+        }
+        return
+    }
+
+    return (
+        <div className="card">
+            <h3>{data.name}</h3>
+            {renderTypeIcon(data.type)}
+            {data.started}
+            {data.ended || "---"}
+        </div>
+    );
+}
+
 export default function Timeline() {
     return (
-        <div className="timeline">
+        <>
             <h2>TIMELINE</h2>
-
-            {events.map((event, index) => {
-                return (
-                    <div key={index} className="card">
-                        <h3>{event.name}</h3>
-                        {event.type}
-                        {event.started}
-                        {event.ended || "---"}
-                    </div>
-                );
-            })}
-        </div>
+            <div className="timeline-container">
+                <div className="timeline"></div>
+                <div className="timeline-events">
+                    {events.map((event, index) => {
+                        return <EventCard key={index} data={event} />
+                    })}
+                </div>
+            </div>
+        </>
     );
 }
