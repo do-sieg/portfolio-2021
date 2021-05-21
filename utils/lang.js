@@ -32,7 +32,7 @@ function getLangTerm(termKey, lang) {
     const langTerms = require(`../data/lang/${langTermFiles[lang]}.js`).default;
     if (!langTerms[termKey]) {
         if (lang !== DEFAULT_LANG) {
-            console.warn(`Lang: '${termKey}' doesn't exist for '${lang}'. Trying default language.`);
+            // console.warn(`Lang: '${termKey}' doesn't exist for '${lang}'. Trying default language.`);
             return getLangTerm(termKey, DEFAULT_LANG);
         } else {
             throw new Error(`Lang: '${termKey}' doesn't exist for '${lang}'.`);

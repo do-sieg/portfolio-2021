@@ -2,7 +2,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto;
+  font-size: medium;
+  background: linear-gradient(#333, #000);
+  color: #fff;
 }
 * {
   box-sizing: border-box;
@@ -24,28 +27,87 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 15rem;
   font-family: Kufam;
-  background-color: pink;
 }
 header h1 {
   margin-bottom: 0.2rem;
   border-bottom: 0.15rem solid;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 500;
+  color: #fff;
 }
 header .jobs {
-  margin: 0 0 0 0.5rem;
+  margin: 0.25rem 0 0 0.5rem;
   font-size: 1.2rem;
   font-weight: 500;
+  color: #aef;
+}
+.container {
+  display: flex;
+  min-height: calc(100vh - 6rem);
+  margin-top: 6rem;
+}
+.container .left-panel {
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.container .main-panel {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.5rem;
+  padding: 1.5rem;
+}
+nav a {
+  position: relative;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: larger;
+  font-weight: 300;
+  color: #ccc;
+  transition: color 0.3s ease-in-out;
+}
+nav a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 0;
+  height: 0.1rem;
+  border-radius: 0.07rem;
+  background: #ccc;
+  transition: width 0.3s ease-in-out 0.2s, background-color 0.3s ease-in-out 0.2s;
+}
+nav a:hover {
+  color: #fff;
+}
+nav a:hover:after {
+  width: 100%;
+  background: #fff;
 }
 main {
-  min-height: calc(100vh - 6rem - 3rem);
-  margin-top: 6rem;
-  background-color: yellow;
+  min-height: calc(100% - 4rem);
+  padding: 2rem 5rem 0;
 }
 footer {
-  height: 3rem;
-  background-color: limegreen;
+  height: 4rem;
+  padding: 0.5rem;
+  border-top: 0.05rem solid #fffa;
+  text-align: center;
+  font-weight: 300;
+}
+footer a {
+  display: block;
+  margin-top: 0.25rem;
 }
 .timeline-container {
   display: flex;
@@ -62,4 +124,13 @@ footer {
 .timeline-container .timeline-events .card {
   padding: 10px;
   border: 1px solid red;
+}
+.info-text {
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: large;
+}
+.info-text .keyword {
+  color: #aef;
+  font-weight: 400;
 }
