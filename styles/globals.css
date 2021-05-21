@@ -48,8 +48,10 @@ header .jobs {
   min-height: calc(100vh - 6rem);
   margin-top: 6rem;
 }
-.container .left-panel {
+.container .side-panel {
+  position: fixed;
   width: 12rem;
+  height: calc(100vh - 6rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -58,6 +60,7 @@ header .jobs {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  margin-left: 12rem;
 }
 nav {
   display: flex;
@@ -109,21 +112,88 @@ footer a {
   display: block;
   margin-top: 0.25rem;
 }
-.timeline-container {
-  display: flex;
-  gap: 2rem;
-}
 .timeline-container .timeline {
-  border-left: 3px solid grey;
+  position: relative;
+  width: 100%;
 }
-.timeline-container .timeline-events {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.timeline-container .timeline:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 2px);
+  margin: 2.5rem 0 2.5rem;
+  width: 4px;
+  border-left: 4px dotted red;
 }
-.timeline-container .timeline-events .card {
+.timeline-container .event-container {
+  position: relative;
+  width: 50%;
   padding: 10px;
-  border: 1px solid red;
+}
+.timeline-container .event-container.left {
+  left: 0;
+}
+.timeline-container .event-container.left .card time {
+  left: calc(100% + 2rem);
+  justify-content: flex-start;
+}
+.timeline-container .event-container.right {
+  left: 50%;
+}
+.timeline-container .event-container.right .card time {
+  right: calc(100% + 2rem);
+  justify-content: flex-end;
+}
+.timeline-container .event-container .card {
+  position: relative;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-image: linear-gradient(#333, #000);
+}
+.timeline-container .event-container .card .card-head {
+  display: flex;
+  align-items: center;
+  background-color: #aaa;
+  padding: 10px;
+}
+.timeline-container .event-container .card .card-head svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  fill: #333;
+}
+.timeline-container .event-container .card .card-head h3 {
+  width: 100%;
+  color: #333;
+}
+.timeline-container .event-container .card .card-body {
+  padding: 0 10px 20px;
+  font-weight: 300;
+}
+.timeline-container .event-container .card .card-body .duration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.2rem 0.5rem;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: smaller;
+  font-weight: 400;
+  background-color: #333;
+}
+.timeline-container .event-container .card .card-body .duration.ongoing {
+  background-color: orangered;
+}
+.timeline-container .event-container .card time {
+  position: absolute;
+  top: calc(50% - 1rem);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  font-size: larger;
 }
 .info-text {
   line-height: 1.5;

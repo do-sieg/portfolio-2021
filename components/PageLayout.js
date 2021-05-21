@@ -23,7 +23,7 @@ export default function PageLayout({ children }) {
                 <p className="jobs">{L_DEV_JOB_TITLES}</p>
             </header>
             <div className="container">
-                <div className="left-panel">
+                <div className="side-panel">
                     <nav>
                         <Link href="/"><a><FaHome />{L_NAV_HOME}</a></Link>
                         <Link href="/about"><a><FaUser />{L_NAV_ABOUT}</a></Link>

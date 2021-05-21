@@ -9,6 +9,12 @@ export default {
     NAV_TRANSLATION: "Translation",
     NAV_CONTACT: "Contact",
 
+    SHORT_MONTHS: [
+        "JAN", "FEB", "MAR", "APR",
+        "MAY", "JUN", "JUL", "AUG",
+        "SEP", "OCT", "NOV", "DEC",
+    ],
+
     HOME_INTRO: (
         <>
             <p><span className="keyword">Welcome</span> to my presentation site.</p>
