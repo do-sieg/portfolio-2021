@@ -1,5 +1,5 @@
 import { FaGraduationCap, FaRocket, FaSuitcase } from 'react-icons/fa';
-import { useLangTerm } from '../utils/lang';
+import { useLangContext, useLangTerm } from '../utils/lang';
 
 
 // données en dur ici dans un premier temps, puis json
@@ -16,21 +16,24 @@ import { useLangTerm } from '../utils/lang';
 const events = [
     {
         type: "project",
-        name: "Project",
-        description: "Some project I did some time ago. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!",
+        group: "dev",
+        name: { en: "Project", fr: "Projet" },
+        description: { en: "Some project I did some time ago. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!" },
         "started": "2020-03-31",
     },
     {
         type: "job",
-        name: "Job",
-        description: "I used to do this job. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!",
+        group: "teach",
+        name: { en: "Job", fr: "Emploi" },
+        description: { en: "I used to do this job. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!" },
         "started": "2020-01-01",
         "ended": "2021-02-08",
     },
     {
-        type: "diploma",
-        name: "Diploma",
-        description: "I graduated from some university. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!",
+        type: "degree",
+        group: "translation",
+        name: { en: "Degree", fr: "Diplôme" },
+        description: { en: "I graduated from some university. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!" },
         "started": "2019-12-17",
     },
 ];
@@ -61,40 +64,46 @@ function getDuration(eventData) {
 
 function EventCard({ index, data }) {
 
+    const lang = useLangContext();
+    const L_ONGOING = useLangTerm('ONGOING');
+
     function renderTypeIcon(type) {
         return {
             "project": <FaRocket />,
             "job": <FaSuitcase />,
-            "diploma": <FaGraduationCap />,
+            "degree": <FaGraduationCap />,
         }[type] || "";
     }
 
     return (
         <div className={`event-container ${index % 2 == 1 ? "right" : "left"}`}>
-            <div className="card">
+            <div className={`card ${data.group}`}>
                 <div className="card-head">
-                    {renderTypeIcon(data.type)}<h3>{data.name}</h3>
+                    {renderTypeIcon(data.type)}<h3>{data.name[lang]}</h3>
                 </div>
                 <div className="card-body">
-                    <p>{data.description}</p>
+                    <p>{data.description[lang]}</p>
                     {data.ended ?
                         <p className="duration">{getDuration(data)}</p>
                         :
-                        <p className="duration ongoing">ONGOING</p>
+                        <p className="duration ongoing">{L_ONGOING}</p>
                     }
                 </div>
-                <time>
-                    {getShortDate(data.started)}
-                </time>
             </div>
+
+            <time>
+                {getShortDate(data.started)}
+            </time>
         </div>
     );
 }
 
 export default function Timeline() {
+    const L_TIMELINE = useLangTerm('TIMELINE');
+
     return (
         <>
-            <h2>TIMELINE</h2>
+            <h2>{L_TIMELINE}</h2>
             <div className="timeline-container">
                 <div className="timeline">
                     {events.map((event, index) => {

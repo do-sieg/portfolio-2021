@@ -5,23 +5,26 @@ import Timeline from "./Timeline";
 
 export default function Home() {
 
-    const pageLang = useLangContext();
-
     const L_HOME_INTRO = useLangTerm('HOME_INTRO');
 
     return (
         <PageLayout>
-            DESCRIPTION {pageLang}
 
-            <p className="info-text">{L_HOME_INTRO}</p>
+            <section>
+                <p className="info-text">{L_HOME_INTRO}</p>
+            </section>
 
-            <div>
+            <section>
                 <Link href="/dev"><a>DEV</a></Link>
                 <Link href="/tutoring"><a>MENT</a></Link>
                 <Link href="/translation"><a>TRAD</a></Link>
-            </div>
 
-            <Timeline />
+                <button>Test</button>
+            </section>
+
+            <section>
+                <Timeline />
+            </section>
         </PageLayout>
     );
 }

@@ -4,7 +4,9 @@ body {
   margin: 0;
   font-family: Roboto;
   font-size: medium;
-  background: linear-gradient(#333, #000);
+  background-color: #000;
+  background-image: linear-gradient(135deg, #3458, #0128);
+  background-attachment: fixed;
   color: #fff;
 }
 * {
@@ -29,6 +31,9 @@ header {
   justify-content: center;
   padding-left: 15rem;
   font-family: Kufam;
+  background-color: #000;
+  background-image: linear-gradient(135deg, #3458, #0128);
+  z-index: 2;
 }
 header h1 {
   margin-bottom: 0.2rem;
@@ -65,19 +70,19 @@ header .jobs {
 nav {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
   padding: 1.5rem;
 }
 nav a {
   position: relative;
-  height: 3rem;
+  height: 2.75rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: larger;
   font-weight: 300;
-  color: #ccc;
-  transition: color 0.3s ease-in-out;
+  color: #fff;
+  transition: color 1s ease-in-out 0.2s, text-shadow 0.3s ease-in-out 0.2s, filter 0.3s ease-in-out 0.2s;
 }
 nav a:after {
   position: absolute;
@@ -87,15 +92,24 @@ nav a:after {
   width: 0;
   height: 0.1rem;
   border-radius: 0.07rem;
-  background: #ccc;
-  transition: width 0.3s ease-in-out 0.2s, background-color 0.3s ease-in-out 0.2s;
+  background: #fff;
+  transform: scale(1);
+  transition: width 0.3s ease-in-out 0.2s, background-color 0.3s ease-in-out 0.2s, filter 0.3s ease-in-out 0.2s;
+}
+nav a svg {
+  transition: filter 0.3s ease-in-out 0.2s;
 }
 nav a:hover {
-  color: #fff;
+  color: #aef;
+  text-shadow: rgba(170, 238, 255, 0.6) 1px 0 4px;
+}
+nav a:hover svg {
+  filter: drop-shadow(rgba(170, 238, 255, 0.6) 1px 0 2px);
 }
 nav a:hover:after {
   width: 100%;
-  background: #fff;
+  background: #aef;
+  filter: drop-shadow(rgba(170, 238, 255, 0.6) 1px 0 2px);
 }
 main {
   min-height: calc(100% - 4rem);
@@ -115,6 +129,7 @@ footer a {
 .timeline-container .timeline {
   position: relative;
   width: 100%;
+  padding: 1rem 0 2rem;
 }
 .timeline-container .timeline:after {
   content: '';
@@ -122,54 +137,78 @@ footer a {
   top: 0;
   bottom: 0;
   left: calc(50% - 2px);
-  margin: 2.5rem 0 2.5rem;
+  margin: 3.5rem 0 3.5rem;
   width: 4px;
-  border-left: 4px dotted red;
+  border-left: 4px dotted #ccc8;
 }
 .timeline-container .event-container {
   position: relative;
   width: 50%;
-  padding: 10px;
+  padding: 10px 20px;
 }
 .timeline-container .event-container.left {
   left: 0;
 }
-.timeline-container .event-container.left .card time {
-  left: calc(100% + 2rem);
+.timeline-container .event-container.left .card {
+  animation: 2s ease-in-out forwards rotateCard3DLeft;
+}
+.timeline-container .event-container.left time {
+  left: 100%;
   justify-content: flex-start;
+  padding-left: 2rem;
+}
+.timeline-container .event-container.left time:after {
+  right: calc(100% - 0.5rem);
 }
 .timeline-container .event-container.right {
   left: 50%;
 }
-.timeline-container .event-container.right .card time {
-  right: calc(100% + 2rem);
+.timeline-container .event-container.right .card {
+  animation: 2s ease-in-out forwards rotateCard3DRight;
+}
+.timeline-container .event-container.right time {
+  right: 100%;
   justify-content: flex-end;
+  padding-right: 2rem;
+}
+.timeline-container .event-container.right time:after {
+  left: calc(100% - 0.5rem);
 }
 .timeline-container .event-container .card {
   position: relative;
-  border: 1px solid #aaa;
   border-radius: 5px;
-  background-image: linear-gradient(#333, #000);
+  background-color: #000;
+  background-image: linear-gradient(135deg, #3458, #0128);
+  filter: drop-shadow(black 2px 2px 12px);
 }
 .timeline-container .event-container .card .card-head {
   display: flex;
   align-items: center;
   background-color: #aaa;
-  padding: 10px;
+  padding: 10px 20px;
+  border-radius: 5px 5px 0 0;
 }
 .timeline-container .event-container .card .card-head svg {
   width: 1.5rem;
   height: 1.5rem;
-  margin-right: 0.5rem;
-  fill: #333;
+  margin-right: 0.65rem;
+  fill: #fff;
+  filter: drop-shadow(black 2px 2px 3px);
 }
 .timeline-container .event-container .card .card-head h3 {
   width: 100%;
-  color: #333;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: black 2px 2px 3px;
 }
 .timeline-container .event-container .card .card-body {
-  padding: 0 10px 20px;
+  padding: 0 20px 20px;
   font-weight: 300;
+}
+.timeline-container .event-container .card .card-body p {
+  margin-top: 0.65rem;
+  font-size: larger;
+  line-height: 1.5;
 }
 .timeline-container .event-container .card .card-body .duration {
   position: absolute;
@@ -182,11 +221,30 @@ footer a {
   font-size: smaller;
   font-weight: 400;
   background-color: #333;
+  text-shadow: black 2px 2px 3px;
 }
 .timeline-container .event-container .card .card-body .duration.ongoing {
-  background-color: orangered;
+  background-color: #d61;
 }
-.timeline-container .event-container .card time {
+.timeline-container .event-container .card.dev {
+  border-color: rgba(102, 119, 170, 0.5);
+}
+.timeline-container .event-container .card.dev .card-head {
+  background-color: rgba(102, 119, 170, 0.5);
+}
+.timeline-container .event-container .card.teach {
+  border-color: rgba(170, 119, 102, 0.5);
+}
+.timeline-container .event-container .card.teach .card-head {
+  background-color: rgba(170, 119, 102, 0.5);
+}
+.timeline-container .event-container .card.translation {
+  border-color: rgba(68, 170, 85, 0.5);
+}
+.timeline-container .event-container .card.translation .card-head {
+  background-color: rgba(68, 170, 85, 0.5);
+}
+.timeline-container .event-container time {
   position: absolute;
   top: calc(50% - 1rem);
   display: flex;
@@ -194,6 +252,17 @@ footer a {
   width: 100%;
   height: 2rem;
   font-size: larger;
+  font-weight: 300;
+  text-shadow: black 4px 4px 12px;
+}
+.timeline-container .event-container time:after {
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 1;
 }
 .info-text {
   line-height: 1.5;
@@ -201,6 +270,6 @@ footer a {
   font-size: large;
 }
 .info-text .keyword {
-  color: #aef;
   font-weight: 400;
+  color: #aef;
 }
