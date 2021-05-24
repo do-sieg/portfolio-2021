@@ -7,6 +7,13 @@ const LangContext = React.createContext({
     fr: 'fr',
 });
 
+export function getLangPrefix(lang) {
+    return {
+        en: '',
+        fr: '/fr',
+    }[lang];
+}
+
 export function LangProvider({ children, lang }) {
     return (
         <LangContext.Provider value={lang}>

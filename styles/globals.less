@@ -99,9 +99,10 @@ header {
   padding-left: 15rem;
   font-family: Kufam;
 
-  // background-image: linear-gradient(to right ,#568,#456);
-  .dark-gradient();
   z-index: 2;
+  .dark-gradient();
+  .filter-shadow(2px, 12px);
+
 
   h1 {
     margin-bottom: 0.2rem;
@@ -115,6 +116,15 @@ header {
     font-size: 1.2rem;
     font-weight: 500;
     color: @c-secondary;
+  }
+
+  .lang-bar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    display: flex;
+    gap: 0.5rem;
   }
 }
 
@@ -202,7 +212,7 @@ main {
   // background-color: fade(yellow, 10%);
 
   min-height: calc(100% - @footer-height);
-  padding: 2rem 5rem 0;
+  padding: 3.5rem 5rem 1.5rem;
 }
 
 
@@ -268,7 +278,6 @@ hr {
     // background-color: fade(cyan, 10%);
 
 
-    // border-left: 3px solid grey;
     position: relative;
     width: 100%;
     padding: 1rem 0 2rem;
@@ -299,18 +308,13 @@ hr {
       left: 0;
 
       .card {
-        // transform: perspective(1000px) rotateY(@timeline-minicard-rotate) scale(@timeline-minicard-scale) translateX(@timeline-minicard-offset);
-        // transition: transform 0.2s ease-in-out 0.2s;
-        // &:hover {
-        //   transform: perspective(1000px) rotateY(0deg);
-        // }
         animation: 2s ease-in-out forwards rotateCard3DLeft;
       }
 
       time {
         left: 100%;
         justify-content: flex-start;
-        padding-left: 2rem;
+        padding-left: 1.5rem;
         &:after {
           right: calc(100% - 0.5rem);
         }
@@ -320,14 +324,13 @@ hr {
       left: 50%;
       
       .card {
-        // transform: perspective(1000px) rotateY(-10deg);
         animation: 2s ease-in-out forwards rotateCard3DRight;
       }
 
       time {
         right: 100%;
         justify-content: flex-end;
-        padding-right: 2rem;
+        padding-right: 1.5rem;
         &:after {
           left: calc(100% - 0.5rem);
         }
@@ -417,7 +420,7 @@ hr {
       align-items: center;
       width: 100%;
       height: 2rem;
-      font-size: larger;
+      font-size: x-large;
       font-weight: 300;
       .text-shadow(4px, 12px);
       &:after {
@@ -427,7 +430,9 @@ hr {
         height: 1rem;
         border-radius: 50%;
         background-color: #fff;
+        background-image: linear-gradient(135deg, #fff, #555);
         z-index: 1;
+        .filter-shadow(2px, 5px);
       }
     }
   }
@@ -473,11 +478,13 @@ hr {
     margin: 0;
     font-size: x-large;
     font-weight: 300;
+    // .text-shadow();
   }
   a {
     opacity: 0;
-    animation: 2.5s forwards 0.6s fade-in;
+    animation: 3.5s forwards fade-in;
     font-size: larger;
+    // .text-shadow();
   }
 }
 

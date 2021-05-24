@@ -46,6 +46,6 @@ export default {
 
     HOME_SLIDE_PROMPT_1: "Need a website?",
     HOME_SLIDE_PROMPT_2: "Need lessons?",
-    HOME_SLIDE_PROMPT_3: "Need a translator?",
+    HOME_SLIDE_PROMPT_3: "Looking for a translator?",
     
 }
