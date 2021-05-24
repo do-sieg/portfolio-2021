@@ -19,6 +19,8 @@ export default {
     TIMELINE: "Activity",
     ONGOING: "Ongoing",
     LEARN_MORE: "Learn More",
+    YEARS: (n) => n <= 1 ? "year" : "years",
+    MONTHS: (n) => n <= 1 ? "month" : "months",
 
     HOME_INTRO: (
         <>

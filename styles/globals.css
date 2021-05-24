@@ -308,10 +308,10 @@ hr {
 .timeline-container .event-container .card.teach .card-head {
   background-color: rgba(170, 119, 102, 0.5);
 }
-.timeline-container .event-container .card.translation {
+.timeline-container .event-container .card.translate {
   border-color: rgba(68, 170, 85, 0.5);
 }
-.timeline-container .event-container .card.translation .card-head {
+.timeline-container .event-container .card.translate .card-head {
   background-color: rgba(68, 170, 85, 0.5);
 }
 .timeline-container .event-container time {

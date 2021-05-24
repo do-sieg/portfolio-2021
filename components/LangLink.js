@@ -5,8 +5,9 @@ import { getLangPrefix, useLangContext } from "../utils/lang";
 export default function LangLink({ children, href = '/', lang = null }) {
 
     const router = useRouter();
+    const contextLang = useLangContext();
 
-    lang = lang || useLangContext();
+    lang = lang || contextLang;
     let prefix = '';
     prefix = getLangPrefix(lang);
 

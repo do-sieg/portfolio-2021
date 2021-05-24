@@ -50,9 +50,9 @@ function getLangTerm(termKey, lang) {
 }
 
 export function useLangTerm(termKey) {
+    const contextLang = useLangContext();
     try {
-        const lang = useLangContext();
-        return getLangTerm(termKey, lang);
+        return getLangTerm(termKey, contextLang);
     } catch (err) {
         console.error(err.message);
         return "";
