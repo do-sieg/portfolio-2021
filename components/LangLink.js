@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { getLangPrefix, useLangContext } from "../utils/lang";
+import { cleanLangUrl, getLangPrefix, useLangContext } from "../utils/lang";
 
 export default function LangLink({ children, href = '/', lang = null }) {
 
@@ -13,7 +13,10 @@ export default function LangLink({ children, href = '/', lang = null }) {
 
     const scroll = !`${prefix}${href}` === router.asPath;
 
+    console.log("LangLink", lang, href, cleanLangUrl(href));
+    // BUGGE !
+
     return (
-        <Link href={`${prefix}${href}`} scroll={scroll}>{children}</Link>
+        <Link href={`${prefix}${cleanLangUrl(href)}`} scroll={scroll}>{children}</Link>
     );
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from './SlideShow.module.css';
 
-export default function SlideShow({ slideList, renderSlideText, customStyles, autoNextTime = 0 }) {
+export default function SlideShow({ slideList, renderSlide, customStyles, autoNextTime = 0 }) {
 
     const [slideIndex, setSlideIndex] = useState(0);
     const timeoutRef = useRef(null);
@@ -32,34 +32,28 @@ export default function SlideShow({ slideList, renderSlideText, customStyles, au
     }
 
     return (
-        <>
-            <div className={`${styles.container} ${customStyles.container || ''}`}>
+        <div className={`${styles.container} ${customStyles.container || ''}`}>
+            {slideList.map((obj, index) => {
+                return (
+                    <div key={index} style={{ display: slideIndex === index ? 'block' : 'none' }}>
+                        {renderSlide(obj, index)}
+                    </div>
+                );
+            })}
+            <button className={`${styles.navButton} ${styles.left} ${customStyles.prevBtn || ''}`} onClick={handlePrevious}>&#10094;</button>
+            <button className={`${styles.navButton} ${styles.right} ${customStyles.nextBtn || ''}`} onClick={handleNext}>&#10095;</button>
+            <div className={styles.navDots}>
                 {slideList.map((obj, index) => {
                     return (
-                        <div key={index} style={{ display: slideIndex === index ? 'block' : 'none' }}>
-
-                            {renderSlideText(obj, index, styles)}
-
-                            {/* <span class="numbertext">{index + 1} / 3</span>
-                                <span>{obj.text}</span> */}
-                        </div>
+                        <span
+                            key={index}
+                            className={`${styles.navDot} ${slideIndex === index ? styles.active : ''}`}
+                            onClick={() => handleChangeSlide(index)}
+                        />
                     );
                 })}
-                <button className={`${styles.navButton} ${styles.left} ${customStyles.prevBtn || ''}`} onClick={handlePrevious}>&#10094;</button>
-                <button className={`${styles.navButton} ${styles.right} ${customStyles.nextBtn || ''}`} onClick={handleNext}>&#10095;</button>
-                <div className={styles.navDots}>
-                    {slideList.map((obj, index) => {
-                        return (
-                            <span
-                                key={index}
-                                className={`${styles.navDot} ${slideIndex === index ? styles.active : ''}`}
-                                onClick={() => handleChangeSlide(index)}
-                            />
-                        );
-                    })}
-                </div>
-            </div >
-        </>
+            </div>
+        </div >
     );
 }
 

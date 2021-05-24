@@ -1,10 +1,10 @@
-import Home from "../../components/pages/Home";
+import Teach from "../../components/pages/Teach";
 import { LangProvider } from "../../utils/lang";
 
-export default function HomeFr() {
+export default function TeachFr() {
     return (
         <LangProvider lang="fr">
-            <Home />
+            <Teach />
         </LangProvider>
     );
 }

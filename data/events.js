@@ -26,13 +26,13 @@ export default [
             en: (() => (
                 <>
                     BA in General Law<br />
-                    Master in Private Law<br />— UPMF, Grenoble
+                    Master in Private Law<br />— UGA, Grenoble
                 </>
             ))(),
             fr: (() => (
                 <>
                     Licence en droit général<br />
-                    Maîtrise de droit privé<br />— UPMF, Grenoble
+                    Maîtrise de droit privé<br />— UGA, Grenoble
                 </>
             ))(),
         },

@@ -15,26 +15,8 @@ import dataEvents from '../data/events';
 
 
 
-function getDuration(eventData) {
-
-    const date1 = new Date(eventData.started);
-    const date2 = new Date(eventData.ended);
-    const diffTime = Math.abs(date2 - date1);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-    let str = "~";
-    let months = parseInt(diffDays / 30, 10) % 12;
-    let years = parseInt(diffDays / 365, 10);
-
-    return { years, months };
-}
-
-// function EventCard({ index, data }) {
 
 
-//     console.log(data.group);
-
-// }
 
 export default function Timeline() {
 
@@ -53,11 +35,23 @@ export default function Timeline() {
     const L_NAV_TEACH = useLangTerm("NAV_TEACH");
     const L_NAV_TRANSLATION = useLangTerm("NAV_TRANSLATION");
     const L_ONGOING = useLangTerm('ONGOING');
-    
+
 
     useEffect(() => {
         setEvents(dataEvents);
     }, []);
+
+    function getDuration(eventData) {
+        const date1 = new Date(eventData.started);
+        const date2 = new Date(eventData.ended);
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+        let months = parseInt(diffDays / 30, 10) % 12;
+        let years = parseInt(diffDays / 365, 10);
+
+        return { years, months };
+    }
 
     function handleToggleFilterStatus(e) {
         e.preventDefault();
@@ -83,7 +77,7 @@ export default function Timeline() {
         e.preventDefault();
         setFilterGroup(3);
     }
-    
+
     function renderTypeIcon(type) {
         return {
             "project": <FaRocket />,
@@ -121,7 +115,7 @@ export default function Timeline() {
                         if (filterGroup === 3 && event.group === "translate") {
                             display = true;
                         }
-                        
+
                         if (filterStatus === 1) {
                             display = display && (event.started && !event.ended);
                         }

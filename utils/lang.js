@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 
 const DEFAULT_LANG = "en";
+const LANG_PREFIXES = {
+    en: '',
+    fr: '/fr',
+};
 
 const LangContext = React.createContext({
     en: 'en',
@@ -8,11 +12,30 @@ const LangContext = React.createContext({
 });
 
 export function getLangPrefix(lang) {
-    return {
-        en: '',
-        fr: '/fr',
-    }[lang];
+    return LANG_PREFIXES[lang];
 }
+
+export function cleanLangUrl(url) {
+    let cleanUrl = url;
+    // console.log("START", cleanUrl);
+    Object.values(LANG_PREFIXES).forEach(prefix => {
+        // console.log("iTERATE prefix", prefix);
+        if (cleanUrl.startsWith(prefix)) {
+            cleanUrl = cleanUrl.replace(prefix, "");
+            // console.log("iTERATE startsWith prefix", prefix);
+            // console.log("iTERATE cleanUrl", cleanUrl);
+        }
+    });
+    // console.log("END", cleanUrl);
+    return cleanUrl;
+}
+
+[
+    "/test",
+    "/fr/test",
+    "/",
+    "/fr",
+].forEach(value => console.log(value, cleanLangUrl(value), value.startsWith("/fr")));
 
 export function LangProvider({ children, lang }) {
     return (

@@ -1,11 +1,10 @@
-import { useLangContext, useLangTerm } from "../utils/lang";
+import { useLangTerm } from "../../utils/lang";
 import Link from "next/link";
-import PageLayout from "./PageLayout";
-import Timeline from "./Timeline";
-import SlideShow from "./SlideShow";
+import PageLayout from "../PageLayout";
+import Timeline from "../Timeline";
+import SlideShow from "../SlideShow";
 
 export default function Home() {
-
     const L_HOME_INTRO = useLangTerm('HOME_INTRO');
     const L_TIMELINE = useLangTerm('TIMELINE');
     const L_HOME_SLIDE_PROMPT_1 = useLangTerm('HOME_SLIDE_PROMPT_1');
@@ -20,33 +19,29 @@ export default function Home() {
                 <div className="info-text">{L_HOME_INTRO}</div>
             </section>
 
-            {/* <hr /> */}
-
             <section>
                 <SlideShow
+                    customStyles={{
+                        container: "base-slideshow-container",
+                        prevBtn: "base-slide-nav-btn left",
+                        nextBtn: "base-slide-nav-btn right",
+                    }}
+                    autoNextTime={4}
                     slideList={[
                         { text: L_HOME_SLIDE_PROMPT_1, link: "/dev" },
-                        { text: L_HOME_SLIDE_PROMPT_2, link: "/tutoring" },
+                        { text: L_HOME_SLIDE_PROMPT_2, link: "/teach" },
                         { text: L_HOME_SLIDE_PROMPT_3, link: "/translation" },
                     ]}
-                    renderSlideText={(obj, index, styles) => {
+                    renderSlide={(obj, index) => {
                         return (
-                            <div className="home-slide-container">
+                            <div className="base-slide home-slide">
                                 <p>{obj.text}</p>
                                 <Link href={obj.link}><a>{L_LEARN_MORE}</a></Link>
                             </div>
                         );
                     }}
-                    customStyles={{
-                        container: "home-slideshow-container",
-                        prevBtn: "home-slide-nav-btn left",
-                        nextBtn: "home-slide-nav-btn right",
-                    }}
-                    autoNextTime={4}
                 />
             </section>
-
-            {/* <hr /> */}
 
             <section>
                 <h2>{L_TIMELINE}</h2>

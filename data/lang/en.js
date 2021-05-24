@@ -17,6 +17,7 @@ export default {
 
     ALL: "All",
     TIMELINE: "Activity",
+    REVIEWS: "Reviews",
     ONGOING: "Ongoing",
     LEARN_MORE: "Learn More",
     YEARS: (n) => n <= 1 ? "year" : "years",
@@ -50,5 +51,7 @@ export default {
     HOME_SLIDE_PROMPT_1: "Need a website?",
     HOME_SLIDE_PROMPT_2: "Need lessons?",
     HOME_SLIDE_PROMPT_3: "Looking for a translator?",
+
+    TEACH_INTRO: "TEACH INTRO",
     
 }
