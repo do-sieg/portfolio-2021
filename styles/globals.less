@@ -79,6 +79,7 @@ h1, h2, h3 {
 }
 
 h2 {
+  margin: 4rem 0 1.5rem;
   text-align: center;
   font-family: Kufam;
   color: @c-secondary;
@@ -228,10 +229,6 @@ footer {
   padding: 0.5rem;
   border-top: 0.05rem solid #fffa;
   font-weight: 300;
-
-  // a {
-  //   display: block;
-  // }
 }
 
 
@@ -242,41 +239,53 @@ hr {
   margin-block-start: 3em;
   margin-block-end: 3em;
   opacity: 0.5;
-  // .neon-filter-shadow(@c-secondary, 3px)
+  .filter-shadow();
 }
 
-// @keyframes rotateCard3DLeft {
-//   0% {
-//     opacity: 0;
-//     transform: perspective(1000px) rotateY(90deg) scale(@timeline-minicard-scale) translateX(@timeline-minicard-offset);
-//   }
-//   50% { 
-//     transform: perspective(1000px) rotateY(90deg) scale(@timeline-minicard-scale) translateX(@timeline-minicard-offset);
-//   }
-//   100% {
-//     transform: perspective(1000px) rotateY(@timeline-minicard-rotate);
-//     opacity: 100%;
-//   }
-// }
-
-// @keyframes rotateCard3DRight {
-//   0% {
-//     opacity: 0;
-//     transform: perspective(1000px) rotateY(-90deg) scale(@timeline-minicard-scale) translateX(-@timeline-minicard-offset);
-//   }
-//   50% { 
-//     transform: perspective(1000px) rotateY(-90deg) scale(@timeline-minicard-scale) translateX(-@timeline-minicard-offset);
-//   }
-//   100% {
-//     transform: perspective(1000px) rotateY(-@timeline-minicard-rotate);
-//     opacity: 100%;
-//   }
-// }
 
 .timeline-container {
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+
+    button {
+      min-width: 5rem;
+      padding: 0.35rem 0.75rem;
+      border: none;
+      border-radius: 15px;
+      font-family: Roboto;
+      font-size: smaller;
+      font-weight: 400;
+      cursor: pointer;
+      opacity: 0.5;
+      color: #fff;
+      .text-shadow();
+      &:active {
+        .filter-shadow();
+      }
+      &.active {
+        opacity: 1;
+      }
+      &.all {
+        background-image: linear-gradient(135deg, @c-dev, @c-teach, @c-translate);
+      }
+      &.dev {
+        background-color: @c-dev;
+      }
+      &.teach {
+        background-color: @c-teach;
+      }
+      &.translate {
+        background-color: @c-translate;
+      }
+      &.ongoing {
+        background-color: @c-active;
+      }
+    }
+  }
   .timeline {
     // background-color: fade(cyan, 10%);
-
 
     position: relative;
     width: 100%;
@@ -339,7 +348,7 @@ hr {
 
     .card {
       position: relative;
-      // border: 1px solid #aaa;
+      // border: 1px solid #555;
       border-radius: 5px;
       .dark-gradient();
 
@@ -348,7 +357,7 @@ hr {
       .card-head {
         display: flex;
         align-items: center;
-        background-color: #aaa;
+        background-color: #555;
         padding: 10px 20px;
         border-radius: 5px 5px 0 0;
         svg {

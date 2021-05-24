@@ -15,6 +15,7 @@ export default {
         "SEP", "OCT", "NOV", "DEC",
     ],
 
+    ALL: "All",
     TIMELINE: "Activity",
     ONGOING: "Ongoing",
     LEARN_MORE: "Learn More",

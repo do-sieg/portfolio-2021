@@ -20,7 +20,7 @@ export default function Home() {
                 <div className="info-text">{L_HOME_INTRO}</div>
             </section>
 
-            <hr />
+            {/* <hr /> */}
 
             <section>
                 <SlideShow
@@ -46,7 +46,7 @@ export default function Home() {
                 />
             </section>
 
-            <hr />
+            {/* <hr /> */}
 
             <section>
                 <h2>{L_TIMELINE}</h2>
