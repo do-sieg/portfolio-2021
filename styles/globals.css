@@ -14,11 +14,25 @@ body {
 }
 a {
   text-decoration: none;
+  border-bottom: 1px solid transparent;
+  color: #e86;
+  transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+}
+a:hover,
+a :active {
+  color: #f3ac94;
+  border-bottom-color: #f3ac94;
 }
 h1,
 h2,
 h3 {
   margin: 0;
+  font-weight: 400;
+}
+h2 {
+  text-align: center;
+  font-family: Kufam;
+  color: #acf;
 }
 header {
   position: fixed;
@@ -46,7 +60,7 @@ header .jobs {
   margin: 0.25rem 0 0 0.5rem;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #aef;
+  color: #acf;
 }
 .container {
   display: flex;
@@ -65,7 +79,6 @@ header .jobs {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  margin-left: 12rem;
 }
 nav {
   display: flex;
@@ -82,6 +95,7 @@ nav a {
   font-size: larger;
   font-weight: 300;
   color: #fff;
+  border: none;
   transition: color 1s ease-in-out 0.2s, text-shadow 0.3s ease-in-out 0.2s, filter 0.3s ease-in-out 0.2s;
 }
 nav a:after {
@@ -100,31 +114,38 @@ nav a svg {
   transition: filter 0.3s ease-in-out 0.2s;
 }
 nav a:hover {
-  color: #aef;
-  text-shadow: rgba(170, 238, 255, 0.6) 1px 0 4px;
+  color: #acf;
+  text-shadow: rgba(170, 204, 255, 0.6) 1px 0 4px;
 }
 nav a:hover svg {
-  filter: drop-shadow(rgba(170, 238, 255, 0.6) 1px 0 2px);
+  filter: drop-shadow(rgba(170, 204, 255, 0.6) 1px 0 2px);
 }
 nav a:hover:after {
   width: 100%;
-  background: #aef;
-  filter: drop-shadow(rgba(170, 238, 255, 0.6) 1px 0 2px);
+  background: #acf;
+  filter: drop-shadow(rgba(170, 204, 255, 0.6) 1px 0 2px);
 }
 main {
   min-height: calc(100% - 4rem);
   padding: 2rem 5rem 0;
 }
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
   height: 4rem;
   padding: 0.5rem;
   border-top: 0.05rem solid #fffa;
-  text-align: center;
   font-weight: 300;
 }
-footer a {
-  display: block;
-  margin-top: 0.25rem;
+hr {
+  width: 50%;
+  border-style: solid;
+  border-color: #acf;
+  margin-block-start: 3em;
+  margin-block-end: 3em;
+  opacity: 0.5;
 }
 .timeline-container .timeline {
   position: relative;
@@ -224,7 +245,7 @@ footer a {
   text-shadow: black 2px 2px 3px;
 }
 .timeline-container .event-container .card .card-body .duration.ongoing {
-  background-color: #d61;
+  background-color: #6a1;
 }
 .timeline-container .event-container .card.dev {
   border-color: rgba(102, 119, 170, 0.5);
@@ -270,6 +291,65 @@ footer a {
   font-size: large;
 }
 .info-text .keyword {
-  font-weight: 400;
-  color: #aef;
+  font-weight: 500;
+  color: #acf;
+}
+.home-slideshow-container {
+  overflow: hidden;
+  background-color: rgba(68, 85, 102, 0.1);
+}
+.home-slideshow-container:hover .home-slide-nav-btn.left {
+  left: 0;
+}
+.home-slideshow-container:hover .home-slide-nav-btn.right {
+  right: 0;
+}
+.home-slide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 12rem;
+  animation-name: fade-in;
+  animation-duration: 2.5s;
+}
+.home-slide-container p {
+  margin: 0;
+  font-size: x-large;
+  font-weight: 300;
+}
+.home-slide-container a {
+  opacity: 0;
+  animation: 2.5s forwards 0.6s fade-in;
+  font-size: larger;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.home-slide-nav-btn {
+  width: 2rem;
+  height: 100%;
+  top: 0 !important;
+  border: none;
+  font-family: Kufam;
+  font-size: x-large;
+  font-weight: 300;
+  background-color: transparent;
+  color: #fffc;
+  transition: background-color 0.6s ease, left 0.6s ease, right 0.6s ease;
+}
+.home-slide-nav-btn.left {
+  left: -2rem;
+}
+.home-slide-nav-btn.right {
+  right: -2rem;
+}
+.home-slide-nav-btn:hover {
+  background-color: #fff3;
 }

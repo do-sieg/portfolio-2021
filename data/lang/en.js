@@ -17,6 +17,7 @@ export default {
 
     TIMELINE: "Activity",
     ONGOING: "Ongoing",
+    LEARN_MORE: "Learn More",
 
     HOME_INTRO: (
         <>
@@ -41,4 +42,10 @@ export default {
             <p>Have a nice visit!</p>
         </>
     ),
+
+
+    HOME_SLIDE_PROMPT_1: "Need a website?",
+    HOME_SLIDE_PROMPT_2: "Need lessons?",
+    HOME_SLIDE_PROMPT_3: "Need a translator?",
+    
 }

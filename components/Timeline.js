@@ -57,8 +57,6 @@ function getDuration(eventData) {
     if (years > 0) str += `${years} year${years > 1 ? "s" : ""} `;
     if (months > 0) str += `${months} month${months > 1 ? "s" : ""} `;
 
-    console.log(str);
-
     return str;
 }
 
@@ -99,18 +97,14 @@ function EventCard({ index, data }) {
 }
 
 export default function Timeline() {
-    const L_TIMELINE = useLangTerm('TIMELINE');
 
     return (
-        <>
-            <h2>{L_TIMELINE}</h2>
-            <div className="timeline-container">
-                <div className="timeline">
-                    {events.map((event, index) => {
-                        return <EventCard key={index} index={index} data={event} />
-                    })}
-                </div>
+        <div className="timeline-container">
+            <div className="timeline">
+                {events.map((event, index) => {
+                    return <EventCard key={index} index={index} data={event} />
+                })}
             </div>
-        </>
+        </div>
     );
 }
