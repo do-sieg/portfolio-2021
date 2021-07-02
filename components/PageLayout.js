@@ -2,7 +2,7 @@ import { useLangTerm } from "../utils/lang";
 import AppHead from "./AppHead";
 import { FaCode, FaEnvelope, FaGraduationCap, FaHome, FaLanguage, FaUser } from "react-icons/fa";
 import Footer from "./Footer";
-import LangLink from "./LangLink";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function PageLayout({ children }) {
@@ -16,10 +16,6 @@ export default function PageLayout({ children }) {
     const L_NAV_CONTACT = useLangTerm("NAV_CONTACT");
 
     const router = useRouter();
-    console.log(router);
-    // const pathSplit = router.asPath.split("/");
-    // const realPath = "/" + pathSplit[pathSplit.length - 1];
-    // console.log(pathSplit, realPath);
 
     return (
         <>
@@ -28,19 +24,25 @@ export default function PageLayout({ children }) {
                 <h1>{L_DEV_NAME}</h1>
                 <p className="jobs">{L_DEV_JOB_TITLES}</p>
                 <div className="lang-bar">
-                    <LangLink href={router.asPath} lang="en"><a>EN</a></LangLink>
-                    <LangLink href={router.asPath} lang="fr"><a>FR</a></LangLink>
+                    {router.locales.map((loc) => {
+                        const shortLoc = loc.substr(0, 2).toUpperCase();
+                        return (
+                            <Link key={loc} href={router.asPath} locale={loc}>
+                                <a className={loc === router.locale ? "current" : ""}>{shortLoc}</a>
+                            </Link>
+                        );
+                    })}
                 </div>
             </header>
             <div className="container">
                 <div className="side-panel">
                     <nav>
-                        {/* <LangLink href="/"><a><FaHome />{L_NAV_HOME}</a></LangLink> */}
-                        {/* <LangLink href="/about"><a><FaUser />{L_NAV_ABOUT}</a></LangLink> */}
-                        {/* <LangLink href="/dev"><a><FaCode />{L_NAV_DEV}</a></LangLink> */}
-                        {/* <LangLink href="/teach"><a><FaGraduationCap />{L_NAV_TEACH}</a></LangLink> */}
-                        {/* <LangLink href="/translation"><a><FaLanguage />{L_NAV_TRANSLATION}</a></LangLink> */}
-                        {/* <LangLink href="/contact"><a><FaEnvelope />{L_NAV_CONTACT}</a></LangLink> */}
+                        <Link href="/"><a><FaHome />{L_NAV_HOME}</a></Link>
+                        {/* <Link href="/about"><a><FaUser />{L_NAV_ABOUT}</a></Link> */}
+                        {/* <Link href="/dev"><a><FaCode />{L_NAV_DEV}</a></Link> */}
+                        <Link href="/teach"><a><FaGraduationCap />{L_NAV_TEACH}</a></Link>
+                        {/* <Link href="/translation"><a><FaLanguage />{L_NAV_TRANSLATION}</a></Link> */}
+                        {/* <Link href="/contact"><a><FaEnvelope />{L_NAV_CONTACT}</a></Link> */}
                     </nav>
                 </div>
                 <div className="main-panel">

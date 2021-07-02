@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { FaGraduationCap, FaRocket, FaSuitcase } from 'react-icons/fa';
-import { useLangContext, useLangTerm } from '../utils/lang';
+import { useLangTerm } from '../utils/lang';
 import dataEvents from '../data/events';
+import { useRouter } from 'next/router';
 
 
 // données en dur ici dans un premier temps, puis json
@@ -20,7 +21,7 @@ import dataEvents from '../data/events';
 
 export default function Timeline() {
 
-    const contextLang = useLangContext();
+    const { locale } = useRouter();
 
     const [events, setEvents] = useState([]);
     const [filterStatus, setFilterStatus] = useState(0);
@@ -93,7 +94,7 @@ export default function Timeline() {
                 <button className={`all ${filterGroup === 0 ? 'active' : ''}`} onClick={handleToggleFilterGroupAll}>{L_ALL}</button>
                 <button className={`dev ${filterGroup === 1 ? 'active' : ''}`} onClick={handleToggleFilterGroupDev}>{L_NAV_DEV}</button>
                 <button className={`teach ${filterGroup === 2 ? 'active' : ''}`} onClick={handleToggleFilterGroupTeach}>{L_NAV_TEACH}</button>
-                <button className={`translate ${filterGroup === 3 ? 'active' : ''}`} onClick={handleToggleFilterGroupTranslate}>{L_NAV_TRANSLATION}</button>
+                {/* <button className={`translate ${filterGroup === 3 ? 'active' : ''}`} onClick={handleToggleFilterGroupTranslate}>{L_NAV_TRANSLATION}</button> */}
                 <button className={`ongoing ${filterStatus === 1 ? 'active' : ''}`} onClick={handleToggleFilterStatus}>{L_ONGOING}</button>
             </div>
 
@@ -140,10 +141,10 @@ export default function Timeline() {
                             <div key={index} className={`event-container ${index % 2 == 1 ? "right" : "left"}`}>
                                 <div className={`card ${event.group || ''}`}>
                                     <div className="card-head">
-                                        {renderTypeIcon(event.type)}<h3>{event.name[contextLang]}</h3>
+                                        {renderTypeIcon(event.type)}<h3>{event.name[locale]}</h3>
                                     </div>
                                     <div className="card-body">
-                                        {event.description && <p>{event.description[contextLang] || ''}</p>}
+                                        {event.description && <p>{event.description[locale] || ''}</p>}
                                         {event.started &&
                                             (event.ended ?
                                                 <p className="duration">{durationStr}</p>

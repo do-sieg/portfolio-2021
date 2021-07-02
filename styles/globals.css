@@ -71,6 +71,13 @@ header .lang-bar {
   display: flex;
   gap: 0.5rem;
 }
+header .lang-bar a.current {
+  color: white;
+}
+header .lang-bar a.current:hover,
+header .lang-bar a.current :active {
+  border-color: white;
+}
 .container {
   display: flex;
   min-height: calc(100vh - 6rem);

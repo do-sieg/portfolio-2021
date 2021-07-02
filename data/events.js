@@ -167,17 +167,17 @@ export default [
     {
         type: "job",
         group: "teach",
-        name: { en: "Web Dev Mentorship", fr: "Mentor développement" },
+        name: { en: "Web Dev Mentorship", fr: "Mentor développement web" },
         description: {
             en: (() => (
                 <>
-                    Support for students in training.<br />
+                    Support for students learning web development.<br />
                     Help with projects for developers, from beginner to advanced levels.<br />— Online
                 </>
             ))(),
             fr: (() => (
                 <>
-                    Accompagnement d’élèves en formation.<br />
+                    Accompagnement d’élèves dans leur apprentissage du web.<br />
                     Aide à la réalisation de projets pour développeurs de niveaux débutant à confirmé.<br />— Cours en ligne
                 </>
             ))(),
@@ -185,25 +185,44 @@ export default [
         "started": "2020-10",
     },
 
+    // {
+    //     type: "job",
+    //     group: "translate",
+    //     name: { en: "Translator/Proofreader", fr: "Traducteur/Relecteur" },
+    //     description: {
+    //         en: (() => (
+    //             <>
+    //                 Translation/correction for data entries, texts, user manuals and files.<br />
+    //                 English to French.<br />— Faithlife, LLC, USA
+    //             </>
+    //         ))(),
+    //         fr: (() => (
+    //             <>
+    //                 Traduction et correction de données, textes, manuels d’utilisation et fichiers informatiques.<br />
+    //                 Anglais vers français.<br />— Faithlife, LLC, USA
+    //             </>
+    //         ))(),
+    //     },
+    //     "started": "2020-11",
+    // },
+
     {
         type: "job",
-        group: "translate",
-        name: { en: "Translator/Proofreader", fr: "Traducteur/Relecteur" },
+        group: "teach",
+        name: { en: "Web Dev Trainer", fr: "Formateur développement web" },
         description: {
             en: (() => (
                 <>
-                    Translation/correction for data entries, texts, user manuals and files.<br />
-                    English to French.<br />— Faithlife, LLC, USA
+                    Lessons with small groups of students on JavaScript.<br />— ANDN Services
                 </>
             ))(),
             fr: (() => (
                 <>
-                    Traduction et correction de données, textes, manuels d’utilisation et fichiers informatiques.<br />
-                    Anglais vers français.<br />— Faithlife, LLC, USA
+                    Cours avec des petits groupes d'élèves sur le langage JavaScript.<br />— ANDN Services
                 </>
             ))(),
         },
-        "started": "2020-11",
+        "started": "2021-06",
     },
 
     {
