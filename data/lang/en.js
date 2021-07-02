@@ -1,6 +1,6 @@
 export default {
     DEV_NAME: "Daniel Orchanian",
-    DEV_JOB_TITLES: "Web Developer, Translator, Teacher",
+    DEV_JOB_TITLES: "Web Developer & Trainer",
 
     NAV_HOME: "Home",
     NAV_ABOUT: "About Me",

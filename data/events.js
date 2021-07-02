@@ -167,7 +167,7 @@ export default [
     {
         type: "job",
         group: "teach",
-        name: { en: "Web Dev Mentorship", fr: "Mentor développement web" },
+        name: { en: "Web Dev Mentor", fr: "Mentor développement web" },
         description: {
             en: (() => (
                 <>

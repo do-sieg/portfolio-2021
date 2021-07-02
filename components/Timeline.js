@@ -56,7 +56,7 @@ export default function Timeline() {
 
     function handleToggleFilterStatus(e) {
         e.preventDefault();
-        setFilterStatus(Math.abs(1 - filterStatus));
+        setFilterStatus(parseInt(e.target.value, 10));
     }
 
     function handleToggleFilterGroupAll(e) {
@@ -91,11 +91,12 @@ export default function Timeline() {
         <div className="timeline-container">
 
             <div className="filters">
-                <button className={`all ${filterGroup === 0 ? 'active' : ''}`} onClick={handleToggleFilterGroupAll}>{L_ALL}</button>
-                <button className={`dev ${filterGroup === 1 ? 'active' : ''}`} onClick={handleToggleFilterGroupDev}>{L_NAV_DEV}</button>
-                <button className={`teach ${filterGroup === 2 ? 'active' : ''}`} onClick={handleToggleFilterGroupTeach}>{L_NAV_TEACH}</button>
+                {/* <button className={`all ${filterGroup === 0 ? 'active' : ''}`} onClick={handleToggleFilterGroupAll}>{L_ALL}</button> */}
+                {/* <button className={`dev ${filterGroup === 1 ? 'active' : ''}`} onClick={handleToggleFilterGroupDev}>{L_NAV_DEV}</button> */}
+                {/* <button className={`teach ${filterGroup === 2 ? 'active' : ''}`} onClick={handleToggleFilterGroupTeach}>{L_NAV_TEACH}</button> */}
                 {/* <button className={`translate ${filterGroup === 3 ? 'active' : ''}`} onClick={handleToggleFilterGroupTranslate}>{L_NAV_TRANSLATION}</button> */}
-                <button className={`ongoing ${filterStatus === 1 ? 'active' : ''}`} onClick={handleToggleFilterStatus}>{L_ONGOING}</button>
+                <button className={`all ${filterStatus === 0 ? 'active' : ''}`} value={0} onClick={handleToggleFilterStatus}>{L_ALL}</button>
+                <button className={`ongoing ${filterStatus === 1 ? 'active' : ''}`} value={1} onClick={handleToggleFilterStatus}>{L_ONGOING}</button>
             </div>
 
             <div className="timeline">

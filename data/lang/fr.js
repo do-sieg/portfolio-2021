@@ -1,5 +1,5 @@
 export default {
-    DEV_JOB_TITLES: "Développeur web, traducteur, enseignant",
+    DEV_JOB_TITLES: "Développeur web & formateur",
 
     NAV_HOME: "Accueil",
     // NAV_ABOUT: "About Me",
