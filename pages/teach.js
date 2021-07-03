@@ -71,12 +71,12 @@ export default function Teach() {
                 })}
             </section>
 
-            <section class="reviews">
+            <section className="reviews">
                 <h2>{L_REVIEWS}</h2>
 
                 {reviews.map((obj, index) => {
                     return (
-                        <div className="review">
+                        <div className="review" key={index}>
                             <blockquote><FaQuoteLeft /> {obj.text} <FaQuoteRight /></blockquote>
                             <div className="score">{renderUserReview(obj.score)}</div>
                             <div className="name"> — {obj.name}</div>
