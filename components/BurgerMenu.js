@@ -29,9 +29,9 @@ export default function BurgerMenu({ children }) {
     return (
         <>
             {burger.isOpen &&
-                <div className={`${styles.overlay} lateral-menu-overlay`} onClick={burger.close}></div>
+                <div className={`${styles.overlay} burger-menu-overlay`} onClick={burger.close}></div>
             }
-            <div className={`${styles.container} lateral-menu-container` + (burger.isOpen ? ` ${styles.open} open` : "")}>
+            <div className={`${styles.container} burger-menu-container` + (burger.isOpen ? ` ${styles.open} open` : "")}>
                 <button className={`${styles.closeButton} close-btn`} onClick={burger.close}><FaTimes /></button>
                 {children}
             </div>

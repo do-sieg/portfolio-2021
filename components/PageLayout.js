@@ -33,7 +33,7 @@ export default function PageLayout({ children }) {
                 <LangBar />
             </header>
 
-            <div className="container">
+            <div className="layout-container">
                 <div className="side-panel">
                     <NavLinks />
                 </div>
