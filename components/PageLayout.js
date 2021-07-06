@@ -7,6 +7,7 @@ import LangBar from "./LangBar";
 import NavLinks from "./NavLinks";
 import { BurgerContext } from "./BurgerMenu";
 import styles from "../styles/PageLayout.module.css";
+import Link from "next/link";
 
 
 export default function PageLayout({ children }) {
@@ -27,10 +28,13 @@ export default function PageLayout({ children }) {
                 {!burger.isOpen &&
                     <button className={`${styles.menuButton} menu-btn`} onClick={burger.open}><FaBars /></button>
                 }
-
-                <h1>{L_DEV_NAME}</h1>
-                <p className="jobs">{L_DEV_JOB_TITLES}</p>
-                <LangBar />
+                <Link href="/">
+                    <a id="banner-link">
+                        <h1>{L_DEV_NAME}</h1>
+                        <p className="jobs">{L_DEV_JOB_TITLES}</p>
+                        <LangBar />
+                    </a>
+                </Link>
             </header>
 
             <div className="layout-container">

@@ -7,12 +7,12 @@ export default function LangBar() {
 
     return (
         <div className={`${styles.container} lang-bar-container`}>
-            {router.locales.map((loc) => {
-                const shortLoc = loc.substr(0, 2).toUpperCase();
+            {router.locales.map((locale) => {
+                const short = locale.substr(0, 2).toUpperCase();
                 return (
-                    <Link key={loc} href={router.asPath} locale={loc}>
-                        <a className={loc === router.locale ? `${styles.current} lang-bar-current` : ""}>
-                            {shortLoc}
+                    <Link key={locale} href={router.asPath} locale={locale}>
+                        <a className={locale === router.locale ? `${styles.current} lang-bar-current` : ""}>
+                            {short}
                         </a>
                     </Link>
                 );

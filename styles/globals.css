@@ -48,6 +48,13 @@ header {
     padding-left: 15rem;
   }
 }
+#banner-link,
+#banner-link:hover,
+#banner-link:active {
+  color: unset;
+  text-decoration: none;
+  border-bottom-color: transparent;
+}
 header h1 {
   margin: 0;
   margin-bottom: 0.2rem;
