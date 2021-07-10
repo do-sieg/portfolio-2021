@@ -2,22 +2,30 @@ import Link from "next/link";
 import { useLangTerm } from "../utils/lang";
 import PageLayout from "../components/PageLayout";
 import SlideShow from "../components/SlideShow";
-import Timeline from "../components/Timeline";
+import Timeline, { mapEventsFromData } from "../components/Timeline";
+import events from "../data/events";
 
 export default function Home() {
-    const L_HOME_INTRO = useLangTerm('HOME_INTRO');
+    const L_HOME_INTRO_DEV = useLangTerm('HOME_INTRO_DEV');
+    const L_HOME_INTRO_TEACH = useLangTerm('HOME_INTRO_TEACH');
+    const L_HOME_INTRO_SIGNATURE = useLangTerm('HOME_INTRO_SIGNATURE');
     const L_TIMELINE = useLangTerm('TIMELINE');
     const L_HOME_SLIDE_PROMPT_1 = useLangTerm('HOME_SLIDE_PROMPT_1');
     const L_HOME_SLIDE_PROMPT_2 = useLangTerm('HOME_SLIDE_PROMPT_2');
     const L_HOME_SLIDE_PROMPT_3 = useLangTerm('HOME_SLIDE_PROMPT_3');
     const L_LEARN_MORE = useLangTerm('LEARN_MORE');
+    const L_LEARN_MORE_DEV = useLangTerm('LEARN_MORE_DEV');
 
     return (
-        <PageLayout>
+        <PageLayout contentClass="page-content home-page">
 
             <section>
-                <div className="info-text">{L_HOME_INTRO}</div>
-            </section>
+                {L_HOME_INTRO_DEV}
+                <Link href="./dev"><a className="prompt-btn">{L_LEARN_MORE_DEV}</a></Link>
+                {L_HOME_INTRO_TEACH}
+                <Link href="./teach"><a className="prompt-btn">{L_LEARN_MORE}</a></Link>
+                {L_HOME_INTRO_SIGNATURE}
+            </section >
 
             <section>
                 <SlideShow
@@ -43,10 +51,13 @@ export default function Home() {
                 />
             </section>
 
+
             <section>
                 <h2>{L_TIMELINE}</h2>
-                <Timeline />
+                <Timeline events={mapEventsFromData(events)
+                    .sort((a, b) => b.startDate - a.startDate)}
+                />
             </section>
-        </PageLayout>
+        </PageLayout >
     );
 }

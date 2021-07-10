@@ -1,26 +1,24 @@
 export default [
     {
         type: "degree",
-        group: "",
         name: { en: "Diploma", fr: "Baccalauréat" },
         description: {
             en: (() => (
                 <>
-                    High school Diploma, Science profile (specialty in mathematics)<br />— Valence, France
+                    High school Diploma, Science profile (specialty in mathematics)
                 </>
             ))(),
             fr: (() => (
                 <>
-                    Baccalauréat Scientifique (spécialité mathématiques)<br />— Valence
+                    Baccalauréat Scientifique (spécialité mathématiques)
                 </>
             ))(),
         },
-        "happened": "2005-06",
+        dates: ["2005-06"],
     },
 
     {
         type: "degree",
-        group: "",
         name: { en: "Graduate studies", fr: "Études supérieures" },
         description: {
             en: (() => (
@@ -36,12 +34,11 @@ export default [
                 </>
             ))(),
         },
-        "happened": "2006-09",
+        dates: ["2006-09"],
     },
 
     {
         type: "degree",
-        group: "dev",
         name: { en: "Internship", fr: "Stage" },
         description: {
             en: (() => (
@@ -55,33 +52,30 @@ export default [
                 </>
             ))(),
         },
-        "started": "2018-07",
-        "ended": "2018-09",
+        dates: ["2018-07", "2018-09"],
     },
 
-    {
-        type: "degree",
-        group: "dev",
-        name: { en: "Training", fr: "Formation" },
-        description: {
-            en: (() => (
-                <>
-                    Web Developer Training<br />— OpenClassrooms
-                </>
-            ))(),
-            fr: (() => (
-                <>
-                    Formation Développeur web<br />— OpenClassrooms
-                </>
-            ))(),
-        },
-        "started": "2021-03",
-        "ended": "2021-05",
-    },
+    // {
+    //     type: "degree",
+    //     name: { en: "Training", fr: "Formation" },
+    //     description: {
+    //         en: (() => (
+    //             <>
+    //                 Web Developer Training<br />— OpenClassrooms
+    //             </>
+    //         ))(),
+    //         fr: (() => (
+    //             <>
+    //                 Formation Développeur web<br />— OpenClassrooms
+    //             </>
+    //         ))(),
+    //     },
+    //     started: "2021-03",
+    //     ended: "2021-05",
+    // },
 
     {
         type: "job",
-        group: "teach",
         name: { en: "French Teacher", fr: "Enseignant FLE" },
         description: {
             en: (() => (
@@ -95,13 +89,11 @@ export default [
                 </>
             ))(),
         },
-        "started": "2013-09",
-        "ended": "2018-09",
+        dates: ["2013-09", "2018-09"],
     },
 
     {
         type: "job",
-        group: "teach",
         name: { en: "IT/French Teacher", fr: "Enseignant Info/FLE" },
         description: {
             en: (() => (
@@ -117,13 +109,11 @@ export default [
                 </>
             ))(),
         },
-        "started": "2019-09",
-        "ended": "2020-09",
+        dates: ["2019-09", "2020-09"],
     },
 
     {
         type: "job",
-        group: "dev",
         name: { en: "Fullstack Developer", fr: "Développeur fullstack" },
         description: {
             en: (() => (
@@ -139,13 +129,11 @@ export default [
                 </>
             ))(),
         },
-        "started": "2018-09",
-        "ended": "2019-09",
+        dates: ["2018-09", "2019-09"],
     },
 
     {
         type: "job",
-        group: "dev",
         name: { en: "Freelance Developer", fr: "Développeur web free-lance" },
         description: {
             en: (() => (
@@ -161,12 +149,11 @@ export default [
                 </>
             ))(),
         },
-        "started": "2018-11",
+        dates: ["2018-11", null],
     },
 
     {
         type: "job",
-        group: "teach",
         name: { en: "Web Dev Mentor", fr: "Mentor développement web" },
         description: {
             en: (() => (
@@ -182,33 +169,31 @@ export default [
                 </>
             ))(),
         },
-        "started": "2020-10",
+        dates: ["2020-10", null],
     },
 
-    // {
-    //     type: "job",
-    //     group: "translate",
-    //     name: { en: "Translator/Proofreader", fr: "Traducteur/Relecteur" },
-    //     description: {
-    //         en: (() => (
-    //             <>
-    //                 Translation/correction for data entries, texts, user manuals and files.<br />
-    //                 English to French.<br />— Faithlife, LLC, USA
-    //             </>
-    //         ))(),
-    //         fr: (() => (
-    //             <>
-    //                 Traduction et correction de données, textes, manuels d’utilisation et fichiers informatiques.<br />
-    //                 Anglais vers français.<br />— Faithlife, LLC, USA
-    //             </>
-    //         ))(),
-    //     },
-    //     "started": "2020-11",
-    // },
+    // // {
+    // //     type: "job",
+    // //     name: { en: "Translator/Proofreader", fr: "Traducteur/Relecteur" },
+    // //     description: {
+    // //         en: (() => (
+    // //             <>
+    // //                 Translation/correction for data entries, texts, user manuals and files.<br />
+    // //                 English to French.<br />— Faithlife, LLC, USA
+    // //             </>
+    // //         ))(),
+    // //         fr: (() => (
+    // //             <>
+    // //                 Traduction et correction de données, textes, manuels d’utilisation et fichiers informatiques.<br />
+    // //                 Anglais vers français.<br />— Faithlife, LLC, USA
+    // //             </>
+    // //         ))(),
+    // //     },
+    // //     started: "2020-11",
+    // // },
 
     {
         type: "job",
-        group: "teach",
         name: { en: "Web Dev Trainer", fr: "Formateur développement web" },
         description: {
             en: (() => (
@@ -222,12 +207,11 @@ export default [
                 </>
             ))(),
         },
-        "started": "2021-06",
+        dates: ["2021-06", null],
     },
 
     {
         type: "project",
-        group: "dev",
         name: { en: "Biochem", fr: "Biochem" },
         description: {
             en: (() => (
@@ -241,13 +225,11 @@ export default [
                 </>
             ))(),
         },
-        "started": "2018-12",
-        "ended": "2019-02",
+        dates: ["2018-12", "2019-02"],
     },
 
     {
         type: "project",
-        group: "dev",
         name: { en: "Saleth", fr: "Saleth" },
         description: {
             en: (() => (
@@ -261,13 +243,11 @@ export default [
                 </>
             ))(),
         },
-        "started": "2020-04",
-        "ended": "2020-06",
+        dates: ["2020-04", "2020-06"],
     },
 
     {
         type: "project",
-        group: "dev",
         name: { en: "Agence Kentia", fr: "Agence Kentia" },
         description: {
             en: (() => (
@@ -281,7 +261,6 @@ export default [
                 </>
             ))(),
         },
-        "started": "2020-11",
-        "ended": "2021-02",
+        dates: ["2020-11", "2021-02"],
     },
 ];

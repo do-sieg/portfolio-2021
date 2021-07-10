@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import styles from "../styles/BurgerMenu.module.css";
 
 export const BurgerContext = React.createContext({
@@ -15,7 +15,6 @@ export function useBurgerState() {
     }
 
     function close() {
-        console.log("CLOSE MENU");
         setIsOpen(false);
     }
 

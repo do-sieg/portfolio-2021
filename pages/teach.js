@@ -60,7 +60,7 @@ export default function Teach() {
     return (
         <PageLayout>
             <section>
-                <div className="info-text">{L_TEACH_INTRO}</div>
+                {L_TEACH_INTRO}
             </section>
 
             <section id="teach-links">

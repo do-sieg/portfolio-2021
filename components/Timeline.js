@@ -1,51 +1,27 @@
-import { useEffect, useState } from 'react';
 import { FaGraduationCap, FaRocket, FaSuitcase } from 'react-icons/fa';
 import { useLangTerm } from '../utils/lang';
-import dataEvents from '../data/events';
 import { useRouter } from 'next/router';
+import styles from "../styles/Timeline.module.css";
 
 
-// données en dur ici dans un premier temps, puis json
-// voir la disposition
-// chargements successif (scroll ou bouton)
+class Event {
+    constructor({ type, group, name, description, dates }) {
+        this.type = type || "none";
+        this.group = group || "none";
+        this.name = name || "";
+        this.description = description || "";
+        if (dates) {
+            this.startDate = dates[0] ? new Date(dates[0]) : null;
+            if (dates[1]) {
+                this.endDate = new Date(dates[1]);
+            } else if (dates[1] === null) {
+                this.endDate = null;
+            }
+        }
+    }
 
-// cartes avec nom, icone pour types (projet, mission, expérience, diplome)
-// + pays sur carte
-// + commentaire sur la carte
-// + lien sur la carte
-
-
-
-
-
-
-export default function Timeline() {
-
-    const { locale } = useRouter();
-
-    const [events, setEvents] = useState([]);
-    const [filterStatus, setFilterStatus] = useState(0);
-    const [filterGroup, setFilterGroup] = useState(0);
-
-    const L_SHORT_MONTHS = useLangTerm('SHORT_MONTHS');
-    const L_YEARS = useLangTerm('YEARS');
-    const L_MONTHS = useLangTerm('MONTHS');
-
-    const L_ALL = useLangTerm("ALL");
-    const L_NAV_DEV = useLangTerm("NAV_DEV");
-    const L_NAV_TEACH = useLangTerm("NAV_TEACH");
-    const L_NAV_TRANSLATION = useLangTerm("NAV_TRANSLATION");
-    const L_ONGOING = useLangTerm('ONGOING');
-
-
-    useEffect(() => {
-        setEvents(dataEvents);
-    }, []);
-
-    function getDuration(eventData) {
-        const date1 = new Date(eventData.started);
-        const date2 = new Date(eventData.ended);
-        const diffTime = Math.abs(date2 - date1);
+    getDuration() {
+        const diffTime = Math.abs(this.endDate - this.startDate);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
         let months = parseInt(diffDays / 30, 10) % 12;
@@ -54,29 +30,34 @@ export default function Timeline() {
         return { years, months };
     }
 
-    function handleToggleFilterStatus(e) {
-        e.preventDefault();
-        setFilterStatus(parseInt(e.target.value, 10));
+    isOneShot() {
+        return this.startDate && this.endDate === undefined;
     }
 
-    function handleToggleFilterGroupAll(e) {
-        e.preventDefault();
-        setFilterGroup(0);
+    isOngoing() {
+        return this.endDate === null;
     }
+}
 
-    function handleToggleFilterGroupDev(e) {
-        e.preventDefault();
-        setFilterGroup(1);
-    }
 
-    function handleToggleFilterGroupTeach(e) {
-        e.preventDefault();
-        setFilterGroup(2);
-    }
+export function mapEventsFromData(list) {
+    return list.map(data => new Event(data));
+}
 
-    function handleToggleFilterGroupTranslate(e) {
-        e.preventDefault();
-        setFilterGroup(3);
+
+export default function Timeline({ events = [] }) {
+    const { locale } = useRouter();
+    const L_YEARS = useLangTerm('YEARS');
+    const L_MONTHS = useLangTerm('MONTHS');
+    const L_SHORT_MONTHS = useLangTerm('SHORT_MONTHS');
+    const L_ONGOING = useLangTerm('ONGOING');
+
+    function getEventDurationStr(event) {
+        const duration = event.getDuration();
+        let durationStr = "~";
+        if (duration.years > 0) durationStr += `${duration.years} ${L_YEARS(duration.years)}`;
+        if (duration.months > 0) durationStr += ` ${duration.months} ${L_MONTHS(duration.months)}`;
+        return durationStr;
     }
 
     function renderTypeIcon(type) {
@@ -88,82 +69,42 @@ export default function Timeline() {
     }
 
     return (
-        <div className="timeline-container">
+        <div className={`${styles.container} timeline-container`}>
+            {events.map((event, index) => {
 
-            <div className="filters">
-                {/* <button className={`all ${filterGroup === 0 ? 'active' : ''}`} onClick={handleToggleFilterGroupAll}>{L_ALL}</button> */}
-                {/* <button className={`dev ${filterGroup === 1 ? 'active' : ''}`} onClick={handleToggleFilterGroupDev}>{L_NAV_DEV}</button> */}
-                {/* <button className={`teach ${filterGroup === 2 ? 'active' : ''}`} onClick={handleToggleFilterGroupTeach}>{L_NAV_TEACH}</button> */}
-                {/* <button className={`translate ${filterGroup === 3 ? 'active' : ''}`} onClick={handleToggleFilterGroupTranslate}>{L_NAV_TRANSLATION}</button> */}
-                <button className={`all ${filterStatus === 0 ? 'active' : ''}`} value={0} onClick={handleToggleFilterStatus}>{L_ALL}</button>
-                <button className={`ongoing ${filterStatus === 1 ? 'active' : ''}`} value={1} onClick={handleToggleFilterStatus}>{L_ONGOING}</button>
-            </div>
+                return (
+                    <div key={index} className={`${styles.eventContainer} event-container`}>
 
-            <div className="timeline">
-                {events
-                    .filter((event) => {
-                        let display = false;
+                        <time>
+                            {event.startDate ?
+                                `${L_SHORT_MONTHS[event.startDate.getMonth()]} ${event.startDate.getFullYear()}`
+                                : "---"
+                            }
+                        </time>
 
-                        if (filterGroup === 0) {
-                            display = true;
-                        }
+                        <div className={`${styles.cardContainer} card-container ${event.type || ''}`}>
 
-                        if (filterGroup === 1 && event.group === "dev") {
-                            display = true;
-                        }
-                        if (filterGroup === 2 && event.group === "teach") {
-                            display = true;
-                        }
-                        if (filterGroup === 3 && event.group === "translate") {
-                            display = true;
-                        }
-
-                        if (filterStatus === 1) {
-                            display = display && (event.started && !event.ended);
-                        }
-                        return display;
-                    })
-                    .sort((a, b) => {
-                        const dateA = a.started || a.happened;
-                        const dateB = b.started || b.happened;
-                        return new Date(dateB) - new Date(dateA);
-                    })
-                    .map((event, index) => {
-                        // return <EventCard key={index} index={index} data={event} />
-
-                        const displayedStartDate = new Date(event.started || event.happened);
-                        const duration = getDuration(event);
-
-                        let durationStr = "~";
-                        if (duration.years > 0) durationStr += `${duration.years} ${L_YEARS(duration.years)}`;
-                        if (duration.months > 0) durationStr += `${duration.months} ${L_MONTHS(duration.months)} `;
-
-                        return (
-                            <div key={index} className={`event-container ${index % 2 == 1 ? "right" : "left"}`}>
-                                <div className={`card ${event.group || ''}`}>
-                                    <div className="card-head">
-                                        {renderTypeIcon(event.type)}<h3>{event.name[locale]}</h3>
-                                    </div>
-                                    <div className="card-body">
-                                        {event.description && <p>{event.description[locale] || ''}</p>}
-                                        {event.started &&
-                                            (event.ended ?
-                                                <p className="duration">{durationStr}</p>
-                                                :
-                                                <p className="duration ongoing">{L_ONGOING}</p>
-                                            )
-                                        }
-                                    </div>
-                                </div>
-
-                                <time>
-                                    {`${L_SHORT_MONTHS[displayedStartDate.getMonth()]} ${displayedStartDate.getFullYear()}`}
-                                </time>
+                            <div className={`${styles.cardHead} card-head`}>
+                                {renderTypeIcon(event.type)}
+                                <h3>{event.name[locale] || ""}</h3>
                             </div>
-                        );
-                    })
-                }
-            </div>
+
+                            <div className={`${styles.cardBody} card-body`}>
+                                <p>{event.description[locale] || ''}</p>
+
+                                {!event.isOneShot() &&
+                                    (event.isOngoing() ?
+                                        <span className={`${styles.duration} ${styles.ongoing} duration ongoing`}>{L_ONGOING}</span>
+                                        :
+                                        <span className={`${styles.duration} duration`}>{getEventDurationStr(event)}</span>
+                                    )
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                );
+            })}
         </div>
     );
 }

@@ -1,0 +1,95 @@
+.container {
+    position: relative;
+    width: 100%;
+    padding: 1rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: -webkit-fill-available;
+    margin: 3.5rem 0 3.5rem calc(15% - 2px);
+    border-left: 4px dotted #ccc8;
+}
+
+.eventContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: relative; */
+    /* left: 15%; */
+    /* width: 85%; */
+    /* padding: 10px 20px; */
+}
+
+.eventContainer time {
+    width: calc(15% - 1.2rem);
+    text-align: right;
+
+    /* right: 100%; */
+    /* display: flex;
+    
+    justify-content: flex-end; */
+    /* padding-right: 0.85rem; */
+    /* @media (min-width: @md-md) {
+      padding-right: 1.5rem;
+    }
+    &:after {
+      left: calc(100% - 0.5rem);
+    } */
+}
+
+.cardContainer {
+    width: calc(85% - 1.2rem);
+    z-index: 1;
+    /* right: 100%; */
+    /* justify-content: flex-end; */
+    /* padding-right: 0.85rem; */
+    /* text-align: right;
+    @media (min-width: @md-md) {
+      padding-right: 1.5rem;
+    }
+    &:after {
+      left: calc(100% - 0.5rem);
+    } */
+}
+
+.cardContainer::before {
+    position: absolute;
+    top: calc(50% - 0.5rem);
+    left: calc(-1.2rem - 0.5rem);
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+}
+
+.cardHead {
+    display: flex;
+    align-items: center;
+    background-color: #555;
+}
+
+.cardHead svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.65rem;
+    /* box-sizing: content-box; */
+}
+
+.cardHead h3 { margin: 0; }
+
+.cardBody .duration {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+
+.cardBody .duration.ongoing {
+    color: orange;
+}

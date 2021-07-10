@@ -10,15 +10,11 @@ import styles from "../styles/PageLayout.module.css";
 import Link from "next/link";
 
 
-export default function PageLayout({ children }) {
+export default function PageLayout({ children, contentClass }) {
     const L_DEV_NAME = useLangTerm("DEV_NAME");
     const L_DEV_JOB_TITLES = useLangTerm("DEV_JOB_TITLES");
 
     const burger = useContext(BurgerContext);
-
-    // useEffect(() => {
-    //     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
-    // }, [menuOpen]);
 
     return (
         <>
@@ -42,7 +38,7 @@ export default function PageLayout({ children }) {
                     <NavLinks />
                 </div>
                 <div className="main-panel">
-                    <main>{children}</main>
+                    <main className={contentClass || ""}>{children}</main>
                     <Footer />
                 </div>
             </div>
