@@ -6,6 +6,7 @@ import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
 
 export default function Home() {
+    const L_HOME_WELCOME = useLangTerm('HOME_WELCOME');
     const L_HOME_INTRO_DEV = useLangTerm('HOME_INTRO_DEV');
     const L_HOME_INTRO_TEACH = useLangTerm('HOME_INTRO_TEACH');
     const L_HOME_INTRO_SIGNATURE = useLangTerm('HOME_INTRO_SIGNATURE');
@@ -20,6 +21,7 @@ export default function Home() {
         <PageLayout contentClass="page-content home-page">
 
             <section>
+                <h2>{L_HOME_WELCOME}</h2>
                 {L_HOME_INTRO_DEV}
                 <Link href="./dev"><a className="prompt-btn">{L_LEARN_MORE_DEV}</a></Link>
                 {L_HOME_INTRO_TEACH}

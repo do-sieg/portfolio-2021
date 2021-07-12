@@ -25,9 +25,9 @@ export default {
     YEARS: (n) => n <= 1 ? "an" : "ans",
     MONTHS: (n) => "mois",
 
+    HOME_WELCOME: "Bienvenue sur mon site",
     HOME_INTRO_DEV: (
         <>
-            <p><strong>Bienvenue</strong> sur mon site.</p>
             <p>Je mets mon expertise de <strong>développeur web</strong> à votre service. Vous montez une équipe pour votre entreprise&nbsp;? Vous cherchez un professionnel pour réaliser un site&nbsp;? Je suis là pour vous accompagner des débuts de vos projets jusqu'à leur mise en service.</p>
             <p>Ayant travaillé en entreprise et en free-lance, je m'intéresse à divers types de projets et je sais m'adapter aux besoins des clients.</p>
         </>

@@ -174,11 +174,14 @@ main {
 .page-content h2 {
   text-align: center;
   font-family: Kufam;
+  font-size: xx-large;
   font-weight: 500;
   color: #acf;
 }
 .page-content p {
   line-height: 1.5;
+  text-align: justify;
+  text-indent: 1.5rem;
   font-size: large;
   font-weight: 300;
 }

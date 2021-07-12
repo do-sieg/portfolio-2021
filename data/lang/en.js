@@ -26,9 +26,9 @@ export default {
     YEARS: (n) => n <= 1 ? "year" : "years",
     MONTHS: (n) => n <= 1 ? "month" : "months",
 
+    HOME_WELCOME: "Welcome to my presentation site",
     HOME_INTRO: (
         <>
-            <p><span className="keyword">Welcome</span> to my presentation site.</p>
             <p>
                 I take interest in various kinds of projects. Whether you are a <span className="keyword">company</span> or an <span className="keyword">individual</span>, my knowledge and skills are <span className="keyword">at your service</span>.
             </p>

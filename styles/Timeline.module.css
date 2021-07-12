@@ -21,20 +21,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* position: relative; */
-    /* left: 15%; */
-    /* width: 85%; */
-    /* padding: 10px 20px; */
 }
 
 .eventContainer time {
     width: calc(15% - 1.2rem);
     text-align: right;
-
-    /* right: 100%; */
-    /* display: flex;
     
-    justify-content: flex-end; */
     /* padding-right: 0.85rem; */
     /* @media (min-width: @md-md) {
       padding-right: 1.5rem;
@@ -47,8 +39,7 @@
 .cardContainer {
     width: calc(85% - 1.2rem);
     z-index: 1;
-    /* right: 100%; */
-    /* justify-content: flex-end; */
+    
     /* padding-right: 0.85rem; */
     /* text-align: right;
     @media (min-width: @md-md) {
