@@ -7,7 +7,7 @@ export function useLangTerm(termKey) {
     }
 
     let term = getTerm(termKey, locale);
-    if (!term) {
+    if (term === undefined) {
         if (locale !== defaultLocale) {
             term = getTerm(termKey, defaultLocale);
         } else {

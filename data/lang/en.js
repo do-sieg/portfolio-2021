@@ -50,6 +50,11 @@ export default {
         </>
     ),
 
+    HOME_INTRO_DEV: "",
+    HOME_INTRO_TEACH: "",
+    HOME_INTRO_SIGNATURE: "",
+    LEARN_MORE_DEV: "",
+
 
     HOME_SLIDE_PROMPT_1: "Need a website?",
     HOME_SLIDE_PROMPT_2: "Need lessons?",
