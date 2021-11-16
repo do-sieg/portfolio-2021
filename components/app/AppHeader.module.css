@@ -10,8 +10,10 @@
 
     /* padding: 2rem; */
     padding: 0.5rem 0rem 0.5rem 15rem;
-    background-color: var(--indigo-600);
-    background-image: linear-gradient(135deg, var(--indigo-600), var(--indigo-900));
+    background-color: var(--blueGray-600);
+    background-image: linear-gradient(135deg, var(--blueGray-600), var(--blueGray-900));
+
+    box-shadow: var(--shadow-lg);
 }
 
 
@@ -25,8 +27,9 @@
     margin-bottom: 0.15rem;
     border-bottom: 0.15rem solid;
     
-    font-family: var(--font-display);
-    /* font-size: 1.3rem; */
+    /* font-size: 1.3rem;
+    @media (min-width: @md-sm) { font-size: 1.6rem; }
+    @media (min-width: @md-lg) { font-size: 2rem; } */
     font-size: 2rem;
     font-weight: 500;
 
@@ -34,12 +37,17 @@
 }
 
 .devJobTitles {
-    margin: 0.25rem 0 0 1rem;
-    font-family: var(--font-display);
-    /* font-size: 1rem; */
+    margin: 0.5rem 0 0 1rem;
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--secondary);
+
+    /* margin-left: 0.25rem;
+    font-size: 1rem;
+    @media (min-width: @md-lg) {
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+    } */
 }
 
 .burgerBtn {

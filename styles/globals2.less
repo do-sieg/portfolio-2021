@@ -10,6 +10,7 @@
 
 @import "./var-fonts.css";
 @import "./var-colors.css";
+@import "./var-shadows.css";
 
 // Content wrapper: limit width and center content
 .inner-container {
@@ -40,9 +41,21 @@ body {
 
 
 body {
-    font-size: medium;
+  font-family: var(--font-sans);
+  font-size: medium;
+  background-color: var(--blueGray-600);
+  background-image: linear-gradient(135deg, var(--blueGray-600), var(--blueGray-900));
+  color: white;
 }
 
+a {
+  color: var(--link);
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    color: var(--link-hover);
+  }
+}
 
 
 

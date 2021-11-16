@@ -1,7 +1,7 @@
 import Head from "next/head";
 import BurgerMenu from "./BurgerMenu";
 import LangBar from "./app/LangBar";
-import NavLinks from "./NavLinks";
+import AppNav from "./app/AppNav";
 
 export default function AppWrapper({ children }) {
 
@@ -9,7 +9,7 @@ export default function AppWrapper({ children }) {
         <>
             <BurgerMenu>
                 <LangBar />
-                <NavLinks />
+                <AppNav />
             </BurgerMenu>
 
             <Head>

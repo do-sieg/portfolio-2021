@@ -1,22 +1,20 @@
 
 import PageLayout from "../core/PageLayout";
 import AppHeader from "./AppHeader";
+import AppFooter from "./AppFooter";
+import AppNav from "./AppNav";
 
 export default function AppLayout({ children }) {
 
     return (
         <PageLayout>
             <AppHeader />
-            
 
-            <aside>APP LEFT ASIDE</aside>
-            <aside style={{ gridArea: "right" }}>APP RIGHT ASIDE</aside>
+            <AppNav asideWrap />
 
-            <main>
-                {children}
-            </main>
+            <main>{children}</main>
 
-            <footer>FOOTER</footer>
+            <AppFooter />
         </PageLayout>
     );
 }

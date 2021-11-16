@@ -1,0 +1,62 @@
+.aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+}
+
+.nav a {
+    position: relative;
+    height: 2.75rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: larger;
+    color: var(--primary);
+
+    transition: color 1s ease-in-out 0.2s, text-shadow 0.3s ease-in-out 0.2s, filter 0.3s ease-in-out 0.2s;
+}
+
+.nav a svg {
+    transition: filter 0.3s ease-in-out 0.2s;
+}
+
+/* Dynamic underline */
+.nav a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 0.1rem;
+    border-radius: 0.07rem;
+    background-color: var(--primary);
+    transform: scale(1.0);
+    transition: width 0.3s ease-in-out 0.2s, background-color 0.3s ease-in-out 0.2s, filter 0.3s ease-in-out 0.2s;
+}
+
+.nav a:hover, .nav a:active {
+    color: var(--secondary);
+    text-shadow: #ffffff99 1px 0 4px;
+}
+
+.nav a:hover svg, .nav a:active svg {
+    filter: drop-shadow(#ffffff99 1px 0 2px);
+}
+
+/* Dynamic underline (hover) */
+.nav a:hover:after, .nav a:active:after {
+    width: 100%;
+    background-color: var(--secondary);
+    filter: drop-shadow(#ffffff99 1px 0 2px);
+}
+

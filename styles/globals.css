@@ -26,27 +26,9 @@ a :active {
   border-bottom-color: #f3ac94;
 }
 header {
-  height: 6rem;
-  padding-left: 3.5rem;
   background-color: hsl(210, 25%, 17%);
   background-image: linear-gradient(135deg, hsla(210, 25%, 27%, 0.5), hsla(210, 27%, 7%, 0.5));
-  filter: drop-shadow(black 2px 2px 12px);
   z-index: 2;
-}
-@media (min-width: 576px) {
-  header {
-    padding-left: 6.5rem;
-  }
-}
-@media (min-width: 992px) {
-  header {
-    padding-left: 11rem;
-  }
-}
-@media (min-width: 1200px) {
-  header {
-    padding-left: 15rem;
-  }
 }
 #banner-link,
 #banner-link:hover,
@@ -54,40 +36,6 @@ header {
   color: unset;
   text-decoration: none;
   border-bottom-color: transparent;
-}
-header h1 {
-  margin: 0;
-  margin-bottom: 0.2rem;
-  border-bottom: 0.15rem solid;
-  font-family: Kufam;
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #fff;
-}
-@media (min-width: 576px) {
-  header h1 {
-    font-size: 1.6rem;
-  }
-}
-@media (min-width: 992px) {
-  header h1 {
-    font-size: 2rem;
-  }
-}
-header .jobs {
-  margin: 0;
-  margin-top: 0.5rem;
-  margin-left: 0.25rem;
-  font-family: Kufam;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #acf;
-}
-@media (min-width: 992px) {
-  header .jobs {
-    margin-left: 0.5rem;
-    font-size: 1.2rem;
-  }
 }
 header .menu-btn {
   background: none;
@@ -108,26 +56,6 @@ header .menu-btn:active {
   header .menu-btn {
     left: 1rem !important;
   }
-}
-.lang-bar-current {
-  color: white !important;
-}
-.lang-bar-current:hover,
-.lang-bar-current:active {
-  border-color: white !important;
-}
-.layout-container {
-  display: flex;
-  min-height: calc(100vh - 6rem);
-  margin-top: 6rem;
-}
-.layout-container .side-panel {
-  position: fixed;
-  width: 12rem;
-  height: calc(100vh - 6rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 main {
   min-height: calc(100% - 4rem);
@@ -194,60 +122,8 @@ main {
   background-color: #4fb961;
   filter: drop-shadow(black 3px 3px 12px);
 }
-footer {
-  height: 4rem;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  border-top: 0.05rem solid #fffa;
-  font-weight: 300;
-}
-nav {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-}
 nav a {
-  position: relative;
-  height: 2.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   border: none;
-  font-size: larger;
-  font-weight: 300;
-  color: #fff;
-  transition: color 1s ease-in-out 0.2s, text-shadow 0.3s ease-in-out 0.2s, filter 0.3s ease-in-out 0.2s;
-}
-nav a svg {
-  transition: filter 0.3s ease-in-out 0.2s;
-}
-nav a:hover {
-  color: #acf;
-  text-shadow: rgba(170, 204, 255, 0.6) 1px 0 4px;
-}
-nav a:hover svg {
-  filter: drop-shadow(rgba(170, 204, 255, 0.6) 1px 0 2px);
-}
-nav a:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: "";
-  width: 0;
-  height: 0.1rem;
-  border-radius: 0.07rem;
-  background: #fff;
-  transform: scale(1);
-  transition: width 0.3s ease-in-out 0.2s, background-color 0.3s ease-in-out 0.2s, filter 0.3s ease-in-out 0.2s;
-}
-nav a:hover:after {
-  width: 100%;
-  background: #acf;
-  filter: drop-shadow(rgba(170, 204, 255, 0.6) 1px 0 2px);
 }
 .burger-menu-container {
   display: flex;

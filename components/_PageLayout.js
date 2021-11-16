@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa";
 import Footer from "./Footer";
 import { useContext } from "react";
 import LangBar from "./app/LangBar";
-import NavLinks from "./NavLinks";
+import AppNav from "./app/AppNav";
 import { BurgerContext } from "./BurgerMenu";
 import styles from "../styles/PageLayout.module.css";
 import Link from "next/link";
@@ -35,7 +35,7 @@ export default function PageLayout({ children, contentClass }) {
 
             <div className="layout-container">
                 <div className="side-panel">
-                    <NavLinks />
+                    <AppNav />
                 </div>
                 <div className="main-panel">
                     <main className={contentClass || ""}>{children}</main>
