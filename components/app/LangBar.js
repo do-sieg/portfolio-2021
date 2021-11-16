@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "../styles/LangBar.module.css";
+import styles from "./LangBar.module.css";
 
 export default function LangBar() {
     const router = useRouter();

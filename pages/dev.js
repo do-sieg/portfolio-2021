@@ -2,11 +2,11 @@ import { FaCss3Alt, FaHtml5, FaJsSquare, FaLess, FaNodeJs, FaPhp, FaReact } from
 import { GrMysql } from "react-icons/gr";
 import { DiRuby } from "react-icons/di";
 import { SiGodotengine, SiNextDotJs } from "react-icons/si";
-import PageLayout from "../components/PageLayout";
 import { useLangTerm } from "../utils/lang";
 import styles from "../styles/Dev.module.css";
 import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
+import PageLayout from "../components/core/PageLayout";
 
 export default function Dev() {
     const L_LANGUAGES = useLangTerm('LANGUAGES');

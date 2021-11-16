@@ -1,0 +1,25 @@
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "top top top"
+                         "left main right"
+                         "left footer right";
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+}
+
+.container header {
+    grid-area: top;
+}
+
+.container aside {
+    grid-area: left;
+}
+
+.container main {
+    grid-area: main;
+}
+
+.container footer {
+    grid-area: footer;
+}

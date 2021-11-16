@@ -1,0 +1,41 @@
+// MOVE?
+// * VARIABLES
+
+// Media query breakpoints
+@sm : 640px;
+@md : 768px;
+@lg : 1024px;
+@xl : 1280px;
+@2xl: 1536px;
+
+// Content wrapper: limit width and center content
+.inner-container {
+    background-color: red;
+    // width: 100%;
+    // max-width: 900px;
+    // margin: 0;
+    // @media (min-width: @md-lg) {
+    //   margin-left: @side-panel-width;
+    // }
+    // @media (min-width: @md-xlg) {
+    //   margin: 0 auto;
+    // }
+}
+
+
+// RESET
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+// Main panel
+.layout-container .main-panel {
+    .inner-container();
+}

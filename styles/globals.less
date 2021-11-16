@@ -29,18 +29,18 @@
 // * MIXINS
 // -----------------------------------------------------------------------------
 
-// Content wrapper: limit width and center content
-.content-wrapper() {
-  width: 100%;
-  max-width: 900px;
-  margin: 0;
-  @media (min-width: @md-lg) {
-    margin-left: @side-panel-width;
-  }
-  @media (min-width: @md-xlg) {
-    margin: 0 auto;
-  }
-}
+// // Content wrapper: limit width and center content
+// .content-wrapper() {
+//   width: 100%;
+//   max-width: 900px;
+//   margin: 0;
+//   @media (min-width: @md-lg) {
+//     margin-left: @side-panel-width;
+//   }
+//   @media (min-width: @md-xlg) {
+//     margin: 0 auto;
+//   }
+// }
 
 // Button icon: change a button to an icon (no background, no border) and set colors
 .btn-icon(@color, @hover-color) {
@@ -188,10 +188,6 @@ header .menu-btn {
   margin-top: @header-height;
 }
 
-// Main panel
-.layout-container .main-panel {
-  .content-wrapper();
-}
 
 // Side panel
 .layout-container .side-panel {

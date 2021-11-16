@@ -3,7 +3,7 @@ import AppHead from "./AppHead";
 import { FaBars } from "react-icons/fa";
 import Footer from "./Footer";
 import { useContext } from "react";
-import LangBar from "./LangBar";
+import LangBar from "./app/LangBar";
 import NavLinks from "./NavLinks";
 import { BurgerContext } from "./BurgerMenu";
 import styles from "../styles/PageLayout.module.css";

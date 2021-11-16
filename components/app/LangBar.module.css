@@ -1,15 +1,15 @@
 .container {
-  position: absolute;
+  /* position: absolute;
   top: 1rem;
   right: 1rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.5rem; */
 }
 
 .current {
-  color: orangered;
+  /* color: orangered; */
 }
 
 .current:hover, .current:active {
-  border-color: orangered;
+  /* border-color: orangered; */
 }

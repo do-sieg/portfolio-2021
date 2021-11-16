@@ -1,18 +1,16 @@
-import LangBar from '../components/LangBar';
-import BurgerMenu, { BurgerContext, useBurgerState } from '../components/BurgerMenu';
-import NavLinks from '../components/NavLinks';
-import '../styles/globals.css'
+import { BurgerContext, useBurgerState } from '../components/BurgerMenu';
+import AppWrapper from '../components/AppWrapper';
+// import '../styles/globals.css';
+import '../styles/globals2.css';
 
 function MyApp({ Component, pageProps }) {
   const burgerState = useBurgerState();
 
   return (
     <BurgerContext.Provider value={burgerState}>
-      <BurgerMenu>
-        <LangBar />
-        <NavLinks />
-      </BurgerMenu>
-      <Component {...pageProps} />
+      <AppWrapper>
+        <Component {...pageProps} />
+      </AppWrapper>
     </BurgerContext.Provider>
   );
 }

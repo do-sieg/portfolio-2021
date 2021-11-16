@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { useLangTerm } from "../utils/lang";
-import PageLayout from "../components/PageLayout";
+import PageLayout from "../components/core/PageLayout";
 import SlideShow from "../components/SlideShow";
 import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
+import AppLayout from "../components/app/AppLayout";
 
 export default function Home() {
     const L_HOME_WELCOME = useLangTerm('HOME_WELCOME');
@@ -18,9 +19,11 @@ export default function Home() {
     const L_LEARN_MORE_DEV = useLangTerm('LEARN_MORE_DEV');
 
     return (
-        <PageLayout contentClass="page-content home-page">
+        // <Layout contentClass="page-content home-page">
+        <AppLayout>
+            HOME
 
-            <section>
+            {/* <section>
                 <h2>{L_HOME_WELCOME}</h2>
                 {L_HOME_INTRO_DEV}
                 <Link href="./dev"><a className="prompt-btn">{L_LEARN_MORE_DEV}</a></Link>
@@ -59,7 +62,7 @@ export default function Home() {
                 <Timeline events={mapEventsFromData(events)
                     .sort((a, b) => b.startDate - a.startDate)}
                 />
-            </section>
-        </PageLayout >
+            </section> */}
+        </AppLayout>
     );
 }

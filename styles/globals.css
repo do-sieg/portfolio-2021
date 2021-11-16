@@ -121,21 +121,6 @@ header .menu-btn:active {
   min-height: calc(100vh - 6rem);
   margin-top: 6rem;
 }
-.layout-container .main-panel {
-  width: 100%;
-  max-width: 900px;
-  margin: 0;
-}
-@media (min-width: 992px) {
-  .layout-container .main-panel {
-    margin-left: 12rem;
-  }
-}
-@media (min-width: 1200px) {
-  .layout-container .main-panel {
-    margin: 0 auto;
-  }
-}
 .layout-container .side-panel {
   position: fixed;
   width: 12rem;
