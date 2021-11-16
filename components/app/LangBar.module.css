@@ -1,15 +1,29 @@
 .container {
-  /* position: absolute;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  gap: 0.5rem; */
+    /* background-color: var(--red-500); */
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    display: flex;
+    gap: 0.5rem;
+    
 }
 
-.current {
-  /* color: orangered; */
+.container a {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--gray-400);
+    transition: color 0.3s;
+    text-decoration: none;
 }
 
-.current:hover, .current:active {
-  /* border-color: orangered; */
+.container a.current {
+    color: white;
+    /* text-decoration: underline; */
+}
+
+.container a:hover, .container a:active {
+    color: var(--yellow-400);
+    text-decoration: underline;
 }

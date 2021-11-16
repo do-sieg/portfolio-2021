@@ -1,3 +1,5 @@
+@import "var-fonts.css";
+@import "var-colors.css";
 .inner-container {
   background-color: red;
 }
@@ -8,6 +10,9 @@ body {
 }
 * {
   box-sizing: border-box;
+}
+body {
+  font-size: medium;
 }
 .layout-container .main-panel {
   background-color: red;
