@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import styles from "../styles/BurgerMenu.module.css";
+import styles from "./BurgerMenu.module.css";
 
 // Use this context to wrap the App component
 export const BurgerContext = React.createContext({
@@ -31,10 +31,10 @@ export default function BurgerMenu({ children }) {
     return (
         <>
             {burger.isOpen &&
-                <div className={`${styles.overlay} burger-menu-overlay`} onClick={burger.close}></div>
+                <div className={styles.overlay} onClick={burger.close}></div>
             }
-            <div className={`${styles.container} burger-menu-container` + (burger.isOpen ? ` ${styles.open} open` : "")}>
-                <button className={`${styles.closeButton} close-btn`} onClick={burger.close}><FaTimes /></button>
+            <div className={styles.container + (burger.isOpen ? " " + styles.open : "")}>
+                <button className={styles.closeBtn} onClick={burger.close}><FaTimes /></button>
                 {children}
             </div>
         </>

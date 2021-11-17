@@ -14,17 +14,19 @@ export default function AppHeader() {
     return (
         <header className={styles.container}>
             {!burger.isOpen &&
-                <button className={styles.burgerBtn} onClick={burger.open}><FaBars /></button>
+                <button className={styles.menuBtn} onClick={burger.open}><FaBars /></button>
             }
 
             <Link href="/">
                 <a className={styles.main}>
-                    <div className={styles.devName}>{L_DEV_NAME}</div>
-                    <div className={styles.devJobTitles}>{L_DEV_JOB_TITLES}</div>
+                    <div className={styles.siteName}>{L_DEV_NAME}</div>
+                    <div className={styles.siteDescription}>{L_DEV_JOB_TITLES}</div>
                 </a>
             </Link>
 
-            <LangBar />
+            <div className={styles.langBar}>
+                <LangBar />
+            </div>
         </header>
     );
 }

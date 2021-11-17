@@ -1,13 +1,6 @@
 .container {
-    /* background-color: var(--red-500); */
-
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-
     display: flex;
     gap: 0.5rem;
-    
 }
 
 .container a {
@@ -18,8 +11,8 @@
 }
 
 .container a.current {
+    font-size: 1.3rem;
     color: white;
-    /* text-decoration: underline; */
 }
 
 .container a:hover, .container a:active {

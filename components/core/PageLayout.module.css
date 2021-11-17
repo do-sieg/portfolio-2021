@@ -18,6 +18,7 @@
 
 .container main {
     grid-area: main;
+    overflow: auto;
 }
 
 .container footer {

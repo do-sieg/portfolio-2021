@@ -1,5 +1,5 @@
 .aside {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-end;
 }
@@ -60,3 +60,7 @@
     filter: drop-shadow(#ffffff99 1px 0 2px);
 }
 
+
+@media (min-width: 1024px) {
+    .aside { display: flex; }
+}

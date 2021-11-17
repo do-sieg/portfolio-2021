@@ -42,15 +42,6 @@
 //   }
 // }
 
-// Button icon: change a button to an icon (no background, no border) and set colors
-.btn-icon(@color, @hover-color) {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: x-large;
-  color: @color;
-  &:hover, &:active { color: @hover-color; }
-}
 
 // Create a background gradient
 .dark-gradient() {
@@ -66,16 +57,6 @@
 // Add shadow (shape)
 .shadow-filter(@range: 2px, @blur: 3px, @color: black) {
   filter: drop-shadow(@color @range @range @blur);
-}
-
-// Add neon effect (text)
-.neon-text(@color, @blur) {
-  text-shadow: @color 1px 0 @blur;
-}
-
-// Add neon effect (shape)
-.neon-filter(@color, @blur) {
-  filter: drop-shadow(@color 1px 0 @blur);
 }
 
 
@@ -124,7 +105,6 @@ a {
 
 // Header
 header {
-  .dark-gradient();
   z-index: 2;
 }
 
@@ -135,48 +115,8 @@ header {
 }
 
 
-header .menu-btn {
-  .btn-icon(darken(white, 10%), white);
-  top: 1rem !important;
-  left: 0.5rem !important;
-  @media (min-width: @md-sm) { left: 1rem !important; }
-  font-size: xx-large;
-  transition: color 0.3s ease-in-out 0.1s;
-}
-
-
-// Main content
-main {
-  min-height: calc(100% - @footer-height);
-  padding: 3.5rem 0.65rem 1.5rem;
-  @media (min-width: @md-sm) { padding: 3.5rem 1.5rem 1.5rem; }
-  @media (min-width: @md-md) { padding: 3.5rem 5rem 1.5rem; }
-  @media (min-width: @md-lg) { padding: 3.5rem 3rem 1.5rem 0.5rem; }
-  @media (min-width: @md-xlg) { padding: 3.5rem 5rem 1.5rem; }
-}
-
 // Page content
 .page-content {
-  section + section { margin-top: 3rem };
-  h2 {
-    text-align: center;
-    font-family: @ft-title;
-    font-size: xx-large;
-    font-weight: 500;
-    color: @c-secondary;
-  }
-
-  p {
-    line-height: 1.5;
-    text-align: justify;
-    text-indent: 1.5rem;
-    font-size: large;
-    font-weight: 300;
-    strong {
-      font-weight: 500;
-      color: @c-secondary;
-    }
-  }
 
   .prompt-btn {
     display: block;
@@ -210,30 +150,7 @@ nav a {
   border: none;
 }
 
-// Burger menu
-.burger-menu-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, fade(#335, 100%), fade(#335, 95%));
-  .close-btn {
-    .btn-icon(darken(white, 10%), white);
-    top: 1rem !important;
-    right: 1rem !important;
-    font-size: xx-large;
-    opacity: 0;
-    transform: scale(0.75);
-    transition: color 0.3s ease-in-out 0.1s, transform 0.3s ease-in 0.3s, opacity 0.3s ease-in 0.5s;
-  }
-  &.open .close-btn {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-// Burger menu (other components)
-.burger-menu-container .lang-bar-container { top: 2rem; right: unset; }
-.burger-menu-container nav { gap: 0.25rem; }
 
 // Timeline
 .timeline-container {
@@ -321,29 +238,6 @@ nav a {
 // * STYLING - RESPONSIVE
 // -----------------------------------------------------------------------------
 
-// Hide/show side navigation links
-.side-panel nav {
-  display: none;
-  @media (min-width: @md-lg) { display: flex; }
-}
-
-// Hide/show header lang selector
-header .lang-bar-container {
-  display: none;
-  @media (min-width: @md-lg) { display: flex; }
-}
-
-// Hide burger menu on larger screen sizes
-@media (min-width: @md-lg) {
-  header .menu-btn, .burger-menu-container, .burger-menu-overlay {
-    display: none !important;
-  }
-}
-
-// Resize burger menu on medium screen sizes
-@media (min-width: @md-md) {
-  .burger-menu-container { width: 40% !important; }
-}
 
 // Split timeline in two columns with cards on the left and side
 @media (min-width: @md-md) {
@@ -379,54 +273,6 @@ header .lang-bar-container {
 
 
 // -------------------------------------------
-
-// hr {
-//   width: 50%;
-//   border-style: solid;
-//   border-color: @c-secondary;
-//   margin-block-start: 3em;
-//   margin-block-end: 3em;
-//   opacity: 0.5;
-//   .shadow-filter();
-// }
-
-//   time {
-//     align-items: center;
-//     height: 2rem;
-//     
-//     @media (min-width: @md-sm) {
-//       width: 100%;
-//     }
-//   }
-
-.timeline-container {
-  .event-container {
-
-    time {
-      // right: 100%;
-      // justify-content: flex-end;
-      // padding-right: 0.85rem;
-      // text-align: right;
-      // @media (min-width: @md-md) {
-      //   padding-right: 1.5rem;
-      // }
-      // &:after {
-      //   left: calc(100% - 0.5rem);
-      // }
-    }
-
-    // &.left {
-    //   @media (min-width: @md-md) {
-    //     left: 0 !important;
-    //     right: unset;
-    //     .card {
-    //       animation: 2s ease-in-out forwards rotateCard3DLeft;
-    //     }
-    //   }
-    // }
-  }
-}
-
 
 
 .base-slideshow-container {
@@ -563,23 +409,4 @@ header .lang-bar-container {
     }
   }
 }
-
-@media (min-width: @md-md) {
-
-  // .event-container {
-  //   width: 50% !important;
-  //   left: 50% !important;
-  //   right: unset;
-  // }
-
-  // .timeline:after {
-  //   left: calc(50% - 2px) !important;
-  // }
-}
-
-
-
-
-
-
 

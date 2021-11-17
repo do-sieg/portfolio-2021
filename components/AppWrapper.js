@@ -7,11 +7,6 @@ export default function AppWrapper({ children }) {
 
     return (
         <>
-            <BurgerMenu>
-                <LangBar />
-                <AppNav />
-            </BurgerMenu>
-
             <Head>
                 <link rel="preconnect" href="https://fonts.gstatic.com"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"></link>
@@ -21,6 +16,11 @@ export default function AppWrapper({ children }) {
             <Head>
                 <title>PORTFOLIO V2</title>
             </Head>
+            
+            <BurgerMenu>
+                <LangBar />
+                <AppNav />
+            </BurgerMenu>
 
             {children}
         </>

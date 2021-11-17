@@ -1,0 +1,16 @@
+.btn-icon {
+    display: flex;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: x-large;
+    transition: color 0.2s ease-in-out 0.1s,
+}
+
+.btn-icon-white {
+    color: var(--gray-200);
+}
+.btn-icon-white:hover, .btn-icon-white:active {
+    color: var(--gray-50);
+}

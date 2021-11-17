@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
 
     padding: 0.5rem;
     border-top: 0.05rem solid var(--gray-300);

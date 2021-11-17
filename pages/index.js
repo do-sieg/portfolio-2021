@@ -1,10 +1,11 @@
+import Head from "next/head";
 import Link from "next/link";
 import { useLangTerm } from "../utils/lang";
-import PageLayout from "../components/core/PageLayout";
 import SlideShow from "../components/SlideShow";
 import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
 import AppLayout from "../components/app/AppLayout";
+import styles from "../styles/pages.module.css";
 
 export default function Home() {
     const L_HOME_WELCOME = useLangTerm('HOME_WELCOME');
@@ -20,10 +21,12 @@ export default function Home() {
 
     return (
         // <Layout contentClass="page-content home-page">
-        <AppLayout>
-            HOME
+        <AppLayout className={styles.container}>
+            <Head>
+                <title>{L_HOME_WELCOME}</title>
+            </Head>
 
-            {/* <section>
+            <section>
                 <h2>{L_HOME_WELCOME}</h2>
                 {L_HOME_INTRO_DEV}
                 <Link href="./dev"><a className="prompt-btn">{L_LEARN_MORE_DEV}</a></Link>
@@ -32,7 +35,7 @@ export default function Home() {
                 {L_HOME_INTRO_SIGNATURE}
             </section >
 
-            <section>
+            {/* <section>
                 <SlideShow
                     customStyles={{
                         container: "base-slideshow-container",
@@ -54,15 +57,15 @@ export default function Home() {
                         );
                     }}
                 />
-            </section>
+            </section> */}
 
 
             <section>
                 <h2>{L_TIMELINE}</h2>
-                <Timeline events={mapEventsFromData(events)
+                {/* <Timeline events={mapEventsFromData(events)
                     .sort((a, b) => b.startDate - a.startDate)}
-                />
-            </section> */}
+                /> */}
+            </section>
         </AppLayout>
     );
 }

@@ -4,7 +4,7 @@ import AppHeader from "./AppHeader";
 import AppFooter from "./AppFooter";
 import AppNav from "./AppNav";
 
-export default function AppLayout({ children }) {
+export default function AppLayout({ children, className = "" }) {
 
     return (
         <PageLayout>
@@ -12,9 +12,11 @@ export default function AppLayout({ children }) {
 
             <AppNav asideWrap />
 
-            <main>{children}</main>
-
+            <main className={className}>
+                {children}
+            </main>
             <AppFooter />
+
         </PageLayout>
     );
 }
