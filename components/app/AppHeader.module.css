@@ -29,10 +29,7 @@
 .siteName {
     padding: 0.25rem 0;
     border-bottom: 0.15rem solid;
-    
-    /* font-size: 1.3rem;
-    @media (min-width: @md-sm) { font-size: 1.6rem; }
-    @media (min-width: @md-lg) { font-size: 2rem; } */
+
     font-size: 1.3rem;
     font-weight: 500;
 
@@ -44,13 +41,6 @@
     font-size: 1rem;
     font-weight: 500;
     color: var(--secondary);
-
-    /* margin-left: 0.25rem;
-    font-size: 1rem;
-    @media (min-width: @md-lg) {
-        margin-left: 0.5rem;
-        font-size: 1.2rem;
-    } */
 }
 
 .menuBtn {

@@ -35,26 +35,6 @@ header {
   text-decoration: none;
   border-bottom-color: transparent;
 }
-.page-content .prompt-btn {
-  display: block;
-  width: fit-content;
-  margin: 0.5rem auto 3rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #3d984c;
-  color: white;
-  font-size: large;
-  font-weight: 400;
-  transition: all 0.3s ease-in-out 0.1s;
-  cursor: pointer;
-  filter: drop-shadow(black 3px 3px 5px);
-}
-.page-content .prompt-btn:hover,
-.page-content .prompt-btn a.active {
-  background-color: #4fb961;
-  filter: drop-shadow(black 3px 3px 12px);
-}
 nav a {
   border: none;
 }

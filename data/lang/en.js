@@ -19,41 +19,39 @@ export default {
     TIMELINE: "Activity",
     REVIEWS: "Reviews",
     ONGOING: "Ongoing",
-    LANGUAGES: "Languages",
+    // LANGUAGES: "Languages",
     PROJECTS: "Projects",
-    TOOLS: "Tools",
+    // TOOLS: "Tools",
+    SKILLS_MAIN: "Main Skills",
+    SKILLS_OTHER: "Other Skills",
     LEARN_MORE: "Learn More",
+    VIEW_PROJECTS: "View my projects",
+    DOWNLOAD_RESUME: "Download my resume",
     YEARS: (n) => n <= 1 ? "year" : "years",
     MONTHS: (n) => n <= 1 ? "month" : "months",
 
-    HOME_WELCOME: "Welcome to my presentation site",
-    HOME_INTRO: (
+
+    HOME_TITLE: "Welcome",
+    HOME_INTRO_DEV: (
         <>
             <p>
-                I take interest in various kinds of projects. Whether you are a <span className="keyword">company</span> or an <span className="keyword">individual</span>, my knowledge and skills are <span className="keyword">at your service</span>.
+                I put my expertise as a <strong>web developer</strong> at your service.
+                My experience in <b>companies</b> and as a <strong>freelance</strong> has taught me to meet all kinds of needs,
+                for all types of projects.
             </p>
             <p>
-                I'll help you <span className="keyword">carry out your ideas</span> and bring them to the final stage.
+                <b>Hiring</b> for a company? Looking for a professional to <strong>build a website</strong>?
+                I help you from the <b>start</b> of your project to its <b>deployment</b>.
             </p>
-
-
-            <p>++CONTACT INFO++</p>
-
-            {/* <p>
-            Do not hesitate to contact me for any information by clicking on <span className="keyword">the small balloon</span> at the top right ... <span className="up-right-arrow"><FontAwesomeIcon icon={faArrowUp} /></span><br />
-        </p>
-        <p>
-            ... or simply by sending me an email at <a href={U_EMAIL}>{DEV_EMAIL}</a>.
-        </p> */}
-
-            <p>Have a nice visit!</p>
         </>
     ),
 
-    HOME_INTRO_DEV: "",
-    HOME_INTRO_TEACH: "",
-    HOME_INTRO_SIGNATURE: "",
-    LEARN_MORE_DEV: "",
+    HOME_INTRO_TEACH: (
+        <p>
+            I also work as a <strong>teacher</strong> and <strong>mentor</strong>.
+            In group or during private sessions, I help you realize your potential.
+        </p>
+    ),
 
 
     HOME_SLIDE_PROMPT_1: "Need a website?",
@@ -61,5 +59,5 @@ export default {
     HOME_SLIDE_PROMPT_3: "Looking for a translator?",
 
     TEACH_INTRO: "TEACH INTRO",
-    
+
 }

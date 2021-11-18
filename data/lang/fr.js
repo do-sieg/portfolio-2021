@@ -17,33 +17,44 @@ export default {
     TIMELINE: "Parcours",
     REVIEWS: "Avis",
     ONGOING: "En cours",
-    LANGUAGES: "Langages",
+    // LANGUAGES: "Langages",
     PROJECTS: "Projets",
-    TOOLS: "Outils",
+    // TOOLS: "Outils",
+    SKILLS_MAIN: "Compétences principales",
+    SKILLS_OTHER: "Autres compétences",
     LEARN_MORE: "En savoir plus",
-    LEARN_MORE_DEV: "Voir mon profil",
+    VIEW_PROJECTS: "Voir mes projets",
+    DOWNLOAD_RESUME: "Télécharger mon CV",
     YEARS: (n) => n <= 1 ? "an" : "ans",
     MONTHS: (n) => "mois",
 
-    HOME_WELCOME: "Bienvenue sur mon site",
+
+    HOME_TITLE: "Bienvenue",
     HOME_INTRO_DEV: (
         <>
-            <p>Je mets mon expertise de <strong>développeur web</strong> à votre service. Vous montez une équipe pour votre entreprise&nbsp;? Vous cherchez un professionnel pour réaliser un site&nbsp;? Je suis là pour vous accompagner des débuts de vos projets jusqu'à leur mise en service.</p>
-            <p>Ayant travaillé en entreprise et en free-lance, je m'intéresse à divers types de projets et je sais m'adapter aux besoins des clients.</p>
+            <p>
+                Je mets mon expertise de <strong>développeur web</strong> à votre service.
+                Mon <strong>expérience</strong> en <b>entreprise</b> et en <strong>free-lance</strong> m'a appris à répondre à toutes sortes de besoins,
+                pour tous types de projets.
+            </p>
+            <p>
+                Vous <b>recrutez</b> pour une entreprise&nbsp;? Vous cherchez un professionnel pour <strong>réaliser un site</strong>&nbsp;?
+                Je vous accompagne dès la <b>création</b> de votre projet jusqu'à son <b>déploiement</b>.
+            </p>
         </>
     ),
     HOME_INTRO_TEACH: (
-        <p>J'interviens également en tant que <strong>formateur et mentor</strong> en développement. En groupes ou lors de cours particuliers, j'aide des développeurs à réaliser leur potentiel.</p>
-    ),
-    HOME_INTRO_SIGNATURE: (
-        <p>Bonne navigation !</p>
+        <p>
+            J'interviens également en tant que <strong>formateur</strong> et <strong>mentor</strong>.
+            En groupe ou par cours particuliers, je vous aide à réaliser votre potentiel.
+        </p>
     ),
 
     HOME_INTRO_3: (
         <>
 
-        {/* <p>N'hésitez pas à me contacter pour tout renseignement.</p> */ }
-{/* 
+            {/* <p>N'hésitez pas à me contacter pour tout renseignement.</p> */}
+            {/* 
 
 N'hésitez pas à me contacter pour tout renseignement en cliquant sur la petite bulle en haut à droite... 
 
@@ -75,14 +86,14 @@ Bonne navigation ! */}
 
 
 
-TEACH_INTRO: (
-    <>
-        <h2>Bienvenue</h2>
-        <p>Bonjour, je suis Daniel, développeur web et enseignant, passionné par tout ce qui touche au code.</p>
-        <p>Je mets des cours à disposition des débutants pour les aider à s'y retrouver un peu. Ils sont le fruit de mes expériences en développement, et tiennent compte des plus récentes mises à jour.</p>
-        <p>Je donne également des cours particuliers. Vérifiez mes disponibilités sur les sites suivants ou contactez-moi directement.</p>
+    TEACH_INTRO: (
+        <>
+            <h2>Bienvenue</h2>
+            <p>Bonjour, je suis Daniel, développeur web et enseignant, passionné par tout ce qui touche au code.</p>
+            <p>Je mets des cours à disposition des débutants pour les aider à s'y retrouver un peu. Ils sont le fruit de mes expériences en développement, et tiennent compte des plus récentes mises à jour.</p>
+            <p>Je donne également des cours particuliers. Vérifiez mes disponibilités sur les sites suivants ou contactez-moi directement.</p>
 
-        <p>CONTACT INFO</p>
-    </>
-),
+            <p>CONTACT INFO</p>
+        </>
+    ),
 }

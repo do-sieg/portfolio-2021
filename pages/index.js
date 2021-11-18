@@ -6,34 +6,87 @@ import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
 import AppLayout from "../components/app/AppLayout";
 import styles from "../styles/pages.module.css";
+import Skillset, { SkillItem } from "../components/app/Skillset";
+import { FaCss3Alt, FaHtml5, FaJsSquare, FaLess, FaNodeJs, FaPhp, FaReact, FaSass, FaSearchengin } from "react-icons/fa";
+import { SiGodotengine, SiMongodb, SiNextDotJs } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
+import { DiRuby } from "react-icons/di";
 
 export default function Home() {
-    const L_HOME_WELCOME = useLangTerm('HOME_WELCOME');
+    const L_HOME_TITLE = useLangTerm('HOME_TITLE');
     const L_HOME_INTRO_DEV = useLangTerm('HOME_INTRO_DEV');
     const L_HOME_INTRO_TEACH = useLangTerm('HOME_INTRO_TEACH');
-    const L_HOME_INTRO_SIGNATURE = useLangTerm('HOME_INTRO_SIGNATURE');
     const L_TIMELINE = useLangTerm('TIMELINE');
     const L_HOME_SLIDE_PROMPT_1 = useLangTerm('HOME_SLIDE_PROMPT_1');
     const L_HOME_SLIDE_PROMPT_2 = useLangTerm('HOME_SLIDE_PROMPT_2');
     const L_HOME_SLIDE_PROMPT_3 = useLangTerm('HOME_SLIDE_PROMPT_3');
     const L_LEARN_MORE = useLangTerm('LEARN_MORE');
-    const L_LEARN_MORE_DEV = useLangTerm('LEARN_MORE_DEV');
+    const L_VIEW_PROJECTS = useLangTerm('VIEW_PROJECTS');
+    const L_DOWNLOAD_RESUME = useLangTerm('DOWNLOAD_RESUME');
+    const L_SKILLS_MAIN = useLangTerm('SKILLS_MAIN');
+    const L_SKILLS_OTHER = useLangTerm('SKILLS_OTHER');
 
     return (
         // <Layout contentClass="page-content home-page">
         <AppLayout className={styles.container}>
             <Head>
-                <title>{L_HOME_WELCOME}</title>
+                <title>{L_HOME_TITLE}</title>
             </Head>
 
+            <h1>{L_HOME_TITLE}</h1>
+
             <section>
-                <h2>{L_HOME_WELCOME}</h2>
                 {L_HOME_INTRO_DEV}
-                <Link href="./dev"><a className="prompt-btn">{L_LEARN_MORE_DEV}</a></Link>
+                <div className={styles.promptBox}>
+                    <Link href="./projects">
+                        <a className={styles.promptBtn}>{L_VIEW_PROJECTS}</a>
+                    </Link>
+                    <Link href="./projects">
+                        <a className={styles.promptBtn}>{L_DOWNLOAD_RESUME}</a>
+                    </Link>
+                </div>
+
                 {L_HOME_INTRO_TEACH}
-                <Link href="./teach"><a className="prompt-btn">{L_LEARN_MORE}</a></Link>
-                {L_HOME_INTRO_SIGNATURE}
+                <div className={styles.promptBox}>
+                    <Link href="./teach">
+                        <a className={styles.promptBtn}>{L_LEARN_MORE}</a>
+                    </Link>
+                </div>
             </section >
+
+            <section>
+                <h2>{L_SKILLS_MAIN}</h2>
+                <Skillset>
+                    <SkillItem name="HTML5" icon={FaHtml5} />
+                    <SkillItem name="CSS3" icon={FaCss3Alt} />
+                    <SkillItem name="Sass" icon={FaSass} />
+                    <SkillItem name="Less" icon={FaLess} />
+                    <SkillItem name="JavaScript" icon={FaJsSquare} />
+                    <SkillItem name="ReactJS" icon={FaReact} />
+                    <SkillItem name="NodeJS" icon={FaNodeJs} />
+                    <SkillItem name="NextJS" icon={SiNextDotJs} />
+                    <SkillItem name="MySQL" icon={GrMysql} />
+                </Skillset>
+            </section>
+
+            <section>
+                <h2>{L_SKILLS_OTHER}</h2>
+                <Skillset>
+                    <SkillItem name="PHP" icon={FaPhp} />
+                    <SkillItem name="Ruby" icon={DiRuby} />
+                    <SkillItem name="MongoDB" icon={SiMongodb} />
+                    <SkillItem name="GDScript" icon={SiGodotengine} />
+                    <SkillItem name="SEO" icon={FaSearchengin} />
+                </Skillset>
+            </section>
+            
+            {/* <section>
+                <h2>NEWS</h2>
+            </section> */}
+
+            {/* <section>
+                <h2>AVIS</h2>
+            </section> */}
 
             {/* <section>
                 <SlideShow
@@ -61,7 +114,7 @@ export default function Home() {
 
 
             <section>
-                <h2>{L_TIMELINE}</h2>
+                {/* <h2>{L_TIMELINE}</h2> */}
                 {/* <Timeline events={mapEventsFromData(events)
                     .sort((a, b) => b.startDate - a.startDate)}
                 /> */}

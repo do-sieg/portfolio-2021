@@ -1,37 +1,79 @@
 .container {
-    padding: 1.5rem 1rem 1.5rem;
-    font-size: large;
+    padding: 1.5rem 1rem 1rem;
+    font-size: x-large;
 }
 
 .container section + section { margin-top: 3rem; }
 
-.container h2 {
+.container h1 {
+    margin-bottom: 2rem;
+    /* border-bottom: 2px solid white; */
     text-align: center;
-    font-weight: 500;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.container h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.5em;
+    /* text-transform: uppercase; */
     color: var(--secondary);
 }
 
 .container p {
+    margin: 1rem 0;
     line-height: 1.5;
     text-align: justify;
-    text-indent: 1.5rem;
+    text-indent: 1em;
     font-weight: 300;
 }
 
-.container strong {
+.container strong, .container b {
+    font-weight: 400;
+    /* color: var(--secondary); */
+}
+
+.promptBox {
+    margin: 0 auto 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.promptBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    
+    font-size: large;
     font-weight: 500;
-    color: var(--secondary);
+
+    background-color: var(--warmGray-600);
+    color: var(--warmGray-100);
+
+    box-shadow: var(--shadow-md);
+    
+    transition: all 0.3s ease-in-out 0.1s;
+}
+
+.promptBtn:hover, .promptBtn:active {
+    background-color: var(--warmGray-400);
+    color: white;
+    box-shadow: var(--shadow-lg);
 }
 
 
 @media (min-width: 640px) {
-    .container { padding: 3.5rem 1.5rem 1.5rem; font-size: larger; }
+    .container { padding: 3.5rem 1.5rem 1rem; font-size: larger; }
 }
 
 @media (min-width: 768px) {
-    .container { padding: 3.5rem 3rem 1.5rem; font-size: x-large; }
+    .container { padding: 3.5rem 3rem 1rem; font-size: x-large; }
 }
 
 @media (min-width: 1024px) {
-    .container { padding: 3.5rem 5rem 1.5rem; }
+    .container { padding: 3.5rem 5rem 1rem; }
 }

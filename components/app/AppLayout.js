@@ -14,8 +14,8 @@ export default function AppLayout({ children, className = "" }) {
 
             <main className={className}>
                 {children}
+                <AppFooter />
             </main>
-            <AppFooter />
 
         </PageLayout>
     );
