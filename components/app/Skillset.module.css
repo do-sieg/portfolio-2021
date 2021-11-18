@@ -19,10 +19,12 @@
 .skillItem svg {
     width: 2rem;
     height: 2rem;
+    filter: var(--drop-shadow-lg);
 }
 
 .skillItem span {
     font-size: medium;
+    filter: var(--drop-shadow-md);
 }
 
 @media (min-width: 640px) {

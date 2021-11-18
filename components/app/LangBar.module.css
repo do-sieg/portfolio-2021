@@ -8,6 +8,7 @@
     color: var(--gray-400);
     transition: color 0.3s;
     text-decoration: none;
+    filter: var(--drop-shadow-md);
 }
 
 .container a.current {

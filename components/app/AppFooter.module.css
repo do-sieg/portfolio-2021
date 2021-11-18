@@ -9,11 +9,21 @@
     border-top: 0.05rem solid var(--gray-300);
 
     font-size: large;
+    color: var(--gray-300);
 }
 
 .contactLinks {
     display: flex;
     gap: 0.5rem;
+}
+
+.contactLinks a {
+    color: var(--gray-300);
+    transition: var(--transition-link);
+}
+
+.contactLinks a:hover, .contactLinks a:active {
+    color: var(--gray-50);
 }
 
 .contactLinks svg {
@@ -23,7 +33,6 @@
 
 @media (min-width: 768px) {
     .container { flex-direction: row; justify-content: space-between; }
-    .contactLinks { width: 50%; gap: 1rem; }
-    .contactLinks svg { width: 2.5rem; height: 2.5rem; }
+    .contactLinks { width: 50%; }
 }
 

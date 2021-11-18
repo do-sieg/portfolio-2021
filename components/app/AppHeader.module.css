@@ -29,11 +29,10 @@
 .siteName {
     padding: 0.25rem 0;
     border-bottom: 0.15rem solid;
-
     font-size: 1.3rem;
     font-weight: 500;
-
     color: var(--primary);
+    filter: var(--drop-shadow-lg);
 }
 
 .siteDescription {
@@ -41,6 +40,7 @@
     font-size: 1rem;
     font-weight: 500;
     color: var(--secondary);
+    filter: var(--drop-shadow-md);
 }
 
 .menuBtn {
@@ -68,5 +68,6 @@
 }
 
 @media (min-width: 1024px) {
+    .container { padding-left: 15rem; }
     .menuBtn { display: none; }
 }

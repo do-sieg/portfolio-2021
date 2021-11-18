@@ -3,11 +3,8 @@ export default {
     DEV_JOB_TITLES: "Web Developer & Trainer",
 
     NAV_HOME: "Home",
-    NAV_ABOUT: "About Me",
-    NAV_DEV: "Web Dev",
+    NAV_PROJECTS: "Projects",
     NAV_TEACH: "Teaching",
-    NAV_TRANSLATION: "Translation",
-    NAV_CONTACT: "Contact",
 
     SHORT_MONTHS: [
         "JAN", "FEB", "MAR", "APR",

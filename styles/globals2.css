@@ -2,6 +2,7 @@
 @import "var-fonts.css";
 @import "var-colors.css";
 @import "var-shadows.css";
+@import "var-transitions.css";
 @import "var-media.css";
 .inner-container {
   background-color: red;

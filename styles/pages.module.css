@@ -12,6 +12,9 @@
     font-family: var(--font-display);
     font-weight: 600;
     font-size: 2em;
+    
+    /* text-shadow: 2px 2px black; */
+    filter: var(--drop-shadow-md);
 }
 
 .container h2 {
@@ -22,6 +25,7 @@
     font-size: 1.5em;
     /* text-transform: uppercase; */
     color: var(--secondary);
+    filter: var(--drop-shadow-md);
 }
 
 .container p {
@@ -56,7 +60,7 @@
 
     box-shadow: var(--shadow-md);
     
-    transition: all 0.3s ease-in-out 0.1s;
+    transition: var(--transition-link);
 }
 
 .promptBtn:hover, .promptBtn:active {

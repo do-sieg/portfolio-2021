@@ -3,9 +3,8 @@ export default {
 
     NAV_HOME: "Accueil",
     // NAV_ABOUT: "About Me",
-    NAV_DEV: "Dév Web",
+    NAV_PROJECTS: "Projets",
     NAV_TEACH: "Cours",
-    NAV_TRANSLATION: "Traduction",
 
     SHORT_MONTHS: [
         "JAN", "FÉV", "MAR", "AVR",
@@ -49,42 +48,6 @@ export default {
             En groupe ou par cours particuliers, je vous aide à réaliser votre potentiel.
         </p>
     ),
-
-    HOME_INTRO_3: (
-        <>
-
-            {/* <p>N'hésitez pas à me contacter pour tout renseignement.</p> */}
-            {/* 
-
-N'hésitez pas à me contacter pour tout renseignement en cliquant sur la petite bulle en haut à droite... 
-
-... ou tout simplement en m'écrivant un email à d.orchanian@gmail.com.
-
-Bonne navigation ! */}
-
-
-            <h2>HOME</h2>
-            <ul>
-                <li>MESSAGE DE PRES + PROMPT ABOUT</li>
-                <li>SKILLS/LANGAGES/FRAMEWORKS</li>
-                <li>DERNIERES ACTUS/PROJ EN COURS</li>
-                <li>DERNIERS ARTICLES + LIEN BLOG</li>
-            </ul>
-
-            <h2>ABOUT</h2>
-            <ul>
-                <li>PRES LONGUE, PHOTOS</li>
-                <li>TIMELINE</li>
-            </ul>
-        </>
-    ),
-
-
-
-
-
-
-
 
     TEACH_INTRO: (
         <>
