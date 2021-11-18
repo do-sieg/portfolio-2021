@@ -12,10 +12,12 @@ export default function AppLayout({ children, className = "" }) {
 
             <AppNav asideWrap />
 
-            <main className={className}>
-                {children}
+            <div style={{ gridArea: "main", display: 'flex', flexDirection: 'column', overflow: 'auto' }}>
+                <main className={className} style={{ gridArea: "unset" }}>
+                    {children}
+                </main>
                 <AppFooter />
-            </main>
+            </div>
 
         </PageLayout>
     );

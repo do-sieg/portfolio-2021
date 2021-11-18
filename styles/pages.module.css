@@ -1,6 +1,7 @@
 .container {
+    flex: 1;
     padding: 1.5rem 1rem 1rem;
-    font-size: x-large;
+    font-size: larger;
 }
 
 .container section + section { margin-top: 3rem; }
@@ -60,7 +61,7 @@
 
     box-shadow: var(--shadow-md);
     
-    transition: var(--transition-link);
+    transition: var(--transition-all);
 }
 
 .promptBtn:hover, .promptBtn:active {
@@ -71,7 +72,7 @@
 
 
 @media (min-width: 640px) {
-    .container { padding: 3.5rem 1.5rem 1rem; font-size: larger; }
+    .container { padding: 3.5rem 1.5rem 1rem; }
 }
 
 @media (min-width: 768px) {

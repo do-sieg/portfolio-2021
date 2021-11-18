@@ -16,7 +16,7 @@ export default function AppNav({ asideWrap = false }) {
 
         const links = [
             { url: "/", icon: <FaHome />, text: L_NAV_HOME },
-            { url: "/dev", icon: <FaRocket />, text: L_NAV_PROJECTS },
+            { url: "/projects", icon: <FaRocket />, text: L_NAV_PROJECTS },
             { url: "/teach", icon: <FaGraduationCap />, text: L_NAV_TEACH },
         ];
 

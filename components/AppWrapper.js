@@ -2,6 +2,7 @@ import Head from "next/head";
 import BurgerMenu from "./BurgerMenu";
 import LangBar from "./app/LangBar";
 import AppNav from "./app/AppNav";
+import { SITE_TITLE } from "../data/constants";
 
 export default function AppWrapper({ children }) {
 
@@ -19,7 +20,7 @@ export default function AppWrapper({ children }) {
             </Head>
 
             <Head>
-                <title>PORTFOLIO V2</title>
+                <title>{SITE_TITLE}</title>
             </Head>
 
             <BurgerMenu>

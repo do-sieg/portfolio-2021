@@ -6,6 +6,8 @@ export default {
     NAV_PROJECTS: "Projects",
     NAV_TEACH: "Teaching",
 
+    ACTION_VISIT: "Visit",
+
     SHORT_MONTHS: [
         "JAN", "FEB", "MAR", "APR",
         "MAY", "JUN", "JUL", "AUG",
@@ -42,13 +44,13 @@ export default {
             </p>
         </>
     ),
-
     HOME_INTRO_TEACH: (
         <p>
             I also work as a <strong>teacher</strong> and <strong>mentor</strong>.
             In group or during private sessions, I help you realize your potential.
         </p>
     ),
+    PROJECTS_TITLE: "Projects",
 
 
     HOME_SLIDE_PROMPT_1: "Need a website?",

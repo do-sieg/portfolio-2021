@@ -1,0 +1,34 @@
+{
+    "kentia": {
+        "name": "Agence Kentia",
+        "description": "Site de coaching, bien-être et relations de couple.",
+        "imagePath": "images/projects/kentia.jpg",
+        "tech": [
+            "nocode"
+        ],
+        "url": "https://www.agencekentia.com/"
+    },
+    "saleth": {
+        "name": "Saleth.fr",
+        "description": "Blog et journal d'une équipe de développement de jeu indépendant.",
+        "imagePath": "images/projects/saleth.jpg",
+        "tech": [
+            "html",
+            "css",
+            "php"
+        ],
+        "url": "https://saleth.fr"
+    },
+    "biochem": {
+        "name": "Biochem",
+        "description": "Site vitrine de l'Institut de Biochimie d'Erevan (Arménie).",
+        "imagePath": "images/projects/biochem.jpg",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "react"
+        ],
+        "url": "https://saleth.fr"
+    }
+}

@@ -6,6 +6,8 @@ export default {
     NAV_PROJECTS: "Projets",
     NAV_TEACH: "Cours",
 
+    ACTION_VISIT: "Visiter",
+
     SHORT_MONTHS: [
         "JAN", "FÉV", "MAR", "AVR",
         "MAI", "JUN", "JUL", "AOU",
@@ -48,6 +50,10 @@ export default {
             En groupe ou par cours particuliers, je vous aide à réaliser votre potentiel.
         </p>
     ),
+    PROJECTS_TITLE: "Projets",
+
+
+
 
     TEACH_INTRO: (
         <>

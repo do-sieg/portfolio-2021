@@ -1,10 +1,10 @@
 .container {
     height: 100vh;
     display: grid;
-    grid-template-areas: "top top top"
-                         "left main right"
-                         "left footer right";
-    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "top top top"
+        "left main right";
+    grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
 }
 
@@ -18,9 +18,4 @@
 
 .container main {
     grid-area: main;
-    overflow: auto;
-}
-
-.container footer {
-    grid-area: footer;
 }

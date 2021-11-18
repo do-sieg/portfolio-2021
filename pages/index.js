@@ -11,6 +11,7 @@ import { FaCss3Alt, FaHtml5, FaJsSquare, FaLess, FaNodeJs, FaPhp, FaReact, FaSas
 import { SiGodotengine, SiMongodb, SiNextDotJs } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { DiRuby } from "react-icons/di";
+import { SITE_TITLE } from "../data/constants";
 
 export default function Home() {
     const L_HOME_TITLE = useLangTerm('HOME_TITLE');
@@ -27,10 +28,9 @@ export default function Home() {
     const L_SKILLS_OTHER = useLangTerm('SKILLS_OTHER');
 
     return (
-        // <Layout contentClass="page-content home-page">
         <AppLayout className={styles.container}>
             <Head>
-                <title>{L_HOME_TITLE}</title>
+                <title>{SITE_TITLE} - {L_HOME_TITLE}</title>
             </Head>
 
             <h1>{L_HOME_TITLE}</h1>

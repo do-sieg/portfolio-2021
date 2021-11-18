@@ -1,0 +1,22 @@
+{
+    "1": {
+        "name": "Project 1",
+        "description": "Some project",
+        "url": "https://saleth.fr"
+    },
+    "2": {
+        "name": "Project 2",
+        "description": "Some project",
+        "url": "https://saleth.fr"
+    },
+    "3": {
+        "name": "Project 3",
+        "description": "Some project",
+        "url": "https://saleth.fr"
+    },
+    "4": {
+        "name": "Project 4",
+        "description": "Some project",
+        "url": "https://saleth.fr"
+    }
+}
