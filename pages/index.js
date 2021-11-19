@@ -6,11 +6,7 @@ import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
 import AppLayout from "../components/app/AppLayout";
 import styles from "../styles/pages.module.css";
-import Skillset, { SkillItem } from "../components/app/Skillset";
-import { FaCss3Alt, FaHtml5, FaJsSquare, FaLess, FaNodeJs, FaPhp, FaReact, FaSass, FaSearchengin } from "react-icons/fa";
-import { SiGodotengine, SiMongodb, SiNextDotJs } from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
-import { DiRuby } from "react-icons/di";
+import Skillset from "../components/app/Skillset";
 import { SITE_TITLE } from "../data/constants";
 
 export default function Home() {
@@ -56,28 +52,29 @@ export default function Home() {
 
             <section>
                 <h2>{L_SKILLS_MAIN}</h2>
-                <Skillset>
-                    <SkillItem name="HTML5" icon={FaHtml5} />
-                    <SkillItem name="CSS3" icon={FaCss3Alt} />
-                    <SkillItem name="Sass" icon={FaSass} />
-                    <SkillItem name="Less" icon={FaLess} />
-                    <SkillItem name="JavaScript" icon={FaJsSquare} />
-                    <SkillItem name="ReactJS" icon={FaReact} />
-                    <SkillItem name="NodeJS" icon={FaNodeJs} />
-                    <SkillItem name="NextJS" icon={SiNextDotJs} />
-                    <SkillItem name="MySQL" icon={GrMysql} />
-                </Skillset>
+                <Skillset skills={[
+                    "html",
+                    "css",
+                    "sass",
+                    "less",
+                    "js",
+                    "reactjs",
+                    "nodejs",
+                    "nextjs",
+                    "mysql",
+                ]} />
             </section>
 
             <section>
                 <h2>{L_SKILLS_OTHER}</h2>
-                <Skillset>
-                    <SkillItem name="PHP" icon={FaPhp} />
-                    <SkillItem name="Ruby" icon={DiRuby} />
-                    <SkillItem name="MongoDB" icon={SiMongodb} />
-                    <SkillItem name="GDScript" icon={SiGodotengine} />
-                    <SkillItem name="SEO" icon={FaSearchengin} />
-                </Skillset>
+                <Skillset skills={[
+                    "php",
+                    "ruby",
+                    "mongodb",
+                    "gdscript",
+                    "git",
+                    "seo",
+                ]} />
             </section>
             
             {/* <section>

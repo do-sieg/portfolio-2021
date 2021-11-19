@@ -5,17 +5,8 @@ import { SITE_TITLE } from "../data/constants";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/pages.module.css";
+import dataTechs from "../data/tech";
 import projectStyles from "../styles/page_projects.module.css";
-import { FaCss3Alt, FaHtml5, FaJsSquare, FaPaperPlane, FaPhp, FaReact } from "react-icons/fa";
-
-const techData = {
-    "html": { name: "HTML", icon: <FaHtml5 /> },
-    "css": { name: "CSS", icon: <FaCss3Alt /> },
-    "js": { name: "JavaScript", icon: <FaJsSquare /> },
-    "react": { name: "React", icon: <FaReact /> },
-    "php": { name: "PHP", icon: <FaPhp /> },
-    "nocode": { name: "No Code", icon: <FaPaperPlane /> },
-};
 
 function ProjectCard({ data }) {
     const L_ACTION_VISIT = useLangTerm('ACTION_VISIT');
@@ -23,13 +14,13 @@ function ProjectCard({ data }) {
     function renderTechIcons() {
         return (
             <>
-                {data.tech.map((element, index) => {
-                    return (
+                {data.tech.map((id, index) => {
+                    return dataTechs[id] ?
                         <div key={index} className={projectStyles.techWrapper}>
-                            {techData[element].icon}
-                            <span className={projectStyles.tooltip}>{techData[element].name}</span>
+                            {dataTechs[id].icon}
+                            <span className={projectStyles.tooltip}>{dataTechs[id].name}</span>
                         </div>
-                    );
+                        : null
                 })}
             </>
         );

@@ -110,9 +110,9 @@
 
 @media (min-width: 640px) {
     .card { flex-direction: row; }
-    .card:nth-child(even) {
+    /* .card:nth-child(even) {
         flex-direction: row-reverse;
-    }
+    } */
     .title { text-align: left; }
     .techs { justify-content: flex-start; }
 }

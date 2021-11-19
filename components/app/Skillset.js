@@ -1,15 +1,17 @@
+import dataTechs from "../../data/tech";
 import styles from "./Skillset.module.css";
 
-export function SkillItem({ name, icon }) {
-    return (
-        <div className={styles.skillItem}>{icon ? icon() : null}<span>{name}</span></div>
-    );
-}
-
-export default function Skillset({ children }) {
+export default function Skillset({ skills = [] }) {
     return (
         <div className={styles.container}>
-            {children}
+            {skills.map((id) => {
+                const data = dataTechs[id];
+                return data ?
+                    <div className={styles.skillItem}>
+                        {data.icon}<span>{data.name}</span>
+                    </div>
+                    : null
+            })}
         </div>
     );
 }
