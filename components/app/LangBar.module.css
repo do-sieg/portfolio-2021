@@ -1,6 +1,7 @@
 .container {
     display: flex;
     gap: 0.5rem;
+    user-select: none;
 }
 
 .container a {
