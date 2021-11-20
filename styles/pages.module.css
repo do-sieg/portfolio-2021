@@ -1,5 +1,7 @@
 .container {
     flex: 1;
+    max-width: 1024px;
+    margin: 0 auto;
     padding: 1.5rem 1rem 1rem;
     font-size: larger;
 }
@@ -15,8 +17,6 @@
     font-family: var(--font-display);
     font-weight: 600;
     font-size: 2em;
-
-    /* text-shadow: 2px 2px black; */
     filter: var(--drop-shadow-md);
 }
 
@@ -46,8 +46,10 @@
 }
 
 .promptBox {
-    margin: 0 auto 2.5rem;
+    margin: 2rem auto 3rem;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 1rem;
 }
@@ -63,7 +65,6 @@
     color: var(--warmGray-100);
 
     box-shadow: var(--shadow-md);
-
     transition: var(--transition-all);
 }
 
@@ -79,6 +80,7 @@
     .container {
         padding: 3.5rem 1.5rem 1rem;
     }
+    .promptBox { flex-direction: row; }
 }
 
 @media (min-width: 768px) {

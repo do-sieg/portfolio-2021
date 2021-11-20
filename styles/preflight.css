@@ -1,5 +1,10 @@
+/* Set all box sizing to border-box by default */
+* {
+  box-sizing: border-box;
+}
 
 /* Remove default margins */
+body,
 blockquote,
 dl,
 dd,
@@ -27,7 +32,7 @@ h6 {
   font-weight: inherit;
 }
 
-/* Unstyle headings */
+/* Unstyle lists */
 ol,
 ul {
   list-style: none;

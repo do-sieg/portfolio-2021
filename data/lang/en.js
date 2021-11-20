@@ -47,7 +47,7 @@ export default {
     HOME_INTRO_TEACH: (
         <p>
             I also work as a <strong>teacher</strong> and <strong>mentor</strong>.
-            In group or during private sessions, I help you realize your potential.
+            In group or during private sessions, I help you achieve your potential.
         </p>
     ),
     PROJECTS_TITLE: "Projects",

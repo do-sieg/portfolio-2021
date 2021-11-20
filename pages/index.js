@@ -14,10 +14,10 @@ export default function Home() {
     const L_HOME_TITLE = useLangTerm('HOME_TITLE');
     const L_HOME_INTRO_DEV = useLangTerm('HOME_INTRO_DEV');
     const L_HOME_INTRO_TEACH = useLangTerm('HOME_INTRO_TEACH');
-    const L_TIMELINE = useLangTerm('TIMELINE');
-    const L_HOME_SLIDE_PROMPT_1 = useLangTerm('HOME_SLIDE_PROMPT_1');
-    const L_HOME_SLIDE_PROMPT_2 = useLangTerm('HOME_SLIDE_PROMPT_2');
-    const L_HOME_SLIDE_PROMPT_3 = useLangTerm('HOME_SLIDE_PROMPT_3');
+    // const L_TIMELINE = useLangTerm('TIMELINE');
+    // const L_HOME_SLIDE_PROMPT_1 = useLangTerm('HOME_SLIDE_PROMPT_1');
+    // const L_HOME_SLIDE_PROMPT_2 = useLangTerm('HOME_SLIDE_PROMPT_2');
+    // const L_HOME_SLIDE_PROMPT_3 = useLangTerm('HOME_SLIDE_PROMPT_3');
     const L_LEARN_MORE = useLangTerm('LEARN_MORE');
     const L_VIEW_PROJECTS = useLangTerm('VIEW_PROJECTS');
     const L_DOWNLOAD_RESUME = useLangTerm('DOWNLOAD_RESUME');
@@ -58,8 +58,6 @@ export default function Home() {
                 <Skillset skills={[
                     "html",
                     "css",
-                    "sass",
-                    "less",
                     "js",
                     "reactjs",
                     "nodejs",
@@ -73,8 +71,10 @@ export default function Home() {
                 <Skillset skills={[
                     "php",
                     "ruby",
-                    "mongodb",
                     "gdscript",
+                    "mongodb",
+                    "sass",
+                    "less",
                     "git",
                     "seo",
                 ]} />
