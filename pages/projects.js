@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import dataTechs from "../data/tech";
 import styles from "../styles/pages.module.css";
 import projectStyles from "../styles/page_projects.module.css";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 function ProjectCard({ data }) {
     const L_ACTION_VISIT = useLangTerm('ACTION_VISIT');
@@ -46,7 +47,9 @@ function ProjectCard({ data }) {
                         {data.imagePath && <img src={data.imagePath} alt={data.name} />}
                     </div>
                     {data.url &&
-                        <a className={styles.promptBtn} href={data.url} target="_blank">{L_ACTION_VISIT}</a>
+                        <a className={styles.promptBtn} href={data.url} target="_blank">
+                            {L_ACTION_VISIT} <FaExternalLinkAlt />
+                        </a>
                     }
                 </div>
             </div>
@@ -58,6 +61,7 @@ export default function Projects() {
     const router = useRouter();
     const [projects, setProjects] = useState([]);
     const L_PROJECTS_TITLE = useLangTerm('PROJECTS_TITLE');
+    const L_CLIENT_PROJECTS = useLangTerm('CLIENT_PROJECTS');
 
     useEffect(() => {
         try {
@@ -77,7 +81,7 @@ export default function Projects() {
             <h1>{L_PROJECTS_TITLE}</h1>
 
             <section>
-                <h2>PROJ CLIENTS</h2>
+                <h2>{L_CLIENT_PROJECTS}</h2>
                 <div className={projectStyles.container}>
                     <ProjectCard data={projects["kentia"]} />
                     <ProjectCard data={projects["saleth"]} />

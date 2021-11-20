@@ -50,17 +50,43 @@ export default {
             En groupe ou par cours particuliers, je vous aide à réaliser votre potentiel.
         </p>
     ),
+
     PROJECTS_TITLE: "Projets",
+    CLIENT_PROJECTS: "Projets clients",
 
     TEACH_TITLE: "Cours",
     TEACH_INTRO: (
         <>
-            <h2>Bienvenue</h2>
-            <p>Bonjour, je suis Daniel, développeur web et enseignant, passionné par tout ce qui touche au code.</p>
-            <p>Je mets des cours à disposition des débutants pour les aider à s'y retrouver un peu. Ils sont le fruit de mes expériences en développement, et tiennent compte des plus récentes mises à jour.</p>
-            <p>Je donne également des cours particuliers. Vérifiez mes disponibilités sur les sites suivants ou contactez-moi directement.</p>
-
-            <p>CONTACT INFO</p>
+            <h2>Transmettre un savoir</h2>
+            <p>
+                En plus de mon activité de développeur, mon autre passion est d'<strong>enseigner</strong>.
+            </p>
         </>
     ),
+    TEACH_TRAINING: (
+        <p>
+            Après six ans d'enseignement dans le secondaire, je mets à profit cette expérience dans le monde de la <strong>formation</strong>.
+            J'interviens dans divers domaines touchant le web : langages, frameworks, outils...
+        </p>
+    ),
+    TEACH_COURSES: (
+        <p>
+            Je projette de mettre des <strong>cours</strong> à disposition des débutants pour les aider à s'y retrouver un peu.
+            {/* Je mets des cours à disposition des débutants pour les aider à s'y retrouver un peu. */}
+        </p>
+    ),
+    TEACH_PRIVATE: (
+        <>
+            <h2>Guider vers la réussite</h2>
+            <p>
+                Je donne également des <strong>cours particuliers</strong> selon mes disponibilités.
+                Un projet à complèter, des notions qui vous échappent, ou tout simplement un désir d'apprendre...
+                je suis là pour vous accompagner.
+            </p>
+            <p>
+                Vous pouvez me contacter sur une des plate-formes suivantes, ou directement par e-mail.
+            </p>
+        </>
+    ),
+
 }

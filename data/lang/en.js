@@ -50,10 +50,16 @@ export default {
             In group or during private sessions, I help you achieve your potential.
         </p>
     ),
+
     PROJECTS_TITLE: "Projects",
+    CLIENT_PROJECTS: "Client Projects",
 
     TEACH_TITLE: "Teaching",
     TEACH_INTRO: "TEACH INTRO",
+    TEACH_TRAINING: "TEACH TRAINING",
+    TEACH_COURSES: "TEACH_COURSES",
+    TEACH_PRIVATE: "TEACH PRIVATE",
+
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",
     // HOME_SLIDE_PROMPT_3: "Looking for a translator?",

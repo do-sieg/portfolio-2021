@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import AppLayout from "../components/app/AppLayout";
 import { FaExternalLinkAlt, FaQuoteLeft, FaQuoteRight, FaRegStar, FaStar } from "react-icons/fa";
 import { useLangTerm } from "../utils/lang";
@@ -42,6 +43,10 @@ const reviews = [
 export default function Teach() {
     const L_TEACH_TITLE = useLangTerm('TEACH_TITLE');
     const L_TEACH_INTRO = useLangTerm('TEACH_INTRO');
+    const L_TEACH_TRAINING = useLangTerm('TEACH_TRAINING');
+    const L_TEACH_COURSES = useLangTerm('TEACH_COURSES');
+    const L_TEACH_PRIVATE = useLangTerm('TEACH_PRIVATE');
+    const L_DOWNLOAD_RESUME = useLangTerm('DOWNLOAD_RESUME');
     const L_REVIEWS = useLangTerm('REVIEWS');
 
     function renderUserReview(score) {
@@ -69,20 +74,28 @@ export default function Teach() {
 
             <h1>{L_TEACH_TITLE}</h1>
 
-
-
-
-            {/* <section>
+            <section>
                 {L_TEACH_INTRO}
-            </section> */}
-
-            {/* <section id="teach-links">
-                {teachLinks.map((obj, index) => {
-                    return (
-                        <a key={index} href={obj.url} target="_blank">{obj.text} <FaExternalLinkAlt /></a>
-                    );
-                })}
+                {L_TEACH_TRAINING}
+                <div className={styles.promptBox}>
+                    <Link href="./projects">
+                        <a className={styles.promptBtn}>{L_DOWNLOAD_RESUME}</a>
+                    </Link>
+                </div>
+                {L_TEACH_COURSES}
+                {L_TEACH_PRIVATE}
+                <div className={styles.promptBox}>
+                    {teachLinks.map((obj, index) => {
+                        return (
+                            <a key={index} className={styles.promptBtn} href={obj.url} target="_blank">
+                                {obj.text} <FaExternalLinkAlt />
+                            </a>
+                        );
+                    })}
+                </div>
             </section>
+
+            {/* 
 
             <section className="reviews">
                 <h2>{L_REVIEWS}</h2>

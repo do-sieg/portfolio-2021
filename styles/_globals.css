@@ -200,17 +200,6 @@ nav a {
 .home-slide {
   height: 12rem;
 }
-#teach-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-#teach-links a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: larger;
-}
 .review {
   display: flex;
   flex-direction: column;
