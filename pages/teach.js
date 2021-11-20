@@ -1,7 +1,10 @@
+import Head from "next/head";
+import AppLayout from "../components/app/AppLayout";
 import { FaExternalLinkAlt, FaQuoteLeft, FaQuoteRight, FaRegStar, FaStar } from "react-icons/fa";
 import { useLangTerm } from "../utils/lang";
-import PageLayout from "../components/PageLayout";
 import SlideShow from "../components/SlideShow";
+import { SITE_TITLE } from "../data/constants";
+import styles from "../styles/pages.module.css";
 
 const teachLinks = [
     { text: "Kelprof", url: "https://www.kelprof.com/cours-particuliers/programmation/cours-particulier-developpement-web-professionnel-762600.html" },
@@ -37,6 +40,7 @@ const reviews = [
 ];
 
 export default function Teach() {
+    const L_TEACH_TITLE = useLangTerm('TEACH_TITLE');
     const L_TEACH_INTRO = useLangTerm('TEACH_INTRO');
     const L_REVIEWS = useLangTerm('REVIEWS');
 
@@ -58,12 +62,21 @@ export default function Teach() {
     }
 
     return (
-        <PageLayout>
-            <section>
-                {L_TEACH_INTRO}
-            </section>
+        <AppLayout className={styles.container}>
+            <Head>
+                <title>{SITE_TITLE} - {L_TEACH_TITLE}</title>
+            </Head>
 
-            <section id="teach-links">
+            <h1>{L_TEACH_TITLE}</h1>
+
+
+
+
+            {/* <section>
+                {L_TEACH_INTRO}
+            </section> */}
+
+            {/* <section id="teach-links">
                 {teachLinks.map((obj, index) => {
                     return (
                         <a key={index} href={obj.url} target="_blank">{obj.text} <FaExternalLinkAlt /></a>
@@ -83,7 +96,7 @@ export default function Teach() {
                         </div>
                     );
                 })}
-            </section>
-        </PageLayout>
+            </section> */}
+        </AppLayout>
     );
 }

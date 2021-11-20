@@ -52,11 +52,11 @@ export default {
     ),
     PROJECTS_TITLE: "Projects",
 
-
-    HOME_SLIDE_PROMPT_1: "Need a website?",
-    HOME_SLIDE_PROMPT_2: "Need lessons?",
-    HOME_SLIDE_PROMPT_3: "Looking for a translator?",
-
+    TEACH_TITLE: "Teaching",
     TEACH_INTRO: "TEACH INTRO",
+    // HOME_SLIDE_PROMPT_1: "Need a website?",
+    // HOME_SLIDE_PROMPT_2: "Need lessons?",
+    // HOME_SLIDE_PROMPT_3: "Looking for a translator?",
+
 
 }

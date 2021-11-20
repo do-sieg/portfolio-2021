@@ -4,8 +4,8 @@ import { useLangTerm } from "../utils/lang";
 import { SITE_TITLE } from "../data/constants";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/pages.module.css";
 import dataTechs from "../data/tech";
+import styles from "../styles/pages.module.css";
 import projectStyles from "../styles/page_projects.module.css";
 
 function ProjectCard({ data }) {
@@ -83,7 +83,6 @@ export default function Projects() {
                     <ProjectCard data={projects["saleth"]} />
                     <ProjectCard data={projects["biochem"]} />
                 </div>
-
             </section>
 
         </AppLayout>

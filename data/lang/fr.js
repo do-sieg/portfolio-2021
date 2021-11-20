@@ -52,9 +52,7 @@ export default {
     ),
     PROJECTS_TITLE: "Projets",
 
-
-
-
+    TEACH_TITLE: "Cours",
     TEACH_INTRO: (
         <>
             <h2>Bienvenue</h2>
