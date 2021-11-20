@@ -139,25 +139,6 @@ nav a {
     right: calc(-1.2rem - 0.8rem);
   }
 }
-.base-slideshow-container {
-  overflow: hidden;
-  background-color: rgba(68, 85, 102, 0.1);
-}
-.base-slideshow-container:hover .base-slide-nav-btn.left {
-  left: 0;
-}
-.base-slideshow-container:hover .base-slide-nav-btn.right {
-  right: 0;
-}
-.base-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  animation-name: fade-in;
-  animation-duration: 2.5s;
-}
 .base-slide p {
   margin: 0;
   font-size: x-large;
@@ -168,66 +149,6 @@ nav a {
   animation: 3.5s forwards fade-in;
   font-size: larger;
 }
-@keyframes fade-in {
-  from {
-    opacity: 0.35;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.base-slide-nav-btn {
-  width: 2rem;
-  height: 100%;
-  top: 0 !important;
-  border: none;
-  font-family: Kufam;
-  font-size: x-large;
-  font-weight: 300;
-  background-color: transparent;
-  color: #fffc;
-  transition: background-color 0.6s ease, left 0.6s ease, right 0.6s ease;
-}
-.base-slide-nav-btn.left {
-  left: -2rem;
-}
-.base-slide-nav-btn.right {
-  right: -2rem;
-}
-.base-slide-nav-btn:hover {
-  background-color: #fff3;
-}
 .home-slide {
   height: 12rem;
-}
-.review {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 1.5rem 0 3.5rem;
-  font-size: larger;
-  font-weight: 300;
-}
-.review blockquote {
-  margin: 0;
-  line-height: 1.5;
-  font-style: italic;
-  text-shadow: black 2px 2px 3px;
-}
-.review blockquote svg {
-  width: 0.5rem;
-}
-.review .name {
-  text-align: right;
-  padding-right: 5rem;
-  font-size: large;
-  font-style: normal;
-  color: #acf;
-}
-.review .score {
-  text-align: center;
-}
-.review .score svg {
-  fill: #acf;
-  filter: drop-shadow(black 2px 2px 3px);
 }

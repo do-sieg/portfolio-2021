@@ -1,0 +1,149 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    /* padding: 1rem; */
+    background-color: var(--gray-700);
+    background-image: linear-gradient(135deg, var(--gray-600), var(--gray-700));
+}
+
+.container:hover .left,
+.container:active .left {
+    left: 0;
+}
+
+.container:hover .right,
+.container:active .right {
+    right: 0;
+}
+
+.navButton {
+    position: absolute;
+    top: calc(50% - 1rem);
+    z-index: 1;
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+
+    font-size: x-large;
+    color: var(--gray-50);
+    opacity: 0.5;
+    transition: var(--transition-all-slow);
+    filter: var(--drop-shadow-md);
+}
+
+.left {
+    left: -2rem;
+}
+
+.right {
+    right: -2rem;
+}
+
+.navButton:hover,
+.navButton:active {
+    background-color: var(--gray-900);
+    opacity: 0.8;
+}
+
+.navDots {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.navDot {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: large;
+    color: var(--gray-400);
+    transition: var(--transition-all-slow);
+    filter: var(--drop-shadow);
+}
+
+.navDot:not([disabled]) {
+    cursor: pointer;
+}
+
+.activeDot, .navDot:not([disabled]):hover {
+    color: var(--gray-50);
+}
+
+.slide {
+    height: 35rem;
+    padding: 1rem;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    animation-name: fade-in;
+    animation-duration: 3s;
+}
+
+.visibleSlide {
+    display: flex;
+}
+
+@keyframes fade-in {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+.slide blockquote {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: large;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.slide blockquote svg {
+    display: inline;
+    width: 0.5rem;
+}
+
+.slide .score {
+    display: flex;
+    justify-content: center;
+    gap: 0.1rem;
+    font-size: large;
+    filter: var(--drop-shadow);
+}
+
+.fullStar {
+    color: var(--secondary);
+}
+
+.emptyStar {
+    color: var(--gray-400);
+    /* transform: scale(0.9); */
+}
+
+.slide .name {
+    width: 100%;
+    text-align: right;
+    padding-right: 5rem;
+    font-size: large;
+    font-style: normal;
+    font-weight: 300;
+    color: var(--secondary);
+}
+
+@media (min-width: 640px) {
+    .slide { height: 16rem; padding: 1rem 3rem; }
+}
+
+@media (min-width: 768px) {
+    .slide { height: 15rem; padding: 1rem 4rem; }
+}

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useLangTerm } from "../utils/lang";
-import SlideShow from "../components/SlideShow";
 import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
 import AppLayout from "../components/app/AppLayout";

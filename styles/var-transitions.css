@@ -1,3 +1,4 @@
 :root {
     --transition-all: all 0.3s ease-in-out 0.1s;
+    --transition-all-slow: all 0.6s ease;
 }
