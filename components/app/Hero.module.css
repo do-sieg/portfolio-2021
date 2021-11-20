@@ -1,0 +1,59 @@
+.container {
+    width: fit-content;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-family: Lilita One;
+    filter: var(--drop-shadow-lg);
+}
+
+.container img {
+    height: 12rem;
+    border-radius: 5px;
+}
+
+.typography {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.firstName {
+    grid-area: first-name;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+}
+
+.lastName {
+    grid-area: last-name;
+    padding: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    background-color: white;
+    color: var(--blueGray-500);
+    border-radius: 5px;
+}
+
+
+@media (min-width: 640px) {
+    .container { flex-direction: row; padding-right: 3rem; gap: 1.5rem; }
+    .container img { height: 15rem; }
+    .typography { gap: 0.5rem; }
+    .firstName { font-size: 6rem; }
+    .lastName { font-size: 3rem; }
+}
+
+@media (min-width: 1280px) {
+    .container { margin: 5rem auto; gap: 2rem; }
+    .container img { height: 20rem; border-radius: 10px; }
+    .typography { gap: 1rem; }
+    .firstName { font-size: 8rem; }
+    .lastName { font-size: 4rem; border-radius: 10px; }
+}

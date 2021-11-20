@@ -4,7 +4,9 @@
     font-size: larger;
 }
 
-.container section + section { margin-top: 3rem; }
+.container section+section {
+    margin-top: 5rem;
+}
 
 .container h1 {
     margin-bottom: 2rem;
@@ -13,7 +15,7 @@
     font-family: var(--font-display);
     font-weight: 600;
     font-size: 2em;
-    
+
     /* text-shadow: 2px 2px black; */
     filter: var(--drop-shadow-md);
 }
@@ -37,7 +39,8 @@
     font-weight: 300;
 }
 
-.container strong, .container b {
+.container strong,
+.container b {
     font-weight: 400;
     /* color: var(--secondary); */
 }
@@ -52,7 +55,7 @@
 .promptBtn {
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    
+
     font-size: large;
     font-weight: 500;
 
@@ -60,11 +63,12 @@
     color: var(--warmGray-100);
 
     box-shadow: var(--shadow-md);
-    
+
     transition: var(--transition-all);
 }
 
-.promptBtn:hover, .promptBtn:active {
+.promptBtn:hover,
+.promptBtn:active {
     background-color: var(--warmGray-400);
     color: white;
     box-shadow: var(--shadow-lg);
@@ -72,13 +76,20 @@
 
 
 @media (min-width: 640px) {
-    .container { padding: 3.5rem 1.5rem 1rem; }
+    .container {
+        padding: 3.5rem 1.5rem 1rem;
+    }
 }
 
 @media (min-width: 768px) {
-    .container { padding: 3.5rem 3rem 1rem; font-size: x-large; }
+    .container {
+        padding: 3.5rem 3rem 1rem;
+        font-size: x-large;
+    }
 }
 
 @media (min-width: 1024px) {
-    .container { padding: 3.5rem 5rem 1rem; }
+    .container {
+        padding: 3.5rem 5rem 1rem;
+    }
 }

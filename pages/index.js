@@ -5,9 +5,10 @@ import SlideShow from "../components/SlideShow";
 import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
 import AppLayout from "../components/app/AppLayout";
-import styles from "../styles/pages.module.css";
 import Skillset from "../components/app/Skillset";
 import { SITE_TITLE } from "../data/constants";
+import styles from "../styles/pages.module.css";
+import Hero from "../components/app/Hero";
 
 export default function Home() {
     const L_HOME_TITLE = useLangTerm('HOME_TITLE');
@@ -28,6 +29,8 @@ export default function Home() {
             <Head>
                 <title>{SITE_TITLE} - {L_HOME_TITLE}</title>
             </Head>
+
+            <Hero />
 
             <h1>{L_HOME_TITLE}</h1>
 
@@ -76,7 +79,7 @@ export default function Home() {
                     "seo",
                 ]} />
             </section>
-            
+
             {/* <section>
                 <h2>NEWS</h2>
             </section> */}
