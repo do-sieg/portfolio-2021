@@ -27,8 +27,20 @@
             "html",
             "css",
             "js",
-            "react"
+            "reactjs"
         ],
         "url": "http://www.biochem.sci.am/?lang=en"
+    },
+    "coursjs": {
+        "name": "CoursJS",
+        "description": "Des cours de développement pour débutants (très orientés sur le langage JavaScript et ses frameworks). Ce projet est remanié et les cours intégrés bientôt dans un projet de plus grande envergure.",
+        "imagePath": "images/projects/coursjs.jpg",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "reactjs",
+            "nextjs"
+        ]
     }
 }

@@ -62,6 +62,9 @@ export default function Projects() {
     const [projects, setProjects] = useState([]);
     const L_PROJECTS_TITLE = useLangTerm('PROJECTS_TITLE');
     const L_CLIENT_PROJECTS = useLangTerm('CLIENT_PROJECTS');
+    const L_OWN_PROJECTS = useLangTerm('OWN_PROJECTS');
+    const L_OLD_PROJECTS = useLangTerm('OLD_PROJECTS');
+    const L_DEMOS = useLangTerm('DEMOS');
 
     useEffect(() => {
         try {
@@ -86,6 +89,20 @@ export default function Projects() {
                     <ProjectCard data={projects["kentia"]} />
                     <ProjectCard data={projects["saleth"]} />
                     <ProjectCard data={projects["biochem"]} />
+                </div>
+            </section>
+
+            {/* <section>
+                <h2>{L_OWN_PROJECTS}</h2>
+                <div className={projectStyles.container}>
+                    <ProjectCard data={projects["coursjs"]} />
+                </div>
+            </section> */}
+
+            <section>
+                <h2>{L_OLD_PROJECTS}</h2>
+                <div className={projectStyles.container}>
+                    <ProjectCard data={projects["coursjs"]} />
                 </div>
             </section>
 

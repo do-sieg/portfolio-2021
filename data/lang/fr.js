@@ -53,6 +53,9 @@ export default {
 
     PROJECTS_TITLE: "Projets",
     CLIENT_PROJECTS: "Projets clients",
+    OWN_PROJECTS: "Projets personnels",
+    OLD_PROJECTS: "Anciens projets",
+    DEMOS: "Démos",
 
     TEACH_TITLE: "Cours",
     TEACH_INTRO: (

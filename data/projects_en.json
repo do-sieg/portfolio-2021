@@ -1,22 +1,46 @@
 {
-    "1": {
-        "name": "Project 1",
-        "description": "Some project",
+    "kentia": {
+        "name": "Agence Kentia",
+        "description": "A website about personal coaching, well-being and couple relationships.",
+        "imagePath": "images/projects/kentia.jpg",
+        "tech": [
+            "nocode"
+        ],
+        "url": "https://www.agencekentia.com"
+    },
+    "saleth": {
+        "name": "Saleth.fr",
+        "description": "Blog and diary for an independent game development team.",
+        "imagePath": "images/projects/saleth.jpg",
+        "tech": [
+            "html",
+            "css",
+            "php"
+        ],
         "url": "https://saleth.fr"
     },
-    "2": {
-        "name": "Project 2",
-        "description": "Some project",
-        "url": "https://saleth.fr"
+    "biochem": {
+        "name": "Biochem",
+        "description": "Presentation website of the Institute of Biochemistry in Yerevan (Armenia).",
+        "imagePath": "images/projects/biochem.jpg",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "reactjs"
+        ],
+        "url": "http://www.biochem.sci.am/?lang=en"
     },
-    "3": {
-        "name": "Project 3",
-        "description": "Some project",
-        "url": "https://saleth.fr"
-    },
-    "4": {
-        "name": "Project 4",
-        "description": "Some project",
-        "url": "https://saleth.fr"
+    "coursjs": {
+        "name": "CoursJS",
+        "description": "Development courses for beginners (JavaScript-oriented, language and frameworks). This project is being redesigned and the courses will soon be integrated into a larger project.",
+        "imagePath": "images/projects/coursjs.jpg",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "reactjs",
+            "nextjs"
+        ]
     }
 }
