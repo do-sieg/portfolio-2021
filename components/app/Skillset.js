@@ -4,10 +4,10 @@ import styles from "./Skillset.module.css";
 export default function Skillset({ skills = [] }) {
     return (
         <div className={styles.container}>
-            {skills.map((id) => {
+            {skills.map((id, index) => {
                 const data = dataTechs[id];
                 return data ?
-                    <div className={styles.skillItem}>
+                    <div key={index} className={styles.skillItem}>
                         {data.icon}<span>{data.name}</span>
                     </div>
                     : null

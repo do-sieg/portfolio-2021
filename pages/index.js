@@ -5,11 +5,13 @@ import Timeline, { mapEventsFromData } from "../components/Timeline";
 import events from "../data/events";
 import AppLayout from "../components/app/AppLayout";
 import Skillset from "../components/app/Skillset";
-import { SITE_TITLE } from "../data/constants";
-import styles from "../styles/pages.module.css";
+import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
 import Hero from "../components/app/Hero";
+import { useRouter } from "next/router";
+import styles from "../styles/pages.module.css";
 
 export default function Home() {
+    const { locale } = useRouter();
     const L_HOME_TITLE = useLangTerm('HOME_TITLE');
     const L_HOME_INTRO_DEV = useLangTerm('HOME_INTRO_DEV');
     const L_HOME_INTRO_TEACH = useLangTerm('HOME_INTRO_TEACH');
@@ -39,8 +41,8 @@ export default function Home() {
                     <Link href="./projects">
                         <a className={styles.promptBtn}>{L_VIEW_PROJECTS}</a>
                     </Link>
-                    <Link href="./projects">
-                        <a className={styles.promptBtn}>{L_DOWNLOAD_RESUME}</a>
+                    <Link href={RESUME_PATHS[locale]}>
+                        <a className={styles.promptBtn} target="_blank">{L_DOWNLOAD_RESUME}</a>
                     </Link>
                 </div>
 

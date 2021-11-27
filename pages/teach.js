@@ -3,10 +3,11 @@ import Link from "next/link";
 import AppLayout from "../components/app/AppLayout";
 import { FaExternalLinkAlt, FaQuoteLeft, FaQuoteRight, FaRegStar, FaStar } from "react-icons/fa";
 import { useLangTerm } from "../utils/lang";
-import { SITE_TITLE } from "../data/constants";
+import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
 import { useSlides } from "../utils/slides";
 import { useEffect } from "react";
 import SlideShowReviews from "../components/app/SlideShowReviews";
+import { useRouter } from "next/router";
 import styles from "../styles/pages.module.css";
 
 const teachLinks = [
@@ -15,6 +16,7 @@ const teachLinks = [
 ];
 
 export default function Teach() {
+    const { locale } = useRouter();
     const L_TEACH_TITLE = useLangTerm('TEACH_TITLE');
     const L_TEACH_INTRO = useLangTerm('TEACH_INTRO');
     const L_TEACH_TRAINING = useLangTerm('TEACH_TRAINING');
@@ -35,8 +37,8 @@ export default function Teach() {
                 {L_TEACH_INTRO}
                 {L_TEACH_TRAINING}
                 <div className={styles.promptBox}>
-                    <Link href="./projects">
-                        <a className={styles.promptBtn}>{L_DOWNLOAD_RESUME}</a>
+                    <Link href={RESUME_PATHS[locale]}>
+                        <a className={styles.promptBtn} target="_blank">{L_DOWNLOAD_RESUME}</a>
                     </Link>
                 </div>
                 {L_TEACH_COURSES}
