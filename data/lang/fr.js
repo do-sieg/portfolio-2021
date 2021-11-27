@@ -1,6 +1,8 @@
 export default {
     DEV_JOB_TITLES: "Développeur & Formateur Web",
 
+    SITE_DESCRIPTION: "Développeur et formateur web, je mets mon expertise à votre service pour créer des sites web qui aideront votre entreprise de maximiser ses résultats.",
+
     NAV_HOME: "Accueil",
     // NAV_ABOUT: "About Me",
     NAV_PROJECTS: "Projets",
@@ -39,7 +41,7 @@ export default {
                 pour tous types de projets.
             </p>
             <p>
-                Vous <b>recrutez</b> pour une entreprise&nbsp;? Vous cherchez un professionnel pour <strong>réaliser un site</strong>&nbsp;?
+                Vous <b>recrutez</b> pour une entreprise&nbsp;? Vous cherchez un professionnel pour réaliser un site qui vous aidera à <strong>maximiser vos résultats</strong>&nbsp;?
                 Je vous accompagne dès la <b>création</b> de votre projet jusqu'à son <b>déploiement</b>.
             </p>
         </>

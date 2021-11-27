@@ -2,6 +2,8 @@ export default {
     DEV_NAME: "Daniel Orchanian",
     DEV_JOB_TITLES: "Web Developer & Trainer",
 
+    SITE_DESCRIPTION: "Web developer and trainer, I put my expertise at your service to create websites to help your company maximize its results.",
+
     NAV_HOME: "Home",
     NAV_PROJECTS: "Projects",
     NAV_TEACH: "Teaching",
@@ -39,7 +41,7 @@ export default {
                 for all types of projects.
             </p>
             <p>
-                <b>Hiring</b> for a company? Looking for a professional to <strong>build a website</strong>?
+                <b>Hiring</b> for a company? Looking for a professional to build a website helping you <strong>maximize your results</strong>?
                 I help you from the <b>start</b> of your project to its <b>deployment</b>.
             </p>
         </>

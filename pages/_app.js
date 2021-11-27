@@ -1,5 +1,5 @@
 import { BurgerContext, useBurgerState } from '../components/BurgerMenu';
-import AppWrapper from '../components/AppWrapper';
+import AppWrapper from '../components/app/AppWrapper';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
