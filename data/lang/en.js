@@ -60,10 +60,39 @@ export default {
     DEMOS: "Demos",
 
     TEACH_TITLE: "Teaching",
-    TEACH_INTRO: "TEACH INTRO",
-    TEACH_TRAINING: "TEACH TRAINING",
-    TEACH_COURSES: "TEACH_COURSES",
-    TEACH_PRIVATE: "TEACH PRIVATE",
+    TEACH_INTRO: (
+        <>
+            <h2>Pass on knowledge</h2>
+            <p>
+                In addition to being a developer, my other passion is <strong>teaching</strong>.
+            </p>
+        </>
+    ),
+    TEACH_TRAINING: (
+        <p>
+            After six years of teaching in high school, I decide to put this experience to good use in the world of <strong>web development training</strong>.
+            I give lessons on various topics: programming languages, frameworks, tools...
+        </p>
+    ),
+    TEACH_COURSES: (
+        <p>
+            I plan to make <strong>courses</strong> available for beginners to help them get a handle on things.
+            {/* I provide classes for beginners to help them find their way around. */}
+        </p>
+    ),
+    TEACH_PRIVATE: (
+        <>
+            <h2>Lead to success</h2>
+            <p>
+                I also give <strong>private lessons</strong> based on my availability.
+                A project to complete, notions that seem confusing, or simply a desire to learn...
+                I am here to support you.
+            </p>
+            <p>
+                You can contact me on one of the following platforms, or directly by e-mail.
+            </p>
+        </>
+    ),
 
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",

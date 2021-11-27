@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import AppLayout from "../components/app/AppLayout";
-import { FaExternalLinkAlt, FaQuoteLeft, FaQuoteRight, FaRegStar, FaStar } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { useLangTerm } from "../utils/lang";
 import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
-import { useSlides } from "../utils/slides";
-import { useEffect } from "react";
 import SlideShowReviews from "../components/app/SlideShowReviews";
 import { useRouter } from "next/router";
 import styles from "../styles/pages.module.css";
