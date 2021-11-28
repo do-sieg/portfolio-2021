@@ -62,7 +62,7 @@ const reviews = {
 
 export default function SlideShowReviews({ noControls = false, autoNextTime = 0 }) {
     const { locale } = useRouter();
-    const [slideIndex, setSlide, prevSlide, nextSlide] = useSlides(reviews.length, autoNextTime);
+    const [slideIndex, setSlide, prevSlide, nextSlide] = useSlides(reviews[locale].length, autoNextTime);
 
     function renderUserReview(score) {
         const scoreArrayFull = [...Array(score)];
