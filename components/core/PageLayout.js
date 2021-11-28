@@ -7,7 +7,6 @@
 // To set a side panel to the right, change its style like this:
 // <aside style={{ gridArea: "right" }}>...</aside>
 
-
 import styles from "./PageLayout.module.css";
 
 export default function PageLayout({ children }) {

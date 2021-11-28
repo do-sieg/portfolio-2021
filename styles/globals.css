@@ -12,10 +12,10 @@ body {
   color: var(--primary);
 }
 a {
-  color: var(--link);
+  color: inherit;
   font-weight: 400;
   text-decoration: none;
 }
 a:hover {
-  color: var(--link-hover);
+  color: inherit;
 }

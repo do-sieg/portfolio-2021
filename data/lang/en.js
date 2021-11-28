@@ -8,12 +8,17 @@ export default {
     NAV_PROJECTS: "Projects",
     NAV_TEACH: "Teaching",
 
+    PHOTO_CREDITS: "Photo Credits",
+
     ACTION_VISIT: "Visit",
 
     SHORT_MONTHS: [
         "JAN", "FEB", "MAR", "APR",
         "MAY", "JUN", "JUL", "AUG",
         "SEP", "OCT", "NOV", "DEC",
+    ],
+    DAYS: [
+        "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
     ],
 
     ALL: "All",

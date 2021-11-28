@@ -7,6 +7,8 @@ export default {
     // NAV_ABOUT: "About Me",
     NAV_PROJECTS: "Projets",
     NAV_TEACH: "Cours",
+    
+    PHOTO_CREDITS: "Crédits photo",
 
     ACTION_VISIT: "Visiter",
 
@@ -14,6 +16,9 @@ export default {
         "JAN", "FÉV", "MAR", "AVR",
         "MAI", "JUN", "JUL", "AOU",
         "SEP", "OCT", "NOV", "DÉC",
+    ],
+    DAYS: [
+        "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"
     ],
 
     ALL: "Tous",

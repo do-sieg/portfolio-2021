@@ -31,6 +31,16 @@
     height: 2rem;
 }
 
+.credits {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.photoCredits {
+    font-size: 0.8rem;
+}
+
 @media (min-width: 768px) {
     .container { flex-direction: row; justify-content: space-between; }
     .contactLinks { width: 50%; }
