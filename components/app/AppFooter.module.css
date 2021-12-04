@@ -34,7 +34,7 @@
 .credits {
     display: flex;
     flex-direction: column;
-    text-align: right;
+    text-align: center;
 }
 
 .photoCredits {
@@ -44,5 +44,6 @@
 @media (min-width: 768px) {
     .container { flex-direction: row; justify-content: space-between; }
     .contactLinks { width: 50%; }
+    .credits { text-align: right; }
 }
 

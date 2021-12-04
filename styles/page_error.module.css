@@ -1,0 +1,30 @@
+.container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.container h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--secondary);
+    filter: var(--drop-shadow-md);
+}
+
+.container p {
+    text-align: center;
+    font-size: large;
+    filter: var(--drop-shadow-md);
+}
+
+.container a {
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .container h1 { font-size: 8rem; }
+    .container p { font-size: x-large; }
+}

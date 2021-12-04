@@ -1,4 +1,16 @@
 export default {
+    ERROR: "Erreur",
+    ERR_MESSAGES: {
+        0: "Une erreur s'est produite.",
+        400: "Requête invalide.",
+        401: "Accès non autorisé.",
+        403: "Accès interdit.",
+        404: "Page introuvable.",
+        500: "Erreur interne du serveur.",
+        // 502: "Bad Gateway.",
+        // 504: "Gateway Timeout.",
+    },
+
     DEV_JOB_TITLES: "Développeur & Formateur Web",
 
     SITE_DESCRIPTION: "Développeur et formateur web, je mets mon expertise à votre service pour créer des sites web qui aideront votre entreprise de maximiser ses résultats.",
@@ -7,10 +19,11 @@ export default {
     // NAV_ABOUT: "About Me",
     NAV_PROJECTS: "Projets",
     NAV_TEACH: "Cours",
-    
+
     PHOTO_CREDITS: "Crédits photo",
 
     ACTION_VISIT: "Visiter",
+    ACTION_BACK_HOME: "Revenir à la page d'accueil",
 
     SHORT_MONTHS: [
         "JAN", "FÉV", "MAR", "AVR",

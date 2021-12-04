@@ -1,4 +1,16 @@
 export default {
+    ERROR: "Error",
+    ERR_MESSAGES: {
+        0: "An error occurred.",
+        400: "Bad Request.",
+        401: "Unauthorized.",
+        403: "Forbidden.",
+        404: "This page could not be found.",
+        500: "Internal Server Error.",
+        502: "Bad Gateway.",
+        504: "Gateway Timeout.",
+    },
+
     DEV_NAME: "Daniel Orchanian",
     DEV_JOB_TITLES: "Web Developer & Trainer",
 
@@ -11,6 +23,7 @@ export default {
     PHOTO_CREDITS: "Photo Credits",
 
     ACTION_VISIT: "Visit",
+    ACTION_BACK_HOME: "Return to the home page",
 
     SHORT_MONTHS: [
         "JAN", "FEB", "MAR", "APR",
