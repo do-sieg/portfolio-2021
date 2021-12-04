@@ -3,8 +3,8 @@ import AppLayout from "../components/app/AppLayout";
 import { SITE_TITLE } from "../data/constants";
 import { useLangTerm } from "../utils/lang";
 import backgrounds from "../data/backgrounds.json";
-import styles from "../styles/pages.module.css";
-import creditStyles from "../styles/page_photo_credits.module.css";
+import styles from "../styles/pages/common.module.css";
+import ownStyles from "../styles/pages/photo_credits.module.css";
 
 export default function PhotoCredits() {
     const L_PHOTO_CREDITS = useLangTerm("PHOTO_CREDITS");
@@ -19,11 +19,11 @@ export default function PhotoCredits() {
 
             <h1>{L_PHOTO_CREDITS}</h1>
 
-            <div className={creditStyles.container}>
+            <div className={ownStyles.container}>
                 {[1, 2, 3, 4, 5, 6, 0].map((index) => {
                     const data = backgrounds[index];
                     return (
-                        <div key={index} className={creditStyles.item}>
+                        <div key={index} className={ownStyles.item}>
                             <img src={data.thumbnail} alt={L_DAYS[index]} />
                             <span>({L_DAYS[index]}) {data.author}</span>
                         </div>

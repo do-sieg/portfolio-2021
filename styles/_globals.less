@@ -43,52 +43,8 @@
 
 
 // -----------------------------------------------------------------------------
-// * STYLING - MAIN STYLES
-// -----------------------------------------------------------------------------
-
-body {
-  background-attachment: fixed;
-  font-size: medium;
-}
-
-a {
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  color: @c-link;
-  transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
-  &:hover, :active {
-    color: lighten(@c-link, 10%);
-    border-bottom-color: lighten(@c-link, 10%);
-  }
-}
-
-
-// -----------------------------------------------------------------------------
-// * STYLING - LAYOUT
-// -----------------------------------------------------------------------------
-
-// Header
-header {
-  z-index: 2;
-}
-
-#banner-link, #banner-link:hover, #banner-link:active {
-  color: unset;
-  text-decoration: none;
-  border-bottom-color: transparent;
-}
-
-// -----------------------------------------------------------------------------
 // * STYLING - COMPONENTS
 // -----------------------------------------------------------------------------
-
-
-// Navigation menu link
-nav a {
-  border: none;
-}
-
-
 
 // Timeline
 .timeline-container {
@@ -209,19 +165,11 @@ nav a {
     margin: 0;
     font-size: x-large;
     font-weight: 300;
-    // .shadow-text();
   }
   a {
     opacity: 0;
     animation: 3.5s forwards fade-in;
     font-size: larger;
-    // .shadow-text();
   }
 }
 
-
-
-
-.home-slide {
-  height: 12rem;
-}

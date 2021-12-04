@@ -6,7 +6,7 @@ import { useLangTerm } from "../utils/lang";
 import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
 import SlideShowReviews from "../components/app/SlideShowReviews";
 import { useRouter } from "next/router";
-import styles from "../styles/pages.module.css";
+import styles from "../styles/pages/common.module.css";
 
 const teachLinks = [
     { text: "Kelprof", url: "https://www.kelprof.com/cours-particuliers/programmation/cours-particulier-developpement-web-professionnel-762600.html" },
@@ -40,6 +40,9 @@ export default function Teach() {
                     </Link>
                 </div>
                 {L_TEACH_COURSES}
+            </section>
+
+            <section>
                 {L_TEACH_PRIVATE}
                 <div className={styles.promptBox}>
                     {teachLinks.map((obj, index) => {

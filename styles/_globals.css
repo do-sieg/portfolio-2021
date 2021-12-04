@@ -1,31 +1,3 @@
-body {
-  background-attachment: fixed;
-  font-size: medium;
-}
-a {
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  color: #e86;
-  transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
-}
-a:hover,
-a :active {
-  color: #f3ac94;
-  border-bottom-color: #f3ac94;
-}
-header {
-  z-index: 2;
-}
-#banner-link,
-#banner-link:hover,
-#banner-link:active {
-  color: unset;
-  text-decoration: none;
-  border-bottom-color: transparent;
-}
-nav a {
-  border: none;
-}
 .timeline-container .event-container time {
   font-size: small;
   font-weight: 300;
@@ -148,7 +120,4 @@ nav a {
   opacity: 0;
   animation: 3.5s forwards fade-in;
   font-size: larger;
-}
-.home-slide {
-  height: 12rem;
 }

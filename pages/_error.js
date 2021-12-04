@@ -2,8 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { useLangTerm } from "../utils/lang";
 import AppLayout from "../components/app/AppLayout";
-import styles from "../styles/pages.module.css";
-import errorStyles from "../styles/page_error.module.css";
+import styles from "../styles/pages/common.module.css";
+import ownStyles from "../styles/pages/error.module.css";
 
 function Error({ statusCode }) {
     const L_ERROR = useLangTerm("ERROR");
@@ -11,7 +11,7 @@ function Error({ statusCode }) {
     const L_ACTION_BACK_HOME = useLangTerm("ACTION_BACK_HOME");
 
     return (
-        <AppLayout className={errorStyles.container}>
+        <AppLayout className={ownStyles.container}>
 
             <Head>
                 <title>{L_ERROR}</title>

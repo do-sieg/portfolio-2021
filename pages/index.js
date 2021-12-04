@@ -1,14 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useLangTerm } from "../utils/lang";
-import Timeline, { mapEventsFromData } from "../components/Timeline";
-import events from "../data/events";
+// import Timeline, { mapEventsFromData } from "../components/Timeline";
+// import events from "../data/events";
 import AppLayout from "../components/app/AppLayout";
 import Skillset from "../components/app/Skillset";
 import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
 import Hero from "../components/app/Hero";
 import { useRouter } from "next/router";
-import styles from "../styles/pages.module.css";
+import styles from "../styles/pages/common.module.css";
 
 export default function Home() {
     const { locale } = useRouter();

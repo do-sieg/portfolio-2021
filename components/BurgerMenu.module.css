@@ -70,6 +70,7 @@
 }
 
 @media (min-width: 1024px) {
+    /* Hide burger menu on large screen sizes */
     .overlay { display: none; }
     .container { display: none; }
 }

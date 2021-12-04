@@ -5,9 +5,9 @@ import { SITE_TITLE } from "../data/constants";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import dataTechs from "../data/tech";
-import styles from "../styles/pages.module.css";
-import projectStyles from "../styles/page_projects.module.css";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import styles from "../styles/pages/common.module.css";
+import ownStyles from "../styles/pages/projects.module.css";
 
 function ProjectCard({ data }) {
     const L_ACTION_VISIT = useLangTerm('ACTION_VISIT');
@@ -17,9 +17,9 @@ function ProjectCard({ data }) {
             <>
                 {data.tech.map((id, index) => {
                     return dataTechs[id] ?
-                        <div key={index} className={projectStyles.techWrapper}>
+                        <div key={index} className={ownStyles.techWrapper}>
                             {dataTechs[id].icon}
-                            <span className={projectStyles.tooltip}>{dataTechs[id].name}</span>
+                            <span className={ownStyles.tooltip}>{dataTechs[id].name}</span>
                         </div>
                         : null
                 })}
@@ -29,21 +29,21 @@ function ProjectCard({ data }) {
 
     return (
         data ?
-            <div className={projectStyles.card}>
-                <div className={projectStyles.info}>
-                    <span className={projectStyles.title}>
+            <div className={ownStyles.card}>
+                <div className={ownStyles.info}>
+                    <span className={ownStyles.title}>
                         {data.name}
                     </span>
-                    <span className={projectStyles.description}>
+                    <span className={ownStyles.description}>
                         {data.description}
                     </span>
-                    <span className={projectStyles.techs}>
+                    <span className={ownStyles.techs}>
                         {data.tech && renderTechIcons()}
                     </span>
                 </div>
 
-                <div className={projectStyles.preview}>
-                    <div className={projectStyles.thumbnail}>
+                <div className={ownStyles.preview}>
+                    <div className={ownStyles.thumbnail}>
                         {data.imagePath && <img src={data.imagePath} alt={data.name} />}
                     </div>
                     {data.url &&
@@ -85,7 +85,7 @@ export default function Projects() {
 
             <section>
                 <h2>{L_CLIENT_PROJECTS}</h2>
-                <div className={projectStyles.container}>
+                <div className={ownStyles.container}>
                     <ProjectCard data={projects["kentia"]} />
                     <ProjectCard data={projects["saleth"]} />
                     <ProjectCard data={projects["biochem"]} />
@@ -94,14 +94,14 @@ export default function Projects() {
 
             {/* <section>
                 <h2>{L_OWN_PROJECTS}</h2>
-                <div className={projectStyles.container}>
+                <div className={ownStyles.container}>
                     <ProjectCard data={projects["coursjs"]} />
                 </div>
             </section> */}
 
             <section>
                 <h2>{L_OLD_PROJECTS}</h2>
-                <div className={projectStyles.container}>
+                <div className={ownStyles.container}>
                     <ProjectCard data={projects["coursjs"]} />
                 </div>
             </section>

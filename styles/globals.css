@@ -1,9 +1,9 @@
-@import "preflight.css";
-@import "var-fonts.css";
-@import "var-colors.css";
-@import "var-shadows.css";
-@import "var-transitions.css";
-@import "var-media.css";
+@import "globals/fonts.css";
+@import "globals/colors.css";
+@import "globals/shadows.css";
+@import "globals/transitions.css";
+@import "globals/media.css";
+@import "globals/preflight.css";
 body {
   min-height: 100vh;
   background-color: var(--blueGray-400);
