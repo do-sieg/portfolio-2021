@@ -59,7 +59,6 @@
         opacity 0.3s ease-in 0.3s;
 }
 
-
 .open .closeBtn {
     opacity: 1;
     transform: scale(1);
@@ -68,4 +67,9 @@
 @media (min-width: 640px) {
     /* Resize burger menu on medium screen sizes */
     .container { width: 45%; }
+}
+
+@media (min-width: 1024px) {
+    .overlay { display: none; }
+    .container { display: none; }
 }
