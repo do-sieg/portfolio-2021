@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FaBars } from "react-icons/fa";
-import { BurgerContext } from "../BurgerMenu";
+import { BurgerContext } from "../core/BurgerMenu";
 import LangBar from "./LangBar";
 import Link from "next/link";
 import { useLangTerm } from "../../utils/lang";

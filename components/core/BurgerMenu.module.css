@@ -42,8 +42,8 @@
 }
 
 .closeBtn {
-    composes: btn-icon from "../styles/buttons.module.css";
-    composes: btn-icon-white from "../styles/buttons.module.css";
+    composes: btn-icon from "../../styles/buttons.module.css";
+    composes: btn-icon-white from "../../styles/buttons.module.css";
     position: absolute;
     top: 1rem;
     right: 1rem;

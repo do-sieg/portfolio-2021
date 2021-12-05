@@ -12,14 +12,8 @@ export const BurgerContext = React.createContext({
 export function useBurgerState() {
     const [isOpen, setIsOpen] = useState(false);
 
-    function open() {
-        console.log("OPEN !");
-        setIsOpen(true);
-    }
-
-    function close() {
-        setIsOpen(false);
-    }
+    function open() { setIsOpen(true); }
+    function close() { setIsOpen(false); }
 
     return { isOpen, open, close };
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import { FaCode, FaGraduationCap, FaHome, FaRocket, FaUser } from "react-icons/fa";
 import { useLangTerm } from "../../utils/lang";
-import { BurgerContext } from "../BurgerMenu";
+import { BurgerContext } from "../core/BurgerMenu";
 import styles from "./AppNav.module.css";
 
 export default function AppNav({ asideWrap = false }) {

@@ -1,4 +1,4 @@
-import { BurgerContext, useBurgerState } from '../components/BurgerMenu';
+import { BurgerContext, useBurgerState } from '../components/core/BurgerMenu';
 import AppWrapper from '../components/app/AppWrapper';
 import '../styles/globals.css';
 
