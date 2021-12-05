@@ -11,7 +11,6 @@ export default {
         504: "Gateway Timeout.",
     },
 
-    DEV_NAME: "Daniel Orchanian",
     DEV_JOB_TITLES: "Web Developer & Trainer",
 
     SITE_DESCRIPTION: "Web developer and trainer, I put my expertise at your service to create websites to help your company maximize its results.",

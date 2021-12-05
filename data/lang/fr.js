@@ -11,6 +11,7 @@ export default {
         // 504: "Gateway Timeout.",
     },
 
+    DEV_NAME: "Daniel Orchanian",
     DEV_JOB_TITLES: "Développeur & Formateur Web",
 
     SITE_DESCRIPTION: "Développeur et formateur web, je mets mon expertise à votre service pour créer des sites web qui aideront votre entreprise de maximiser ses résultats.",
