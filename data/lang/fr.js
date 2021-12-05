@@ -90,7 +90,7 @@ export default {
     ),
     TEACH_TRAINING: (
         <p>
-            Après six ans d'enseignement dans le secondaire, je mets à profit cette expérience dans le monde de la <strong>formation</strong>.
+            Après six ans d'enseignement en secondaire, je mets à profit mon expérience dans le monde de la <strong>formation</strong>.
             J'interviens dans divers domaines touchant le web : langages, frameworks, outils...
         </p>
     ),
