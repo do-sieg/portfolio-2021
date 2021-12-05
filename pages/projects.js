@@ -100,12 +100,13 @@ export default function Projects() {
                 </div>
             </section>
 
-            {/* <section>
+            <section>
                 <h2>{L_OWN_PROJECTS}</h2>
                 <div className={ownStyles.container}>
-                    <ProjectCard data={projects["coursjs"]} />
+                    <ProjectCard data={projects["scriptmanager"]} />
+                    <ProjectCard data={projects["xpal"]} />
                 </div>
-            </section> */}
+            </section>
 
             <section>
                 <h2>{L_DEMO_PROJECTS}</h2>

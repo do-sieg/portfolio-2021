@@ -102,5 +102,23 @@
             "mysql"
         ],
         "repository": "https://github.com/do-sieg/oc7-reseau-social-nodejs-reactjs"
+    },
+    "scriptmanager": {
+        "name": "ScriptManager",
+        "description": "Un système complet qui permet d'utiliser des fichiers ruby externes comme scripts pour RPG Maker XP, permettant d'exporter, de charger et d'importer ces scripts.",
+        "imagePath": "images/projects/rmxp-hd-logo.png",
+        "tech": [
+            "ruby"
+        ],
+        "repository": "https://github.com/do-sieg/rmxp-scriptmanager"
+    },
+    "xpal": {
+        "name": "XPAL (XP Antilag System)",
+        "description": "Une refonte totale du moteur graphique de RPG Maker XP pour optimiser l'affichage des maps.",
+        "imagePath": "images/projects/rmxp-hd-logo.png",
+        "tech": [
+            "ruby"
+        ],
+        "repository": "https://github.com/do-sieg/rmxp-XPAL-antilag"
     }
 }
