@@ -28,6 +28,8 @@ export default function AppHead() {
             <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet"></link>
 
+            <meta property="og:image" content={FAVICON_URL} />
+
             {/* <meta property="og:url" content={url} />
             <meta property="og:site_name" content={siteName} />
             <meta property="og:type" content={type} />

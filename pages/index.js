@@ -12,6 +12,7 @@ import styles from "../styles/pages/common.module.css";
 
 export default function Home() {
     const { locale } = useRouter();
+    const L_DEV_JOB_TITLES = useLangTerm('DEV_JOB_TITLES');
     const L_HOME_TITLE = useLangTerm('HOME_TITLE');
     const L_HOME_INTRO_DEV = useLangTerm('HOME_INTRO_DEV');
     const L_HOME_INTRO_TEACH = useLangTerm('HOME_INTRO_TEACH');
@@ -28,7 +29,7 @@ export default function Home() {
     return (
         <AppLayout className={styles.container}>
             <Head>
-                <title>{SITE_TITLE} - {L_HOME_TITLE}</title>
+                <title>{SITE_TITLE} - {L_DEV_JOB_TITLES}</title>
             </Head>
 
             <Hero />
