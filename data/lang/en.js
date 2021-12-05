@@ -23,6 +23,7 @@ export default {
     PHOTO_CREDITS: "Photo Credits",
 
     ACTION_VISIT: "Visit",
+    ACTION_VIEW_CODE: "Code",
     ACTION_BACK_HOME: "Return to the home page",
 
     SHORT_MONTHS: [
@@ -74,8 +75,8 @@ export default {
     PROJECTS_TITLE: "Projects",
     CLIENT_PROJECTS: "Client Projects",
     OWN_PROJECTS: "Personal Projects",
+    DEMO_PROJECTS: "Demos",
     OLD_PROJECTS: "Old Projects",
-    DEMOS: "Demos",
 
     TEACH_TITLE: "Teaching",
     TEACH_INTRO: (

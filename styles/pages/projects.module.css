@@ -108,6 +108,12 @@
     height: 100%;
 }
 
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 @media (min-width: 640px) {
     .card { flex-direction: row; }
     /* .card:nth-child(even) {

@@ -42,5 +42,65 @@
             "reactjs",
             "nextjs"
         ]
+    },
+    "oc2": {
+        "name": "Transformer une maquette en site web",
+        "description": "Réalisation d'un site web (design seulement) sur la base d'une maquette.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "html",
+            "css"
+        ],
+        "url": "https://do-sieg.github.io/oc2-maquette-html-css/",
+        "repository": "https://github.com/do-sieg/oc2-maquette-html-css"
+    },
+    "oc3": {
+        "name": "Dynamiser une page web",
+        "description": "Création d'un site (design seulement) orienté mobile, utilisant des animations.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "html",
+            "css",
+            "sass"
+        ],
+        "url": "https://do-sieg.github.io/oc3-animations-dynamiques-css/",
+        "repository": "https://github.com/do-sieg/oc3-animations-dynamiques-css"
+    },
+    "oc4": {
+        "name": "Optimiser un site web existant",
+        "description": "Identification et correction d'un certain nombre de problèmes sur un site existant.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "seo"
+        ],
+        "repository": "https://github.com/do-sieg/oc4-optimisation-site-web"
+    },
+    "oc6": {
+        "name": "API pour une application d'avis gastronomiques",
+        "description": "Conception d'une interface de programmation (API) permettant de créer et modifier du contenu, le tout de manière sécurisée.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "nodejs",
+            "mongodb"
+        ],
+        "repository": "https://github.com/do-sieg/oc6-api-securisee-nodejs"
+    },
+    "oc7": {
+        "name": "Créer un réseau social d’entreprise",
+        "description": "Création d'un réseau social interne pour les employés d'une entreprise.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "html",
+            "css",
+            "less",
+            "js",
+            "reactjs",
+            "nodejs",
+            "mysql"
+        ],
+        "repository": "https://github.com/do-sieg/oc7-reseau-social-nodejs-reactjs"
     }
 }

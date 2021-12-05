@@ -42,5 +42,65 @@
             "reactjs",
             "nextjs"
         ]
+    },
+    "oc2": {
+        "name": "Transform a model into a website",
+        "description": "Creating a website (design only) based on a model.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "html",
+            "css"
+        ],
+        "url": "https://do-sieg.github.io/oc2-maquette-html-css/",
+        "repository": "https://github.com/do-sieg/oc2-maquette-html-css"
+    },
+    "oc3": {
+        "name": "Make a web page dynamic",
+        "description": "Creating a mobile-oriented website (design only), using animations.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "html",
+            "css",
+            "sass"
+        ],
+        "url": "https://do-sieg.github.io/oc3-animations-dynamiques-css/",
+        "repository": "https://github.com/do-sieg/oc3-animations-dynamiques-css"
+    },
+    "oc4": {
+        "name": "Optimize an existing website",
+        "description": "Identifying and correcting a number of problems on an existing website.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "seo"
+        ],
+        "repository": "https://github.com/do-sieg/oc4-optimisation-site-web"
+    },
+    "oc6": {
+        "name": "API for a food review app",
+        "description": "Designing a programming interface (API) to create and modify content, with security in mind.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "nodejs",
+            "mongodb"
+        ],
+        "repository": "https://github.com/do-sieg/oc6-api-securisee-nodejs"
+    },
+    "oc7": {
+        "name": "Create a corporate social network",
+        "description": "Creating an internal social network for the employees of a company.",
+        "imagePath": "images/projects/oc-logo.jpg",
+        "tech": [
+            "html",
+            "css",
+            "less",
+            "js",
+            "reactjs",
+            "nodejs",
+            "mysql"
+        ],
+        "repository": "https://github.com/do-sieg/oc7-reseau-social-nodejs-reactjs"
     }
 }

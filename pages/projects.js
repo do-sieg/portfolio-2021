@@ -11,6 +11,7 @@ import ownStyles from "../styles/pages/projects.module.css";
 
 function ProjectCard({ data }) {
     const L_ACTION_VISIT = useLangTerm('ACTION_VISIT');
+    const L_ACTION_VIEW_CODE = useLangTerm('ACTION_VIEW_CODE');
 
     function renderTechIcons() {
         return (
@@ -46,11 +47,18 @@ function ProjectCard({ data }) {
                     <div className={ownStyles.thumbnail}>
                         {data.imagePath && <img src={data.imagePath} alt={data.name} />}
                     </div>
-                    {data.url &&
-                        <a className={styles.promptBtn} href={data.url} target="_blank">
-                            {L_ACTION_VISIT} <FaExternalLinkAlt />
-                        </a>
-                    }
+                    <div className={ownStyles.actions}>
+                        {data.url &&
+                            <a className={styles.promptBtn} href={data.url} target="_blank">
+                                {L_ACTION_VISIT} <FaExternalLinkAlt />
+                            </a>
+                        }
+                        {data.repository &&
+                            <a className={styles.promptBtn} href={data.repository} target="_blank">
+                                {L_ACTION_VIEW_CODE} <FaExternalLinkAlt />
+                            </a>
+                        }
+                    </div>
                 </div>
             </div>
             : null
@@ -63,8 +71,8 @@ export default function Projects() {
     const L_PROJECTS_TITLE = useLangTerm('PROJECTS_TITLE');
     const L_CLIENT_PROJECTS = useLangTerm('CLIENT_PROJECTS');
     const L_OWN_PROJECTS = useLangTerm('OWN_PROJECTS');
+    const L_DEMO_PROJECTS = useLangTerm('DEMO_PROJECTS');
     const L_OLD_PROJECTS = useLangTerm('OLD_PROJECTS');
-    const L_DEMOS = useLangTerm('DEMOS');
 
     useEffect(() => {
         try {
@@ -98,6 +106,17 @@ export default function Projects() {
                     <ProjectCard data={projects["coursjs"]} />
                 </div>
             </section> */}
+
+            <section>
+                <h2>{L_DEMO_PROJECTS}</h2>
+                <div className={ownStyles.container}>
+                    <ProjectCard data={projects["oc2"]} />
+                    <ProjectCard data={projects["oc3"]} />
+                    <ProjectCard data={projects["oc4"]} />
+                    <ProjectCard data={projects["oc6"]} />
+                    <ProjectCard data={projects["oc7"]} />
+                </div>
+            </section>
 
             <section>
                 <h2>{L_OLD_PROJECTS}</h2>
