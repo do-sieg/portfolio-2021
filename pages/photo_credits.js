@@ -8,6 +8,7 @@ import ownStyles from "../styles/pages/photo_credits.module.css";
 
 export default function PhotoCredits() {
     const L_PHOTO_CREDITS = useLangTerm("PHOTO_CREDITS");
+    const L_BACKGROUND_IMAGES = useLangTerm("BACKGROUND_IMAGES");
     const L_DAYS = useLangTerm("DAYS");
 
     return (
@@ -19,17 +20,20 @@ export default function PhotoCredits() {
 
             <h1>{L_PHOTO_CREDITS}</h1>
 
-            <div className={ownStyles.container}>
-                {[1, 2, 3, 4, 5, 6, 0].map((index) => {
-                    const data = backgrounds[index];
-                    return (
-                        <div key={index} className={ownStyles.item}>
-                            <img src={data.thumbnail} alt={L_DAYS[index]} />
-                            <span>({L_DAYS[index]}) {data.author}</span>
-                        </div>
-                    );
-                })}
-            </div>
+            <section>
+                <h2>{L_BACKGROUND_IMAGES}</h2>
+                <div className={ownStyles.container}>
+                    {[1, 2, 3, 4, 5, 6, 0].map((index) => {
+                        const data = backgrounds[index];
+                        return (
+                            <div key={index} className={ownStyles.item}>
+                                <img src={data.thumbnail} alt={L_DAYS[index]} />
+                                <span>({L_DAYS[index]}) {data.author}</span>
+                            </div>
+                        );
+                    })}
+                </div>
+            </section>
         </AppLayout>
     );
 }

@@ -1,5 +1,5 @@
 import { DiRuby } from "react-icons/di";
-import { FaCss3Alt, FaGitAlt, FaHtml5, FaJsSquare, FaLess, FaNodeJs, FaPaperPlane, FaPhp, FaReact, FaSass, FaSearchengin } from "react-icons/fa";
+import { FaCss3Alt, FaGitAlt, FaHtml5, FaJsSquare, FaLess, FaNodeJs, FaPaperPlane, FaPhp, FaReact, FaSass, FaSearchengin, FaWordpress } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiGodotengine, SiMongodb, SiNextDotJs } from "react-icons/si";
 
@@ -19,5 +19,6 @@ export default {
     gdscript: { name: "GDScript", icon: <SiGodotengine /> },
     git: { name: "Git", icon: <FaGitAlt /> },
     seo: { name: "SEO", icon: <FaSearchengin /> },
+    wp: { name: "Wordpress", icon: <FaWordpress /> },
     nocode: { name: "No Code", icon: <FaPaperPlane /> },
 };

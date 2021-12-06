@@ -22,6 +22,7 @@ export default {
     NAV_TEACH: "Cours",
 
     PHOTO_CREDITS: "Crédits photo",
+    BACKGROUND_IMAGES: "Images d'arrière-plan",
 
     ACTION_VISIT: "Visiter",
     ACTION_VIEW_CODE: "Code",
@@ -69,7 +70,7 @@ export default {
     HOME_INTRO_TEACH: (
         <p>
             J'interviens également en tant que <strong>formateur</strong> et <strong>mentor</strong>.
-            En groupe ou par cours particuliers, je vous aide à réaliser votre potentiel.
+            En groupe ou en cours particuliers, je vous aide à réaliser votre potentiel.
         </p>
     ),
 

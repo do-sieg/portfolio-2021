@@ -20,6 +20,7 @@ export default {
     NAV_TEACH: "Teaching",
 
     PHOTO_CREDITS: "Photo Credits",
+    BACKGROUND_IMAGES: "Background Images",
 
     ACTION_VISIT: "Visit",
     ACTION_VIEW_CODE: "Code",
@@ -67,7 +68,7 @@ export default {
     HOME_INTRO_TEACH: (
         <p>
             I also work as a <strong>teacher</strong> and <strong>mentor</strong>.
-            In group or during private sessions, I help you achieve your potential.
+            In group or in private sessions, I help you achieve your potential.
         </p>
     ),
 

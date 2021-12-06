@@ -75,6 +75,7 @@ export default function Home() {
                     "ruby",
                     "gdscript",
                     "mongodb",
+                    "wp",
                     "sass",
                     "less",
                     "git",
