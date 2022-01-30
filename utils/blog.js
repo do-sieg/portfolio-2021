@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { mdLoad, mdToHtml } from "./markdown";
+import { mdLoad } from "./markdown";
 
 const POSTS_DIR = "pages/blog/posts";
 
