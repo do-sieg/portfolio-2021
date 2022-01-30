@@ -1,6 +1,6 @@
 import Head from "next/head";
 import AppLayout from "../../components/app/AppLayout";
-import { BlogPost } from "../../components/app/BlogPost";
+import BlogPostItem from "../../components/app/BlogPostItem";
 import { SITE_TITLE } from "../../data/constants";
 import { useLangTerm } from "../../utils/lang";
 import { getPosts } from "../../utils/blog";
@@ -33,19 +33,19 @@ export default function Blog({ posts }) {
                 {posts.length > 0 ?
                     <div className={ownStyles.postList}>
                         {posts.map((post, index) => {
-                            return <BlogPost key={index} post={post} featured={index == 0} />;
+                            return <BlogPostItem key={index} post={post} featured={index == 0} />;
                         })}
                         {posts.map((post, index) => {
-                            return <BlogPost key={index} post={post} />;
+                            return <BlogPostItem key={index} post={post} />;
                         })}
                         {posts.map((post, index) => {
-                            return <BlogPost key={index} post={post} />;
+                            return <BlogPostItem key={index} post={post} />;
                         })}
                         {posts.map((post, index) => {
-                            return <BlogPost key={index} post={post} />;
+                            return <BlogPostItem key={index} post={post} />;
                         })}
                         {posts.map((post, index) => {
-                            return <BlogPost key={index} post={post} />;
+                            return <BlogPostItem key={index} post={post} />;
                         })}
                     </div>
                     :

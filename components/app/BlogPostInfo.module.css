@@ -1,0 +1,33 @@
+
+.container {
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--blueGray-300);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+.container img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: small;
+}
+
+.authorName {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.texts time {
+    font-weight: 350;
+}

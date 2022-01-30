@@ -1,0 +1,20 @@
+.container h1 {
+    text-align: left;
+}
+
+
+.coverImage {
+    width: 100%;
+    max-height: 600px;
+    margin: 2rem 0 2rem;
+}
+
+.container blockquote {
+    padding: 1rem 0;
+    border-left: 0.35rem solid var(--secondary);
+    /* background-color: var(--blueGray-400); */
+}
+
+.container blockquote p {
+    margin: 0;
+}

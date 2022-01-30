@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { mdLoad } from "./markdown";
+import { mdLoad, mdToHtml } from "./markdown";
 
 const POSTS_DIR = "pages/blog/posts";
 
@@ -23,4 +23,11 @@ export async function getPosts(locale, limit = 0) {
         console.error(`Error on loading blog posts for locale '${locale}'.`, err.message);
         return [];
     }
+}
+
+export async function getPost(locale, slug) {
+    const data = mdLoad(path.join(POSTS_DIR, locale, `${slug}.md`));
+    const htmlContent = await mdToHtml(data.content);
+    data.htmlContent = htmlContent;
+    return data;
 }
