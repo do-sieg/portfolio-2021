@@ -1,0 +1,22 @@
+---
+title: Test FR
+excerpt: Petit test FR des familles parce que voilà quoi parce que là vraiment ras-le-bol de ces âneries 
+date: "2020-03-16"
+author:
+    name: Daniel Orchanian
+    picture: images/profile/profile_03_square.jpg
+coverImage:
+    path: images/blog/covers/christin-hume-Hcfwew744z4-unsplash.jpg
+    authorName: Christin Hume
+    authorUrl: https://unsplash.com/@christinhumephoto
+published: true
+---
+
+
+# Ceci est un test FR
+
+Coucou les gens !
+
+Comment ça va ?
+
+Moi ça va super.

@@ -1,0 +1,129 @@
+.postListContainer {
+    margin-top: 2rem;
+    border-top: solid 1px var(--blueGray-300);
+    padding-top: 2rem;
+}
+
+.postList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.postItem {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blueGray-500);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-all);
+    border-radius: 1rem 2rem 1rem;
+}
+
+.postItem:hover, .postItem:active {
+    box-shadow: var(--shadow-xl);
+}
+
+.postCover {
+    height: 10rem;
+}
+
+.postCover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1rem 2rem 0 0;
+}
+
+.postData {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    filter: var(--drop-shadow-lg);
+}
+
+.featuredPost .postData {
+    margin: auto 0;
+}
+
+.postData h3 {
+    font-size: x-large;
+    color: var(--secondary);
+}
+
+.postData p {
+    flex: 1;
+    text-indent: unset;
+    font-size: large;
+}
+
+.postInfo {
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--blueGray-400);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+.postInfo img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.postInfoText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: small;
+}
+
+.postInfoText .authorName {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.postInfoText time {
+    font-weight: 350;
+}
+
+@media (min-width: 640px) {
+    .postList {
+        grid-template-columns: 1fr 1fr;
+    }
+    .featuredPost {
+        min-height: 20rem;
+        grid-column: span 2;
+    }
+    .featuredPost {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .featuredPost .postCover {
+        height: unset;
+        flex: 7;
+    }
+    .featuredPost .postData {
+        flex: 5;
+    }
+    .featuredPost h3 {
+        font-size: xx-large;
+    }
+    .featuredPost .postCover img {
+        border-radius: 1rem 0 0 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .postList {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .featuredPost {
+        min-height: 22rem;
+        grid-column: span 3;
+    }
+}

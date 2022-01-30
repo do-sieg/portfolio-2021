@@ -20,6 +20,7 @@ export default {
     // NAV_ABOUT: "About Me",
     NAV_PROJECTS: "Projets",
     NAV_TEACH: "Cours",
+    NAV_BLOG: "Blog",
 
     PHOTO_CREDITS: "Crédits photo",
     BACKGROUND_IMAGES: "Images d'arrière-plan",
@@ -28,6 +29,7 @@ export default {
     ACTION_VIEW_CODE: "Code",
     ACTION_BACK_HOME: "Revenir à la page d'accueil",
 
+    DATE_FORMAT: "DD MM YY",
     SHORT_MONTHS: [
         "JAN", "FÉV", "MAR", "AVR",
         "MAI", "JUN", "JUL", "AOU",
@@ -115,4 +117,6 @@ export default {
         </>
     ),
 
+    BLOG_INTRO: <p>Mes derniers articles sur la vie de développeur, les technos, etc...</p>,
+    BLOG_NO_ARTICLES: "Pas encore d'article. Ils arrivent bientôt.",
 }

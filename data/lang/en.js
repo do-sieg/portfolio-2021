@@ -18,6 +18,7 @@ export default {
     NAV_HOME: "Home",
     NAV_PROJECTS: "Projects",
     NAV_TEACH: "Teaching",
+    NAV_BLOG: "Blog",
 
     PHOTO_CREDITS: "Photo Credits",
     BACKGROUND_IMAGES: "Background Images",
@@ -26,6 +27,7 @@ export default {
     ACTION_VIEW_CODE: "Code",
     ACTION_BACK_HOME: "Return to the home page",
 
+    DATE_FORMAT: "MM DD, YY",
     SHORT_MONTHS: [
         "JAN", "FEB", "MAR", "APR",
         "MAY", "JUN", "JUL", "AUG",
@@ -112,6 +114,9 @@ export default {
             </p>
         </>
     ),
+
+    BLOG_INTRO: <p>My latest articles on life as a developer, technology, etc...</p>,
+    BLOG_NO_ARTICLES: "No articles yet. Coming soon.",
 
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",
