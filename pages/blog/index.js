@@ -1,5 +1,5 @@
-import Head from "next/head";
 import AppLayout from "../../components/app/AppLayout";
+import AppHead from "../../components/app/AppHead";
 import BlogPostItem from "../../components/app/BlogPostItem";
 import { SITE_TITLE } from "../../data/constants";
 import { useLangTerm } from "../../utils/lang";
@@ -20,10 +20,7 @@ export default function Blog({ posts }) {
 
     return (
         <AppLayout className={styles.container}>
-
-            <Head>
-                <title>{SITE_TITLE} - {L_NAV_BLOG}</title>
-            </Head>
+            <AppHead title={`${SITE_TITLE} - ${L_NAV_BLOG}`} />
 
             <h1>{L_NAV_BLOG}</h1>
 

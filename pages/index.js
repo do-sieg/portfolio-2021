@@ -4,6 +4,7 @@ import { useLangTerm } from "../utils/lang";
 // import Timeline, { mapEventsFromData } from "../components/Timeline";
 // import events from "../data/events";
 import AppLayout from "../components/app/AppLayout";
+import AppHead from "../components/app/AppHead";
 import Skillset from "../components/app/Skillset";
 import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
 import Hero from "../components/app/Hero";
@@ -28,9 +29,7 @@ export default function Home() {
 
     return (
         <AppLayout className={styles.container}>
-            <Head>
-                <title>{SITE_TITLE} - {L_DEV_JOB_TITLES}</title>
-            </Head>
+            <AppHead title={`${SITE_TITLE} - ${L_DEV_JOB_TITLES}`} />
 
             <Hero />
 

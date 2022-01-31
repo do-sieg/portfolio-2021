@@ -1,5 +1,5 @@
-import Head from "next/head";
 import AppLayout from "../components/app/AppLayout";
+import AppHead from "../components/app/AppHead";
 import { SITE_TITLE } from "../data/constants";
 import { useLangTerm } from "../utils/lang";
 import backgrounds from "../data/backgrounds.json";
@@ -13,10 +13,7 @@ export default function PhotoCredits() {
 
     return (
         <AppLayout className={styles.container}>
-
-            <Head>
-                <title>{SITE_TITLE} - {L_PHOTO_CREDITS}</title>
-            </Head>
+            <AppHead title={`${SITE_TITLE} - ${L_PHOTO_CREDITS}`} />
 
             <h1>{L_PHOTO_CREDITS}</h1>
 

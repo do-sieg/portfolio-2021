@@ -1,6 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
 import AppLayout from "../components/app/AppLayout";
+import AppHead from "../components/app/AppHead";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useLangTerm } from "../utils/lang";
 import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
@@ -25,9 +25,7 @@ export default function Teach() {
 
     return (
         <AppLayout className={styles.container}>
-            <Head>
-                <title>{SITE_TITLE} - {L_TEACH_TITLE}</title>
-            </Head>
+            <AppHead title={`${SITE_TITLE} - ${L_TEACH_TITLE}`} />
 
             <h1>{L_TEACH_TITLE}</h1>
 

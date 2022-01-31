@@ -1,16 +1,21 @@
 import Head from "next/head";
-import { FAVICON_URL, SITE_TITLE } from "../../data/constants";
+import { FAVICON_URL, SITE_TITLE, SITE_URL } from "../../data/constants";
 import { useLangTerm } from "../../utils/lang";
 
-export default function AppHead() {
+export default function AppHead({
+    title = SITE_TITLE,
+    description,
+    imageUrl = FAVICON_URL,
+    type = "website",
+}) {
     const L_SITE_DESCRIPTION = useLangTerm("SITE_DESCRIPTION");
 
     return (
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            <title>{SITE_TITLE}</title>
-            <meta name="description" content={L_SITE_DESCRIPTION} />
+            <title>{title}</title>
+            <meta name="description" content={description ?? L_SITE_DESCRIPTION} />
 
             <link rel="icon" href={FAVICON_URL} sizes="32x32" />
             <link rel="icon" href={FAVICON_URL} sizes="192x192" />
@@ -28,25 +33,25 @@ export default function AppHead() {
             <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"></link>
             <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet"></link>
 
-            <meta property="og:image" content={FAVICON_URL} />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description ?? L_SITE_DESCRIPTION} />
+            <meta property="og:image" content={imageUrl} />
+            <meta property="og:type" content={type} />
+            
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={description} />
+            <meta name="twitter:image" content={imageUrl} />
 
             {/* <meta property="og:url" content={url} />
             <meta property="og:site_name" content={siteName} />
-            <meta property="og:type" content={type} />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:image" content={image} />
             {imageWidth && <meta property="og:image:width" content={imageWidth} />}
             {imageWidth && <meta property="og:image:height" content={imageHeight} />}
             <meta property="og:locale" content={locale} />
             {localeAlternates.map((element, index) => {
                 return <meta key={index} property="og:locale:alternate" content={element} />
             })} */}
-            
-            {/* <meta name="twitter:card" content="summary" />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={image} /> */}
+
         </Head>
     );
 }

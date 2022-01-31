@@ -1,5 +1,5 @@
-import Head from "next/head";
 import AppLayout from "../components/app/AppLayout";
+import AppHead from "../components/app/AppHead";
 import { useLangTerm } from "../utils/lang";
 import { SITE_TITLE } from "../data/constants";
 import { useEffect, useState } from "react";
@@ -85,9 +85,7 @@ export default function Projects() {
 
     return (
         <AppLayout className={styles.container}>
-            <Head>
-                <title>{SITE_TITLE} - {L_PROJECTS_TITLE}</title>
-            </Head>
+            <AppHead title={`${SITE_TITLE} - ${L_PROJECTS_TITLE}`} />
 
             <h1>{L_PROJECTS_TITLE}</h1>
 

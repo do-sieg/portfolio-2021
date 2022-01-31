@@ -1,7 +1,7 @@
-import Head from "next/head";
 import Link from "next/link";
 import { useLangTerm } from "../utils/lang";
 import AppLayout from "../components/app/AppLayout";
+import AppHead from "../components/app/AppHead";
 import styles from "../styles/pages/common.module.css";
 import ownStyles from "../styles/pages/error.module.css";
 
@@ -12,10 +12,7 @@ function Error({ statusCode }) {
 
     return (
         <AppLayout className={ownStyles.container}>
-
-            <Head>
-                <title>{L_ERROR}</title>
-            </Head>
+            <AppHead title={L_ERROR} />
 
             <h1>{statusCode || L_ERROR}</h1>
             <p>{L_ERR_MESSAGES[statusCode || 0]}</p>
