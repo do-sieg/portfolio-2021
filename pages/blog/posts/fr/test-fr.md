@@ -6,6 +6,7 @@ category: first
 author:
     name: Daniel Orchanian
     picture: /images/profile/profile_03_square.jpg
+    id: daniel
 coverImage:
     path: /images/blog/covers/christin-hume-Hcfwew744z4-unsplash.jpg
     authorName: Christin Hume

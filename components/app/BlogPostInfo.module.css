@@ -31,3 +31,8 @@
 .publicationDate {
     font-weight: 350;
 }
+
+.readingTime {
+    font-weight: 350;
+    color: var(--blueGray-300);
+}

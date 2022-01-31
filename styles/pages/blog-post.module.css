@@ -31,3 +31,49 @@ p.postDescription {
 .container blockquote p {
     margin: 0;
 }
+
+.authorSignature {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--blueGray-300);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.authorSignature img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.authorName {
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.authorLink {
+    font-size: large;
+    font-weight: 300;
+}
+
+.authorLink a {
+    font-weight: inherit;
+    color: inherit;
+}
+
+.authorLink a:hover, .authorLink a:active {
+    text-decoration: underline;
+    transition: var(--transition-all);
+}
+
+.coverImageAuthor {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: large;
+    font-weight: 300;
+    font-style: italic;
+}

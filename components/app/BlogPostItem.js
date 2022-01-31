@@ -21,7 +21,7 @@ export default function BlogPostItem({ post, featured = false }) {
                         {L_BLOG_CATEGORY_NAMES[post.metaData.category]}
                     </a></Link>
                 </div>
-                <Link href={`/blog/${post.slug}`}><a>
+                <Link href={`/blog/${post.slug}`}><a className={styles.postTexts}>
                     <h3>{post.metaData.title}</h3>
                     <p className={styles.postDescription}>{post.metaData.description}</p>
                 </a></Link>

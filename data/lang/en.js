@@ -119,6 +119,10 @@ export default {
     BLOG_NO_ARTICLES: "No articles yet. Coming soon.",
     BLOG_ALL_ARTICLES: "All articles",
     BLOG_READING_TIME: "min read",
+    BLOG_MORE_POSTS_AUTHOR: (authorLink) => {
+        return <span>Read <Link href={authorLink}><a>more posts</a></Link> from this author</span>;
+    },
+    BLOG_PHOTO_CREDITS: "Photo:",
 
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",

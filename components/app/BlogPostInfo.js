@@ -20,7 +20,10 @@ export default function BlogPostInfo({ post }) {
             <img src={post.metaData.author.picture} alt={post.metaData.author.name} />
             <div className={styles.texts}>
                 <div className={styles.authorName}>{post.metaData.author.name}</div>
-                <div className={styles.publicationDate}>{renderDate()} - {post.metaData.readingTime} {L_BLOG_READING_TIME}</div>
+                <div>
+                    <span className={styles.publicationDate}>{renderDate()} - </span>
+                    <span className={styles.readingTime}>{post.metaData.readingTime} {L_BLOG_READING_TIME}</span>
+                </div>
             </div>
         </div>
     );

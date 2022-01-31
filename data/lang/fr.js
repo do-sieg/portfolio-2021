@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default {
     ERROR: "Erreur",
     ERR_MESSAGES: {
@@ -121,6 +123,10 @@ export default {
     BLOG_NO_ARTICLES: "Pas encore d'article. Ils arrivent bientôt.",
     BLOG_ALL_ARTICLES: "Tous les articles",
     BLOG_READING_TIME: "min de lecture",
+    BLOG_MORE_POSTS_AUTHOR: (authorLink) => {
+        return <span>Lire <Link href={authorLink}><a>plus d'articles</a></Link> de cet auteur</span>;
+    },
+    BLOG_PHOTO_CREDITS: "Photo :",
     BLOG_CATEGORY_NAMES: {
         first: "Prime",
         second: "Deuzio",

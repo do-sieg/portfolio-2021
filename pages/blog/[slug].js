@@ -8,6 +8,7 @@ import { useLangTerm } from "../../utils/lang";
 import styles from "../../styles/pages/common.module.css";
 import ownStyles from "../../styles/pages/blog-post.module.css";
 import "highlight.js/styles/vs2015.css";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export async function getStaticPaths({ locales }) {
     const paths = [];
@@ -30,6 +31,8 @@ export async function getStaticProps({ params, locale }) {
 
 export default function BlogPost({ metaData, htmlContent }) {
     const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
+    const L_BLOG_MORE_POSTS_AUTHOR = useLangTerm("BLOG_MORE_POSTS_AUTHOR");
+    const L_BLOG_PHOTO_CREDITS = useLangTerm("BLOG_PHOTO_CREDITS");
 
     return (
         <AppLayout className={styles.container + " " + ownStyles.container}>
@@ -55,6 +58,28 @@ export default function BlogPost({ metaData, htmlContent }) {
             }
 
             <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+
+            <div className={ownStyles.authorSignature}>
+                <img src={metaData.author.picture} alt={metaData.author.name} />
+                <div className={ownStyles.texts}>
+                    <div className={ownStyles.authorName}>{metaData.author.name}</div>
+                    {metaData.author.id &&
+                        <div className={ownStyles.authorLink}>
+                            {/* {L_BLOG_MORE_POSTS_AUTHOR(`/blog/author/${metaData.author.id}`)} */}
+                            {L_BLOG_MORE_POSTS_AUTHOR(`/blog`)}
+                        </div>
+                    }
+                </div>
+            </div>
+
+            {metaData.coverImage.authorName &&
+                <div className={ownStyles.coverImageAuthor}>
+                    {L_BLOG_PHOTO_CREDITS} {metaData.coverImage.authorName}
+                    {metaData.coverImage.authorUrl &&
+                        <a href={metaData.coverImage.authorUrl} target="_blank"><FaExternalLinkAlt /></a>
+                    }
+                </div>
+            }
 
         </AppLayout>
     );

@@ -55,11 +55,15 @@
     text-transform: uppercase;
 }
 
-.postData h3 {
+.postTexts {
+    flex: 1;
+}
+
+.postTexts h3 {
     font-size: x-large;
 }
 
-.postData p.postDescription {
+.postTexts p.postDescription {
     flex: 1;
     text-indent: unset;
     font-size: large;

@@ -4,8 +4,9 @@ description: Petit test FR
 date: "2023-01-05"
 category: second
 author:
-    name: Daniel O
-    picture: /images/profile/profile_03_square.jpg
+    name: Daniel 2
+    picture: /images/profile/profile_02.jpg
+    id: daniel2
 coverImage:
     path: /images/blog/covers/christin-hume-Hcfwew744z4-unsplash.jpg
     authorName: Christin Hume
