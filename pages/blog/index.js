@@ -35,18 +35,6 @@ export default function Blog({ posts }) {
                         {posts.map((post, index) => {
                             return <BlogPostItem key={index} post={post} featured={index == 0} />;
                         })}
-                        {posts.map((post, index) => {
-                            return <BlogPostItem key={index} post={post} />;
-                        })}
-                        {posts.map((post, index) => {
-                            return <BlogPostItem key={index} post={post} />;
-                        })}
-                        {posts.map((post, index) => {
-                            return <BlogPostItem key={index} post={post} />;
-                        })}
-                        {posts.map((post, index) => {
-                            return <BlogPostItem key={index} post={post} />;
-                        })}
                     </div>
                     :
                     <p>{L_BLOG_NO_ARTICLES}</p>
