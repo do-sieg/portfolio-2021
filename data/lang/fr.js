@@ -119,4 +119,8 @@ export default {
 
     BLOG_INTRO: <p>Mes derniers articles sur la vie de développeur, les technos, etc...</p>,
     BLOG_NO_ARTICLES: "Pas encore d'article. Ils arrivent bientôt.",
+    BLOG_CATEGORY_NAMES: {
+        first: "Prime",
+        second: "Deuzio",
+    },
 }

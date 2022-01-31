@@ -2,6 +2,7 @@
 title: Test FR
 description: Petit test FR des familles parce que voilà quoi parce que là vraiment ras-le-bol de ces âneries 
 date: "2020-03-16"
+category: first
 author:
     name: Daniel Orchanian
     picture: /images/profile/profile_03_square.jpg

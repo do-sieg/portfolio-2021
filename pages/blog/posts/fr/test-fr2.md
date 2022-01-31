@@ -2,6 +2,7 @@
 title: Test FR
 description: Petit test FR
 date: "2023-01-05"
+category: second
 author:
     name: Daniel O
     picture: /images/profile/profile_03_square.jpg

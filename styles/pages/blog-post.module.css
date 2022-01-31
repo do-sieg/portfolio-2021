@@ -1,7 +1,21 @@
 .container h1 {
+    margin-bottom: 0;
     text-align: left;
 }
 
+.postCategory {
+    margin-bottom: 0.5rem;
+    font-size: large;
+    font-weight: 500;
+    color: var(--secondary);
+    text-transform: uppercase;
+}
+
+p.postDescription {
+    margin-bottom: 2rem;
+    text-indent: unset;
+    color: var(--blueGray-100);
+}
 
 .coverImage {
     width: 100%;
@@ -12,7 +26,6 @@
 .container blockquote {
     padding: 1rem 0;
     border-left: 0.35rem solid var(--secondary);
-    /* background-color: var(--blueGray-400); */
 }
 
 .container blockquote p {

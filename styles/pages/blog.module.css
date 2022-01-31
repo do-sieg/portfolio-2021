@@ -47,15 +47,23 @@
     margin: auto 0;
 }
 
+.postCategory {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary);
+    text-transform: uppercase;
+}
+
 .postData h3 {
     font-size: x-large;
-    color: var(--secondary);
 }
 
 .postData p {
     flex: 1;
     text-indent: unset;
     font-size: large;
+    color: var(--blueGray-200);
 }
 
 @media (min-width: 640px) {
