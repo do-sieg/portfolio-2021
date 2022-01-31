@@ -1,6 +1,6 @@
 import Head from "next/head";
 import AppLayout from "../../components/app/AppLayout";
-import { SITE_TITLE } from "../../data/constants";
+import { SITE_TITLE, SITE_URL } from "../../data/constants";
 import { getPost, getPosts } from "../../utils/blog";
 import BlogPostInfo from "../../components/app/BlogPostInfo";
 import styles from "../../styles/pages/common.module.css";
@@ -33,6 +33,14 @@ export default function BlogPost({ metaData, htmlContent }) {
 
             <Head>
                 <title>{metaData.title} - {SITE_TITLE}</title>
+                <meta name="description" content={metaData.description} />
+
+                <meta property="og:title" content={`${metaData.title} - ${SITE_TITLE}`} />
+                <meta property="og:description" content={metaData.description} />
+                <meta property="og:type" content="article" />
+                {metaData.coverImage.path &&
+                    <meta property="og:image" content={[SITE_URL, metaData.coverImage.path].join("/")} />
+                }
             </Head>
 
             {/* category */}

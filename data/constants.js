@@ -1,4 +1,5 @@
 export const SITE_TITLE = "Daniel Orchanian";
+export const SITE_URL = "https://danielorchanian.fr";
 export const DEV_FIRST_NAME = "Daniel";
 export const DEV_LAST_NAME = "Orchanian";
 export const DEV_EMAIL = "d.orchanian@gmail.com";

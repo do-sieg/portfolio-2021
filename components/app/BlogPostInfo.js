@@ -19,7 +19,7 @@ export default function BlogPostInfo({ post }) {
             <img src={post.metaData.author.picture} alt={post.metaData.author.name} />
             <div className={styles.texts}>
                 <div className={styles.authorName}>{post.metaData.author.name}</div>
-                <time>{renderDate()}</time>
+                <div className={styles.publicationDate}>{renderDate()}</div>
             </div>
         </div>
     );
