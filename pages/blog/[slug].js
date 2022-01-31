@@ -34,7 +34,7 @@ export default function BlogPost({ metaData, htmlContent }) {
             <AppHead
                 title={`${metaData.title} - ${SITE_TITLE}`}
                 description={metaData.description}
-                imageUrl={metaData.coverImage.path ?? [SITE_URL, metaData.coverImage.path].join("/")}
+                imageUrl={metaData.coverImage.path ? SITE_URL + metaData.coverImage.path : null}
                 type="article"
             />
 
