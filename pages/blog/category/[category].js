@@ -7,7 +7,6 @@ import { useLangTerm } from "../../../utils/lang";
 import styles from "../../../styles/pages/common.module.css";
 import ownStyles from "../../../styles/pages/blog.module.css";
 
-
 export async function getStaticPaths({ locales }) {
     const paths = [];
     for (const locale of locales) {

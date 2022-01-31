@@ -15,16 +15,18 @@ export default function BlogPostItem({ post, featured = false }) {
                     </a></Link>
                 }
             </div>
-            <Link href={`/blog/${post.slug}`}><a className={styles.postData}>
+            <div className={styles.postData}>
                 <div className={styles.postCategory}>
                     <Link href={`/blog/category/${post.metaData.category}`}><a>
                         {L_BLOG_CATEGORY_NAMES[post.metaData.category]}
                     </a></Link>
                 </div>
-                <h3>{post.metaData.title}</h3>
-                <p className={styles.postDescription}>{post.metaData.description}</p>
+                <Link href={`/blog/${post.slug}`}><a>
+                    <h3>{post.metaData.title}</h3>
+                    <p className={styles.postDescription}>{post.metaData.description}</p>
+                </a></Link>
                 <BlogPostInfo post={post} />
-            </a></Link>
+            </div>
         </div>
     );
 }
