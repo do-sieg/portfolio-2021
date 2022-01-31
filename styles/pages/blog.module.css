@@ -59,7 +59,7 @@
     font-size: x-large;
 }
 
-.postData p {
+.postData p.postDescription {
     flex: 1;
     text-indent: unset;
     font-size: large;
