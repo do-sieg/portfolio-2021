@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { mdLoad, mdToHtml } from "./markdown";
 
-const POSTS_DIR = "pages/blog/posts";
+const POSTS_DIR = "data/blog_posts";
 
 function getReadingTime(locale, text) {
     const averageWordsPerMinute = {
