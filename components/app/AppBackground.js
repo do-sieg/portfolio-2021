@@ -5,7 +5,7 @@ export default function AppBackground() {
     return (
         <div
             className={styles.container}
-            style={{ backgroundImage: `linear-gradient(135deg, rgb(255 255 255 /50%), rgb(255 255 255 /80%)), url(..${backgrounds[new Date().getDay()].path})` }}
+            style={{ backgroundImage: `linear-gradient(135deg, rgb(255 255 255 /50%), rgb(255 255 255 /80%)), url(${backgrounds[new Date().getDay()].path})` }}
         />
     );
 }
