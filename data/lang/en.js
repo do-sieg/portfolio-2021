@@ -117,7 +117,7 @@ export default {
 
     BLOG_INTRO: <p>My latest articles on life as a developer, technology, etc...</p>,
     BLOG_NO_ARTICLES: "No articles yet. Coming soon.",
-
+    BLOG_ALL_ARTICLES: "All articles",
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",
     // HOME_SLIDE_PROMPT_3: "Looking for a translator?",

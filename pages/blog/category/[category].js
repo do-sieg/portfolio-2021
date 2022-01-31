@@ -1,6 +1,7 @@
 import AppLayout from "../../../components/app/AppLayout";
 import AppHead from "../../../components/app/AppHead";
 import BlogPostItem from "../../../components/app/BlogPostItem";
+import BlogCategorySelector from "../../../components/app/BlogToolbar";
 import { getPosts } from "../../../utils/blog";
 import { BLOG_CATEGORIES, SITE_TITLE } from "../../../data/constants";
 import { useLangTerm } from "../../../utils/lang";
@@ -29,6 +30,8 @@ export default function Blog({ category, posts }) {
     return (
         <AppLayout className={styles.container}>
             <AppHead title={`${L_BLOG_CATEGORY_NAMES[category]} - ${SITE_TITLE}`} />
+
+            <BlogCategorySelector />
 
             <h1>{L_BLOG_CATEGORY_NAMES[category]}</h1>
 

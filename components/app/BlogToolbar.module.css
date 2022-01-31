@@ -1,0 +1,18 @@
+.container {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.selectorContainer select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: large;
+    color: var(--blueGray-500);
+    cursor: pointer;
+}
+
+.selectorContainer option {
+    min-height: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
