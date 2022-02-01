@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { DEV_LINKEDIN } from "../constants";
 
 export default {
     ERROR: "Erreur",
@@ -119,7 +121,12 @@ export default {
         </>
     ),
 
-    BLOG_INTRO: <p>Mes derniers articles sur la vie de développeur, les technos, etc...</p>,
+    BLOG_INTRO: (
+        <>
+            <p>Mes derniers articles sur la programmation, les technos, la vie de développeur... et d'autres sujets aussi.</p>
+            <p>N'hésitez pas à me suivre sur <a href={DEV_LINKEDIN} target="_blank">LinkedIn <FaExternalLinkAlt style={{ display: "inline" }} /></a> pour recevoir des notifications sur le nouveau contenu.</p>
+        </>
+    ),
     BLOG_NO_ARTICLES: "Pas encore d'article. Ils arrivent bientôt.",
     BLOG_ALL_ARTICLES: "Tous les articles",
     BLOG_READING_TIME: "min de lecture",
@@ -128,7 +135,6 @@ export default {
     },
     BLOG_PHOTO_CREDITS: "Photo :",
     BLOG_CATEGORY_NAMES: {
-        first: "Prime",
-        second: "Deuzio",
+        javascript: "JavaScript",
     },
 }

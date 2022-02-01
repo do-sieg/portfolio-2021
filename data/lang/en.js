@@ -1,3 +1,6 @@
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { DEV_LINKEDIN } from "../constants";
+
 export default {
     ERROR: "Error",
     ERR_MESSAGES: {
@@ -116,6 +119,13 @@ export default {
     ),
 
     BLOG_INTRO: <p>My latest articles on life as a developer, technology, etc...</p>,
+    
+    BLOG_INTRO: (
+        <>
+            <p>My latest articles about programming, technologies, developer's life... and a lot of other things.</p>
+            <p>Be sure to follow me on <a href={DEV_LINKEDIN} target="_blank">LinkedIn <FaExternalLinkAlt style={{ display: "inline" }} /></a> to receive notifications on new content.</p>
+        </>
+    ),
     BLOG_NO_ARTICLES: "No articles yet. Coming soon.",
     BLOG_ALL_ARTICLES: "All articles",
     BLOG_READING_TIME: "min read",
@@ -123,6 +133,9 @@ export default {
         return <span>Read <Link href={authorLink}><a>more posts</a></Link> from this author</span>;
     },
     BLOG_PHOTO_CREDITS: "Photo:",
+    BLOG_CATEGORY_NAMES: {
+        javascript: "JavaScript",
+    },
 
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",

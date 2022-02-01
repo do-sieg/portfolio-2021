@@ -6,6 +6,7 @@ import path from "path";
 import grayMatter from "gray-matter";
 import { rehype } from "rehype";
 import rehypeHighlight from "rehype-highlight";
+import rehypeExternalLinks from "rehype-external-links";
 import rehypeStringify from "rehype-stringify/lib";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -25,6 +26,7 @@ export async function mdToHtml(code) {
         .use(remarkParse)
         .use(remarkGfm)
         .use(remarkRehype)
+        .use(rehypeExternalLinks, { target: '_blank', rel: ['nofollow'] })
         .use(rehypeStringify)
         .process(code)
 

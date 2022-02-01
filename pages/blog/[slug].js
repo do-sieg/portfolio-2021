@@ -40,7 +40,7 @@ export default function BlogPost({ metaData, htmlContent }) {
             <AppHead
                 title={`${metaData.title} - ${SITE_TITLE}`}
                 description={metaData.description}
-                imageUrl={metaData.coverImage.path ? SITE_URL + metaData.coverImage.path : null}
+                imageUrl={metaData?.coverImage?.path ? SITE_URL + metaData.coverImage.path : null}
                 type="article"
             />
 
@@ -53,11 +53,11 @@ export default function BlogPost({ metaData, htmlContent }) {
             <p className={ownStyles.postDescription}>{metaData.description}</p>
             <BlogPostInfo post={{ metaData }} />
 
-            {metaData.coverImage.path &&
+            {metaData?.coverImage?.path &&
                 <img className={ownStyles.coverImage} src={metaData.coverImage.path} alt={metaData.title} />
             }
 
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            <div className={ownStyles.postContent} dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
             <div className={ownStyles.authorSignature}>
                 <img src={metaData.author.picture} alt={metaData.author.name} />
@@ -72,7 +72,7 @@ export default function BlogPost({ metaData, htmlContent }) {
                 </div>
             </div>
 
-            {metaData.coverImage.authorName &&
+            {metaData?.coverImage?.authorName &&
                 <div className={ownStyles.coverImageAuthor}>
                     {L_BLOG_PHOTO_CREDITS} {metaData.coverImage.authorName}
                     {metaData.coverImage.authorUrl &&

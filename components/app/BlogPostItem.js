@@ -9,7 +9,7 @@ export default function BlogPostItem({ post, featured = false }) {
     return (
         <div className={styles.postItem + " " + (featured ? styles.featuredPost : "")}>
             <div className={styles.postCover}>
-                {post.metaData.coverImage.path &&
+                {post.metaData?.coverImage?.path &&
                     <Link href={`/blog/${post.slug}`}><a>
                         <img className={styles.coverImage} src={post.metaData.coverImage.path} alt={post.metaData.title} />
                     </a></Link>
