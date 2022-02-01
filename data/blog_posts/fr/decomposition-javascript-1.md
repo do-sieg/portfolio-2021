@@ -8,10 +8,9 @@ author:
     name: Daniel Orchanian
     picture: /images/profile/profile_03_square.jpg
 coverImage:
-    path: /images/blog/covers/decomposition-javascript-1.jpg
-    authorName: Glitch Lab App
-    authorUrl: https://unsplash.com/@glitchlab
-  
+    path: /images/blog/covers/decomposition-javascript-1-v2.jpg
+    authorName: Julietta Watson
+    authorUrl: https://unsplash.com/@jwatson95
 published: true
 ---
 
@@ -19,7 +18,7 @@ La technique que nous allons voir aujourd'hui s'appelle l'**affectation par déc
 
 Elle permet d'**extraire** des données d'un **tableau** ou d'un **objet clé-valeurs** et de les **affecter à des variables**.
 
-> J'ai rien pigé...
+> J'ai rien pigé, mais ça a l'air dégoûtant...
 
 Ok, on va commencer par un exemple...
 
