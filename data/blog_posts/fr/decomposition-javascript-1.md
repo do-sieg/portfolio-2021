@@ -73,9 +73,9 @@ let [name, age, city] = list;
 console.log(name, age, city); // => "Alex", 25, "Paris"
 ```
 
-Non, vous ne rêvez pas : on a bien créé trois variables _name_, _age_ et _city_ à partir de notre tableau, et **en une seule ligne** !
+Non, vous ne rêvez pas : on a bien créé trois variables _name_, _age_ et _city_ à partir de notre tableau, et **en une seule ligne** !
 
-> Mais quelle est cette **sorcellerie** ?!
+> Mais quelle est cette **sorcellerie** ?!
 
 
 ## La décomposition : comment ça marche
@@ -96,7 +96,7 @@ Chaque élément du tableau de gauche (_name, age, city_) prend une valeur du ta
 
 Le tableau de droite est **décomposé** : ses valeurs sont **distribuées à gauche**, dans nos trois variables.
 
-La grande originalité est qu'**on peut utiliser le mot-clé _let_** avant les crochets pour signaler qu'on **crée des variables** !
+La grande originalité est qu'**on peut utiliser le mot-clé _let_** avant les crochets pour signaler qu'on **crée des variables** !
 
 > Puissant...
 
@@ -107,7 +107,7 @@ const list = ["Alex", "M", 25, "designer", "Paris"];
 let [name, gender, age, job, city] = list;
 ```
 
-Pratique, non ?
+Pratique, non ?
 
 Et ça marche aussi avec des **constantes** :
 
@@ -158,12 +158,12 @@ Mais il est possible grâce à la décomposition d'**extraire des variables** po
 let { name, age } = user;
 ```
 
-> Mais attends un peu... et les autres clés ?
+> Mais attends un peu... et les autres clés ?
 
 
 ## Flexible... et lisible
 
-C'est justement là que la décomposition montre sa puissance : avec les objets, **pas besoin de récupérer toutes les clés** ! Vous ne récupérez que ce qui vous intéresse !
+C'est justement là que la décomposition montre sa puissance : avec les objets, **pas besoin de récupérer toutes les clés** ! Vous ne récupérez que ce qui vous intéresse !
 
 On peut même carrément récupérer les valeurs dans l'**ordre voulu** :
 
@@ -174,7 +174,7 @@ console.log(job); // => "designer"
 console.log(name); // => "Alex"
 ```
 
-> Mais c'est trop bien !
+> Mais c'est trop bien !
 
 Oui. Par exemple, si vous utilisez des composants **React** avec des classes, vous devez souvent utiliser les variables de `this.state` et `this.props` :
 
@@ -194,13 +194,14 @@ const total = salary * bonus - tax * multiplier;
 
 > Mais on a rajouté **deux lignes**...
 
-Certes, mais quelle **amélioration en lisibilité** ! Il est bien plus rapide de parcourir ce code que le précédent.
+Certes, mais quelle **amélioration en lisibilité** ! Il est bien plus rapide de parcourir ce code que le précédent.
 
-_**Note** : Attention, le **nombre de lignes** ne doit pas devenir une **obsession** ! **La lisibilité doit l'emporter sur la concision du code**._
+_**Note** : Attention, le **nombre de lignes** ne doit pas devenir une **obsession** ! **La lisibilité doit l'emporter sur la concision du code**._
 
 
 ## La suite... bientôt
 
 Voilà voilà. La partie 2 traitera d'**applications un peu plus poussées** de la décomposition.
 
-En attendant, pour de plus amples (TRÈS amples) détails sur la décomposition, voici un lien vers la page MDN qui en traite : [Affecter par décomposition (MDN)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+En attendant, pour de plus amples (TRÈS amples) détails sur la décomposition, voici un lien vers la page MDN qui en traite :
+- [Affecter par décomposition (MDN)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).

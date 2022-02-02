@@ -45,6 +45,14 @@
     /* color: var(--secondary); */
 }
 
+.container ol, .container ul {
+    list-style: disc;
+    font-weight: 300;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    padding-inline-start: 2.5rem;
+}
+
 .promptBox {
     margin: 2rem auto 3rem;
     display: flex;

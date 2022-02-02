@@ -38,7 +38,7 @@ p.postDescription {
 
 .postContent blockquote {
     margin: 2.5rem 0;
-    padding: 0.5rem 0 0.5rem 1.5rem;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
     border-left: 0.45rem solid var(--secondary);
     font-style: italic;
     background-color: hsla(0, 0%, 100%, 0.1);
@@ -48,6 +48,17 @@ p.postDescription {
 
 .postContent blockquote p {
     margin: 0;
+}
+
+.postContent a {
+    color: var(--link);
+    border-bottom: 0.15rem solid transparent;
+    transition: var(--transition-all-fast);
+}
+
+.postContent a:hover, .postContent a:active {
+    color: var(--link-hover);
+    border-color: var(--link-hover);
 }
 
 .authorSignature {
@@ -78,12 +89,12 @@ p.postDescription {
 }
 
 .authorLink a {
-    font-weight: inherit;
-    color: inherit;
+    border-bottom: 0.0625rem solid transparent;
 }
 
 .authorLink a:hover, .authorLink a:active {
-    text-decoration: underline;
+    color: var(--link-hover);
+    border-color: var(--link-hover);
     transition: var(--transition-all);
 }
 

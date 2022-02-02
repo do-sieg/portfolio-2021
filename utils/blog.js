@@ -27,8 +27,8 @@ export async function getPosts({ locale, category = null, limit = 0 }) {
                     metaData: data.data,
                 }
             })
-            .filter(obj => obj.metaData.published)
-            .filter(obj => category ? obj.metaData.category === category : true)
+            .filter(post => post.metaData.published && new Date(post.metaData.date) <= new Date())
+            .filter(post => category ? post.metaData.category === category : true)
             .sort((a, b) => new Date(b.metaData.date) - new Date(a.metaData.date));
     } catch (err) {
         console.error(`Error on loading blog posts for locale '${locale}'.`, err.message);
