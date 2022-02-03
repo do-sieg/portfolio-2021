@@ -1,6 +1,6 @@
 ---
 title: La Décomposition en JavaScript (2)
-description: Exploiter les possibilités de cette technique pour des fonctions plus maniables.
+description: Adopter cette technique et en exploiter les possibilités pour des fonctions plus maniables.
 date: "2022-02-03"
 category: javascript
 author:
@@ -88,7 +88,7 @@ Il existe bien des techniques, mais ça donne des choses comme :
 getData(...[,,,], "pantoufle");
 ```
 
-(Je mets un lien en fin d'article si ça vous intéresse.)
+(Je mets un lien à ce sujet en fin d'article si ça vous intéresse.)
 
 (Mais c'est moche.)
 
@@ -114,15 +114,16 @@ function getData({ limit, page, countryId, search }) {
 }
 ```
 
-> Ooooooh... J'ai pas tout compris...
+> Ooooooh...  
+> J'ai pas tout compris...
 
 Eh bien c'est très simple : JavaScript permet de décomposer un objet **directement dans les arguments de la fonction** !
 
-> Ooooooh... (J'ai compris.)
+> Ooooooh... (Là j'ai compris.)
 
-L'idée à retenir est qu'on ne fonctionne plus **à l'aveugle** comme avec argument unique en _options_, mais on a bien accès à toutes les clés possibles de cet objet **dans la définition de la fonction**.
+L'idée à retenir est qu'on ne fonctionne plus **à l'aveugle** avec un argument unique _options_, mais on a bien accès à toutes les clés possibles de cet objet **dans la définition de la fonction**.
 
-On traite **directement avec les clés** au lieu de passer par l'objet même (_limit_ au lieu d'_options.limit_).
+On traite **directement avec les clés** au lieu de passer par l'objet même (ex : _limit_ au lieu d'_options.limit_).
 
 
 ## Encore plus de flexibilité
@@ -144,6 +145,8 @@ function getData(page, limit, { countryId = 0, search = "" }) {
     // On a fait de page et limit des arguments requis
 }
 ```
+
+> Re-ooooooh...
 
 Et on n'a **pas à se soucier de l'ordre des arguments**, car un objet ne tient pas compte de l'ordre de ses clés (et c'est pour ça qu'on n'utilise pas de tableau) !
 
@@ -174,7 +177,7 @@ function MyComponent(props) {
 La même chose **en décomposant props**, ce qui rend les choses plus lisibles :
 
 ```js
-function MyComponent({ firstName, lastName, age }) {
+function MyComponent({ firstName, lastName, age = 20 }) {
     return <div>{firstName} {lastName}, {age} ans</div>;
 }
 
@@ -192,7 +195,7 @@ Avantages :
 On peut utiliser ça partout, pas uniquement dans React !
 
 
-## Une approche à utiliser au bon moment
+## Une technique à rapidement adopter
 
 **Attention** : ne passez pas **toutes vos fonctions** avec des arguments décomposés dans un objet...
 
@@ -212,5 +215,5 @@ C'est donc la fin de cette explication en deux parties sur la décomposition en 
 Je remets le lien de MDN qui traite du sujet dans ses moindres détails :
 - [Affecter par décomposition (MDN)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
-Et un lien vers StackOverflow avec les astuces pour "sauter des arguments" quand on appelle une fonction JavaScript (en anglais) :
+Et un lien vers StackOverflow (en anglais) avec les astuces pour "sauter des arguments" quand on appelle une fonction JavaScript avec des arguments "classiques" :
 - [Skip arguments in a JavaScript function](https://stackoverflow.com/questions/32518615/skip-arguments-in-a-javascript-function)
