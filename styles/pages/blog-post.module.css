@@ -106,3 +106,18 @@ p.postDescription {
     font-weight: 300;
     font-style: italic;
 }
+
+.postFooter {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--blueGray-300);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .postFooter {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

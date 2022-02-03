@@ -137,4 +137,6 @@ export default {
     BLOG_CATEGORY_NAMES: {
         javascript: "JavaScript",
     },
+    BLOG_CATEGORY_MORE: "Articles dans",
+    BLOG_CATEGORY_SEE_ALL_POSTS: (n) => n === 1 ? `${n} article` : `Voir les ${n} articles`,
 }

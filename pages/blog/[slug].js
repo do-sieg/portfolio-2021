@@ -4,6 +4,7 @@ import AppHead from "../../components/app/AppHead";
 import { SITE_TITLE, SITE_URL } from "../../data/constants";
 import { getPost, getPosts } from "../../utils/static-blog";
 import BlogPostInfo from "../../components/app/BlogPostInfo";
+import BlogCategoryCard from "../../components/app/BlogCategoryCard";
 import { useLangTerm } from "../../utils/lang";
 import styles from "../../styles/pages/common.module.css";
 import ownStyles from "../../styles/pages/blog-post.module.css";
@@ -22,14 +23,21 @@ export async function getStaticPaths({ locales }) {
 export async function getStaticProps({ params, locale }) {
     const { slug } = params;
     const data = await getPost({ locale, slug });
+
+    const featuredPosts = await getPosts({ locale, category: data.data.category, limit: 3 });
+    const totalPosts = await getPosts({ locale, category: data.data.category });
+
     const props = {
         metaData: data.data,
         htmlContent: data.htmlContent,
+        featuredPosts,
+        totalPosts: totalPosts.length,
     };
+
     return { props };
 }
 
-export default function BlogPost({ metaData, htmlContent }) {
+export default function BlogPost({ metaData, htmlContent, featuredPosts, totalPosts }) {
     const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
     const L_BLOG_MORE_POSTS_AUTHOR = useLangTerm("BLOG_MORE_POSTS_AUTHOR");
     const L_BLOG_PHOTO_CREDITS = useLangTerm("BLOG_PHOTO_CREDITS");
@@ -49,6 +57,7 @@ export default function BlogPost({ metaData, htmlContent }) {
                     {L_BLOG_CATEGORY_NAMES[metaData.category]}
                 </a></Link>
             </div>
+
             <h1>{metaData.title}</h1>
             <p className={ownStyles.postDescription}>{metaData.description}</p>
             <BlogPostInfo post={{ metaData }} />
@@ -80,6 +89,14 @@ export default function BlogPost({ metaData, htmlContent }) {
                     }
                 </div>
             }
+
+            <div className={ownStyles.postFooter}>
+                <BlogCategoryCard
+                    category={metaData.category}
+                    featuredPosts={featuredPosts}
+                    totalPosts={totalPosts}
+                />
+            </div>
 
         </AppLayout>
     );

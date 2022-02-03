@@ -136,6 +136,8 @@ export default {
     BLOG_CATEGORY_NAMES: {
         javascript: "JavaScript",
     },
+    BLOG_CATEGORY_MORE: "More in",
+    BLOG_CATEGORY_SEE_ALL_POSTS: (n) => n === 1 ? `${n} article` : `See all ${n} articles`,
 
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",
