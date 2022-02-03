@@ -23,6 +23,23 @@ function getTerm(termKey, locale) {
     return terms[termKey];
 }
 
+export function useLangDate() {
+    function renderDate(dateString) {
+        const L_DATE_FORMAT = useLangTerm("DATE_FORMAT");
+        const L_SHORT_MONTHS = useLangTerm("SHORT_MONTHS");
+
+        const d = new Date(dateString);
+        let str = L_DATE_FORMAT;
+        str = str.replace(/dd/gi, d.getDate());
+        str = str.replace(/mm/gi, L_SHORT_MONTHS[d.getMonth()]);
+        str = str.replace(/yy/gi, d.getFullYear());
+        return str;
+    }
+
+    return renderDate;
+}
+
+
 // export function useLangTerm(termKey, forceLocale = null) {
 //     try {
 //         let { locales, locale, defaultLocale } = useRouter();

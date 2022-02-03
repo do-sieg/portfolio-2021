@@ -1,6 +1,6 @@
 import AppLayout from "../../../components/app/AppLayout";
 import AppHead from "../../../components/app/AppHead";
-import BlogPostItem from "../../../components/app/BlogPostItem";
+import BlogPostCard from "../../../components/app/BlogPostCard";
 import BlogToolbar from "../../../components/app/BlogToolbar";
 import { getPosts } from "../../../utils/static-blog";
 import { BLOG_CATEGORIES, SITE_TITLE } from "../../../data/constants";
@@ -39,7 +39,7 @@ export default function Blog({ category, posts }) {
                 {posts.length > 0 ?
                     <div className={ownStyles.postList}>
                         {posts.map((post, index) => {
-                            return <BlogPostItem key={index} post={post} featured={index == 0} />;
+                            return <BlogPostCard key={index} post={post} featured={index == 0} />;
                         })}
                     </div>
                     :

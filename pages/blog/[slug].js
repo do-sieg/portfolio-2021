@@ -3,7 +3,7 @@ import AppLayout from "../../components/app/AppLayout";
 import AppHead from "../../components/app/AppHead";
 import { SITE_TITLE, SITE_URL } from "../../data/constants";
 import { getPost, getPosts } from "../../utils/static-blog";
-import BlogPostInfo from "../../components/app/BlogPostInfo";
+import BlogPostMeta from "../../components/app/BlogPostMeta";
 import BlogCategoryCard from "../../components/app/BlogCategoryCard";
 import { useLangTerm } from "../../utils/lang";
 import styles from "../../styles/pages/common.module.css";
@@ -60,7 +60,7 @@ export default function BlogPost({ metaData, htmlContent, featuredPosts, totalPo
 
             <h1>{metaData.title}</h1>
             <p className={ownStyles.postDescription}>{metaData.description}</p>
-            <BlogPostInfo post={{ metaData }} />
+            <BlogPostMeta post={{ metaData }} />
 
             {metaData?.coverImage?.path &&
                 <img className={ownStyles.coverImage} src={metaData.coverImage.path} alt={metaData.title} />
