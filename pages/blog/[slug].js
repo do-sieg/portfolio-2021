@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AppLayout from "../../components/app/AppLayout";
 import AppHead from "../../components/app/AppHead";
+import Separator from "../../components/app/Separator";
 import { SITE_TITLE, SITE_URL } from "../../data/constants";
 import { getPost, getPosts } from "../../utils/static-blog";
 import BlogPostMeta from "../../components/app/BlogPostMeta";
@@ -68,6 +69,8 @@ export default function BlogPost({ metaData, htmlContent, featuredPosts, totalPo
 
             <div className={ownStyles.postContent} dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
+            <Separator top="4rem" bottom="2rem" />
+
             <div className={ownStyles.authorSignature}>
                 <img src={metaData.author.picture} alt={metaData.author.name} />
                 <div className={ownStyles.texts}>
@@ -89,6 +92,8 @@ export default function BlogPost({ metaData, htmlContent, featuredPosts, totalPo
                     }
                 </div>
             }
+
+            <Separator top="4rem" bottom="2rem" />
 
             <div className={ownStyles.postFooter}>
                 <BlogCategoryCard

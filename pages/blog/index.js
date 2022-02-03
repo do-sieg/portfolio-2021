@@ -1,5 +1,6 @@
 import AppLayout from "../../components/app/AppLayout";
 import AppHead from "../../components/app/AppHead";
+import Separator from "../../components/app/Separator";
 import BlogPostCard from "../../components/app/BlogPostCard";
 import BlogToolbar from "../../components/app/BlogToolbar";
 import { getPosts } from "../../utils/static-blog";
@@ -29,7 +30,9 @@ export default function Blog({ posts }) {
 
             {L_BLOG_INTRO}
 
-            <section className={ownStyles.postListContainer}>
+            <Separator top="2rem" bottom="2rem" />
+
+            <section>
                 {posts.length > 0 ?
                     <div className={ownStyles.postList}>
                         {posts.map((post, index) => {

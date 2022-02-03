@@ -62,9 +62,6 @@ p.postDescription {
 }
 
 .authorSignature {
-    margin-top: 4rem;
-    padding: 2rem 0;
-    border-top: 1px solid var(--blueGray-300);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -99,6 +96,7 @@ p.postDescription {
 }
 
 .coverImageAuthor {
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -108,9 +106,6 @@ p.postDescription {
 }
 
 .postFooter {
-    margin-top: 4rem;
-    padding: 2rem 0;
-    border-top: 1px solid var(--blueGray-300);
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
