@@ -1,6 +1,6 @@
 ---
 title: La Décomposition en JavaScript (2)
-description: Exploiter les possibilités de cette technique pour une un code plus maniable. 
+description: Exploiter les possibilités de cette technique pour des fonctions plus maniables.
 date: "2022-02-03"
 category: javascript
 author:
