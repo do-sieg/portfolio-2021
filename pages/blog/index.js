@@ -2,7 +2,7 @@ import AppLayout from "../../components/app/AppLayout";
 import AppHead from "../../components/app/AppHead";
 import BlogPostItem from "../../components/app/BlogPostItem";
 import BlogToolbar from "../../components/app/BlogToolbar";
-import { getPosts } from "../../utils/blog";
+import { getPosts } from "../../utils/static-blog";
 import { SITE_TITLE } from "../../data/constants";
 import { useLangTerm } from "../../utils/lang";
 import styles from "../../styles/pages/common.module.css";
