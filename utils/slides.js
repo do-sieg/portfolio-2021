@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useSlides(max, autoNextTime = false) {
+export function useSlides(max, autoNextTime = 0) {
     const [slideIndex, setSlideIndex] = useState(0);
     const timeoutRef = useRef(null);
 

@@ -55,7 +55,7 @@ export default function Teach() {
 
             <section>
                 <h2>{L_REVIEWS}</h2>
-                <SlideShowReviews autoNextTime={8000} />
+                <SlideShowReviews autoNextTime={9000} />
             </section>
         </AppLayout>
     );

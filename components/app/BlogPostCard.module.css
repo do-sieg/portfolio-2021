@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    background-color: var(--blueGray-500);
+    background-color: var(--blueGray-600);
     border-radius: 1rem 2rem 1rem;
     box-shadow: var(--shadow-lg);
     transition: var(--transition-all);
