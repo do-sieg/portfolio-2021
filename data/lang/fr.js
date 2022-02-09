@@ -136,6 +136,7 @@ export default {
     BLOG_PHOTO_CREDITS: "Photo :",
     BLOG_CATEGORY_NAMES: {
         javascript: "JavaScript",
+        jobs: "Emploi",
     },
     BLOG_CATEGORY_MORE: "Articles dans",
     BLOG_CATEGORY_SEE_ALL_POSTS: (n) => n === 1 ? `${n} article` : `Voir les ${n} articles`,

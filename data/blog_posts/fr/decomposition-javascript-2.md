@@ -8,7 +8,7 @@ author:
     name: Daniel Orchanian
     picture: /images/profile/profile_03_square.jpg
 coverImage:
-    path: /images/blog/covers/decomposition-javascript-2.jpg
+    path: /images/blog/covers/fr/decomposition-javascript-2.jpg
     authorName: Glitch Lab App
     authorUrl: https://unsplash.com/@glitchlab
 published: true

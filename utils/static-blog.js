@@ -27,7 +27,8 @@ export async function getPosts({ locale, category = null, limit = 0 }) {
                     metaData: data.data,
                 }
             })
-            .filter(post => post.metaData.published && new Date(post.metaData.date) <= new Date())
+            .filter(post => post.metaData.published)
+            // .filter(post => post.metaData.published && new Date(post.metaData.date) <= new Date())
             .filter(post => category ? post.metaData.category === category : true)
             .sort((a, b) => new Date(b.metaData.date) - new Date(a.metaData.date));
     } catch (err) {

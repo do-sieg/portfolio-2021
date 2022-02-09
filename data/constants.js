@@ -12,4 +12,5 @@ export const RESUME_PATHS = {
 };
 export const BLOG_CATEGORIES = [
     "javascript",
+    "jobs",
 ];

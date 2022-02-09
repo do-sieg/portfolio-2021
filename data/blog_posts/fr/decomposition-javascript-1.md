@@ -8,7 +8,7 @@ author:
     name: Daniel Orchanian
     picture: /images/profile/profile_03_square.jpg
 coverImage:
-    path: /images/blog/covers/decomposition-javascript-1-v2.jpg
+    path: /images/blog/covers/fr/decomposition-javascript-1-v2.jpg
     authorName: Julietta Watson
     authorUrl: https://unsplash.com/@jwatson95
 published: true
