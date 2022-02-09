@@ -8,13 +8,13 @@ import { getPost, getPosts } from "../../utils/static-blog";
 import BlogPostMeta from "../../components/app/BlogPostMeta";
 import BlogCategoryCard from "../../components/app/BlogCategoryCard";
 import BlogPostCard from "../../components/app/BlogPostCard";
-import { useEffect, useState } from "react";
-import { useLangTerm } from "../../utils/lang";
+import { useContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { LangContext, useLangTerm } from "../../utils/lang";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import styles from "../../styles/pages/common.module.css";
 import ownStyles from "../../styles/pages/blog-post.module.css";
 import "highlight.js/styles/vs2015.css";
-import { useRouter } from "next/router";
 
 export async function getStaticPaths({ locales }) {
     const paths = [];
@@ -30,7 +30,7 @@ export async function getStaticProps({ params, locale }) {
     const data = await getPost({ locale, slug });
 
     const featuredCtgPosts = await getPosts({ locale, category: data.data.category, limit: 3 });
-    const totalPosts = await getPosts({ locale, category: data.data.category });
+    const totalCtgPosts = await getPosts({ locale, category: data.data.category });
 
     const props = {
         locale,
@@ -38,24 +38,34 @@ export async function getStaticProps({ params, locale }) {
         metaData: data.data,
         htmlContent: data.htmlContent,
         featuredCtgPosts,
-        totalPosts: totalPosts.length,
+        totalCtgPosts: totalCtgPosts.length,
     };
 
     return { props };
 }
 
-export default function BlogPost({ locale, slug, metaData, htmlContent, featuredCtgPosts, totalPosts }) {
+export default function BlogPost({ locale, slug, metaData, htmlContent, featuredCtgPosts, totalCtgPosts }) {
     const router = useRouter();
+    const { setLangLinks, clearLangLinks } = useContext(LangContext);
     const [featuredPosts, setFeaturedPosts] = useState([]);
     const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
     const L_BLOG_MORE_POSTS_AUTHOR = useLangTerm("BLOG_MORE_POSTS_AUTHOR");
     const L_BLOG_PHOTO_CREDITS = useLangTerm("BLOG_PHOTO_CREDITS");
 
+    useEffect(() => {
+        clearLangLinks();
+        if (metaData.translations) {
+            Object.entries(metaData.translations).forEach(([lang, slug]) => {
+                setLangLinks(lang, slug);
+            });
+        }
+    }, [router.asPath]);
+
     useEffect(async () => {
         try {
             const response = await axios.post("/api/blog", { locale, limit: 2, current: slug });
             setFeaturedPosts(response.data.posts);
-        } catch (ert) {
+        } catch (err) {
             setFeaturedPosts([]);
         }
     }, [router.asPath]);
@@ -116,7 +126,7 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
                 <BlogCategoryCard
                     category={metaData.category}
                     featuredPosts={featuredCtgPosts}
-                    totalPosts={totalPosts}
+                    totalPosts={totalCtgPosts}
                 />
 
                 {featuredPosts.map((post) => {

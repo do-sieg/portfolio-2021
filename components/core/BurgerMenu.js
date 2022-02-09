@@ -7,7 +7,7 @@ export const BurgerContext = React.createContext({
     isOpen: false, open: null, close: null
 });
 
-// This hook has to be called in the App component and pass as the value prop
+// This hook has to be called in the App component and be passed as the value prop
 // for BurgerContext
 export function useBurgerState() {
     const [isOpen, setIsOpen] = useState(false);

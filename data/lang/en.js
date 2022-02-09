@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { DEV_LINKEDIN } from "../constants";
 

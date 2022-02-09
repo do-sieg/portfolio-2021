@@ -11,6 +11,8 @@ coverImage:
     path: /images/blog/covers/fr/cinq-problemes-recrutement.jpg
     authorName: Eric Prouzet
     authorUrl: https://unsplash.com/@eprouzet
+translations:
+    en: five-issues-recruiting
 published: true
 ---
 
@@ -35,7 +37,7 @@ C'est parti...
 
 Il y a plusieurs mois, on me contacte pour un job. Le recruteur **manque le rendez-vous** téléphonique et quand il me rappelle, je suis avec mon épouse enceinte de six mois au supermarché.
 
-Je lâche donc mon épouse en pleines courses et file boucler l'entretien téléphonique **dans ma voiture sur le parking**.
+Je lâche donc mon épouse en pleines courses et file boucler l'entretien téléphonique au silence, **dans ma voiture sur le parking**.
 
 (Oui, j'étais jeune et naïf. Aujourd'hui, j'aurais ignoré cet appel.)
 
@@ -57,9 +59,9 @@ D'ailleurs...
 
 Quand on demande la rémunération, et que le recruteur fait tout pour **esquiver** la question...
 
-- Soit il **ignore** l'information, auquel cas le recruteur n'a aucune réponse à nos questions, et la conversation n'ira pas plus loin.
+- Soit il **ignore** l'information, auquel cas le recruteur n'a aucune réponse aux questions importantes, et la conversation n'ira pas plus loin.
 
-- Soit il nous **cache délibérément** la chose, et donc **il y a embrouille**. La conversation n'ira pas plus loin.
+- Soit il nous **cache délibérément** la chose, et donc **il y a probablement une entourloupe**. La conversation n'ira pas plus loin.
 
 - Soit alors il croit que **c'est pas bien de penser à l'argent**. Il est **resté au XVIème siècle**, et la conversation n'ira pas plus loin.
 
@@ -103,9 +105,9 @@ Mais quand c'est **VOUS** qui contactez les gens, et que ceux-ci montent un doss
 
 Pareil quand vous **promettez de "_rappeler lundi_"**. Dites juste que vous nous recontacterez de façon vague, on connaît la formule. C'est simple : **ne donnez pas de date**.
 
-Parce que les gens décalent parfois des choses pour attendre votre appel, surtout quand l'offre leur plaît.
+Parce que les gens décalent parfois des choses pour attendre votre appel, surtout quand **l'offre leur plaît vraiment**.
 
-Vous travaillez dans les **_ressources humaines_**. Il y a des **humains** en face de vous.
+Vous travaillez dans les **_ressources humaines_**. Avec des **humains**.
 
 
 ## Le mot de la fin
