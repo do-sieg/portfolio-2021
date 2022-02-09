@@ -1,8 +1,21 @@
 {
+    "do-blog": {
+        "name": "Blog",
+        "description": "Un blog où je publie mes derniers articles sur la programmation, les technos, la vie de développeur... et d'autres sujets aussi.",
+        "imagePath": "/images/projects/do-logo.png",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "reactjs",
+            "nextjs"
+        ],
+        "link": "/blog"
+    },
     "kentia": {
         "name": "Agence Kentia",
         "description": "Site de coaching, bien-être et relations de couple.",
-        "imagePath": "images/projects/kentia.jpg",
+        "imagePath": "/images/projects/kentia.jpg",
         "tech": [
             "nocode"
         ],
@@ -11,7 +24,7 @@
     "saleth": {
         "name": "Saleth.fr",
         "description": "Blog et journal d'une équipe de développement de jeu indépendant.",
-        "imagePath": "images/projects/saleth.jpg",
+        "imagePath": "/images/projects/saleth.jpg",
         "tech": [
             "html",
             "css",
@@ -22,7 +35,7 @@
     "biochem": {
         "name": "Biochem",
         "description": "Site vitrine de l'Institut de Biochimie d'Erevan (Arménie).",
-        "imagePath": "images/projects/biochem.jpg",
+        "imagePath": "/images/projects/biochem.jpg",
         "tech": [
             "html",
             "css",
@@ -34,7 +47,7 @@
     "coursjs": {
         "name": "CoursJS",
         "description": "Des cours de développement pour débutants (très orientés sur le langage JavaScript et ses frameworks). Ce projet est remanié et les cours intégrés bientôt dans un projet de plus grande envergure.",
-        "imagePath": "images/projects/coursjs.jpg",
+        "imagePath": "/images/projects/coursjs.jpg",
         "tech": [
             "html",
             "css",
@@ -46,7 +59,7 @@
     "oc2": {
         "name": "Transformer une maquette en site web",
         "description": "Réalisation d'un site web (design seulement) sur la base d'une maquette.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "html",
             "css"
@@ -57,7 +70,7 @@
     "oc3": {
         "name": "Dynamiser une page web",
         "description": "Création d'un site (design seulement) orienté mobile, utilisant des animations.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "html",
             "css",
@@ -69,7 +82,7 @@
     "oc4": {
         "name": "Optimiser un site web existant",
         "description": "Identification et correction d'un certain nombre de problèmes sur un site existant.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "html",
             "css",
@@ -81,7 +94,7 @@
     "oc6": {
         "name": "API pour une application d'avis gastronomiques",
         "description": "Conception d'une interface de programmation (API) permettant de créer et modifier du contenu, le tout de manière sécurisée.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "nodejs",
             "mongodb"
@@ -91,7 +104,7 @@
     "oc7": {
         "name": "Créer un réseau social d’entreprise",
         "description": "Création d'un réseau social interne pour les employés d'une entreprise.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "html",
             "css",
@@ -106,7 +119,7 @@
     "scriptmanager": {
         "name": "ScriptManager",
         "description": "Un système complet qui permet d'utiliser des fichiers ruby externes comme scripts pour RPG Maker XP, permettant d'exporter, de charger et d'importer ces scripts.",
-        "imagePath": "images/projects/rmxp-hd-logo.png",
+        "imagePath": "/images/projects/rmxp-hd-logo.png",
         "tech": [
             "ruby"
         ],
@@ -115,7 +128,7 @@
     "xpal": {
         "name": "XPAL (XP Antilag System)",
         "description": "Une refonte totale du moteur graphique de RPG Maker XP pour optimiser l'affichage des maps.",
-        "imagePath": "images/projects/rmxp-hd-logo.png",
+        "imagePath": "/images/projects/rmxp-hd-logo.png",
         "tech": [
             "ruby"
         ],

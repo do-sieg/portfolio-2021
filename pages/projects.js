@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AppLayout from "../components/app/AppLayout";
 import AppHead from "../components/app/AppHead";
 import { useLangTerm } from "../utils/lang";
@@ -5,7 +6,7 @@ import { SITE_TITLE } from "../data/constants";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import dataTechs from "../data/tech";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaDoorOpen, FaExternalLinkAlt } from "react-icons/fa";
 import styles from "../styles/pages/common.module.css";
 import ownStyles from "../styles/pages/projects.module.css";
 
@@ -48,6 +49,11 @@ function ProjectCard({ data }) {
                         {data.imagePath && <img src={data.imagePath} alt={data.name} />}
                     </div>
                     <div className={ownStyles.actions}>
+                        {data.link &&
+                            <Link href={data.link}><a className={styles.promptBtn}>
+                                {L_ACTION_VISIT} <FaDoorOpen />
+                            </a></Link>
+                        }
                         {data.url &&
                             <a className={styles.promptBtn} href={data.url} target="_blank">
                                 {L_ACTION_VISIT} <FaExternalLinkAlt />
@@ -101,6 +107,7 @@ export default function Projects() {
             <section>
                 <h2>{L_OWN_PROJECTS}</h2>
                 <div className={ownStyles.container}>
+                    <ProjectCard data={projects["do-blog"]} />
                     <ProjectCard data={projects["scriptmanager"]} />
                     <ProjectCard data={projects["xpal"]} />
                 </div>

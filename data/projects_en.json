@@ -1,8 +1,21 @@
 {
+    "do-blog": {
+        "name": "Blog",
+        "description": "A blog where I post my latest articles about programming, technologies, developer's life... and a lot of other things.",
+        "imagePath": "/images/projects/do-logo.png",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "reactjs",
+            "nextjs"
+        ],
+        "link": "/blog"
+    },
     "kentia": {
         "name": "Agence Kentia",
         "description": "A website about personal coaching, well-being and couple relationships.",
-        "imagePath": "images/projects/kentia.jpg",
+        "imagePath": "/images/projects/kentia.jpg",
         "tech": [
             "nocode"
         ],
@@ -11,7 +24,7 @@
     "saleth": {
         "name": "Saleth.fr",
         "description": "Blog and diary for an independent game development team.",
-        "imagePath": "images/projects/saleth.jpg",
+        "imagePath": "/images/projects/saleth.jpg",
         "tech": [
             "html",
             "css",
@@ -22,7 +35,7 @@
     "biochem": {
         "name": "Biochem",
         "description": "Presentation website of the Institute of Biochemistry in Yerevan (Armenia).",
-        "imagePath": "images/projects/biochem.jpg",
+        "imagePath": "/images/projects/biochem.jpg",
         "tech": [
             "html",
             "css",
@@ -34,7 +47,7 @@
     "coursjs": {
         "name": "CoursJS",
         "description": "Development courses for beginners (JavaScript-oriented, language and frameworks). This project is being redesigned and the courses will soon be integrated into a larger project.",
-        "imagePath": "images/projects/coursjs.jpg",
+        "imagePath": "/images/projects/coursjs.jpg",
         "tech": [
             "html",
             "css",
@@ -46,7 +59,7 @@
     "oc2": {
         "name": "Transform a model into a website",
         "description": "Creating a website (design only) based on a model.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "html",
             "css"
@@ -57,7 +70,7 @@
     "oc3": {
         "name": "Make a web page dynamic",
         "description": "Creating a mobile-oriented website (design only), using animations.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "html",
             "css",
@@ -69,7 +82,7 @@
     "oc4": {
         "name": "Optimize an existing website",
         "description": "Identifying and correcting a number of problems on an existing website.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "html",
             "css",
@@ -81,7 +94,7 @@
     "oc6": {
         "name": "API for a food review app",
         "description": "Designing a programming interface (API) to create and modify content, with security in mind.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "nodejs",
             "mongodb"
@@ -91,7 +104,7 @@
     "oc7": {
         "name": "Create a corporate social network",
         "description": "Creating an internal social network for the employees of a company.",
-        "imagePath": "images/projects/oc-logo.jpg",
+        "imagePath": "/images/projects/oc-logo.jpg",
         "tech": [
             "html",
             "css",
@@ -106,7 +119,7 @@
     "scriptmanager": {
         "name": "ScriptManager",
         "description": "A full system allowing the use of external files to run as scripts for RPG Maker XP. It allows the user to export, use and import these scripts.",
-        "imagePath": "images/projects/rmxp-hd-logo.png",
+        "imagePath": "/images/projects/rmxp-hd-logo.png",
         "tech": [
             "ruby"
         ],
@@ -115,7 +128,7 @@
     "xpal": {
         "name": "XPAL (XP Antilag System)",
         "description": "A complete overhaul of the RPG Maker XP graphics engine to optimize the display of maps.",
-        "imagePath": "images/projects/rmxp-hd-logo.png",
+        "imagePath": "/images/projects/rmxp-hd-logo.png",
         "tech": [
             "ruby"
         ],
