@@ -26,7 +26,7 @@ Ou bien :
 > **Recruteur** : Un candidat m'a ignoré aujourd'hui.  
 > **Candidats** : On attend ta réponse à nos e-mails.
 
-Après avoir discuté avec des candidates ET des recruteurs, j'ai pu compiler **cinq problèmes majeurs** dans le processus recrutement qui **frôlent le ridicule**.
+Après avoir discuté avec des candidates ET des recruteurs, j'ai pu compiler **cinq problèmes majeurs** dans le processus de recrutement qui **frôlent le ridicule**.
 
 C'est parti...
 
