@@ -1,4 +1,5 @@
 import Link from "next/link";
+import axios from "axios";
 import AppLayout from "../../components/app/AppLayout";
 import AppHead from "../../components/app/AppHead";
 import Separator from "../../components/app/Separator";
@@ -6,11 +7,14 @@ import { SITE_TITLE, SITE_URL } from "../../data/constants";
 import { getPost, getPosts } from "../../utils/static-blog";
 import BlogPostMeta from "../../components/app/BlogPostMeta";
 import BlogCategoryCard from "../../components/app/BlogCategoryCard";
+import BlogPostCard from "../../components/app/BlogPostCard";
+import { useEffect, useState } from "react";
 import { useLangTerm } from "../../utils/lang";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import styles from "../../styles/pages/common.module.css";
 import ownStyles from "../../styles/pages/blog-post.module.css";
 import "highlight.js/styles/vs2015.css";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 export async function getStaticPaths({ locales }) {
     const paths = [];
@@ -25,23 +29,36 @@ export async function getStaticProps({ params, locale }) {
     const { slug } = params;
     const data = await getPost({ locale, slug });
 
-    const featuredPosts = await getPosts({ locale, category: data.data.category, limit: 3 });
+    const featuredCtgPosts = await getPosts({ locale, category: data.data.category, limit: 3 });
     const totalPosts = await getPosts({ locale, category: data.data.category });
 
     const props = {
+        locale,
+        slug,
         metaData: data.data,
         htmlContent: data.htmlContent,
-        featuredPosts,
+        featuredCtgPosts,
         totalPosts: totalPosts.length,
     };
 
     return { props };
 }
 
-export default function BlogPost({ metaData, htmlContent, featuredPosts, totalPosts }) {
+export default function BlogPost({ locale, slug, metaData, htmlContent, featuredCtgPosts, totalPosts }) {
+    const router = useRouter();
+    const [featuredPosts, setFeaturedPosts] = useState([]);
     const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
     const L_BLOG_MORE_POSTS_AUTHOR = useLangTerm("BLOG_MORE_POSTS_AUTHOR");
     const L_BLOG_PHOTO_CREDITS = useLangTerm("BLOG_PHOTO_CREDITS");
+
+    useEffect(async () => {
+        try {
+            const response = await axios.post("/api/blog", { locale, limit: 2, current: slug });
+            setFeaturedPosts(response.data.posts);
+        } catch (ert) {
+            setFeaturedPosts([]);
+        }
+    }, [router.asPath]);
 
     return (
         <AppLayout className={styles.container + " " + ownStyles.container}>
@@ -98,9 +115,13 @@ export default function BlogPost({ metaData, htmlContent, featuredPosts, totalPo
             <div className={ownStyles.postFooter}>
                 <BlogCategoryCard
                     category={metaData.category}
-                    featuredPosts={featuredPosts}
+                    featuredPosts={featuredCtgPosts}
                     totalPosts={totalPosts}
                 />
+
+                {featuredPosts.map((post) => {
+                    return <BlogPostCard key={post.slug} post={post} />
+                })}
             </div>
 
         </AppLayout>
