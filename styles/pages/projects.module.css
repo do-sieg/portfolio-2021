@@ -115,6 +115,16 @@
     gap: 1rem;
 }
 
+.promptBtn {
+    composes: base-btn from "../../styles/buttons.module.css";
+    background-color: var(--cyan-900);
+}
+
+.promptBtn:hover,
+.promptBtn:active {
+    background-color: var(--cyan-800);
+}
+
 @media (min-width: 640px) {
     .card { flex-direction: row; }
     /* .card:nth-child(even) {

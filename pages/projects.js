@@ -50,17 +50,17 @@ function ProjectCard({ data }) {
                     </div>
                     <div className={ownStyles.actions}>
                         {data.link &&
-                            <Link href={data.link}><a className={styles.promptBtn}>
+                            <Link href={data.link}><a className={ownStyles.promptBtn}>
                                 {L_ACTION_VISIT} <FaDoorOpen />
                             </a></Link>
                         }
                         {data.url &&
-                            <a className={styles.promptBtn} href={data.url} target="_blank">
+                            <a className={ownStyles.promptBtn} href={data.url} target="_blank">
                                 {L_ACTION_VISIT} <FaExternalLinkAlt />
                             </a>
                         }
                         {data.repository &&
-                            <a className={styles.promptBtn} href={data.repository} target="_blank">
+                            <a className={ownStyles.promptBtn} href={data.repository} target="_blank">
                                 {L_ACTION_VIEW_CODE} <FaExternalLinkAlt />
                             </a>
                         }

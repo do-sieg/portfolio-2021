@@ -70,28 +70,16 @@
 }
 
 .promptBtn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-
-    text-align: center;
-    font-size: large;
-    font-weight: 500;
-
-    background-color: var(--warmGray-600);
-    color: var(--warmGray-100);
-
+    composes: base-btn from "../../styles/buttons.module.css";
+    background-color: var(--warmGray-800);
+    color: var(--warmGray-100);    
     box-shadow: var(--shadow-md);
     transition: var(--transition-all);
-    user-select: none;
 }
 
 .promptBtn:hover,
 .promptBtn:active {
-    background-color: var(--warmGray-400);
+    background-color: var(--warmGray-700);
     color: white;
     box-shadow: var(--shadow-lg);
 }
