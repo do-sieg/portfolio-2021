@@ -79,13 +79,13 @@ C'est aussi simple que ça.
 Ce n'est pas tellement de votre faute. Le nom _JavaScript_ est une grosse **escroquerie**.
 
 En fait, il s'agit de deux langages aux antipodes l'un de l'autre.  
-Il y a plus de ressemblances entre **le tennis et le tennis de table** qu'entre le Java et le JavaScript.
+Il y a plus de ressemblances entre **le tennis et le tennis de table** qu'entre Java et JavaScript.
 
 Maintenant que vous savez, n'essayez plus de convaincre un ingénieur de postuler quand même, **surtout quand il vous a expliqué** !
 
 Vous demanderiez à **Nadal** ou **Federer** de participer à un championnat de **ping-pong** ? Non.
 
-Vous recrutez dans la tech. Bossez un minimum votre sujet ou le candidat **ne vous prendra pas au sérieux**.
+Vous recrutez dans la tech. Bossez un minimum votre sujet ou personne **ne vous prendra au sérieux**.
 
 
 ## 4. Les messages automatisés
