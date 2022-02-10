@@ -1,7 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    background-color: var(--blueGray-600);
+    background-color: var(--blueGray-800);
+    background-image: linear-gradient(135deg, var(--blueGray-700), var(--blueGray-900));
     border-radius: 1rem 2rem 1rem;
     box-shadow: var(--shadow-lg);
     transition: var(--transition-all);
@@ -55,7 +56,7 @@
     flex: 1;
     text-indent: unset;
     font-size: large;
-    color: var(--blueGray-200);
+    color: var(--blueGray-100);
 }
 
 @media (min-width: 768px) {

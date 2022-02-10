@@ -6,7 +6,7 @@
 
 .container a {
     font-size: 1.2rem;
-    color: var(--gray-400);
+    color: var(--gray-300);
     transition: color 0.3s;
     text-decoration: none;
     filter: var(--drop-shadow-md);

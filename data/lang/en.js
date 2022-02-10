@@ -128,6 +128,7 @@ export default {
         </>
     ),
     BLOG_NO_ARTICLES: "No articles yet. Coming soon.",
+    // BLOG_SELECT_CATEGORY: "Select a category",
     BLOG_ALL_ARTICLES: "All articles",
     BLOG_READING_TIME: "min read",
     BLOG_MORE_POSTS_AUTHOR: (authorLink) => {

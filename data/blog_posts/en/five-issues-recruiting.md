@@ -8,7 +8,7 @@ author:
     name: Daniel Orchanian
     picture: /images/profile/profile_03_square.jpg
 coverImage:
-    path: /images/blog/covers/en/five-issues-recruiting.jpg
+    path: /images/blog/covers/en/five-issues-recruiting-v2.jpg
     authorName: Eric Prouzet
     authorUrl: https://unsplash.com/@eprouzet
 translations:

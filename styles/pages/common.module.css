@@ -34,7 +34,7 @@
 .container p {
     margin: 1rem 0;
     line-height: 1.5;
-    text-align: justify;
+    /* text-align: justify; Deactivated for accessibilty issues */
     text-indent: 1em;
     font-weight: 300;
 }

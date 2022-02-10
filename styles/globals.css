@@ -6,8 +6,8 @@
 @import "globals/preflight.css";
 body {
   min-height: 100vh;
-  background-color: var(--blueGray-500);
-  background-image: linear-gradient(135deg, var(--blueGray-500), var(--blueGray-700));
+  background-color: var(--blueGray-800);
+  background-image: linear-gradient(135deg, var(--blueGray-700), var(--blueGray-900));
   background-repeat: no-repeat;
   font-family: var(--font-sans);
   font-size: medium;
