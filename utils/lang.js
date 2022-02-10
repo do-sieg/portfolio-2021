@@ -17,7 +17,7 @@ export function useLangState() {
             return { ...prevLinks, ...{ [lang]: slug } }
         });
     }
-    
+
     function clearLangLinks() { setLangLinks({}) }
 
     return { langLinks, setLangLinks: setLinks, clearLangLinks };
@@ -46,43 +46,11 @@ function getTerm(termKey, locale) {
     return terms[termKey];
 }
 
-export function useLangDate() {
-    function renderDate(dateString) {
-        const L_DATE_FORMAT = useLangTerm("DATE_FORMAT");
-        const L_SHORT_MONTHS = useLangTerm("SHORT_MONTHS");
-
-        const d = new Date(dateString);
-        let str = L_DATE_FORMAT;
-        str = str.replace(/dd/gi, d.getDate());
-        str = str.replace(/mm/gi, L_SHORT_MONTHS[d.getMonth()]);
-        str = str.replace(/yy/gi, d.getFullYear());
-        return str;
-    }
-
-    return renderDate;
+export function renderDate(dateString, format, months) {
+    const d = new Date(dateString);
+    let str = format;
+    str = str.replace(/dd/gi, d.getDate());
+    str = str.replace(/mm/gi, months[d.getMonth()]);
+    str = str.replace(/yy/gi, d.getFullYear());
+    return str;
 }
-
-
-// export function useLangTerm(termKey, forceLocale = null) {
-//     try {
-//         let { locales, locale, defaultLocale } = useRouter();
-//         if (forceLocale) {
-//             locale = forceLocale;
-//         }
-
-//         const langTerms = require(`../data/lang/${locale}.js`).default;
-//         if (!langTerms[termKey]) {
-//             if (locale !== defaultLocale) {
-//                 // console.warn(`Lang: '${termKey}' doesn't exist for '${locale}'. Trying default language.`);
-//                 return useLangTerm(termKey, defaultLocale);
-//             } else {
-//                 throw new Error(`Lang: '${termKey}' doesn't exist for '${locale}'.`);
-//             }
-//         }
-//         return langTerms[termKey];
-
-//     } catch (err) {
-//         console.error(err.message);
-//         return "";
-//     }
-// }

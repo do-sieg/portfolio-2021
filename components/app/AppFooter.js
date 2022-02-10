@@ -17,7 +17,7 @@ export default function AppFooter() {
             </div>
             <div className={styles.credits}>
                 <div>© {new Date().getFullYear()} {L_DEV_NAME}</div>
-                <div className={styles.photoCredits}><Link href="./photo_credits"><a>{L_PHOTO_CREDITS}</a></Link></div>
+                <div className={styles.photoCredits}><Link href="/photo_credits"><a>{L_PHOTO_CREDITS}</a></Link></div>
             </div>
         </footer>
     );

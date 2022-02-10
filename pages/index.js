@@ -38,7 +38,7 @@ export default function Home() {
             <section>
                 {L_HOME_INTRO_DEV}
                 <div className={styles.promptBox}>
-                    <Link href="./projects">
+                    <Link href="/projects">
                         <a className={styles.promptBtn}>{L_VIEW_PROJECTS}</a>
                     </Link>
                     <Link href={RESUME_PATHS[locale]}>
@@ -48,7 +48,7 @@ export default function Home() {
 
                 {L_HOME_INTRO_TEACH}
                 <div className={styles.promptBox}>
-                    <Link href="./teach">
+                    <Link href="/teach">
                         <a className={styles.promptBtn}>{L_LEARN_MORE}</a>
                     </Link>
                 </div>

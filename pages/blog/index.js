@@ -1,8 +1,8 @@
 import AppLayout from "../../components/app/AppLayout";
 import AppHead from "../../components/app/AppHead";
 import Separator from "../../components/app/Separator";
-import BlogPostCard from "../../components/app/BlogPostCard";
-import BlogToolbar from "../../components/app/BlogToolbar";
+import BlogPostCard from "../../components/app/blog/BlogPostCard";
+import BlogToolbar from "../../components/app/blog/BlogToolbar";
 import { getPosts } from "../../utils/static-blog";
 import { SITE_TITLE } from "../../data/constants";
 import { useLangTerm } from "../../utils/lang";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useLangTerm } from "../../utils/lang";
+import { useLangTerm } from "../../../utils/lang";
 import BlogPostMeta from "./BlogPostMeta";
 import styles from "./BlogPostCard.module.css";
 

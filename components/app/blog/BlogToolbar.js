@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-import { BLOG_CATEGORIES } from "../../data/constants";
-import { useLangTerm } from "../../utils/lang";
+import { BLOG_CATEGORIES } from "../../../data/constants";
+import { useLangTerm } from "../../../utils/lang";
 import styles from "./BlogToolbar.module.css";
 
 export default function BlogToolbar({ category }) {
