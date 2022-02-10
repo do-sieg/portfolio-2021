@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--warmGray-900);
+    background-image: linear-gradient(135deg, var(--warmGray-800), var(--warmGray-900));
+}
+
+.container nav {
+    gap: 0.25rem;
+}
+
+.closeBtn {
+    composes: btn-icon from "../../styles/buttons.module.css";
+    composes: btn-icon-white from "../../styles/buttons.module.css";
+    font-size: xx-large;
+    transform: scale(0.75);
+    transition:
+        color 0.2s ease-in-out 0.1s,
+        transform 0.3s ease-in 0.2s,
+        opacity 0.3s ease-in 0.3s;
+}
+
+.open .closeBtn {
+    transform: scale(1);
+}
+
+@media (min-width: 640px) {
+    /* Resize burger menu on medium screen sizes */
+    .container { width: 45%; }
+}
+
+@media (min-width: 1024px) {
+    /* Hide burger menu on large screen sizes */
+    .overlay { display: none; }
+    .container { display: none; }
+}

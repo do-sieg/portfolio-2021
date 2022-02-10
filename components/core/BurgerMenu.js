@@ -19,16 +19,17 @@ export function useBurgerState() {
 }
 
 // This is the menu component that can be called on pages, etc.
-export default function BurgerMenu({ children }) {
+// It is advised to create a component rendering this with custom styles
+export default function BurgerMenu({ children, customStyles = {} }) {
     const burger = useContext(BurgerContext);
 
     return (
         <>
             {burger.isOpen &&
-                <div className={styles.overlay} onClick={burger.close}></div>
+                <div className={styles.overlay + (customStyles.overlay ? ` ${customStyles.overlay}` : "")} onClick={burger.close}></div>
             }
-            <div className={styles.container + (burger.isOpen ? " " + styles.open : "")}>
-                <button className={styles.closeBtn} onClick={burger.close}><FaTimes /></button>
+            <div className={styles.container + (customStyles.container ? ` ${customStyles.container}` : "") + (burger.isOpen ? ` ${styles.open}` : "")}>
+                <button className={styles.closeBtn + (customStyles.closeBtn ? ` ${customStyles.closeBtn}` : "")} onClick={burger.close}><FaTimes /></button>
                 {children}
             </div>
         </>

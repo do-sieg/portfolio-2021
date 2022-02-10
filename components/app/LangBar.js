@@ -11,7 +11,7 @@ export default function LangBar() {
     return (
         <div className={styles.container}>
             {router.locales.map((locale) => {
-                const short = locale.substr(0, 2).toUpperCase();
+                const short = locale.substring(0, 2).toUpperCase();
                 return (
                     <Link
                         key={locale}

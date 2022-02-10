@@ -2,10 +2,8 @@
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100vh;
-
     z-index: 4;
     cursor: pointer;
     background-color: #333a;
@@ -15,24 +13,12 @@
     position: fixed;
     top: 0;
     left: -100%;
-
     width: 100%;
     height: 100vh;
     z-index: 5;
     background-color: #333;
-    background-image: linear-gradient(135deg, var(--blueGray-800), var(--blueGray-900));
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
     transition: left;
     transition-duration: 0.2s;
-}
-
-.container nav {
-    gap: 0.25rem;
 }
 
 .open {
@@ -42,35 +28,12 @@
 }
 
 .closeBtn {
-    composes: btn-icon from "../../styles/buttons.module.css";
-    composes: btn-icon-white from "../../styles/buttons.module.css";
     position: absolute;
     top: 1rem;
     right: 1rem;
-
     opacity: 0;
-    transform: scale(0.75);
-    
-    font-size: xx-large;
-    
-    transition:
-        color 0.2s ease-in-out 0.1s,
-        transform 0.3s ease-in 0.2s,
-        opacity 0.3s ease-in 0.3s;
 }
 
 .open .closeBtn {
     opacity: 1;
-    transform: scale(1);
-}
-
-@media (min-width: 640px) {
-    /* Resize burger menu on medium screen sizes */
-    .container { width: 45%; }
-}
-
-@media (min-width: 1024px) {
-    /* Hide burger menu on large screen sizes */
-    .overlay { display: none; }
-    .container { display: none; }
 }

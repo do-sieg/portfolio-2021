@@ -1,6 +1,6 @@
 import { BurgerContext, useBurgerState } from '../components/core/BurgerMenu';
 import { LangContext, useLangState } from '../utils/lang';
-import AppWrapper from '../components/app/AppWrapper';
+import AppBurgerMenu from '../components/app/AppBurgerMenu';
 import '../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }) {
@@ -10,9 +10,8 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <BurgerContext.Provider value={burgerState}>
       <LangContext.Provider value={langState}>
-        <AppWrapper>
-          <Component {...pageProps} />
-        </AppWrapper>
+        <AppBurgerMenu />
+        <Component {...pageProps} />
       </LangContext.Provider>
     </BurgerContext.Provider>
   );
