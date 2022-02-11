@@ -1,0 +1,31 @@
+.container {
+    composes: card from "../../../styles/pages/common.module.css";
+    padding: 0;
+}
+
+.container h3 {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    padding: 0.5rem 2rem 0.5rem;
+    font-weight: 500;
+    background-color: var(--blueGray-900);
+}
+
+.title {
+    margin: 0.5rem 0;
+    padding: 0 2rem 1rem;
+    font-weight: 300;
+    font-size: large;
+}
+
+.basic h3 {
+    background-color: var(--lime-700);
+}
+
+.intermediate h3 {
+    background-color: var(--blue-700);
+}
+
+.advanced h3 {
+    background-color: var(--pink-700);
+}

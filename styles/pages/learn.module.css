@@ -1,0 +1,11 @@
+.subjectGroup {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .subjectGroup {
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -29,6 +29,7 @@ export default {
     PHOTO_CREDITS: "Crédits photo",
     BACKGROUND_IMAGES: "Images d'arrière-plan",
 
+    ACTION_START: "Commencer",
     ACTION_VISIT: "Visiter",
     ACTION_VIEW_CODE: "Code",
     ACTION_BACK_HOME: "Revenir à la page d'accueil",
@@ -141,4 +142,14 @@ export default {
     },
     BLOG_CATEGORY_MORE: "Articles dans",
     BLOG_CATEGORY_SEE_ALL_POSTS: (n) => n === 1 ? `${n} article` : `Voir les ${n} articles`,
+
+    LESSONS_TITLE: "Les Cours",
+    LESSONS_LEVEL_TITLES: {
+        basic: "Basique",
+        intermediate: "Intermédiaire",
+        advanced: "Avancé",
+    },
+    LESSONS_INTRO: "<p>INTRO</p>",
+    LESSONS_SUBJECT_TITLE: (name) => `Cours ${name}`,
+    LESSONS_NUMBER: (n) => `${n} cours`,
 }

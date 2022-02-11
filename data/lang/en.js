@@ -27,6 +27,7 @@ export default {
     PHOTO_CREDITS: "Photo Credits",
     BACKGROUND_IMAGES: "Background Images",
 
+    ACTION_START: "Start",
     ACTION_VISIT: "Visit",
     ACTION_VIEW_CODE: "Code",
     ACTION_BACK_HOME: "Return to the home page",
@@ -96,7 +97,7 @@ export default {
     TEACH_TRAINING: (
         <p>
             After six years of teaching in high school, I decide to put this experience to good use in the world of <strong>web development training</strong>.
-            I give lessons on various topics: programming languages, frameworks, tools...
+            I give lessons on various subjects: programming languages, frameworks, tools...
         </p>
     ),
     TEACH_COURSES: (
@@ -145,6 +146,15 @@ export default {
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",
     // HOME_SLIDE_PROMPT_3: "Looking for a translator?",
-
+    
+    LESSONS_TITLE: "Lessons",
+    LESSONS_LEVEL_TITLES: {
+        basic: "Basic",
+        intermediate: "Intermediate",
+        advanced: "Advanced",
+    },
+    LESSONS_INTRO: "<p>INTRO</p>",
+    LESSONS_SUBJECT_TITLE: (name) => `${name} Lessons`,
+    LESSONS_NUMBER: (n) => n === 1 ? `${n} lesson` : `${n} lessons`,
 
 }
