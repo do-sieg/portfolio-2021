@@ -1,0 +1,23 @@
+.container {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1.5rem;
+    color: var(--secondary);
+}
+
+.container svg {
+    margin-top: 4px;
+}
+
+.container a {
+    border-bottom: 2px solid transparent;
+    font-weight: 350;
+    text-shadow: var(--shadow-md);
+    transition: var(--transition-all);
+}
+
+.container a:hover, .container a:active {
+    border-bottom-color: var(--secondary);
+}

@@ -2,6 +2,7 @@ import AppHead from "../../components/app/AppHead";
 import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE } from "../../data/constants";
 import { getLesson, getLessons } from "../../utils/lessons";
+import LearnNav from "../../components/app/learn/LearnNav";
 import styles from "../../styles/pages/common.module.css";
 import ownStyles from "../../styles/pages/blog-post.module.css";
 import "highlight.js/styles/vs2015.css";
@@ -33,20 +34,27 @@ export async function getStaticProps({ params, locale }) {
     const data = await getLesson({ locale, subjectId, slug });
 
     const props = {
-        // subjectId,
-        // slug,
+        subjectId,
+        slug,
         metaData: data.data,
         htmlContent: data.htmlContent,
     };
     return { props };
 }
 
-export default function LearnLesson({ metaData, htmlContent }) {
+export default function LearnLesson({ subjectId, slug, metaData, htmlContent }) {
+
     return (
         <AppLayout className={styles.container}>
             <AppHead title={`${metaData.title} - ${SITE_TITLE}`} />
 
-            <h1>{`${metaData.title}`}</h1>
+            <LearnNav
+                subjectId={subjectId}
+                lessonSlug={slug}
+                lessonTitle={metaData.title}
+            />
+
+            <h1>{metaData.title}</h1>
 
             <div className={ownStyles.postContent} dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
