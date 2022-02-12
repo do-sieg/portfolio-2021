@@ -2,9 +2,11 @@ import AppHead from "../../components/app/AppHead";
 import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE } from "../../data/constants";
 import { getLesson, getLessons } from "../../utils/lessons";
+import { useLangTerm } from "../../utils/lang";
 import LearnNav from "../../components/app/learn/LearnNav";
 import styles from "../../styles/pages/common.module.css";
 import ownStyles from "../../styles/pages/blog-post.module.css";
+import otherSyles from "../../styles/pages/learn-lesson.module.css";
 import "highlight.js/styles/vs2015.css";
 
 export async function getStaticPaths({ locales }) {
@@ -43,6 +45,9 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export default function LearnLesson({ subjectId, slug, metaData, htmlContent }) {
+    const L_BY = useLangTerm("BY");
+    const L_UPDATED = useLangTerm("UPDATED");
+    const L_READING_TIME = useLangTerm("READING_TIME");
 
     return (
         <AppLayout className={styles.container}>
@@ -53,6 +58,12 @@ export default function LearnLesson({ subjectId, slug, metaData, htmlContent }) 
                 lessonSlug={slug}
                 lessonTitle={metaData.title}
             />
+
+            <div className={otherSyles.lessonMeta}>
+                {L_BY} {metaData.authorName}<br />
+                {L_UPDATED} {metaData.updated}<br />
+                {metaData.readingTime} {L_READING_TIME}
+            </div>
 
             <h1>{metaData.title}</h1>
 

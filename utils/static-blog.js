@@ -1,17 +1,9 @@
 import fs from "fs";
 import path from "path";
 import { mdLoad, mdToHtml } from "./markdown";
+import { getReadingTime } from "./text";
 
 const POSTS_DIR = "data/blog_posts";
-
-function getReadingTime(locale, text) {
-    const averageWordsPerMinute = {
-        fr: 195,
-        en: 228,
-    }[locale];
-    const wordCount = text.replace(/[^\w ]/g, "").split(/\s+/).length;
-    return Math.ceil(wordCount / averageWordsPerMinute);
-}
 
 export async function getPosts({ locale, category = null, limit = 0, current = null }) {
     try {

@@ -45,6 +45,8 @@ export default {
     ],
 
     ALL: "Tous",
+    BY: "Par",
+    UPDATED: "Mise à jour :",
     TIMELINE: "Parcours",
     REVIEWS: "Avis",
     ONGOING: "En cours",
@@ -58,7 +60,7 @@ export default {
     DOWNLOAD_RESUME: "Télécharger mon CV",
     YEARS: (n) => n <= 1 ? "an" : "ans",
     MONTHS: (n) => "mois",
-
+    READING_TIME: "min de lecture",
 
     HOME_TITLE: "Bienvenue",
     HOME_INTRO_DEV: (
@@ -131,7 +133,6 @@ export default {
     BLOG_NO_ARTICLES: "Pas encore d'article. Ils arrivent bientôt.",
     // BLOG_SELECT_CATEGORY: "Sélectionnez une catégorie",
     BLOG_ALL_ARTICLES: "Tous les articles",
-    BLOG_READING_TIME: "min de lecture",
     BLOG_MORE_POSTS_AUTHOR: (authorLink) => {
         return <span>Lire <Link href={authorLink}><a>plus d'articles</a></Link> de cet auteur</span>;
     },

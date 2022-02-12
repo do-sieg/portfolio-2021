@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useLangTerm } from "../../../utils/lang";
 import { GoChevronRight } from "react-icons/go";
 import styles from "./LearnNav.module.css";
@@ -26,10 +26,10 @@ export default function LearnNav({ subjectId, lessonSlug = "", lessonTitle = "" 
             <Link href={"/learn"}><a>{L_LESSONS_TITLE}</a></Link>
             {links.map(({ text, path }, index) => {
                 return (
-                    <>
+                    <Fragment key={index}>
                         <GoChevronRight />
                         <Link key={index} href={path}><a>{text}</a></Link>
-                    </>
+                    </Fragment>
                 );
             })}
         </div>

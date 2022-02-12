@@ -6,7 +6,7 @@ export default function BlogCategoryCard({ category, featuredPosts, totalPosts }
     const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
     const L_BLOG_CATEGORY_MORE = useLangTerm("BLOG_CATEGORY_MORE");
     const L_BLOG_CATEGORY_SEE_ALL_POSTS = useLangTerm("BLOG_CATEGORY_SEE_ALL_POSTS");
-    const L_BLOG_READING_TIME = useLangTerm("BLOG_READING_TIME");
+    const L_READING_TIME = useLangTerm("READING_TIME");
     const L_DATE_FORMAT = useLangTerm("DATE_FORMAT");
     const L_SHORT_MONTHS = useLangTerm("SHORT_MONTHS");
 
@@ -25,7 +25,7 @@ export default function BlogCategoryCard({ category, featuredPosts, totalPosts }
                         <li key={post.slug}>
                             <Link href={post.slug}><a>
                                 <h4>{post.metaData.title}</h4>
-                                <span>{renderDate(post.metaData.date, L_DATE_FORMAT, L_SHORT_MONTHS)} – {post.metaData.readingTime} {L_BLOG_READING_TIME}</span>
+                                <span>{renderDate(post.metaData.date, L_DATE_FORMAT, L_SHORT_MONTHS)} – {post.metaData.readingTime} {L_READING_TIME}</span>
                             </a></Link>
                         </li>
                     );

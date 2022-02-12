@@ -1,5 +1,7 @@
 ---
 title: Créer une page HTML
+authorName: Daniel Orchanian
+updated: "2020-02-12"
 published: true
 ---
 

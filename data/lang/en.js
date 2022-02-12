@@ -43,6 +43,8 @@ export default {
     ],
 
     ALL: "All",
+    BY: "By",
+    UPDATED: "Updated:",
     TIMELINE: "Activity",
     REVIEWS: "Reviews",
     ONGOING: "Ongoing",
@@ -56,7 +58,7 @@ export default {
     DOWNLOAD_RESUME: "Download my resume",
     YEARS: (n) => n <= 1 ? "year" : "years",
     MONTHS: (n) => n <= 1 ? "month" : "months",
-
+    READING_TIME: "min read",
 
     HOME_TITLE: "Welcome",
     HOME_INTRO_DEV: (
@@ -131,7 +133,6 @@ export default {
     BLOG_NO_ARTICLES: "No articles yet. Coming soon.",
     // BLOG_SELECT_CATEGORY: "Select a category",
     BLOG_ALL_ARTICLES: "All articles",
-    BLOG_READING_TIME: "min read",
     BLOG_MORE_POSTS_AUTHOR: (authorLink) => {
         return <span>Read <Link href={authorLink}><a>more posts</a></Link> from this author</span>;
     },

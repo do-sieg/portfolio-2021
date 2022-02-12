@@ -14,18 +14,21 @@
 .title {
     margin: 0.5rem 0;
     padding: 0 2rem 1rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    font-size: large;
 }
 
 .basic h3 {
-    background-color: var(--lime-700);
+    background-color: var(--emerald-700);
+    background-image: linear-gradient(135deg, var(--emerald-600), var(--emerald-800));
 }
 
 .intermediate h3 {
     background-color: var(--blue-700);
+    background-image: linear-gradient(135deg, var(--blue-600), var(--blue-800));
 }
 
 .advanced h3 {
     background-color: var(--pink-700);
+    background-image: linear-gradient(135deg, var(--pink-600), var(--pink-800));
 }

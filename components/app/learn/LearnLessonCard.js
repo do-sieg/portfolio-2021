@@ -6,7 +6,7 @@ export default function LearnLessonCard({ index, subjectId, subjectName, level, 
         <Link href={`/learn/${subjectId}/${data.slug}`}><a>
             <div className={`${styles.container} ${styles[level]}`}>
                 <h3>{subjectName} {index + 1}</h3>
-                <div className={styles.title}>{data.metaData.title} →</div>
+                <div className={styles.title}>{data.metaData.title}&nbsp;→</div>
             </div>
         </a></Link>
     );

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { mdLoad, mdToHtml } from "./markdown";
+import { getReadingTime } from "./text";
 
 const LESSONS_DIR = "data/lessons";
 
@@ -11,7 +12,7 @@ export async function getLessons({ locale, subjectId }) {
         entries = entries
             .map((filename) => {
                 const data = mdLoad(path.join(LESSONS_DIR, locale, subjectId, filename));
-                // data.data.readingTime = getReadingTime(locale, data.content);
+                data.data.readingTime = getReadingTime(locale, data.content);
                 return {
                     slug: filename.substring(0, filename.indexOf(".md")),
                     metaData: data.data,
@@ -28,7 +29,7 @@ export async function getLessons({ locale, subjectId }) {
 
 export async function getLesson({ locale, subjectId, slug }) {
     const data = mdLoad(path.join(LESSONS_DIR, locale, subjectId, `${slug}.md`));
-    // data.data.readingTime = getReadingTime(locale, data.content);
+    data.data.readingTime = getReadingTime(locale, data.content);
     const htmlContent = await mdToHtml(data.content);
     data.htmlContent = htmlContent;
     return data;
