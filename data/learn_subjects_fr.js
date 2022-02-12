@@ -3,15 +3,15 @@ export const learnSubjects = {
         name: "HTML",
         description: "DESC HTML FR",
         sections: {
-            basic: [
+            "Test de groupe": [
                 "test",
                 "test",
                 "test",
             ],
-            intermediate: [
+            "Second groupe": [
                 "test",
             ],
-            advanced: [
+            "Ultime groupe": [
                 "test",
             ],
         },

@@ -3,6 +3,7 @@ import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE } from "../../data/constants";
 import { getLessons } from "../../utils/lessons";
 import { useLangTerm } from "../../utils/lang";
+import Separator from "../../components/app/Separator";
 import LearnNav from "../../components/app/learn/LearnNav";
 import LearnLessonCard from "../../components/app/learn/LearnLessonCard";
 import pageStyles from "../../styles/pages/Page.module.css";
@@ -36,7 +37,6 @@ export async function getStaticProps({ locale, params }) {
 
 export default function LearnSubject({ subjectId, name, description, sections, lessons }) {
     const L_LESSONS_SUBJECT_TITLE = useLangTerm("LESSONS_SUBJECT_TITLE");
-    const L_LESSONS_LEVEL_TITLES = useLangTerm("LESSONS_LEVEL_TITLES");
 
     return (
         <AppLayout className={`${pageStyles.container} ${styles.container}`}>
@@ -48,17 +48,16 @@ export default function LearnSubject({ subjectId, name, description, sections, l
 
             <section><p>{description}</p></section>
 
-            {Object.entries(sections).map(([level, list]) => {
-                const startingIndex = {
-                    basic: 0,
-                    intermediate: sections.basic.length,
-                    advanced: sections.basic.length + sections.intermediate.length,
-                }[level];
+            <Separator />
 
+            {Object.keys(sections).map((key, sectionIndex) => {
+                const prevKeys = Object.keys(sections).slice(0, sectionIndex);
+                const startingIndex = prevKeys.reduce((acc, key) => acc + sections[key].length, 0);
+                const list = sections[key];
                 return (
                     list.length > 0 ?
-                        <section key={level}>
-                            <h2>{L_LESSONS_LEVEL_TITLES[level]}</h2>
+                        <section key={key}>
+                            <h2>{key}</h2>
                             <div className={styles.lessonsGroup}>
                                 {list.map((slug, index) => {
                                     const data = lessons.find(lesson => lesson.slug === slug);
@@ -68,7 +67,6 @@ export default function LearnSubject({ subjectId, name, description, sections, l
                                             index={startingIndex + index}
                                             subjectId={subjectId}
                                             subjectName={name}
-                                            level={level}
                                             data={data}
                                         />
                                         : null;

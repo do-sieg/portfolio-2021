@@ -3,12 +3,11 @@ export const learnSubjects = {
         name: "HTML",
         description: "DESC HTML EN",
         sections: {
-            basic: [
-            ],
-            intermediate: [
-            ],
-            advanced: [
-            ],
+            // "BOOOOY": [
+            //     "test",
+            //     "test",
+            //     "test",
+            // ],
         },
     },
 };
