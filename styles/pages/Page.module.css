@@ -22,13 +22,16 @@
 
 .container h2 {
     margin-bottom: 1.5rem;
-    text-align: center;
     font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.5em;
     /* text-transform: uppercase; */
     color: var(--secondary);
     filter: var(--drop-shadow-md);
+}
+
+.container section > h2 {
+    text-align: center;
 }
 
 .container p {

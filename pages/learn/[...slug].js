@@ -55,6 +55,7 @@ export default function LearnLesson({ subjectId, slug, metaData, htmlContent }) 
             <LearnNav
                 subjectId={subjectId}
                 lessonSlug={slug}
+                lessonNumber={metaData.number}
                 lessonTitle={metaData.title}
             />
 

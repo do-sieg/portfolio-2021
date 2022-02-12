@@ -5,7 +5,7 @@ import { useLangTerm } from "../../../utils/lang";
 import { GoChevronRight } from "react-icons/go";
 import styles from "./LearnNav.module.css";
 
-export default function LearnNav({ subjectId, lessonSlug = "", lessonTitle = "" }) {
+export default function LearnNav({ subjectId, lessonSlug = "", lessonNumber = null, lessonTitle = "" }) {
     const { locale } = useRouter();
     const L_LESSONS_TITLE = useLangTerm("LESSONS_TITLE");
     const L_LESSONS_SUBJECT_TITLE = useLangTerm("LESSONS_SUBJECT_TITLE");
@@ -16,7 +16,9 @@ export default function LearnNav({ subjectId, lessonSlug = "", lessonTitle = "" 
         const learnSubjects = require(`../../../data/learn_subjects_${locale}`).learnSubjects;
         newLinks.push({ text: L_LESSONS_SUBJECT_TITLE(learnSubjects[subjectId].name), path: `/learn/${subjectId}` });
         if (lessonSlug && lessonTitle) {
-            newLinks.push({ text: lessonTitle, path: `/learn/${subjectId}/${lessonSlug}` });
+            let text = lessonTitle;
+            if (lessonNumber) text = `[${lessonNumber}] ${text}`;
+            newLinks.push({ text, path: `/learn/${subjectId}/${lessonSlug}` });
         }
         setLinks(newLinks);
     }, []);

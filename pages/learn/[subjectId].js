@@ -51,8 +51,8 @@ export default function LearnSubject({ subjectId, name, description, sections, l
             <Separator />
 
             {Object.keys(sections).map((key, sectionIndex) => {
-                const prevKeys = Object.keys(sections).slice(0, sectionIndex);
-                const startingIndex = prevKeys.reduce((acc, key) => acc + sections[key].length, 0);
+                // const prevKeys = Object.keys(sections).slice(0, sectionIndex);
+                // const startingIndex = prevKeys.reduce((acc, key) => acc + sections[key].length, 0);
                 const list = sections[key];
                 return (
                     list.length > 0 ?
@@ -64,7 +64,6 @@ export default function LearnSubject({ subjectId, name, description, sections, l
                                     return data ?
                                         <LearnLessonCard
                                             key={index}
-                                            index={startingIndex + index}
                                             subjectId={subjectId}
                                             subjectName={name}
                                             data={data}
