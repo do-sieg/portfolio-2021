@@ -23,7 +23,8 @@ export default {
     NAV_HOME: "Accueil",
     // NAV_ABOUT: "About Me",
     NAV_PROJECTS: "Projets",
-    NAV_TEACH: "Cours",
+    NAV_TEACH: "Mentorat",
+    NAV_LEARN: "Cours",
     NAV_BLOG: "Blog",
 
     PHOTO_CREDITS: "Crédits photo",
@@ -58,6 +59,7 @@ export default {
     LEARN_MORE: "En savoir plus",
     VIEW_PROJECTS: "Voir mes projets",
     DOWNLOAD_RESUME: "Télécharger mon CV",
+    VIEW_COURSES: "Accéder aux cours",
     YEARS: (n) => n <= 1 ? "an" : "ans",
     MONTHS: (n) => "mois",
     READING_TIME: "min de lecture",
@@ -106,8 +108,7 @@ export default {
     ),
     TEACH_COURSES: (
         <p>
-            Je projette de mettre des <strong>cours</strong> à disposition des débutants pour les aider à s'y retrouver un peu.
-            {/* Je mets des cours à disposition des débutants pour les aider à s'y retrouver un peu. */}
+            Je mets des <strong>cours</strong> à disposition des débutants pour les aider à s'y retrouver un peu.
         </p>
     ),
     TEACH_PRIVATE: (

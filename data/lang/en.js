@@ -22,6 +22,7 @@ export default {
     NAV_HOME: "Home",
     NAV_PROJECTS: "Projects",
     NAV_TEACH: "Teaching",
+    NAV_LEARN: "Courses",
     NAV_BLOG: "Blog",
 
     PHOTO_CREDITS: "Photo Credits",
@@ -56,6 +57,7 @@ export default {
     LEARN_MORE: "Learn More",
     VIEW_PROJECTS: "View my projects",
     DOWNLOAD_RESUME: "Download my resume",
+    VIEW_COURSES: "View all courses",
     YEARS: (n) => n <= 1 ? "year" : "years",
     MONTHS: (n) => n <= 1 ? "month" : "months",
     READING_TIME: "min read",
@@ -104,8 +106,7 @@ export default {
     ),
     TEACH_COURSES: (
         <p>
-            I plan to make <strong>courses</strong> available for beginners to help them get a handle on things.
-            {/* I provide classes for beginners to help them find their way around. */}
+            I provide <strong>courses</strong> for beginners to help them find their way around.
         </p>
     ),
     TEACH_PRIVATE: (

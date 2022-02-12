@@ -46,7 +46,7 @@ export default function LearnSubject({ subjectId, name, description, sections, l
 
             <h1>{`${L_LESSONS_SUBJECT_TITLE(name)}`}</h1>
 
-            <p>{description}</p>
+            <section><p>{description}</p></section>
 
             {Object.entries(sections).map(([level, list]) => {
                 const startingIndex = {

@@ -21,6 +21,7 @@ export default function Teach() {
     const L_TEACH_COURSES = useLangTerm('TEACH_COURSES');
     const L_TEACH_PRIVATE = useLangTerm('TEACH_PRIVATE');
     const L_DOWNLOAD_RESUME = useLangTerm('DOWNLOAD_RESUME');
+    const L_VIEW_COURSES = useLangTerm('VIEW_COURSES');
     const L_REVIEWS = useLangTerm('REVIEWS');
 
     return (
@@ -38,6 +39,11 @@ export default function Teach() {
                     </Link>
                 </div>
                 {L_TEACH_COURSES}
+                <div className={pageStyles.promptBox}>
+                    <Link href="/learn">
+                        <a className={pageStyles.promptBtn}>{L_VIEW_COURSES}</a>
+                    </Link>
+                </div>
             </section>
 
             <section>
