@@ -13,7 +13,6 @@
 
 p.postDescription {
     margin-bottom: 2rem;
-    text-indent: unset;
     color: var(--blueGray-100);
 }
 

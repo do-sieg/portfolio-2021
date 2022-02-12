@@ -3,10 +3,6 @@
     text-align: left;
 }
 
-.container p {
-    text-indent: unset;
-}
-
 .container blockquote {
     margin: 2.5rem 0;
     padding: 0.5rem 1rem 0.5rem 1.5rem;

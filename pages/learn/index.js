@@ -17,7 +17,7 @@ export default function Learn() {
 
             <h1>{L_LESSONS_TITLE}</h1>
 
-            <p>{L_LESSONS_INTRO}</p>
+            <section><p>{L_LESSONS_INTRO}</p></section>
 
             <Separator />
 

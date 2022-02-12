@@ -28,7 +28,7 @@ export default function Blog({ posts }) {
 
             <h1>{L_NAV_BLOG}</h1>
 
-            {L_BLOG_INTRO}
+            <section>{L_BLOG_INTRO}</section>
 
             <Separator top="2rem" bottom="2rem" />
 
