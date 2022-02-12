@@ -1,0 +1,33 @@
+.container h2 {
+    margin: 4rem 0 1.5rem;
+    text-align: left;
+}
+
+.container p {
+    text-indent: unset;
+}
+
+.container blockquote {
+    margin: 2.5rem 0;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    border-left: 0.45rem solid var(--secondary);
+    font-style: italic;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    color: var(--blueGray-100);
+    /* box-shadow: var(--shadow-sm); */
+}
+
+.container blockquote p {
+    margin: 0;
+}
+
+.container a {
+    color: var(--link);
+    border-bottom: 0.15rem solid transparent;
+    transition: var(--transition-all-fast);
+}
+
+.container a:hover, .container a:active {
+    color: var(--link-hover);
+    border-color: var(--link-hover);
+}

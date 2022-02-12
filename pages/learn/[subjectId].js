@@ -5,8 +5,8 @@ import { getLessons } from "../../utils/lessons";
 import { useLangTerm } from "../../utils/lang";
 import LearnNav from "../../components/app/learn/LearnNav";
 import LearnLessonCard from "../../components/app/learn/LearnLessonCard";
-import styles from "../../styles/pages/common.module.css";
-import ownStyles from "../../styles/pages/learn-subject.module.css";
+import pageStyles from "../../styles/pages/Page.module.css";
+import styles from "../../styles/pages/LearnSubject.module.css";
 
 export async function getStaticPaths({ locales }) {
     const paths = [];
@@ -39,7 +39,7 @@ export default function LearnSubject({ subjectId, name, description, sections, l
     const L_LESSONS_LEVEL_TITLES = useLangTerm("LESSONS_LEVEL_TITLES");
 
     return (
-        <AppLayout className={`${styles.container} ${ownStyles.container}`}>
+        <AppLayout className={`${pageStyles.container} ${styles.container}`}>
             <AppHead title={`${L_LESSONS_SUBJECT_TITLE(name)} - ${SITE_TITLE}`} />
 
             <LearnNav subjectId={subjectId} />
@@ -59,7 +59,7 @@ export default function LearnSubject({ subjectId, name, description, sections, l
                     list.length > 0 ?
                         <section key={level}>
                             <h2>{L_LESSONS_LEVEL_TITLES[level]}</h2>
-                            <div className={ownStyles.lessonsGroup}>
+                            <div className={styles.lessonsGroup}>
                                 {list.map((slug, index) => {
                                     const data = lessons.find(lesson => lesson.slug === slug);
                                     return data ?

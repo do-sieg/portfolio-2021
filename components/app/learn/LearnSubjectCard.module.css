@@ -1,5 +1,5 @@
 .container {
-    composes: card from "../../../styles/pages/common.module.css";
+    composes: card from "../../../styles/pages/Page.module.css";
 }
 
 .container h3 {

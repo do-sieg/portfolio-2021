@@ -6,8 +6,8 @@ import BlogToolbar from "../../components/app/blog/BlogToolbar";
 import { getPosts } from "../../utils/static-blog";
 import { SITE_TITLE } from "../../data/constants";
 import { useLangTerm } from "../../utils/lang";
-import styles from "../../styles/pages/common.module.css";
-import ownStyles from "../../styles/pages/blog.module.css";
+import pageStyles from "../../styles/pages/Page.module.css";
+import styles from "../../styles/pages/Blog.module.css";
 
 export async function getStaticProps({ locale }) {
     const posts = await getPosts({ locale });
@@ -21,7 +21,7 @@ export default function Blog({ posts }) {
     const L_BLOG_NO_ARTICLES = useLangTerm("BLOG_NO_ARTICLES");
 
     return (
-        <AppLayout className={styles.container}>
+        <AppLayout className={pageStyles.container}>
             <AppHead title={`${SITE_TITLE} - ${L_NAV_BLOG}`} />
 
             <BlogToolbar />
@@ -34,7 +34,7 @@ export default function Blog({ posts }) {
 
             <section>
                 {posts.length > 0 ?
-                    <div className={ownStyles.postList}>
+                    <div className={styles.postList}>
                         {posts.map((post, index) => {
                             return <BlogPostCard key={index} post={post} featured={index == 0} />;
                         })}

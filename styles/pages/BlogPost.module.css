@@ -20,45 +20,7 @@ p.postDescription {
 .coverImage {
     width: 100%;
     max-height: 600px;
-    margin-top: 2rem;
-}
-
-.postContent {
-    margin-top: 2rem;
-}
-
-.postContent h2 {
-    margin: 4rem 0 1.5rem;
-    text-align: left;
-}
-
-.postContent p {
-    text-indent: unset;
-}
-
-.postContent blockquote {
-    margin: 2.5rem 0;
-    padding: 0.5rem 1rem 0.5rem 1.5rem;
-    border-left: 0.45rem solid var(--secondary);
-    font-style: italic;
-    background-color: hsla(0, 0%, 100%, 0.1);
-    color: var(--blueGray-100);
-    /* box-shadow: var(--shadow-sm); */
-}
-
-.postContent blockquote p {
-    margin: 0;
-}
-
-.postContent a {
-    color: var(--link);
-    border-bottom: 0.15rem solid transparent;
-    transition: var(--transition-all-fast);
-}
-
-.postContent a:hover, .postContent a:active {
-    color: var(--link-hover);
-    border-color: var(--link-hover);
+    margin: 2rem 0;
 }
 
 .authorSignature {

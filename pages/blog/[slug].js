@@ -8,13 +8,13 @@ import { getPost, getPosts } from "../../utils/static-blog";
 import BlogPostMeta from "../../components/app/blog/BlogPostMeta";
 import BlogCategoryCard from "../../components/app/blog/BlogCategoryCard";
 import BlogPostCard from "../../components/app/blog/BlogPostCard";
+import MarkdownContent from "../../components/app/MarkdownContent";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { LangContext, useLangTerm } from "../../utils/lang";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import styles from "../../styles/pages/common.module.css";
-import ownStyles from "../../styles/pages/blog-post.module.css";
-import "highlight.js/styles/vs2015.css";
+import pageStyles from "../../styles/pages/Page.module.css";
+import styles from "../../styles/pages/BlogPost.module.css";
 
 export async function getStaticPaths({ locales }) {
     const paths = [];
@@ -71,7 +71,7 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
     }, [router.asPath]);
 
     return (
-        <AppLayout className={styles.container + " " + ownStyles.container}>
+        <AppLayout className={`${pageStyles.container} ${styles.container}`}>
 
             <AppHead
                 title={`${metaData.title} - ${SITE_TITLE}`}
@@ -80,30 +80,30 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
                 type="article"
             />
 
-            <div className={ownStyles.postCategory}>
+            <div className={styles.postCategory}>
                 <Link href={`/blog/category/${metaData.category}`}><a>
                     {L_BLOG_CATEGORY_NAMES[metaData.category]}
                 </a></Link>
             </div>
 
             <h1>{metaData.title}</h1>
-            <p className={ownStyles.postDescription}>{metaData.description}</p>
+            <p className={styles.postDescription}>{metaData.description}</p>
             <BlogPostMeta post={{ metaData }} />
 
             {metaData?.coverImage?.path &&
-                <img className={ownStyles.coverImage} src={metaData.coverImage.path} alt={metaData.title} />
+                <img className={styles.coverImage} src={metaData.coverImage.path} alt={metaData.title} />
             }
 
-            <div className={ownStyles.postContent} dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            <MarkdownContent content={htmlContent} />
 
             <Separator top="4rem" bottom="2rem" />
 
-            <div className={ownStyles.authorSignature}>
+            <div className={styles.authorSignature}>
                 <img src={metaData.author.picture} alt={metaData.author.name} />
-                <div className={ownStyles.texts}>
-                    <div className={ownStyles.authorName}>{metaData.author.name}</div>
+                <div className={styles.texts}>
+                    <div className={styles.authorName}>{metaData.author.name}</div>
                     {metaData.author.id &&
-                        <div className={ownStyles.authorLink}>
+                        <div className={styles.authorLink}>
                             {/* {L_BLOG_MORE_POSTS_AUTHOR(`/blog/author/${metaData.author.id}`)} */}
                             {L_BLOG_MORE_POSTS_AUTHOR(`/blog`)}
                         </div>
@@ -112,7 +112,7 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
             </div>
 
             {metaData?.coverImage?.authorName &&
-                <div className={ownStyles.coverImageAuthor}>
+                <div className={styles.coverImageAuthor}>
                     {L_BLOG_PHOTO_CREDITS} {metaData.coverImage.authorName}
                     {metaData.coverImage.authorUrl &&
                         <a href={metaData.coverImage.authorUrl} target="_blank"><FaExternalLinkAlt /></a>
@@ -122,7 +122,7 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
 
             <Separator top="4rem" bottom="2rem" />
 
-            <div className={ownStyles.postFooter}>
+            <div className={styles.postFooter}>
                 <BlogCategoryCard
                     category={metaData.category}
                     featuredPosts={featuredCtgPosts}

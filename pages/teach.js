@@ -6,7 +6,7 @@ import { useLangTerm } from "../utils/lang";
 import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
 import SlideShowReviews from "../components/app/SlideShowReviews";
 import { useRouter } from "next/router";
-import styles from "../styles/pages/common.module.css";
+import pageStyles from "../styles/pages/Page.module.css";
 
 const teachLinks = [
     { text: "Kelprof", url: "https://www.kelprof.com/cours-particuliers/programmation/cours-particulier-developpement-web-professionnel-762600.html" },
@@ -24,7 +24,7 @@ export default function Teach() {
     const L_REVIEWS = useLangTerm('REVIEWS');
 
     return (
-        <AppLayout className={styles.container}>
+        <AppLayout className={pageStyles.container}>
             <AppHead title={`${SITE_TITLE} - ${L_TEACH_TITLE}`} />
 
             <h1>{L_TEACH_TITLE}</h1>
@@ -32,9 +32,9 @@ export default function Teach() {
             <section>
                 {L_TEACH_INTRO}
                 {L_TEACH_TRAINING}
-                <div className={styles.promptBox}>
+                <div className={pageStyles.promptBox}>
                     <Link href={RESUME_PATHS[locale]}>
-                        <a className={styles.promptBtn} target="_blank">{L_DOWNLOAD_RESUME}</a>
+                        <a className={pageStyles.promptBtn} target="_blank">{L_DOWNLOAD_RESUME}</a>
                     </Link>
                 </div>
                 {L_TEACH_COURSES}
@@ -42,10 +42,10 @@ export default function Teach() {
 
             <section>
                 {L_TEACH_PRIVATE}
-                <div className={styles.promptBox}>
+                <div className={pageStyles.promptBox}>
                     {teachLinks.map((obj, index) => {
                         return (
-                            <a key={index} className={styles.promptBtn} href={obj.url} target="_blank">
+                            <a key={index} className={pageStyles.promptBtn} href={obj.url} target="_blank">
                                 {obj.text} <FaExternalLinkAlt />
                             </a>
                         );
