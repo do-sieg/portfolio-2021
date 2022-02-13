@@ -6,7 +6,7 @@ export default function AuthorSignature({ imagePath, name, children }) {
             <img src={imagePath} alt={name} />
             <div>
                 <div className={styles.name}>{name}</div>
-                <div className={styles.line}>{children}</div>
+                <div className={styles.lines}>{children}</div>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 .container {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1rem; */
 }
 
 .container img {
@@ -10,7 +10,8 @@
     border-radius: 50%;
     object-fit: cover;
     object-position: top;
-    align-self: flex-start;
+    float: left;
+    margin: 0.5rem 1rem 0.5rem 0;
 }
 
 .name {
@@ -18,21 +19,28 @@
     color: var(--secondary);
 }
 
-.line {
+.lines {
     font-size: 1.2rem;
     font-weight: 300;
 }
 
-.line p {
+.lines p {
     margin: 0.5rem 0;
 }
 
-.line a {
+.lines a {
     border-bottom: 0.0625rem solid transparent;
 }
 
-.line a:hover, .line a:active {
+.lines a:hover, .lines a:active {
     color: var(--link-hover);
     border-color: var(--link-hover);
     transition: var(--transition-all);
+}
+
+@media (min-width: 640px) {
+    .container img {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
 }
