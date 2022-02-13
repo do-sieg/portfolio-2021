@@ -22,40 +22,6 @@ p.postDescription {
     margin: 2rem 0;
 }
 
-.authorSignature {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.authorSignature img {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-}
-
-.authorName {
-    text-transform: uppercase;
-    color: var(--secondary);
-}
-
-.authorLink {
-    font-size: large;
-    font-weight: 300;
-}
-
-.authorLink a {
-    border-bottom: 0.0625rem solid transparent;
-}
-
-.authorLink a:hover, .authorLink a:active {
-    color: var(--link-hover);
-    border-color: var(--link-hover);
-    transition: var(--transition-all);
-}
-
 .coverImageAuthor {
     margin-top: 1rem;
     display: flex;

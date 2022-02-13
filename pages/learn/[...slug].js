@@ -1,8 +1,11 @@
+import Link from "next/link";
 import AppHead from "../../components/app/AppHead";
 import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE } from "../../data/constants";
 import { getLesson, getLessons } from "../../utils/lessons";
 import { useLangTerm } from "../../utils/lang";
+import Separator from "../../components/app/Separator";
+import AuthorSignature from "../../components/app/AuthorSignature";
 import LearnNav from "../../components/app/learn/LearnNav";
 import MarkdownContent from "../../components/app/MarkdownContent";
 import pageStyles from "../../styles/pages/Page.module.css";
@@ -44,9 +47,10 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export default function LearnLesson({ subjectId, slug, metaData, htmlContent }) {
-    const L_BY = useLangTerm("BY");
+    // const L_BY = useLangTerm("BY");
     const L_UPDATED = useLangTerm("UPDATED");
     const L_READING_TIME = useLangTerm("READING_TIME");
+    const L_LESSONS_SIGNATURE = useLangTerm("LESSONS_SIGNATURE");
 
     return (
         <AppLayout className={pageStyles.container}>
@@ -60,14 +64,20 @@ export default function LearnLesson({ subjectId, slug, metaData, htmlContent }) 
             />
 
             <div className={styles.lessonMeta}>
-                {L_BY} {metaData.authorName}<br />
+                {/* {L_BY} {metaData.author.name}<br /> */}
                 {L_UPDATED} {metaData.updated}<br />
                 {metaData.readingTime} {L_READING_TIME}
             </div>
 
             <h1>{metaData.title}</h1>
 
-           <MarkdownContent content={htmlContent} />
+            <MarkdownContent content={htmlContent} />
+
+            <Separator top="4rem" bottom="2rem" />
+
+            <AuthorSignature imagePath={metaData.author.picture} name={metaData.author.name}>
+                <div>{L_LESSONS_SIGNATURE}</div>
+            </AuthorSignature>
 
         </AppLayout>
     );

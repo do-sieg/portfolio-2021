@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    align-self: flex-start;
+}
+
+.name {
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.line {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.line p {
+    margin: 0.5rem 0;
+}
+
+.line a {
+    border-bottom: 0.0625rem solid transparent;
+}
+
+.line a:hover, .line a:active {
+    color: var(--link-hover);
+    border-color: var(--link-hover);
+    transition: var(--transition-all);
+}

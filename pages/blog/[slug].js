@@ -15,6 +15,7 @@ import { LangContext, useLangTerm } from "../../utils/lang";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import pageStyles from "../../styles/pages/Page.module.css";
 import styles from "../../styles/pages/BlogPost.module.css";
+import AuthorSignature from "../../components/app/AuthorSignature";
 
 export async function getStaticPaths({ locales }) {
     const paths = [];
@@ -98,18 +99,14 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
 
             <Separator top="4rem" bottom="2rem" />
 
-            <div className={styles.authorSignature}>
-                <img src={metaData.author.picture} alt={metaData.author.name} />
-                <div className={styles.texts}>
-                    <div className={styles.authorName}>{metaData.author.name}</div>
-                    {metaData.author.id &&
-                        <div className={styles.authorLink}>
-                            {/* {L_BLOG_MORE_POSTS_AUTHOR(`/blog/author/${metaData.author.id}`)} */}
-                            {L_BLOG_MORE_POSTS_AUTHOR(`/blog`)}
-                        </div>
-                    }
-                </div>
-            </div>
+            <AuthorSignature imagePath={metaData.author.picture} name={metaData.author.name}>
+                {metaData.author.id &&
+                    <>
+                        {/* {L_BLOG_MORE_POSTS_AUTHOR(`/blog/author/${metaData.author.id}`)} */}
+                        {L_BLOG_MORE_POSTS_AUTHOR(`/blog`)}
+                    </>
+                }
+            </AuthorSignature>
 
             {metaData?.coverImage?.authorName &&
                 <div className={styles.coverImageAuthor}>

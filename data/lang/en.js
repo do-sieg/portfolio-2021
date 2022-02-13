@@ -158,5 +158,13 @@ export default {
     LESSONS_INTRO: "<p>INTRO</p>",
     LESSONS_SUBJECT_TITLE: (name) => `${name} Lessons`,
     LESSONS_NUMBER: (n) => n === 1 ? `${n} lesson` : `${n} lessons`,
+    LESSONS_SIGNATURE: (
+        <>
+            <p>I am a web developer and trainer, with a passion for all things code-related.</p>
+            <p>I make these courses available to everyone to learn or review concepts as simply and clearly as possible.</p>
+            <p>Check <Link href="/learn"><a>all the courses here</a></Link>.</p>
+        </>
+    ),
 
+    $ git commit -m "Moved author signature to a component, added lesson signature"
 }

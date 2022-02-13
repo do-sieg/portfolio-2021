@@ -2,8 +2,10 @@
 title: Créer une page HTML
 number: 101
 level: basic
-authorName: Daniel Orchanian
-updated: "2020-02-12"
+author:
+    name: Daniel Orchanian
+    picture: /images/profile/profile_03_square.jpg
+updated: "2020-02-14"
 published: true
 ---
 

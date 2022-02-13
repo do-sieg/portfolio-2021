@@ -154,4 +154,11 @@ export default {
     LESSONS_INTRO: "<p>INTRO</p>",
     LESSONS_SUBJECT_TITLE: (name) => `Cours ${name}`,
     LESSONS_NUMBER: (n) => `${n} cours`,
+    LESSONS_SIGNATURE: (
+        <>
+            <p>Je suis développeur web et formateur, passionné par tout ce qui touche au code.</p>
+            <p>Je mets ces cours à disposition de tous pour apprendre ou réviser des notions le plus simplement et clairement possible.</p>
+            <p>Retrouvez <Link href="/learn"><a>tous les cours ici</a></Link>.</p>
+        </>
+    ),
 }
