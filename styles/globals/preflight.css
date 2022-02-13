@@ -1,6 +1,6 @@
-/* Set all box sizing to border-box by default */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Set all box sizing to border-box by default */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Remove default margins */

@@ -28,10 +28,10 @@ export default function LearnNav({ subjectId, lessonSlug = "", lessonNumber = nu
             <Link href={"/learn"}><a>{L_LESSONS_TITLE}</a></Link>
             {links.map(({ text, path }, index) => {
                 return (
-                    <Fragment key={index}>
+                    <div key={index} className={styles.linkContainer}>
                         <GoChevronRight />
                         <Link key={index} href={path}><a>{text}</a></Link>
-                    </Fragment>
+                    </div>
                 );
             })}
         </div>

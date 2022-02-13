@@ -37,7 +37,6 @@
 .container .expandLargeScreen {
     cursor: pointer;
     display: none;
-    -webkit-tap-highlight-color:transparent;
 }
 
 @media (min-width:1024px) {
