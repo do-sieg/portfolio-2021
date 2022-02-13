@@ -66,6 +66,10 @@ Elle ne contient qu'un simple texte pour le moment, et on va améliorer ça. Mai
 
 À bientôt !
 
+![_EXPAND_test](/images/profile/profile_03_square.jpg)
+
+![_EXPAND_test](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/04-06-13_Arras_01.JPG/1280px-04-06-13_Arras_01.JPG)
+
 <!-- 
 TODO
 - lien pour explications sur comment afficher extensions

@@ -27,3 +27,24 @@
     color: var(--link-hover);
     border-color: var(--link-hover);
 }
+
+.container img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.container .expandLargeScreen {
+    cursor: pointer;
+    display: none;
+    -webkit-tap-highlight-color:transparent;
+}
+
+@media (min-width:1024px) {
+    .container .expandSmallScreen {
+        display: none;
+    }
+    .container .expandLargeScreen {
+        display: flex;
+    }
+}
