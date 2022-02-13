@@ -165,6 +165,4 @@ export default {
             <p>Check <Link href="/learn"><a>all the courses here</a></Link>.</p>
         </>
     ),
-
-    $ git commit -m "Moved author signature to a component, added lesson signature"
 }
