@@ -6,3 +6,7 @@
     color: var(--gray-200);
 }
 
+.coverImage {
+    width: 100%;
+    margin: 2rem auto;
+}

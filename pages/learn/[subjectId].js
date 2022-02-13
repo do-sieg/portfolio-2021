@@ -1,6 +1,7 @@
 import AppHead from "../../components/app/AppHead";
 import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE } from "../../data/constants";
+import { getSubject, getSubjects } from "../../utils/subjects";
 import { getLessons } from "../../utils/lessons";
 import { useLangTerm } from "../../utils/lang";
 import Separator from "../../components/app/Separator";
@@ -12,16 +13,16 @@ import styles from "../../styles/pages/LearnSubject.module.css";
 export async function getStaticPaths({ locales }) {
     const paths = [];
     for (const locale of locales) {
-        const learnSubjects = require(`../../data/learn_subjects_${locale}`).learnSubjects;
-        paths.push(...Object.keys(learnSubjects).map(subjectId => `/${locale}/learn/${subjectId}`));
+        const subjects = getSubjects(locale);
+        paths.push(...Object.keys(subjects).map(subjectId => `/${locale}/learn/${subjectId}`));
     }
     return { paths, fallback: false };
 }
 
 export async function getStaticProps({ locale, params }) {
     const { subjectId } = params;
-    const learnSubjects = require(`../../data/learn_subjects_${locale}`).learnSubjects;
-    const { name, description, sections } = learnSubjects[subjectId];
+    const subject = getSubject(locale, subjectId);
+    const { name, description, coverImagePath, sections } = subject;
 
     const lessons = await getLessons({ locale, subjectId });
 
@@ -29,13 +30,14 @@ export async function getStaticProps({ locale, params }) {
         subjectId,
         name,
         description,
+        coverImagePath,
         sections,
         lessons,
     };
     return { props };
 }
 
-export default function LearnSubject({ subjectId, name, description, sections, lessons }) {
+export default function LearnSubject({ subjectId, name, description, coverImagePath, sections, lessons }) {
     const L_LESSONS_SUBJECT_TITLE = useLangTerm("LESSONS_SUBJECT_TITLE");
 
     return (
@@ -43,6 +45,8 @@ export default function LearnSubject({ subjectId, name, description, sections, l
             <AppHead title={`${L_LESSONS_SUBJECT_TITLE(name)} - ${SITE_TITLE}`} />
 
             <LearnNav subjectId={subjectId} />
+
+            <img className={styles.coverImage} src={coverImagePath} alt={name} />
 
             <h1>{`${L_LESSONS_SUBJECT_TITLE(name)}`}</h1>
 

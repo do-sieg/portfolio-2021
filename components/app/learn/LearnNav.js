@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLangTerm } from "../../../utils/lang";
+import { getSubject } from "../../../utils/subjects";
 import { GoChevronRight } from "react-icons/go";
 import styles from "./LearnNav.module.css";
 
@@ -13,8 +14,8 @@ export default function LearnNav({ subjectId, lessonSlug = "", lessonNumber = nu
 
     useEffect(() => {
         const newLinks = [];
-        const learnSubjects = require(`../../../data/learn_subjects_${locale}`).learnSubjects;
-        newLinks.push({ text: L_LESSONS_SUBJECT_TITLE(learnSubjects[subjectId].name), path: `/learn/${subjectId}` });
+        const subject = getSubject(locale, subjectId);
+        newLinks.push({ text: L_LESSONS_SUBJECT_TITLE(subject.name), path: `/learn/${subjectId}` });
         if (lessonSlug && lessonTitle) {
             let text = lessonTitle;
             if (lessonNumber) text = `[${lessonNumber}] ${text}`;

@@ -2,6 +2,7 @@ import Link from "next/link";
 import AppHead from "../../components/app/AppHead";
 import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE } from "../../data/constants";
+import { getSubject, getSubjects } from "../../utils/subjects";
 import { getLesson, getLessons } from "../../utils/lessons";
 import { useLangTerm } from "../../utils/lang";
 import Separator from "../../components/app/Separator";
@@ -15,8 +16,8 @@ export async function getStaticPaths({ locales }) {
     const paths = [];
 
     locales.forEach((locale) => {
-        const learnSubjects = require(`../../data/learn_subjects_${locale}`).learnSubjects;
-        Object.keys(learnSubjects).forEach(async (subjectId) => {
+        const subjects = getSubjects(locale);
+        Object.keys(subjects).forEach(async (subjectId) => {
             const lessons = await getLessons({ locale, subjectId });
 
             lessons.forEach((lesson) => {
@@ -34,11 +35,13 @@ export async function getStaticPaths({ locales }) {
 
 export async function getStaticProps({ params, locale }) {
     const [subjectId, slug] = params.slug;
+    const subject = getSubject(locale, subjectId);
 
     const data = await getLesson({ locale, subjectId, slug });
 
     const props = {
         subjectId,
+        coverImagePath: subject.coverImagePath,
         slug,
         metaData: data.data,
         htmlContent: data.htmlContent,
@@ -46,7 +49,7 @@ export async function getStaticProps({ params, locale }) {
     return { props };
 }
 
-export default function LearnLesson({ subjectId, slug, metaData, htmlContent }) {
+export default function LearnLesson({ subjectId, coverImagePath, slug, metaData, htmlContent }) {
     // const L_BY = useLangTerm("BY");
     const L_UPDATED = useLangTerm("UPDATED");
     const L_READING_TIME = useLangTerm("READING_TIME");
@@ -70,6 +73,8 @@ export default function LearnLesson({ subjectId, slug, metaData, htmlContent }) 
             </div>
 
             <h1>{metaData.title}</h1>
+
+            <img className={styles.coverImage} src={coverImagePath} alt={metaData.title} />
 
             <MarkdownContent content={htmlContent} />
 
