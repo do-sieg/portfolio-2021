@@ -151,7 +151,30 @@ export default {
         intermediate: "Intermédiaire",
         advanced: "Avancé",
     },
-    LESSONS_INTRO: "<p>INTRO</p>",
+    LESSONS_INTRO: (
+        <>
+            <p>
+                Quand j'interviens en formation ou lors de cours particuliers,
+                je dois souvent expliquer certains sujets dans leurs moindres détails.
+                Mais cela fait <strong>beaucoup de choses à mémoriser</strong>.
+            </p>
+            <p>
+                Les cours que je mets à disposition ici sont découpés de façon à <strong>être
+                concis</strong> et <strong>aller à l'essentiel</strong>.
+                J'essaie d'utiliser un langage <strong>clair</strong>, en expliquant le jargon technique.
+            </p>
+            <p>
+                Mon objectif à long terme sera de couvrir plusieurs langages et frameworks,
+                de la façon la plus complète possible.
+                Les cours seront régulièrement <strong>mis à jour</strong> pour refléter
+                les nouveautés des différents sujets.
+            </p>
+            <p>Bonne lecture !</p>
+            <sub style={{ fontWeight: 300 }}>
+                <i>Photo : <a href="https://unsplash.com/@nickmorrison" target="_blank">Nick Morrison</a></i>
+            </sub>
+        </>
+    ),
     LESSONS_SUBJECT_TITLE: (name) => `Cours ${name}`,
     LESSONS_NUMBER: (n) => `${n} cours`,
     LESSONS_SIGNATURE: (
@@ -161,4 +184,5 @@ export default {
             <p>Retrouvez <Link href="/learn"><a>tous les cours ici</a></Link>.</p>
         </>
     ),
+    LESSONS_CTG_WEB_LANGUAGES: "Les Langages du Web",
 }

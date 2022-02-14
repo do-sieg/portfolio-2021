@@ -22,7 +22,7 @@ export default function LearnNav({ subjectId, lessonSlug = "", lessonNumber = nu
             newLinks.push({ text, path: `/learn/${subjectId}/${lessonSlug}` });
         }
         setLinks(newLinks);
-    }, []);
+    }, [locale]);
 
     return (
         <div className={styles.container}>

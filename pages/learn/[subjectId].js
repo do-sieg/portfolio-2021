@@ -22,14 +22,14 @@ export async function getStaticPaths({ locales }) {
 export async function getStaticProps({ locale, params }) {
     const { subjectId } = params;
     const subject = getSubject(locale, subjectId);
-    const { name, description, coverImagePath, sections } = subject;
+    const { name, intro, coverImagePath, sections } = subject;
 
     const lessons = await getLessons({ locale, subjectId });
 
     const props = {
         subjectId,
         name,
-        description,
+        intro,
         coverImagePath,
         sections,
         lessons,
@@ -37,7 +37,7 @@ export async function getStaticProps({ locale, params }) {
     return { props };
 }
 
-export default function LearnSubject({ subjectId, name, description, coverImagePath, sections, lessons }) {
+export default function LearnSubject({ subjectId, name, intro, coverImagePath, sections, lessons }) {
     const L_LESSONS_SUBJECT_TITLE = useLangTerm("LESSONS_SUBJECT_TITLE");
 
     return (
@@ -50,7 +50,7 @@ export default function LearnSubject({ subjectId, name, description, coverImageP
 
             <h1>{`${L_LESSONS_SUBJECT_TITLE(name)}`}</h1>
 
-            <section><p>{description}</p></section>
+            <section><p>{intro}</p></section>
 
             <Separator />
 

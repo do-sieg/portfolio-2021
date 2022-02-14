@@ -1,4 +1,3 @@
-
 export function getSubjects(locale) {
     return require(`/data/learn_subjects_${locale}`).learnSubjects;
 }

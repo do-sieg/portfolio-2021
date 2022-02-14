@@ -124,7 +124,7 @@ export default {
     ),
 
     BLOG_INTRO: <p>My latest articles on life as a developer, technology, etc...</p>,
-    
+
     BLOG_INTRO: (
         <>
             <p>My latest articles about programming, technologies, developer's life... and a lot of other things.</p>
@@ -148,14 +148,37 @@ export default {
     // HOME_SLIDE_PROMPT_1: "Need a website?",
     // HOME_SLIDE_PROMPT_2: "Need lessons?",
     // HOME_SLIDE_PROMPT_3: "Looking for a translator?",
-    
-    LESSONS_TITLE: "Lessons",
+
+    LESSONS_TITLE: "Courses",
     LESSONS_LEVEL_TITLES: {
         basic: "Basic",
         intermediate: "Intermediate",
         advanced: "Advanced",
     },
-    LESSONS_INTRO: "<p>INTRO</p>",
+    LESSONS_INTRO: (
+        <>
+            <p>
+                When I give training courses or private lessons,
+                I often have to explain things in great detail.
+                But that's <strong>a lot to memorize</strong>.
+            </p>
+            <p>
+                The courses made available here are broken down
+                to <strong>be concise</strong> and <strong>get to the point</strong>.
+                I try to use <strong>understandable</strong> language, explaining technical terms.
+            </p>
+            <p>
+                My long term goal will be to cover several languages and frameworks,
+                in the most complete way possible.
+                The courses will be regularly <strong>updated</strong> to reflect
+                new developments in the various subjects.
+            </p>
+            <p>Enjoy your reading!</p>
+            <sub style={{ fontWeight: 300 }}>
+                <i>Photo: <a href="https://unsplash.com/@nickmorrison" target="_blank">Nick Morrison</a></i>
+            </sub>
+        </>
+    ),
     LESSONS_SUBJECT_TITLE: (name) => `${name} Lessons`,
     LESSONS_NUMBER: (n) => n === 1 ? `${n} lesson` : `${n} lessons`,
     LESSONS_SIGNATURE: (
@@ -165,4 +188,5 @@ export default {
             <p>Check <Link href="/learn"><a>all the courses here</a></Link>.</p>
         </>
     ),
+    LESSONS_CTG_WEB_LANGUAGES: "Web Languages",
 }
