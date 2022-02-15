@@ -23,7 +23,7 @@ export default function BlogCategoryCard({ category, featuredPosts, totalPosts }
                 {featuredPosts.map((post) => {
                     return (
                         <li key={post.slug}>
-                            <Link href={post.slug}><a>
+                            <Link href={`/blog/${post.slug}`}><a>
                                 <h4>{post.metaData.title}</h4>
                                 <span>{renderDate(post.metaData.date, L_DATE_FORMAT, L_SHORT_MONTHS)} – {post.metaData.readingTime} {L_BLOG_READING_TIME}</span>
                             </a></Link>

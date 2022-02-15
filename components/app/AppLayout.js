@@ -8,15 +8,18 @@ import AppBackground from "./AppBackground";
 
 export default function AppLayout({ children, className = "" }) {
     const router = useRouter();
+    const scrollRef = useRef(null);
     const mainRef = useRef(null);
 
     useEffect(() => {
+        scrollRef.current.scrollTo(0, 0);
         mainRef.current.scrollTo(0, 0);
         mainRef.current.focus();
     }, [router.asPath]);
 
     return (
         <PageLayout>
+            <div ref={scrollRef} />
             <AppBackground />
             <AppHeader />
             <AppNav asideWrap />
