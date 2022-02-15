@@ -12,9 +12,9 @@ export default function AppLayout({ children, className = "" }) {
     const mainRef = useRef(null);
 
     useEffect(() => {
-        scrollRef.current.scrollTo(0, 0);
         mainRef.current.scrollTo(0, 0);
         mainRef.current.focus();
+        scrollRef.current.scrollTo(0, 0);
     }, [router.asPath]);
 
     return (
