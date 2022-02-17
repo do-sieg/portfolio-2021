@@ -135,7 +135,7 @@ export default {
     // BLOG_SELECT_CATEGORY: "Select a category",
     BLOG_ALL_ARTICLES: "All articles",
     BLOG_MORE_POSTS_AUTHOR: (authorLink) => {
-        return <span>Read <Link href={authorLink}><a>more posts</a></Link> from this author</span>;
+        return <span>Read <Link href={authorLink}><a rel="author">more posts</a></Link> from this author</span>;
     },
     BLOG_PHOTO_CREDITS: "Photo:",
     BLOG_CATEGORY_NAMES: {

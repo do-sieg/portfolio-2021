@@ -76,7 +76,9 @@ export default function LearnLesson({ subjectId, coverImagePath, slug, metaData,
 
             <img className={styles.coverImage} src={coverImagePath} alt={metaData.title} />
 
-            <MarkdownContent content={htmlContent} />
+            <article>
+                <MarkdownContent content={htmlContent} />
+            </article>
 
             <Separator top="4rem" bottom="2rem" />
 

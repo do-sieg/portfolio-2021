@@ -95,7 +95,9 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
                 <img className={styles.coverImage} src={metaData.coverImage.path} alt={metaData.title} />
             }
 
-            <MarkdownContent content={htmlContent} />
+            <article>
+                <MarkdownContent content={htmlContent} />
+            </article>
 
             <Separator top="4rem" bottom="2rem" />
 
