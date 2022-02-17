@@ -113,10 +113,18 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
 
             {metaData?.coverImage?.authorName &&
                 <div className={ownStyles.coverImageAuthor}>
-                    {L_BLOG_PHOTO_CREDITS} {metaData.coverImage.authorName}
-                    {metaData.coverImage.authorUrl &&
-                        <a href={metaData.coverImage.authorUrl} target="_blank"><FaExternalLinkAlt /></a>
-                    }
+                    {L_BLOG_PHOTO_CREDITS}
+                    {metaData.coverImage.authorName.split(",").map((name, index) => {
+                        return (
+                            <>
+                            {index > 0 ? "," : ""}
+                                {` ${name.trim()}`}
+                                {metaData.coverImage.authorUrl &&
+                                    <a href={metaData.coverImage.authorUrl.split(",")[index].trim()} target="_blank"><FaExternalLinkAlt /></a>
+                                }
+                            </>
+                        );
+                    })}
                 </div>
             }
 

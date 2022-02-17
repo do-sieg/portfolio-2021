@@ -18,7 +18,8 @@ La technique que nous allons voir aujourd'hui s'appelle l'**affectation par déc
 
 Elle permet d'**extraire** des données d'un **tableau** ou d'un **objet clé-valeurs** et de les **affecter à des variables**.
 
-> J'ai rien pigé, mais ça a l'air dégoûtant...
+> "J'ai rien pigé, mais ça a l'air dégoûtant..."  
+-- Un lecteur horrifié
 
 Ok, on va commencer par un exemple...
 
@@ -52,9 +53,8 @@ let job = list[3];
 let city = list[4];
 ```
 
-> C'est moche...
-
-Oui. C'est TRÈS moche.
+> "C'est TRÈS moche..."  
+-- Un esthète
 
 
 ## Une solution : la décomposition
@@ -75,7 +75,8 @@ console.log(name, age, city); // => "Alex", 25, "Paris"
 
 Non, vous ne rêvez pas : on a bien créé trois variables _name_, _age_ et _city_ à partir de notre tableau, et **en une seule ligne** !
 
-> Mais quelle est cette **sorcellerie** ?!
+> "Mais quelle est cette **sorcellerie** ?!"  
+-- Un lecteur puritain
 
 
 ## La décomposition : comment ça marche
@@ -98,7 +99,7 @@ Le tableau de droite est **décomposé** : ses valeurs sont **distribuées à g
 
 La grande originalité est qu'**on peut utiliser le mot-clé _let_** avant les crochets pour signaler qu'on **crée des variables** !
 
-> Puissant...
+> "Puissant..."
 
 Du coup, si vous changez votre tableau, vous pourrez simplement écrire ceci :
 
@@ -118,7 +119,8 @@ const [name, age, city] = list;
 
 ## Exemple : le hook useState de ReactJS
 
-> Attends, j'ai déjà vu ce truc quelque part...
+> "Attends, j'ai déjà vu ce truc quelque part..."  
+-- Un lecteur attentif
 
 En effet, si vous utilisez **React**, et notamment le **hook _useState_**, vous avez déjà utilisé la décomposition :
 
@@ -158,7 +160,7 @@ Mais il est possible grâce à la décomposition d'**extraire des variables** po
 let { name, age } = user;
 ```
 
-> Mais attends un peu... et les autres clés ?
+> "Mais attends un peu... et les autres clés ?"
 
 
 ## Flexible... et lisible
@@ -174,7 +176,7 @@ console.log(job); // => "designer"
 console.log(name); // => "Alex"
 ```
 
-> Mais c'est trop bien !
+> "Mais c'est trop bien !"
 
 Oui. Par exemple, si vous utilisez des composants **React** avec des classes, vous devez souvent utiliser les variables de `this.state` et `this.props` :
 
@@ -192,7 +194,7 @@ const { tax, multiplier } = this.props;
 const total = salary * bonus - tax * multiplier;
 ```
 
-> Mais on a rajouté **deux lignes**...
+> "Mais on a rajouté **deux lignes**..."
 
 Certes, mais quelle **amélioration en lisibilité** ! Il est bien plus rapide de parcourir ce code que le précédent.
 

@@ -21,11 +21,12 @@ Dans un article précédent, on a vu ce qu'était la **décomposition** en JavaS
 
 Aujourd'hui, on va voir comment **pousser** la technique pour l'utiliser avec des **fonctions**.
 
-> Pas de blague sur le compost cette fois ?
+> "Pas de blague sur le compost cette fois ?"  
+-- Un lecteur traumatisé
 
 Non, cette blague était déjà moisie dès le premier article.
 
-> ...
+> "..."
 
 
 ## Le problème des arguments optionnels
@@ -51,7 +52,7 @@ Mais on ne veut avoir à toujours indiquer ces paramètres, car ils sont **optio
 
 ## Une solution : les valeurs par défaut
 
-> On pourrait leur donner des **valeurs par défaut** ?
+> "On pourrait leur donner des **valeurs par défaut** ?"
 
 Comme ceci ?
 
@@ -63,7 +64,7 @@ function getData(limit = 0, page = 1, countryId = 0, search = "") {
 }
 ```
 
-> Oui.
+> "Oui."
 
 Bien vu, mais en pratique, on a un souci :
 
@@ -80,7 +81,7 @@ getData(0, 1, 0, "pantoufle");
 
 Vous voyez le souci ? Si on n'a besoin que du dernier argument, on doit quand même **indiquer tous ceux qui le précèdent**.
 
-> Pas cool... On ne peut rien faire ?
+> "Pas cool... On ne peut rien faire ?"
 
 Il existe bien des techniques, mais ça donne des choses comme :
 
@@ -97,7 +98,7 @@ getData(...[,,,], "pantoufle");
 
 Une solution pour régler ce souci est la **décomposition**. Remanions un peu notre fonction...
 
-> Je sais, je sais !
+> "Je sais, je sais !"
 
 ```js
 function getData(options) {
@@ -114,12 +115,12 @@ function getData({ limit, page, countryId, search }) {
 }
 ```
 
-> Ooooooh...  
-> J'ai pas tout compris...
+> "Ooooooh...  
+> J'ai pas tout compris..."
 
 Eh bien c'est très simple : JavaScript permet de décomposer un objet **directement dans les arguments de la fonction** !
 
-> Ooooooh... (Là j'ai compris.)
+> "Ooooooh... (Là j'ai compris.)"
 
 L'idée à retenir est qu'on ne fonctionne plus **à l'aveugle** avec un argument unique _options_, mais on a bien accès à toutes les clés possibles de cet objet **dans la définition de la fonction**.
 
@@ -136,7 +137,7 @@ function getData({ limit = 0, page = 1, countryId = 0, search = "" }) {
 }
 ```
 
-> Ooooooh...
+> "Ooooooh..."
 
 Et on peut même **combiner ceci avec des arguments normaux** :
 
@@ -146,7 +147,7 @@ function getData(page, limit, { countryId = 0, search = "" }) {
 }
 ```
 
-> Re-ooooooh...
+> "Re-ooooooh..."
 
 Et on n'a **pas à se soucier de l'ordre des arguments**, car un objet ne tient pas compte de l'ordre de ses clés (et c'est pour ça qu'on n'utilise pas de tableau) !
 
@@ -189,8 +190,8 @@ Avantages :
 - Ces propriétés sont **directement accessibles dans des variables**.
 - On peut leur **donner des valeurs par défaut**.
 
-> Il commence à nous saoûler l'autre avec ses exemples React...  
-> -- Un développeur VueJS
+> "Il commence à nous saoûler l'autre avec ses exemples React..."  
+-- Un développeur VueJS
 
 On peut utiliser ça partout, pas uniquement dans React !
 
@@ -199,7 +200,8 @@ On peut utiliser ça partout, pas uniquement dans React !
 
 **Attention** : ne passez pas **toutes vos fonctions** avec des arguments décomposés dans un objet...
 
-> Oups...
+> "Oups..."  
+-- Un lecteur impatient
 
 Mais si vous recevez un objet comme argument d'une fonction, vous gagnerez beaucoup à le décomposer pour en récupérer les clés.
 
@@ -210,7 +212,7 @@ C'est donc une pratique fortement encouragée.
 
 ## Le mot de la fin
 
-C'est donc la fin de cette explication en deux parties sur la décomposition en JavaScript.
+C'est la fin de cette explication en deux parties sur la décomposition en JavaScript.
 
 Je remets le lien de MDN qui traite du sujet dans ses moindres détails :
 - [Affecter par décomposition (MDN)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).

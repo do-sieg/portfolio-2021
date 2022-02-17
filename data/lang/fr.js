@@ -134,7 +134,7 @@ export default {
     BLOG_MORE_POSTS_AUTHOR: (authorLink) => {
         return <span>Lire <Link href={authorLink}><a>plus d'articles</a></Link> de cet auteur</span>;
     },
-    BLOG_PHOTO_CREDITS: "Photo :",
+    BLOG_PHOTO_CREDITS: "Photo(s) :",
     BLOG_CATEGORY_NAMES: {
         javascript: "JavaScript",
         jobs: "Emploi",
