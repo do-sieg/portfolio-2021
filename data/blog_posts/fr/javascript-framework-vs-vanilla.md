@@ -8,7 +8,7 @@ author:
     name: Daniel Orchanian
     picture: /images/profile/profile_03_square.jpg
 coverImage:
-    path: /images/blog/covers/fr/javaScript-framework-vs-vanilla-1.jpg
+    path: /images/blog/covers/fr/javascript-framework-vs-vanilla-1.jpg
     authorName: Rod Long, asier_relampagoestudio
     authorUrl: https://unsplash.com/@rodlong, https://www.freepik.com/asier-relampagoestudio
 published: true
