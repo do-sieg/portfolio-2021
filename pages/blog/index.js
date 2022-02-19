@@ -19,6 +19,7 @@ export default function Blog({ posts }) {
     const L_NAV_BLOG = useLangTerm("NAV_BLOG");
     const L_BLOG_INTRO = useLangTerm("BLOG_INTRO");
     const L_BLOG_NO_ARTICLES = useLangTerm("BLOG_NO_ARTICLES");
+    const L_BLOG_RECENT_POSTS = useLangTerm("BLOG_RECENT_POSTS");
 
     return (
         <AppLayout className={pageStyles.container}>
@@ -33,6 +34,8 @@ export default function Blog({ posts }) {
             <Separator top="2rem" bottom="2rem" />
 
             <section>
+                <h2>{L_BLOG_RECENT_POSTS}</h2>
+
                 {posts.length > 0 ?
                     <div className={styles.postList}>
                         {posts.map((post, index) => {
