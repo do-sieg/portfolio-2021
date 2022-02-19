@@ -22,11 +22,13 @@ export default {
     NAV_HOME: "Home",
     NAV_PROJECTS: "Projects",
     NAV_TEACH: "Teaching",
+    NAV_LEARN: "Courses",
     NAV_BLOG: "Blog",
 
     PHOTO_CREDITS: "Photo Credits",
     BACKGROUND_IMAGES: "Background Images",
 
+    ACTION_START: "Start",
     ACTION_VISIT: "Visit",
     ACTION_VIEW_CODE: "Code",
     ACTION_BACK_HOME: "Return to the home page",
@@ -42,6 +44,8 @@ export default {
     ],
 
     ALL: "All",
+    BY: "By",
+    UPDATED: "Updated:",
     TIMELINE: "Activity",
     REVIEWS: "Reviews",
     ONGOING: "Ongoing",
@@ -53,9 +57,10 @@ export default {
     LEARN_MORE: "Learn More",
     VIEW_PROJECTS: "View my projects",
     DOWNLOAD_RESUME: "Download my resume",
+    VIEW_COURSES: "View all courses",
     YEARS: (n) => n <= 1 ? "year" : "years",
     MONTHS: (n) => n <= 1 ? "month" : "months",
-
+    READING_TIME: "min read",
 
     HOME_TITLE: "Welcome",
     HOME_INTRO_DEV: (
@@ -96,13 +101,12 @@ export default {
     TEACH_TRAINING: (
         <p>
             After six years of teaching in high school, I decide to put this experience to good use in the world of <strong>web development training</strong>.
-            I give lessons on various topics: programming languages, frameworks, tools...
+            I give lessons on various subjects: programming languages, frameworks, tools...
         </p>
     ),
     TEACH_COURSES: (
         <p>
-            I plan to make <strong>courses</strong> available for beginners to help them get a handle on things.
-            {/* I provide classes for beginners to help them find their way around. */}
+            I provide <strong>courses</strong> for beginners to help them find their way around.
         </p>
     ),
     TEACH_PRIVATE: (
@@ -120,7 +124,7 @@ export default {
     ),
 
     BLOG_INTRO: <p>My latest articles on life as a developer, technology, etc...</p>,
-    
+
     BLOG_INTRO: (
         <>
             <p>My latest articles about programming, technologies, developer's life... and a lot of other things.</p>
@@ -128,11 +132,11 @@ export default {
         </>
     ),
     BLOG_NO_ARTICLES: "No articles yet. Coming soon.",
+    BLOG_RECENT_POSTS: "Latest Posts",
     // BLOG_SELECT_CATEGORY: "Select a category",
     BLOG_ALL_ARTICLES: "All articles",
-    BLOG_READING_TIME: "min read",
     BLOG_MORE_POSTS_AUTHOR: (authorLink) => {
-        return <span>Read <Link href={authorLink}><a>more posts</a></Link> from this author</span>;
+        return <span>Read <Link href={authorLink}><a rel="author">more posts</a></Link> from this author</span>;
     },
     BLOG_PHOTO_CREDITS: "Photo(s):",
     BLOG_CATEGORY_NAMES: {
@@ -146,5 +150,45 @@ export default {
     // HOME_SLIDE_PROMPT_2: "Need lessons?",
     // HOME_SLIDE_PROMPT_3: "Looking for a translator?",
 
-
+    LESSONS_TITLE: "Courses",
+    LESSONS_LEVEL_TITLES: {
+        basic: "Basic",
+        intermediate: "Intermediate",
+        advanced: "Advanced",
+    },
+    LESSONS_INTRO: (
+        <>
+            <p>
+                When I give training courses or private lessons,
+                I often have to explain things in great detail.
+                But that's <strong>a lot to memorize</strong>.
+            </p>
+            <p>
+                The courses made available here are broken down
+                to <strong>be concise</strong> and <strong>get to the point</strong>.
+                I try to use <strong>understandable</strong> language, explaining technical terms.
+            </p>
+            <p>
+                My long term goal will be to cover several languages and frameworks,
+                in the most complete way possible.
+                The courses will be regularly <strong>updated</strong> to reflect
+                new developments in the various subjects.
+            </p>
+            <p>Enjoy your reading!</p>
+            <sub style={{ fontWeight: 300 }}>
+                <i>Photo: <a href="https://unsplash.com/@nickmorrison" target="_blank">Nick Morrison</a></i>
+            </sub>
+        </>
+    ),
+    LEARN_NO_LESSONS: "No lessons yet. Coming soon.",
+    LESSONS_SUBJECT_TITLE: (name) => `${name} Lessons`,
+    LESSONS_NUMBER: (n) => n === 1 ? `${n} lesson` : `${n} lessons`,
+    LESSONS_SIGNATURE: (
+        <>
+            <p>I am a web developer and trainer, with a passion for all things code-related.</p>
+            <p>I make these courses available to everyone to learn or review concepts as simply and clearly as possible.</p>
+            <p>Check <Link href="/learn"><a>all the courses here</a></Link>.</p>
+        </>
+    ),
+    LESSONS_CTG_WEB_LANGUAGES: "Web Languages",
 }

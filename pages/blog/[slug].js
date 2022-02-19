@@ -8,13 +8,14 @@ import { getPost, getPosts } from "../../utils/static-blog";
 import BlogPostMeta from "../../components/app/blog/BlogPostMeta";
 import BlogCategoryCard from "../../components/app/blog/BlogCategoryCard";
 import BlogPostCard from "../../components/app/blog/BlogPostCard";
-import { useContext, useEffect, useState } from "react";
+import MarkdownContent from "../../components/app/MarkdownContent";
+import { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { LangContext, useLangTerm } from "../../utils/lang";
+import { useLangTerm } from "../../utils/lang";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import styles from "../../styles/pages/common.module.css";
-import ownStyles from "../../styles/pages/blog-post.module.css";
-import "highlight.js/styles/vs2015.css";
+import pageStyles from "../../styles/pages/Page.module.css";
+import styles from "../../styles/pages/BlogPost.module.css";
+import AuthorSignature from "../../components/app/AuthorSignature";
 
 export async function getStaticPaths({ locales }) {
     const paths = [];
@@ -33,7 +34,7 @@ export async function getStaticProps({ params, locale }) {
     const totalCtgPosts = await getPosts({ locale, category: data.data.category });
 
     const props = {
-        locale,
+        pageLangLinks: { [locale]: slug, ...data.data.translations },
         slug,
         metaData: data.data,
         htmlContent: data.htmlContent,
@@ -44,22 +45,12 @@ export async function getStaticProps({ params, locale }) {
     return { props };
 }
 
-export default function BlogPost({ locale, slug, metaData, htmlContent, featuredCtgPosts, totalCtgPosts }) {
-    const router = useRouter();
-    const { setLangLinks, clearLangLinks } = useContext(LangContext);
+export default function BlogPost({ slug, metaData, htmlContent, featuredCtgPosts, totalCtgPosts }) {
+    const { locale, asPath } = useRouter();
     const [featuredPosts, setFeaturedPosts] = useState([]);
     const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
     const L_BLOG_MORE_POSTS_AUTHOR = useLangTerm("BLOG_MORE_POSTS_AUTHOR");
     const L_BLOG_PHOTO_CREDITS = useLangTerm("BLOG_PHOTO_CREDITS");
-
-    useEffect(() => {
-        clearLangLinks();
-        if (metaData.translations) {
-            Object.entries(metaData.translations).forEach(([lang, slug]) => {
-                setLangLinks(lang, slug);
-            });
-        }
-    }, [router.asPath]);
 
     useEffect(async () => {
         try {
@@ -68,10 +59,10 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
         } catch (err) {
             setFeaturedPosts([]);
         }
-    }, [router.asPath]);
+    }, [asPath]);
 
     return (
-        <AppLayout className={styles.container + " " + ownStyles.container}>
+        <AppLayout className={`${pageStyles.container} ${styles.container}`}>
 
             <AppHead
                 title={`${metaData.title} - ${SITE_TITLE}`}
@@ -80,49 +71,47 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
                 type="article"
             />
 
-            <div className={ownStyles.postCategory}>
+            <div className={styles.postCategory}>
                 <Link href={`/blog/category/${metaData.category}`}><a>
                     {L_BLOG_CATEGORY_NAMES[metaData.category]}
                 </a></Link>
             </div>
 
             <h1>{metaData.title}</h1>
-            <p className={ownStyles.postDescription}>{metaData.description}</p>
+            <p className={styles.postDescription}>{metaData.description}</p>
             <BlogPostMeta post={{ metaData }} />
 
             {metaData?.coverImage?.path &&
-                <img className={ownStyles.coverImage} src={metaData.coverImage.path} alt={metaData.title} />
+                <img className={styles.coverImage} src={metaData.coverImage.path} alt={metaData.title} />
             }
 
-            <div className={ownStyles.postContent} dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            <article>
+                <MarkdownContent content={htmlContent} />
+            </article>
 
             <Separator top="4rem" bottom="2rem" />
 
-            <div className={ownStyles.authorSignature}>
-                <img src={metaData.author.picture} alt={metaData.author.name} />
-                <div className={ownStyles.texts}>
-                    <div className={ownStyles.authorName}>{metaData.author.name}</div>
-                    {metaData.author.id &&
-                        <div className={ownStyles.authorLink}>
-                            {/* {L_BLOG_MORE_POSTS_AUTHOR(`/blog/author/${metaData.author.id}`)} */}
-                            {L_BLOG_MORE_POSTS_AUTHOR(`/blog`)}
-                        </div>
-                    }
-                </div>
-            </div>
+            <AuthorSignature imagePath={metaData.author.picture} name={metaData.author.name}>
+                {metaData.author.id &&
+                    <>
+                        {/* {L_BLOG_MORE_POSTS_AUTHOR(`/blog/author/${metaData.author.id}`)} */}
+                        {L_BLOG_MORE_POSTS_AUTHOR(`/blog`)}
+                    </>
+                }
+            </AuthorSignature>
 
             {metaData?.coverImage?.authorName &&
-                <div className={ownStyles.coverImageAuthor}>
+                <div className={styles.coverImageAuthor}>
                     {L_BLOG_PHOTO_CREDITS}
                     {metaData.coverImage.authorName.split(",").map((name, index) => {
                         return (
-                            <>
-                            {index > 0 ? "," : ""}
+                            <Fragment key={index}>
+                                {index > 0 ? "," : ""}
                                 {` ${name.trim()}`}
                                 {metaData.coverImage.authorUrl &&
                                     <a href={metaData.coverImage.authorUrl.split(",")[index].trim()} target="_blank"><FaExternalLinkAlt /></a>
                                 }
-                            </>
+                            </Fragment>
                         );
                     })}
                 </div>
@@ -130,7 +119,7 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
 
             <Separator top="4rem" bottom="2rem" />
 
-            <div className={ownStyles.postFooter}>
+            <div className={styles.postFooter}>
                 <BlogCategoryCard
                     category={metaData.category}
                     featuredPosts={featuredCtgPosts}

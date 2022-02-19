@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useContext } from "react";
-import { FaCode, FaGraduationCap, FaHome, FaRocket, FaUser } from "react-icons/fa";
+import { FaChalkboardTeacher, FaCode, FaGraduationCap, FaHome, FaRocket, FaUser } from "react-icons/fa";
 import { RiArticleFill } from "react-icons/ri";
 import { useLangTerm } from "../../utils/lang";
 import { BurgerContext } from "../core/BurgerMenu";
@@ -11,6 +11,7 @@ export default function AppNav({ asideWrap = false }) {
     const L_NAV_BLOG = useLangTerm("NAV_BLOG");
     const L_NAV_PROJECTS = useLangTerm("NAV_PROJECTS");
     const L_NAV_TEACH = useLangTerm("NAV_TEACH");
+    const L_NAV_LEARN = useLangTerm("NAV_LEARN");
 
     const burger = useContext(BurgerContext);
 
@@ -19,8 +20,9 @@ export default function AppNav({ asideWrap = false }) {
         const links = [
             { url: "/", icon: <FaHome />, text: L_NAV_HOME },
             { url: "/blog", icon: <RiArticleFill />, text: L_NAV_BLOG },
+            { url: "/teach", icon: <FaChalkboardTeacher />, text: L_NAV_TEACH },
+            { url: "/learn", icon: <FaGraduationCap />, text: L_NAV_LEARN },
             { url: "/projects", icon: <FaRocket />, text: L_NAV_PROJECTS },
-            { url: "/teach", icon: <FaGraduationCap />, text: L_NAV_TEACH },
         ];
 
         return (

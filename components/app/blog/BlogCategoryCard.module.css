@@ -1,11 +1,6 @@
 .container {
-    padding: 1rem 2rem;
-    background-color: var(--blueGray-800);
-    background-image: linear-gradient(135deg, var(--blueGray-700), var(--blueGray-900));
-    border-radius: 1rem 2rem 1rem;
-    box-shadow: var(--shadow-lg);
+    composes: card from "../../../styles/pages/Page.module.css";
     font-size: medium;
-    transition: var(--transition-all);
 }
 
 .container h3 {

@@ -1,0 +1,19 @@
+.container {
+    composes: card from "../../../styles/pages/Page.module.css";
+}
+
+.container h3 {
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.description {
+    margin: 1rem 0;
+    font-size: large;
+    font-weight: 300;
+}
+
+.action {
+    font-size: large;
+    font-weight: 300;
+}

@@ -23,12 +23,14 @@ export default {
     NAV_HOME: "Accueil",
     // NAV_ABOUT: "About Me",
     NAV_PROJECTS: "Projets",
-    NAV_TEACH: "Cours",
+    NAV_TEACH: "Mentorat",
+    NAV_LEARN: "Cours",
     NAV_BLOG: "Blog",
 
     PHOTO_CREDITS: "Crédits photo",
     BACKGROUND_IMAGES: "Images d'arrière-plan",
 
+    ACTION_START: "Commencer",
     ACTION_VISIT: "Visiter",
     ACTION_VIEW_CODE: "Code",
     ACTION_BACK_HOME: "Revenir à la page d'accueil",
@@ -44,6 +46,8 @@ export default {
     ],
 
     ALL: "Tous",
+    BY: "Par",
+    UPDATED: "Mise à jour :",
     TIMELINE: "Parcours",
     REVIEWS: "Avis",
     ONGOING: "En cours",
@@ -55,9 +59,10 @@ export default {
     LEARN_MORE: "En savoir plus",
     VIEW_PROJECTS: "Voir mes projets",
     DOWNLOAD_RESUME: "Télécharger mon CV",
+    VIEW_COURSES: "Accéder aux cours",
     YEARS: (n) => n <= 1 ? "an" : "ans",
     MONTHS: (n) => "mois",
-
+    READING_TIME: "min de lecture",
 
     HOME_TITLE: "Bienvenue",
     HOME_INTRO_DEV: (
@@ -103,8 +108,7 @@ export default {
     ),
     TEACH_COURSES: (
         <p>
-            Je projette de mettre des <strong>cours</strong> à disposition des débutants pour les aider à s'y retrouver un peu.
-            {/* Je mets des cours à disposition des débutants pour les aider à s'y retrouver un peu. */}
+            Je mets des <strong>cours</strong> à disposition des débutants pour les aider à s'y retrouver un peu.
         </p>
     ),
     TEACH_PRIVATE: (
@@ -128,11 +132,11 @@ export default {
         </>
     ),
     BLOG_NO_ARTICLES: "Pas encore d'article. Ils arrivent bientôt.",
+    BLOG_RECENT_POSTS: "Derniers articles",
     // BLOG_SELECT_CATEGORY: "Sélectionnez une catégorie",
     BLOG_ALL_ARTICLES: "Tous les articles",
-    BLOG_READING_TIME: "min de lecture",
     BLOG_MORE_POSTS_AUTHOR: (authorLink) => {
-        return <span>Lire <Link href={authorLink}><a>plus d'articles</a></Link> de cet auteur</span>;
+        return <span>Lire <Link href={authorLink}><a rel="author">plus d'articles</a></Link> de cet auteur</span>;
     },
     BLOG_PHOTO_CREDITS: "Photo(s) :",
     BLOG_CATEGORY_NAMES: {
@@ -141,4 +145,46 @@ export default {
     },
     BLOG_CATEGORY_MORE: "Articles dans",
     BLOG_CATEGORY_SEE_ALL_POSTS: (n) => n === 1 ? `${n} article` : `Voir les ${n} articles`,
+
+    LESSONS_TITLE: "Les Cours",
+    LESSONS_LEVEL_TITLES: {
+        basic: "Basique",
+        intermediate: "Intermédiaire",
+        advanced: "Avancé",
+    },
+    LESSONS_INTRO: (
+        <>
+            <p>
+                Quand j'interviens en formation ou lors de cours particuliers,
+                je dois souvent expliquer certains sujets dans leurs moindres détails.
+                Mais cela fait <strong>beaucoup de choses à mémoriser</strong>.
+            </p>
+            <p>
+                Les cours que je mets à disposition ici sont découpés de façon à <strong>être
+                concis</strong> et <strong>aller à l'essentiel</strong>.
+                J'essaie d'utiliser un langage <strong>clair</strong>, en expliquant le jargon technique.
+            </p>
+            <p>
+                Mon objectif à long terme sera de couvrir plusieurs langages et frameworks,
+                de la façon la plus complète possible.
+                Les cours seront régulièrement <strong>mis à jour</strong> pour refléter
+                les nouveautés des différents sujets.
+            </p>
+            <p>Bonne lecture !</p>
+            <sub style={{ fontWeight: 300 }}>
+                <i>Photo : <a href="https://unsplash.com/@nickmorrison" target="_blank">Nick Morrison</a></i>
+            </sub>
+        </>
+    ),
+    LEARN_NO_LESSONS: "Pas encore de cours. Ils arrivent bientôt.",
+    LESSONS_SUBJECT_TITLE: (name) => `Cours ${name}`,
+    LESSONS_NUMBER: (n) => `${n} cours`,
+    LESSONS_SIGNATURE: (
+        <>
+            <p>Je suis développeur web et formateur, passionné par tout ce qui touche au code.</p>
+            <p>Je mets ces cours à disposition de tous pour apprendre ou réviser des notions le plus simplement et clairement possible.</p>
+            <p>Retrouvez <Link href="/learn"><a>tous les cours ici</a></Link>.</p>
+        </>
+    ),
+    LESSONS_CTG_WEB_LANGUAGES: "Les Langages du Web",
 }

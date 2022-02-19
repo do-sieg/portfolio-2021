@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { useLangTerm } from "../utils/lang";
 // import Timeline, { mapEventsFromData } from "../components/Timeline";
@@ -9,7 +8,7 @@ import Skillset from "../components/app/Skillset";
 import { RESUME_PATHS, SITE_TITLE } from "../data/constants";
 import Hero from "../components/app/Hero";
 import { useRouter } from "next/router";
-import styles from "../styles/pages/common.module.css";
+import pageStyles from "../styles/pages/Page.module.css";
 
 export default function Home() {
     const { locale } = useRouter();
@@ -28,7 +27,7 @@ export default function Home() {
     const L_SKILLS_OTHER = useLangTerm('SKILLS_OTHER');
 
     return (
-        <AppLayout className={styles.container}>
+        <AppLayout className={pageStyles.container}>
             <AppHead title={`${SITE_TITLE} - ${L_DEV_JOB_TITLES}`} />
 
             <Hero />
@@ -37,19 +36,19 @@ export default function Home() {
 
             <section>
                 {L_HOME_INTRO_DEV}
-                <div className={styles.promptBox}>
+                <div className={pageStyles.promptBox}>
                     <Link href="/projects">
-                        <a className={styles.promptBtn}>{L_VIEW_PROJECTS}</a>
+                        <a className={pageStyles.promptBtn}>{L_VIEW_PROJECTS}</a>
                     </Link>
                     <Link href={RESUME_PATHS[locale]}>
-                        <a className={styles.promptBtn} target="_blank">{L_DOWNLOAD_RESUME}</a>
+                        <a className={pageStyles.promptBtn} target="_blank">{L_DOWNLOAD_RESUME}</a>
                     </Link>
                 </div>
 
                 {L_HOME_INTRO_TEACH}
-                <div className={styles.promptBox}>
+                <div className={pageStyles.promptBox}>
                     <Link href="/teach">
-                        <a className={styles.promptBtn}>{L_LEARN_MORE}</a>
+                        <a className={pageStyles.promptBtn}>{L_LEARN_MORE}</a>
                     </Link>
                 </div>
             </section >
@@ -115,12 +114,12 @@ export default function Home() {
             </section> */}
 
 
-            <section>
+            {/* <section> */}
                 {/* <h2>{L_TIMELINE}</h2> */}
                 {/* <Timeline events={mapEventsFromData(events)
                     .sort((a, b) => b.startDate - a.startDate)}
                 /> */}
-            </section>
+            {/* </section> */}
         </AppLayout>
     );
 }

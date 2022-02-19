@@ -7,6 +7,8 @@ export default function MyApp({ Component, pageProps }) {
   const burgerState = useBurgerState();
   const langState = useLangState();
 
+  langState.useLangEffect(pageProps);
+
   return (
     <BurgerContext.Provider value={burgerState}>
       <LangContext.Provider value={langState}>

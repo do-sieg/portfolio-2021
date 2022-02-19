@@ -1,0 +1,12 @@
+.lessonMeta {
+    margin: 3rem 0;
+    text-align: right;
+    font-size: large;
+    font-style: italic;
+    color: var(--gray-200);
+}
+
+.coverImage {
+    width: 100%;
+    margin: 2rem auto;
+}

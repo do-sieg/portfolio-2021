@@ -1,0 +1,25 @@
+.coverImage {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.lessonsGroup {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .coverImage {
+        width: 70%;
+    }
+    .lessonsGroup {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lessonsGroup {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 // Use this context to wrap the App component
 export const LangContext = createContext({
@@ -10,17 +10,21 @@ export const LangContext = createContext({
 // This hook has to be called in the App component and be passed as the value prop
 // for LangContext
 export function useLangState() {
+    const { locale, asPath } = useRouter();
     const [langLinks, setLangLinks] = useState({});
 
-    function setLinks(lang, slug) {
-        setLangLinks((prevLinks) => {
-            return { ...prevLinks, ...{ [lang]: slug } }
-        });
+    // This hook must be called in the App component to use custom lang links
+    // as page props
+    function useLangEffect(pageProps) {
+        return useEffect(() => {
+            setLangLinks(pageProps.pageLangLinks ?? {});
+        }, [locale, asPath]);
     }
 
-    function clearLangLinks() { setLangLinks({}) }
-
-    return { langLinks, setLangLinks: setLinks, clearLangLinks };
+    return {
+        langLinks,
+        useLangEffect,
+    };
 }
 
 export function useLangTerm(termKey) {

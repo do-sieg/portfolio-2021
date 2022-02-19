@@ -34,3 +34,7 @@ yarn-error.log*
 .vercel
 
 TODO.md
+/data/blog_posts/fr/html/_draft.md
+/data/blog_posts/en/html/_draft.md
+/data/lessons/fr/html/_draft.md
+/data/lessons/en/html/_draft.md

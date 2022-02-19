@@ -5,19 +5,11 @@
 }
 
 .card {
-    padding: 1rem;
-
+    composes: card from "../../styles/pages/Page.module.css";
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
     gap: 1rem;
-    
-    background-color: var(--blueGray-800);
-    background-image: linear-gradient(135deg, var(--blueGray-700), var(--blueGray-900));
-    border-radius: 5px;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-all);
 }
 
 .info {
@@ -81,7 +73,7 @@
     z-index: 1;
     opacity: 0;
 
-    padding: 0.1rem 0.5rem;
+    padding: 0.2rem 0.5rem;
     background-color: var(--gray-900);
     border-radius: 0 10px 10px;
 
