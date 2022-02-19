@@ -12,6 +12,7 @@ export const learnSubjects = {
         sections: {
             "Premiers pas en HTML": [
                 "creer-page-html",
+                "balises-attributs-html",
             ],
         },
     },

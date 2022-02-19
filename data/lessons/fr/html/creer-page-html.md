@@ -5,7 +5,7 @@ level: basic
 author:
     name: Daniel Orchanian
     picture: /images/profile/profile_03_square.jpg
-updated: "2020-02-14"
+updated: "2020-02-18"
 published: true
 ---
 
@@ -81,6 +81,9 @@ Il suffit juste d'**actualiser la page** pour que son contenu change. Vous pouve
 ![_EXPAND_Écrire un texte dans la page HTML (3)](/images/learn/fr/html/html-write-first-text-3.png)
 
 > Il existe des outils pour que le rafraîchissement se fasse automatiquement à chaque modification du fichier. Si vous utilisez **Visual Studio Code**, l'extension **Live Server** est recommandée.
+
+
+## Conclusion
 
 Et voilà, vous avez créé une page HTML qui s'affiche dans le navigateur.
 
