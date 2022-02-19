@@ -175,6 +175,7 @@ export default {
             </sub>
         </>
     ),
+    LEARN_NO_LESSONS: "Pas encore de cours. Ils arrivent bientôt.",
     LESSONS_SUBJECT_TITLE: (name) => `Cours ${name}`,
     LESSONS_NUMBER: (n) => `${n} cours`,
     LESSONS_SIGNATURE: (

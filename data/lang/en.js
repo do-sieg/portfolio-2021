@@ -179,6 +179,7 @@ export default {
             </sub>
         </>
     ),
+    LEARN_NO_LESSONS: "No lessons yet. Coming soon.",
     LESSONS_SUBJECT_TITLE: (name) => `${name} Lessons`,
     LESSONS_NUMBER: (n) => n === 1 ? `${n} lesson` : `${n} lessons`,
     LESSONS_SIGNATURE: (

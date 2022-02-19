@@ -21,7 +21,10 @@ export function useLangState() {
         }, [locale, asPath]);
     }
 
-    return { langLinks, setLangLinks, useLangEffect };
+    return {
+        langLinks,
+        useLangEffect,
+    };
 }
 
 export function useLangTerm(termKey) {

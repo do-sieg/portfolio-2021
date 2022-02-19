@@ -3,6 +3,8 @@ import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE } from "../../data/constants";
 import { getSubject, getSubjects } from "../../utils/subjects";
 import { getLessons } from "../../utils/lessons";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { useLangTerm } from "../../utils/lang";
 import Separator from "../../components/app/Separator";
 import LearnNav from "../../components/app/learn/LearnNav";
@@ -38,7 +40,36 @@ export async function getStaticProps({ locale, params }) {
 }
 
 export default function LearnSubject({ subjectId, name, intro, coverImagePath, sections, lessons }) {
+    const { locale, asPath } = useRouter();
+    const L_LEARN_NO_LESSONS = useLangTerm("LEARN_NO_LESSONS");
     const L_LESSONS_SUBJECT_TITLE = useLangTerm("LESSONS_SUBJECT_TITLE");
+    const [content, setContent] = useState([]);
+
+    useEffect(() => {
+        setContent(Object.keys(sections).map((key) => {
+            // const prevKeys = Object.keys(sections).slice(0, sectionIndex);
+            // const startingIndex = prevKeys.reduce((acc, key) => acc + sections[key].length, 0);
+            const list = sections[key];
+            return (
+                <section key={key}>
+                    <h2>{key}</h2>
+                    <div className={styles.lessonsGroup}>
+                        {list.map((slug, index) => {
+                            const data = lessons.find(lesson => lesson.slug === slug);
+                            return data ?
+                                <LearnLessonCard
+                                    key={index}
+                                    subjectId={subjectId}
+                                    subjectName={name}
+                                    data={data}
+                                />
+                                : null;
+                        })}
+                    </div>
+                </section>
+            );
+        }));
+    }, [locale, asPath]);
 
     return (
         <AppLayout className={`${pageStyles.container} ${styles.container}`}>
@@ -54,31 +85,7 @@ export default function LearnSubject({ subjectId, name, intro, coverImagePath, s
 
             <Separator />
 
-            {Object.keys(sections).map((key, sectionIndex) => {
-                // const prevKeys = Object.keys(sections).slice(0, sectionIndex);
-                // const startingIndex = prevKeys.reduce((acc, key) => acc + sections[key].length, 0);
-                const list = sections[key];
-                return (
-                    list.length > 0 ?
-                        <section key={key}>
-                            <h2>{key}</h2>
-                            <div className={styles.lessonsGroup}>
-                                {list.map((slug, index) => {
-                                    const data = lessons.find(lesson => lesson.slug === slug);
-                                    return data ?
-                                        <LearnLessonCard
-                                            key={index}
-                                            subjectId={subjectId}
-                                            subjectName={name}
-                                            data={data}
-                                        />
-                                        : null;
-                                })}
-                            </div>
-                        </section>
-                        : null
-                );
-            })}
+            {content.length > 0 ? content : <div>{L_LEARN_NO_LESSONS}</div>}
 
         </AppLayout>
     );
