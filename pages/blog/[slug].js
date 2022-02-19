@@ -34,7 +34,7 @@ export async function getStaticProps({ params, locale }) {
     const totalCtgPosts = await getPosts({ locale, category: data.data.category });
 
     const props = {
-        locale,
+        pageLangLinks: { [locale]: slug, ...data.data.translations },
         slug,
         metaData: data.data,
         htmlContent: data.htmlContent,
@@ -45,22 +45,12 @@ export async function getStaticProps({ params, locale }) {
     return { props };
 }
 
-export default function BlogPost({ locale, slug, metaData, htmlContent, featuredCtgPosts, totalCtgPosts }) {
-    const router = useRouter();
-    const { setLangLinks, clearLangLinks } = useContext(LangContext);
+export default function BlogPost({ slug, metaData, htmlContent, featuredCtgPosts, totalCtgPosts }) {
+    const { locale, asPath } = useRouter();
     const [featuredPosts, setFeaturedPosts] = useState([]);
     const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
     const L_BLOG_MORE_POSTS_AUTHOR = useLangTerm("BLOG_MORE_POSTS_AUTHOR");
     const L_BLOG_PHOTO_CREDITS = useLangTerm("BLOG_PHOTO_CREDITS");
-
-    useEffect(() => {
-        clearLangLinks();
-        if (metaData.translations) {
-            Object.entries(metaData.translations).forEach(([lang, slug]) => {
-                setLangLinks(lang, slug);
-            });
-        }
-    }, [router.asPath]);
 
     useEffect(async () => {
         try {
@@ -69,7 +59,7 @@ export default function BlogPost({ locale, slug, metaData, htmlContent, featured
         } catch (err) {
             setFeaturedPosts([]);
         }
-    }, [router.asPath]);
+    }, [asPath]);
 
     return (
         <AppLayout className={`${pageStyles.container} ${styles.container}`}>
