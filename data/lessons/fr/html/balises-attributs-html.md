@@ -20,11 +20,11 @@ On peut ensuite donner à ces balises des **attributs** pour préciser certaines
 
 ## 1. Les balises
 
-Une **balise HTML** se reconnaît aux **chevrons** qui l'entourent : **<** et **>**.
+Une **balise HTML** se reconnaît aux **chevrons** qui l'entourent : **<** et **>**.
 
-Entre les chevrons, on retrouve le nom de la balise : `<p>`, `<a>`, `<div>`...
+Entre les chevrons, on retrouve le nom de la balise : `<p>`, `<a>`, `<div>`...
 
-Il existe deux types de balises : les balises **en paire** et les balises **orphelines**. 
+Il existe deux types de balises : les balises **en paire** et les balises **orphelines**. 
 
 
 ### a. Les balises en paires
@@ -39,7 +39,7 @@ Ces balises fonctionnent avec un système d'**ouverture** et **fermeture** autou
 
 Dans l'exemple ci-dessus, on a une balise **ouvrante** (`<title>`) et une balise **fermante** (`</title>`) autour d'un texte (_Un week-end en Bretagne_).
 
-La balise **fermante** est identique à la balise ouvrante, mais avec un slash (**/**) devant le nom : `<title>`, `</title>`.
+La balise **fermante** est identique à la balise ouvrante, mais avec un slash (**/**) devant le nom : `<title>`, `</title>`.
 
 L'ordinateur va lire le code et comprendre qu'il doit afficher le texte entre les deux balises comme **titre d'onglet**.
 
@@ -52,7 +52,7 @@ Il existe certaines balises qui n'ont pas de contenu textuel, mais servent à in
 
 On les appelle aussi **balises auto-fermantes** (_self-closing tags_ en anglais), car elles ne fonctionnent pas avec le système de balises ouvrante + fermante.
 
-Ici, on met le **slash** à la **fin de la balise** :
+Ici, on met le **slash** à la **fin de la balise** :
 
 ```html
 <img />
@@ -65,7 +65,7 @@ Il est donc **fortement recommandé** de le mettre.
 
 ### c. Des balises dans des balises
 
-Il est possible d'**imbriquer** des balises dans d'autres balises :
+Il est possible d'**imbriquer** des balises dans d'autres balises :
 
 ```html
 <head>
@@ -84,7 +84,7 @@ Ce retrait s'appelle l'**indentation** et permet de représenter la **hiérarchi
 
 Les **attributs** agissent comme des **paramètres** des balises.
 
-Un attribut :
+Un attribut :
 - se place **dans la balise** ouvrante (ou la balise orpheline), après le nom
 - est composé du nom de l'attribut, suivi du signe égal (**=**)
 - contient une **valeur** entre **guillemets**
@@ -95,7 +95,7 @@ Un attribut :
 
 Si certains attributs sont optionnels, d'autres sont **obligatoires** pour faire fonctionner quelques balises.
 
-Dans l'exemple suivant, l'image ne fonctionnera pas sans un attribut **src** :
+Dans l'exemple suivant, l'image ne fonctionnera pas sans un attribut **src** :
 
 ```html
 <img src="/images/3.jpg" />

@@ -13,6 +13,7 @@ export const learnSubjects = {
             "Premiers pas en HTML": [
                 "creer-page-html",
                 "balises-attributs-html",
+                "structure-page-html",
             ],
         },
     },
