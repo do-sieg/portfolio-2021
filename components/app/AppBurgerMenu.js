@@ -1,4 +1,4 @@
-import BurgerMenu from "../core/BurgerMenu";
+import { BurgerMenu } from "../core/BurgerMenu";
 import AppNav from "./AppNav";
 import LangBar from "./LangBar";
 import styles from "./AppBurgerMenu.module.css";

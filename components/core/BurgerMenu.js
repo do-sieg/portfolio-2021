@@ -2,25 +2,24 @@ import React, { useContext, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import styles from "./BurgerMenu.module.css";
 
-// Use this context to wrap the App component
-export const BurgerContext = React.createContext({
-    isOpen: false, open: null, close: null
-});
+export const BurgerContext = React.createContext();
 
-// This hook has to be called in the App component and be passed as the value prop
-// for BurgerContext
-export function useBurgerState() {
+// Used to wrap the App component
+export function BurgerProvider({ children }) {
     const [isOpen, setIsOpen] = useState(false);
-
     function open() { setIsOpen(true); }
     function close() { setIsOpen(false); }
 
-    return { isOpen, open, close };
+    return (
+        <BurgerContext.Provider value={{ isOpen, open, close }}>
+            {children}
+        </BurgerContext.Provider>
+    );
 }
 
 // This is the menu component that can be called on pages, etc.
 // It is advised to create a component rendering this with custom styles
-export default function BurgerMenu({ children, customStyles = {} }) {
+export function BurgerMenu({ children, customStyles = {} }) {
     const burger = useContext(BurgerContext);
 
     return (
