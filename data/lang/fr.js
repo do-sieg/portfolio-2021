@@ -140,6 +140,7 @@ export default {
     },
     BLOG_PHOTO_CREDITS: "Photo(s) :",
     BLOG_CATEGORY_NAMES: {
+        git: "Git",
         javascript: "JavaScript",
         jobs: "Emploi",
     },

@@ -17,13 +17,7 @@ published: false
 ---
 
 
-
-portes
-3eme étage
-dispo 1er mars
-
-
-saint marcel
+git-changer-casse-fichiers
 
 
 
@@ -34,10 +28,6 @@ A2 Trop de frameworks tue l'expertise
 - Trop de redondance dans les frameworks
 - Expertise requise par le marché
 - Investissement énorme
-
-
-
-
 
 
 

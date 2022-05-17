@@ -12,6 +12,27 @@
         ],
         "link": "/blog"
     },
+    "armenianz": {
+        "name": "Armenianz",
+        "description": "A look at current events in the Armenian community around the world.",
+        "imagePath": "/images/projects/armenianz.png",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "reactjs",
+            "nextjs"
+        ],
+        "url": "http://armenia.nz"
+    },
+    "arpege": {
+        "name": "Arpege Engine",
+        "description": "A library of scripts and templates to create a role playing game powered by the Godot engine. In progress.",
+        "imagePath": "/images/projects/godot-logo.png",
+        "tech": [
+            "gdscript"
+        ]
+    },
     "kentia": {
         "name": "Agence Kentia",
         "description": "A website about personal coaching, well-being and couple relationships.",

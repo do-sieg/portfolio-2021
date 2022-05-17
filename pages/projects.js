@@ -35,6 +35,7 @@ export default function Projects() {
             <section>
                 <h2>{L_CLIENT_PROJECTS}</h2>
                 <div className={styles.container}>
+                    <ProjectCard data={projects["armenianz"]} />
                     <ProjectCard data={projects["kentia"]} />
                     <ProjectCard data={projects["saleth"]} />
                     <ProjectCard data={projects["biochem"]} />
@@ -45,6 +46,7 @@ export default function Projects() {
                 <h2>{L_OWN_PROJECTS}</h2>
                 <div className={styles.container}>
                     <ProjectCard data={projects["do-blog"]} />
+                    <ProjectCard data={projects["arpege"]} />
                     <ProjectCard data={projects["scriptmanager"]} />
                     <ProjectCard data={projects["xpal"]} />
                 </div>

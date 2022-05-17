@@ -12,6 +12,27 @@
         ],
         "link": "/blog"
     },
+    "armenianz": {
+        "name": "Armenianz",
+        "description": "Une analyse de l'actualité de la communauté arménienne à travers le monde.",
+        "imagePath": "/images/projects/armenianz.png",
+        "tech": [
+            "html",
+            "css",
+            "js",
+            "reactjs",
+            "nextjs"
+        ],
+        "url": "http://armenia.nz"
+    },
+    "arpege": {
+        "name": "Arpege Engine",
+        "description": "Une bibliothèque de scripts et modèles permettant de créer un jeu de rôle avec le moteur Godot. Projet en cours de conception.",
+        "imagePath": "/images/projects/godot-logo.png",
+        "tech": [
+            "gdscript"
+        ]
+    },
     "kentia": {
         "name": "Agence Kentia",
         "description": "Site de coaching, bien-être et relations de couple.",

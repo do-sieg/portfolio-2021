@@ -11,6 +11,7 @@ export const RESUME_PATHS = {
     fr: "/files/CV_Daniel_Orchanian_2021-11_FR.pdf",
 };
 export const BLOG_CATEGORIES = [
+    "git",
     "javascript",
     "jobs",
 ];
