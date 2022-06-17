@@ -1,7 +1,7 @@
 import Link from "next/link";
 import AppHead from "../../components/app/AppHead";
 import AppLayout from "../../components/app/AppLayout";
-import { SITE_TITLE } from "../../data/constants";
+import { SITE_TITLE, SITE_URL } from "../../data/constants";
 import { getSubject, getSubjects } from "../../utils/subjects";
 import { getLesson, getLessons } from "../../utils/lessons";
 import { useLangTerm } from "../../utils/lang";
@@ -39,6 +39,11 @@ export async function getStaticProps({ params, locale }) {
 
     const data = await getLesson({ locale, subjectId, slug });
 
+    const { intro, coverImagePath } = getSubject(locale, subjectId);
+
+    data.data.description = intro;
+    data.data.coverImagePath = coverImagePath;
+
     const props = {
         subjectId,
         coverImagePath: subject.coverImagePath,
@@ -50,14 +55,18 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export default function LearnLesson({ subjectId, coverImagePath, slug, metaData, htmlContent }) {
-    // const L_BY = useLangTerm("BY");
     const L_UPDATED = useLangTerm("UPDATED");
     const L_READING_TIME = useLangTerm("READING_TIME");
     const L_LESSONS_SIGNATURE = useLangTerm("LESSONS_SIGNATURE");
 
     return (
         <AppLayout className={pageStyles.container}>
-            <AppHead title={`${metaData.title} - ${SITE_TITLE}`} />
+            <AppHead
+                title={`${metaData.title} - ${SITE_TITLE}`}
+                description={metaData.description}
+                imageUrl={metaData?.coverImagePath ? SITE_URL + metaData.coverImagePath : null}
+                type="article"
+            />
 
             <LearnNav
                 subjectId={subjectId}
