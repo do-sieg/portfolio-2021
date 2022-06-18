@@ -98,29 +98,10 @@ function addDefaultAuthor(post) {
     return post;
 }
 
-// Static blog utility functions
-// Last update: 2022-05-03
-
-// export async function getPostsByAuthor(locale, authorId, limit) {
-//     const result = await getPosts({ locale, authorId, limit });
-//     if (result.posts.length > 0) {
-//         result.authorName = result.posts[0].data.author.name;
-//     }
-//     return result;
-// }
-
-// export async function getPostsByTag(locale, tag, limit) {
-//     return await getPosts({ locale, tag, limit });
-// }
 
 // export async function getPosts({ locale, limit = 0, authorId = null, tag = null, current = null }) {
 //     try {
 
-
-
 //         // if (current) entries = entries.filter(post => post.slug !== current);
 
-//     } catch (err) {
-//     }
-// }
 

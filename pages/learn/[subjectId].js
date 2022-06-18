@@ -2,10 +2,10 @@ import AppHead from "../../components/app/AppHead";
 import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE } from "../../data/constants";
 import { getSubject, getSubjects } from "../../utils/subjects";
-import { getLessons } from "../../utils/lessons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useLangTerm } from "../../utils/lang";
+import { getPosts } from "../../utils/static-blog";
 import Separator from "../../components/app/Separator";
 import LearnNav from "../../components/app/learn/LearnNav";
 import LearnLessonCard from "../../components/app/learn/LearnLessonCard";
@@ -26,7 +26,7 @@ export async function getStaticProps({ locale, params }) {
     const subject = getSubject(locale, subjectId);
     const { name, intro, coverImagePath, sections } = subject;
 
-    const lessons = await getLessons({ locale, subjectId });
+    const { posts } = await getPosts({ pathname: `/data/lessons/${locale}/${subjectId}`, locale });
 
     const props = {
         subjectId,
@@ -34,12 +34,12 @@ export async function getStaticProps({ locale, params }) {
         intro,
         coverImagePath,
         sections,
-        lessons,
+        posts,
     };
     return { props };
 }
 
-export default function LearnSubject({ subjectId, name, intro, coverImagePath, sections, lessons }) {
+export default function LearnSubject({ subjectId, name, intro, coverImagePath, sections, posts }) {
     const { locale, asPath } = useRouter();
     const L_LEARN_NO_LESSONS = useLangTerm("LEARN_NO_LESSONS");
     const L_LESSONS_SUBJECT_TITLE = useLangTerm("LESSONS_SUBJECT_TITLE");
@@ -55,13 +55,13 @@ export default function LearnSubject({ subjectId, name, intro, coverImagePath, s
                     <h2>{key}</h2>
                     <div className={styles.lessonsGroup}>
                         {list.map((slug, index) => {
-                            const data = lessons.find(lesson => lesson.slug === slug);
+                            const data = posts.find(post => post.slug === slug);
                             return data ?
                                 <LearnLessonCard
                                     key={index}
                                     subjectId={subjectId}
                                     subjectName={name}
-                                    data={data}
+                                    post={data}
                                 />
                                 : null;
                         })}
