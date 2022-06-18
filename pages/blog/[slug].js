@@ -31,7 +31,7 @@ export async function getStaticProps({ params, locale }) {
 
     const { posts: featuredCtgPosts, totalPosts: totalCtgPosts } = await getPosts({ pathname: `/data/blog_posts/${locale}`, locale, category: data.data.category, limit: 3 });
 
-    const { posts: featuredPosts } = await getPosts({ pathname: `/data/blog_posts/${locale}`, locale, limit: 2 });
+    const { posts: featuredPosts } = await getPosts({ pathname: `/data/blog_posts/${locale}`, locale, limit: 2, exclude: [slug] });
 
     const props = {
         pageLangLinks: { [locale]: slug, ...data.data.translations },

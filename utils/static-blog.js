@@ -20,7 +20,17 @@ export async function getSinglePost({ pathname, locale, slug }) {
     return addDefaultAuthor(markdown);
 }
 
-export async function getPosts({ pathname, locale, limit = 0, page = 0, postsPerPage = 0, authorId = null, category = null, tag = null }) {
+export async function getPosts({
+    pathname,
+    locale,
+    limit = 0,
+    page = 0,
+    postsPerPage = 0,
+    authorId = null,
+    category = null,
+    tag = null,
+    exclude = [],
+}) {
     try {
         // Get all entries from the folder
         let entries = fs.readdirSync(path.join(process.cwd(), pathname));
@@ -42,6 +52,7 @@ export async function getPosts({ pathname, locale, limit = 0, page = 0, postsPer
             .filter(post => process.env.NODE_ENV === "development" ? true : post.data.published && new Date(post.data.date) <= new Date())
             .filter(post => category ? post.data.category === category : true)
             .filter(post => tag ? post.data.tags && post.data.tags.includes(tag) : true)
+            .filter(post => !exclude.includes(post.slug))
             .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
             .map(post => addDefaultAuthor(post));
 
@@ -97,11 +108,3 @@ function addDefaultAuthor(post) {
     }
     return post;
 }
-
-
-// export async function getPosts({ locale, limit = 0, authorId = null, tag = null, current = null }) {
-//     try {
-
-//         // if (current) entries = entries.filter(post => post.slug !== current);
-
-
