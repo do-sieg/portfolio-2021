@@ -3,10 +3,6 @@ title: Cinq problèmes avec le recrutement
 description: Quand le processus de recrutement tourne à la farce de mauvais goût. Cinq cas de figure à éradiquer au plus vite.
 date: "2022-02-09"
 category: jobs
-author:
-    id: daniel
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 coverImage:
     path: /images/blog/covers/fr/cinq-problemes-recrutement-v2.jpg
     authorName: Eric Prouzet

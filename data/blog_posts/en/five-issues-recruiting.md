@@ -3,10 +3,6 @@ title: Five issues with recruiting
 description: When an important step in someone's career turns into a bad joke. Five things to get rid of as soon as possible.
 date: "2022-02-09"
 category: jobs
-author:
-    id: daniel
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 coverImage:
     path: /images/blog/covers/en/five-issues-recruiting-v2.jpg
     authorName: Eric Prouzet

@@ -3,10 +3,6 @@ title: Frameworks - L'approche modulaire
 description: ???
 date: "2022-06-17"
 category: javascript
-author:
-    id: daniel
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 # coverImage:
     # path: /images/blog/covers/fr/javascript-framework-vs-vanilla-1.jpg
     # authorName: Rod Long, asier_relampagoestudio

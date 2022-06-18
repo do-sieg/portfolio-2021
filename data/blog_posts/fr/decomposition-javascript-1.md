@@ -3,10 +3,6 @@ title: La Décomposition en JavaScript (1)
 description: Comprendre comment extraire des données d'un tableau ou d'un objet pour créer directement des variables. 
 date: "2022-02-01"
 category: javascript
-author:
-    id: daniel
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 coverImage:
     path: /images/blog/covers/fr/decomposition-javascript-1-v2.jpg
     authorName: Julietta Watson

@@ -2,9 +2,6 @@
 title: La structure d'une page HTML
 number: 103
 level: basic
-author:
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 updated: "2020-06-17"
 published: true
 ---

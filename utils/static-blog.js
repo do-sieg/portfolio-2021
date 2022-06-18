@@ -6,10 +6,15 @@ import path from "path";
 import { mdLoad } from "./markdown";
 
 const blogConfig = {
+    // defaultAuthor: {
+    //     id: "default",
+    //     name: "Default",
+    //     picture: "/images/blog/authors/default.png",
+    // },
     defaultAuthor: {
-        id: "default",
-        name: "Default",
-        picture: "/images/blog/authors/default.png",
+        id: "daniel",
+        name: "Daniel Orchanian",
+        picture: "/images/profile/profile_03_square.jpg",
     },
 };
 

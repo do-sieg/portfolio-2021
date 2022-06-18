@@ -3,10 +3,6 @@ title: Framework JavaScript ou JavaScript "Vanilla" ?
 description: Faut-il toujours utiliser un framework ? Au fait, pourquoi on utilise des frameworks ?
 date: "2022-02-17"
 category: javascript
-author:
-    id: daniel
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 coverImage:
     path: /images/blog/covers/fr/javascript-framework-vs-vanilla-1.jpg
     authorName: Rod Long, asier_relampagoestudio

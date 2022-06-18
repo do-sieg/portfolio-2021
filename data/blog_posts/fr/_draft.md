@@ -3,10 +3,6 @@ title: Survivre aux frameworks JavaScript
 description: Peut-on encore parler d'expertise quand les frameworks se multiplient comme des petits pains ?
 date: "2022-02-15"
 category: javascript
-author:
-    id: daniel
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 # coverImage:
 #     path: /images/blog/covers/fr/cinq-problemes-recrutement-v2.jpg
 #     authorName: Eric Prouzet

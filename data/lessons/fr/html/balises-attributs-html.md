@@ -2,9 +2,6 @@
 title: Les balises et les attributs HTML
 number: 102
 level: basic
-author:
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 updated: "2020-06-17"
 published: true
 ---

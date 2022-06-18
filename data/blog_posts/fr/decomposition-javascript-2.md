@@ -3,10 +3,6 @@ title: La Décomposition en JavaScript (2)
 description: Adopter cette technique et en exploiter les possibilités pour des fonctions plus maniables.
 date: "2022-02-03"
 category: javascript
-author:
-    id: daniel
-    name: Daniel Orchanian
-    picture: /images/profile/profile_03_square.jpg
 coverImage:
     path: /images/blog/covers/fr/decomposition-javascript-2.jpg
     authorName: Glitch Lab App
