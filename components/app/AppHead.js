@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { FAVICON_URL, SITE_TITLE, SITE_URL } from "../../data/constants";
-import { useLangTerm } from "../../utils/lang";
+import { FAVICON_URL, SITE_TITLE } from "../../data/constants";
+import { useLang } from "../../utils/lang";
 
 export default function AppHead({
     title = SITE_TITLE,
@@ -8,14 +8,14 @@ export default function AppHead({
     imageUrl = FAVICON_URL,
     type = "website",
 }) {
-    const L_SITE_DESCRIPTION = useLangTerm("SITE_DESCRIPTION");
+    const { siteDescription } = useLang("common");
 
     return (
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
             <title>{title}</title>
-            <meta name="description" content={description ?? L_SITE_DESCRIPTION} />
+            <meta name="description" content={description ?? siteDescription} />
 
             <link rel="icon" href={FAVICON_URL} sizes="32x32" />
             <link rel="icon" href={FAVICON_URL} sizes="192x192" />
@@ -34,13 +34,13 @@ export default function AppHead({
             <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet"></link>
 
             <meta property="og:title" content={title} />
-            <meta property="og:description" content={description ?? L_SITE_DESCRIPTION} />
+            <meta property="og:description" content={description ?? siteDescription} />
             <meta property="og:image" content={imageUrl} />
             <meta property="og:type" content={type} />
-            
+
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description ?? L_SITE_DESCRIPTION} />
+            <meta name="twitter:description" content={description ?? siteDescription} />
             <meta name="twitter:image" content={imageUrl} />
 
             {/* <meta property="og:url" content={url} />

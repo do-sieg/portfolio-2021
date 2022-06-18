@@ -1,15 +1,14 @@
+import Link from "next/link";
 import { useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import { BurgerContext } from "../core/BurgerMenu";
 import LangBar from "./LangBar";
-import Link from "next/link";
-import { useLangTerm } from "../../utils/lang";
+import { useLang } from "../../utils/lang";
 import styles from "./AppHeader.module.css";
 
 export default function AppHeader() {
     const burger = useContext(BurgerContext);
-    const L_DEV_NAME = useLangTerm("DEV_NAME");
-    const L_DEV_JOB_TITLES = useLangTerm("DEV_JOB_TITLES");
+    const { devName, devJobTitles } = useLang("common");
 
     return (
         <header className={styles.container}>
@@ -19,8 +18,8 @@ export default function AppHeader() {
 
             <Link href="/">
                 <a className={styles.main}>
-                    <div className={styles.siteName}>{L_DEV_NAME}</div>
-                    <div className={styles.siteDescription}>{L_DEV_JOB_TITLES}</div>
+                    <div className={styles.siteName}>{devName}</div>
+                    <div className={styles.siteDescription}>{devJobTitles}</div>
                 </a>
             </Link>
 

@@ -3,7 +3,7 @@ import AppLayout from "../../components/app/AppLayout";
 import { SITE_TITLE, SITE_URL } from "../../data/constants";
 import { getSubject, getSubjects } from "../../utils/subjects";
 import { getPosts, getSinglePost } from "../../utils/static-blog";
-import { useLangTerm } from "../../utils/lang";
+import { useLang } from "../../utils/lang";
 import Separator from "../../components/app/Separator";
 import AuthorSignature from "../../components/app/AuthorSignature";
 import LearnNav from "../../components/app/learn/LearnNav";
@@ -44,9 +44,9 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export default function LearnLesson({ post, subjectId, coverImagePath }) {
-    const L_UPDATED = useLangTerm("UPDATED");
-    const L_READING_TIME = useLangTerm("READING_TIME");
-    const L_LESSONS_SIGNATURE = useLangTerm("LESSONS_SIGNATURE");
+    const { updated } = useLang("common");
+    const { readingTime } = useLang("blog");
+    const { learnSignature } = useLang("learn");
 
     return (
         <AppLayout className={pageStyles.container}>
@@ -66,8 +66,8 @@ export default function LearnLesson({ post, subjectId, coverImagePath }) {
 
             <div className={styles.lessonMeta}>
                 {/* {L_BY} {post.data.author.name}<br /> */}
-                {L_UPDATED} {post.data.updated}<br />
-                {post.data.readingTime} {L_READING_TIME}
+                {updated} {post.data.updated}<br />
+                {post.data.readingTime} {readingTime}
             </div>
 
             <h1>{post.data.title}</h1>
@@ -81,7 +81,7 @@ export default function LearnLesson({ post, subjectId, coverImagePath }) {
             <Separator top="4rem" bottom="2rem" />
 
             <AuthorSignature imagePath={post.data.author.picture} name={post.data.author.name}>
-                <div>{L_LESSONS_SIGNATURE}</div>
+                <div>{learnSignature}</div>
             </AuthorSignature>
 
         </AppLayout>

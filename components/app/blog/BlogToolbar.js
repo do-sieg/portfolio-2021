@@ -1,12 +1,11 @@
 import { useRouter } from "next/router";
 import { BLOG_CATEGORIES } from "../../../data/constants";
-import { useLangTerm } from "../../../utils/lang";
+import { useLang } from "../../../utils/lang";
 import styles from "./BlogToolbar.module.css";
 
 export default function BlogToolbar({ category }) {
     const router = useRouter();
-    const L_BLOG_ALL_ARTICLES = useLangTerm("BLOG_ALL_ARTICLES");
-    const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
+    const { categoryNames, allPosts } = useLang("blog");
 
     function handleChangeCategory(e) {
         const category = e.target.value;
@@ -24,9 +23,9 @@ export default function BlogToolbar({ category }) {
         <div className={styles.container}>
             <div className={styles.selectorContainer}>
                 <select value={category ? category : "all"} onChange={handleChangeCategory}>
-                    <option value="all">{L_BLOG_ALL_ARTICLES}</option>
+                    <option value="all">{allPosts}</option>
                     {BLOG_CATEGORIES.map((category) => {
-                        return <option key={category} value={category}>{L_BLOG_CATEGORY_NAMES[category]}</option>
+                        return <option key={category} value={category}>{categoryNames[category]}</option>
                     })}
                 </select>
             </div>

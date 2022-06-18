@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import { LangContext } from "../../utils/lang";
+import { LangContext } from "./LangProvider";
 import styles from "./LangBar.module.css";
 
 export default function LangBar() {

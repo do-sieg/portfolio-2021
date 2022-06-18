@@ -5,7 +5,7 @@ import Separator from "../../components/app/Separator";
 import BlogPostCard from "../../components/app/blog/BlogPostCard";
 import BlogToolbar from "../../components/app/blog/BlogToolbar";
 import { SITE_TITLE } from "../../data/constants";
-import { useLangTerm } from "../../utils/lang";
+import { useLang } from "../../utils/lang";
 import { useStaticBlogPosts } from "../../utils/static-blog-hooks";
 import pageStyles from "../../styles/pages/Page.module.css";
 import styles from "../../styles/pages/BlogHome.module.css";
@@ -13,26 +13,22 @@ import styles from "../../styles/pages/BlogHome.module.css";
 export default function BlogHome() {
     const { locale } = useRouter();
     const { posts } = useStaticBlogPosts({ pathname: `/data/blog_posts/${locale}`, locale });
-
-    const L_NAV_BLOG = useLangTerm("NAV_BLOG");
-    const L_BLOG_INTRO = useLangTerm("BLOG_INTRO");
-    const L_BLOG_NO_ARTICLES = useLangTerm("BLOG_NO_ARTICLES");
-    const L_BLOG_RECENT_POSTS = useLangTerm("BLOG_RECENT_POSTS");
+    const { titleBlogHome, titleRecentPosts, introBlogHome, noPosts } = useLang("blog");
 
     return (
         <AppLayout className={pageStyles.container}>
-            <AppHead title={`${SITE_TITLE} - ${L_NAV_BLOG}`} />
+            <AppHead title={`${SITE_TITLE} - ${titleBlogHome}`} />
 
             <BlogToolbar />
 
-            <h1>{L_NAV_BLOG}</h1>
+            <h1>{titleBlogHome}</h1>
 
-            <section>{L_BLOG_INTRO}</section>
+            <section>{introBlogHome}</section>
 
             <Separator top="2rem" bottom="2rem" />
 
             <section>
-                <h2>{L_BLOG_RECENT_POSTS}</h2>
+                <h2>{titleRecentPosts}</h2>
 
 
                 {posts !== null &&
@@ -43,7 +39,7 @@ export default function BlogHome() {
                             })}
                         </div>
                         :
-                        <p>{L_BLOG_NO_ARTICLES}</p>
+                        <p>{noPosts}</p>
                     )
                 }
             </section>

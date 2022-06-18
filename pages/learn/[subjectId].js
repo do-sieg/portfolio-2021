@@ -4,7 +4,7 @@ import { SITE_TITLE } from "../../data/constants";
 import { getSubject, getSubjects } from "../../utils/subjects";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useLangTerm } from "../../utils/lang";
+import { useLang } from "../../utils/lang";
 import { getPosts } from "../../utils/static-blog";
 import Separator from "../../components/app/Separator";
 import LearnNav from "../../components/app/learn/LearnNav";
@@ -41,11 +41,8 @@ export async function getStaticProps({ locale, params }) {
 
 export default function LearnSubject({ subjectId, name, intro, coverImagePath, sections, posts }) {
     const { locale, asPath } = useRouter();
-    const L_LEARN_NO_LESSONS = useLangTerm("LEARN_NO_LESSONS");
-    const L_LESSONS_SUBJECT_TITLE = useLangTerm("LESSONS_SUBJECT_TITLE");
+    const { subjectTitle, noLessons } = useLang("learn");
     const [content, setContent] = useState([]);
-
-    console.log({posts});
 
     useEffect(() => {
         setContent(Object.keys(sections).map((key) => {
@@ -75,19 +72,19 @@ export default function LearnSubject({ subjectId, name, intro, coverImagePath, s
 
     return (
         <AppLayout className={`${pageStyles.container} ${styles.container}`}>
-            <AppHead title={`${L_LESSONS_SUBJECT_TITLE(name)} - ${SITE_TITLE}`} />
+            <AppHead title={`${subjectTitle(name)} - ${SITE_TITLE}`} />
 
             <LearnNav subjectId={subjectId} />
 
             <img className={styles.coverImage} src={coverImagePath} alt={name} />
 
-            <h1>{`${L_LESSONS_SUBJECT_TITLE(name)}`}</h1>
+            <h1>{`${subjectTitle(name)}`}</h1>
 
             <section><p>{intro}</p></section>
 
             <Separator />
 
-            {content.length > 0 ? content : <div>{L_LEARN_NO_LESSONS}</div>}
+            {content.length > 0 ? content : <div>{noLessons}</div>}
 
         </AppLayout>
     );

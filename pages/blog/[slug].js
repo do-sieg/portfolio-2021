@@ -9,7 +9,7 @@ import BlogCategoryCard from "../../components/app/blog/BlogCategoryCard";
 import BlogPostCard from "../../components/app/blog/BlogPostCard";
 import MarkdownContent from "../../components/app/MarkdownContent";
 import { Fragment } from "react";
-import { useLangTerm } from "../../utils/lang";
+import { useLang } from "../../utils/lang";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import pageStyles from "../../styles/pages/Page.module.css";
 import styles from "../../styles/pages/BlogPost.module.css";
@@ -45,9 +45,7 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export default function BlogPost({ post, featuredCtgPosts, totalCtgPosts, featuredPosts }) {
-    const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
-    const L_BLOG_MORE_POSTS_AUTHOR = useLangTerm("BLOG_MORE_POSTS_AUTHOR");
-    const L_BLOG_PHOTO_CREDITS = useLangTerm("BLOG_PHOTO_CREDITS");
+    const { categoryNames, morePostsAuthor, blogPhotoCredits } = useLang("blog");
 
     return (
         <AppLayout className={`${pageStyles.container} ${styles.container}`}>
@@ -61,7 +59,7 @@ export default function BlogPost({ post, featuredCtgPosts, totalCtgPosts, featur
 
             <div className={styles.postCategory}>
                 <Link href={`/blog/category/${post.data.category}`}><a>
-                    {L_BLOG_CATEGORY_NAMES[post.data.category]}
+                    {categoryNames[post.data.category]}
                 </a></Link>
             </div>
 
@@ -82,15 +80,15 @@ export default function BlogPost({ post, featuredCtgPosts, totalCtgPosts, featur
             <AuthorSignature imagePath={post.data.author.picture} name={post.data.author.name}>
                 {post.data.author.id &&
                     <>
-                        {/* {L_BLOG_MORE_POSTS_AUTHOR(`/blog/author/${post.data.author.id}`)} */}
-                        {L_BLOG_MORE_POSTS_AUTHOR(`/blog`)}
+                        {/* {morePostsAuthor(`/blog/author/${post.data.author.id}`)} */}
+                        {morePostsAuthor(`/blog`)}
                     </>
                 }
             </AuthorSignature>
 
             {post.data?.coverImage?.authorName &&
                 <div className={styles.coverImageAuthor}>
-                    {L_BLOG_PHOTO_CREDITS}
+                    {blogPhotoCredits}
                     {post.data.coverImage.authorName.split(",").map((name, index) => {
                         return (
                             <Fragment key={index}>

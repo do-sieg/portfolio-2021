@@ -1,21 +1,18 @@
 import Link from "next/link";
-import { renderDate, useLangTerm } from "../../../utils/lang";
+import { useLang } from "../../../utils/lang";
+import { renderDate } from "../../../utils/time";
 import styles from "./BlogCategoryCard.module.css";
 
 export default function BlogCategoryCard({ category, featuredPosts, totalPosts }) {
-    const L_BLOG_CATEGORY_NAMES = useLangTerm("BLOG_CATEGORY_NAMES");
-    const L_BLOG_CATEGORY_MORE = useLangTerm("BLOG_CATEGORY_MORE");
-    const L_BLOG_CATEGORY_SEE_ALL_POSTS = useLangTerm("BLOG_CATEGORY_SEE_ALL_POSTS");
-    const L_READING_TIME = useLangTerm("READING_TIME");
-    const L_DATE_FORMAT = useLangTerm("DATE_FORMAT");
-    const L_SHORT_MONTHS = useLangTerm("SHORT_MONTHS");
+    const { dateFormat, shortMonths } = useLang("common");
+    const { categoryNames, readingTime, morePostsCtg, actionSeeAllPosts } = useLang("blog");
 
     return (
         <div className={styles.container}>
             <h3>
-                {`${L_BLOG_CATEGORY_MORE} `}
+                {`${morePostsCtg} `}
                 <Link href={`/blog/category/${category}`}><a>
-                    {L_BLOG_CATEGORY_NAMES[category]}
+                    {categoryNames[category]}
                 </a></Link>
             </h3>
 
@@ -25,7 +22,7 @@ export default function BlogCategoryCard({ category, featuredPosts, totalPosts }
                         <li key={post.slug}>
                             <Link href={`/blog/${post.slug}`}><a>
                                 <h4>{post.data.title}</h4>
-                                <span>{renderDate(post.data.date, L_DATE_FORMAT, L_SHORT_MONTHS)} – {post.data.readingTime} {L_READING_TIME}</span>
+                                <span>{renderDate(post.data.date, dateFormat, shortMonths)} – {post.data.readingTime} {readingTime}</span>
                             </a></Link>
                         </li>
                     );
@@ -33,7 +30,7 @@ export default function BlogCategoryCard({ category, featuredPosts, totalPosts }
             </ul>
 
             <Link href={`/blog/category/${category}`}><a>
-                {L_BLOG_CATEGORY_SEE_ALL_POSTS(totalPosts)} →
+                {actionSeeAllPosts(totalPosts)} →
             </a></Link>
         </div>
     );

@@ -1,6 +1,6 @@
 import AppLayout from "../components/app/AppLayout";
 import AppHead from "../components/app/AppHead";
-import { useLangTerm } from "../utils/lang";
+import { useLang } from "../utils/lang";
 import { SITE_TITLE } from "../data/constants";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -11,11 +11,7 @@ import styles from "../styles/pages/Projects.module.css";
 export default function Projects() {
     const router = useRouter();
     const [projects, setProjects] = useState([]);
-    const L_PROJECTS_TITLE = useLangTerm('PROJECTS_TITLE');
-    const L_CLIENT_PROJECTS = useLangTerm('CLIENT_PROJECTS');
-    const L_OWN_PROJECTS = useLangTerm('OWN_PROJECTS');
-    const L_DEMO_PROJECTS = useLangTerm('DEMO_PROJECTS');
-    const L_OLD_PROJECTS = useLangTerm('OLD_PROJECTS');
+    const { titleProjects, titleClientProjects, titleOwnProjects, titleDemoProjects, titleOldProjects } = useLang("projects");
 
     useEffect(() => {
         try {
@@ -28,12 +24,12 @@ export default function Projects() {
 
     return (
         <AppLayout className={pageStyles.container}>
-            <AppHead title={`${SITE_TITLE} - ${L_PROJECTS_TITLE}`} />
+            <AppHead title={`${SITE_TITLE} - ${titleProjects}`} />
 
-            <h1>{L_PROJECTS_TITLE}</h1>
+            <h1>{titleProjects}</h1>
 
             <section>
-                <h2>{L_CLIENT_PROJECTS}</h2>
+                <h2>{titleClientProjects}</h2>
                 <div className={styles.container}>
                     <ProjectCard data={projects["armenianz"]} />
                     <ProjectCard data={projects["kentia"]} />
@@ -43,7 +39,7 @@ export default function Projects() {
             </section>
 
             <section>
-                <h2>{L_OWN_PROJECTS}</h2>
+                <h2>{titleOwnProjects}</h2>
                 <div className={styles.container}>
                     <ProjectCard data={projects["do-blog"]} />
                     <ProjectCard data={projects["arpege"]} />
@@ -53,7 +49,7 @@ export default function Projects() {
             </section>
 
             <section>
-                <h2>{L_DEMO_PROJECTS}</h2>
+                <h2>{titleDemoProjects}</h2>
                 <div className={styles.container}>
                     <ProjectCard data={projects["oc2"]} />
                     <ProjectCard data={projects["oc3"]} />
@@ -64,7 +60,7 @@ export default function Projects() {
             </section>
 
             <section>
-                <h2>{L_OLD_PROJECTS}</h2>
+                <h2>{titleOldProjects}</h2>
                 <div className={styles.container}>
                     <ProjectCard data={projects["coursjs"]} />
                 </div>

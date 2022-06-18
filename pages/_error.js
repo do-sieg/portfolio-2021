@@ -1,23 +1,21 @@
 import Link from "next/link";
-import { useLangTerm } from "../utils/lang";
+import { useLang } from "../utils/lang";
 import AppLayout from "../components/app/AppLayout";
 import AppHead from "../components/app/AppHead";
 import pageStyles from "../styles/pages/Page.module.css";
 import styles from "../styles/pages/Error.module.css";
 
 function Error({ statusCode }) {
-    const L_ERROR = useLangTerm("ERROR");
-    const L_ERR_MESSAGES = useLangTerm("ERR_MESSAGES");
-    const L_ACTION_BACK_HOME = useLangTerm("ACTION_BACK_HOME");
+    const { error, errorMessages, actionBackHome } = useLang("common");
 
     return (
         <AppLayout className={styles.container}>
-            <AppHead title={L_ERROR} />
+            <AppHead title={error} />
 
-            <h1>{statusCode || L_ERROR}</h1>
-            <p>{L_ERR_MESSAGES[statusCode || 0]}</p>
+            <h1>{statusCode || error}</h1>
+            <p>{errorMessages[statusCode || 0]}</p>
             <Link href="/">
-                <a className={pageStyles.promptBtn}>{L_ACTION_BACK_HOME}</a>
+                <a className={pageStyles.promptBtn}>{actionBackHome}</a>
             </Link>
         </AppLayout>
     )

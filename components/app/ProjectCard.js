@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { useLangTerm } from "../../utils/lang";
+import { useLang } from "../../utils/lang";
 import dataTechs from "../../data/tech";
 import { FaDoorOpen, FaExternalLinkAlt } from "react-icons/fa";
 import styles from "../../styles/pages/Projects.module.css";
 
 export function ProjectCard({ data }) {
-    const L_ACTION_VISIT = useLangTerm('ACTION_VISIT');
-    const L_ACTION_VIEW_CODE = useLangTerm('ACTION_VIEW_CODE');
+    const { actionVisit, actionViewCode } = useLang("projects");
 
     function renderTechIcons() {
         return (
@@ -45,15 +44,15 @@ export function ProjectCard({ data }) {
                     <div className={styles.actions}>
                         {data.link &&
                             <Link href={data.link}><a className={styles.promptBtn}>
-                                {L_ACTION_VISIT} <FaDoorOpen />
+                                {actionVisit} <FaDoorOpen />
                             </a></Link>}
                         {data.url &&
                             <a className={styles.promptBtn} href={data.url} target="_blank">
-                                {L_ACTION_VISIT} <FaExternalLinkAlt />
+                                {actionVisit} <FaExternalLinkAlt />
                             </a>}
                         {data.repository &&
                             <a className={styles.promptBtn} href={data.repository} target="_blank">
-                                {L_ACTION_VIEW_CODE} <FaExternalLinkAlt />
+                                {actionViewCode} <FaExternalLinkAlt />
                             </a>}
                     </div>
                 </div>

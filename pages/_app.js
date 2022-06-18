@@ -1,5 +1,5 @@
 import { BurgerProvider } from '../components/core/BurgerMenu';
-import { LangProvider } from '../utils/lang';
+import { LangProvider } from '../components/app/LangProvider';
 import AppBurgerMenu from '../components/app/AppBurgerMenu';
 import '../styles/globals.css';
 

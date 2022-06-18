@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { useLangTerm } from "../utils/lang";
-// import Timeline, { mapEventsFromData } from "../components/Timeline";
-// import events from "../data/events";
+import { useLang } from "../utils/lang";
 import AppLayout from "../components/app/AppLayout";
 import AppHead from "../components/app/AppHead";
 import Skillset from "../components/app/Skillset";
@@ -12,49 +10,38 @@ import pageStyles from "../styles/pages/Page.module.css";
 
 export default function Home() {
     const { locale } = useRouter();
-    const L_DEV_JOB_TITLES = useLangTerm('DEV_JOB_TITLES');
-    const L_HOME_TITLE = useLangTerm('HOME_TITLE');
-    const L_HOME_INTRO_DEV = useLangTerm('HOME_INTRO_DEV');
-    const L_HOME_INTRO_TEACH = useLangTerm('HOME_INTRO_TEACH');
-    // const L_TIMELINE = useLangTerm('TIMELINE');
-    // const L_HOME_SLIDE_PROMPT_1 = useLangTerm('HOME_SLIDE_PROMPT_1');
-    // const L_HOME_SLIDE_PROMPT_2 = useLangTerm('HOME_SLIDE_PROMPT_2');
-    // const L_HOME_SLIDE_PROMPT_3 = useLangTerm('HOME_SLIDE_PROMPT_3');
-    const L_LEARN_MORE = useLangTerm('LEARN_MORE');
-    const L_VIEW_PROJECTS = useLangTerm('VIEW_PROJECTS');
-    const L_DOWNLOAD_RESUME = useLangTerm('DOWNLOAD_RESUME');
-    const L_SKILLS_MAIN = useLangTerm('SKILLS_MAIN');
-    const L_SKILLS_OTHER = useLangTerm('SKILLS_OTHER');
+    const { devJobTitles, actionLearnMore, actionDownloadResume } = useLang("common");
+    const { titleWelcome, titleMainSkills, titleOtherSkills, actionViewProjects, introDev, introTeach } = useLang("home");
 
     return (
         <AppLayout className={pageStyles.container}>
-            <AppHead title={`${SITE_TITLE} - ${L_DEV_JOB_TITLES}`} />
+            <AppHead title={`${SITE_TITLE} - ${devJobTitles}`} />
 
             <Hero />
 
-            <h1>{L_HOME_TITLE}</h1>
+            <h1>{titleWelcome}</h1>
 
             <section>
-                {L_HOME_INTRO_DEV}
+                {introDev}
                 <div className={pageStyles.promptBox}>
                     <Link href="/projects">
-                        <a className={pageStyles.promptBtn}>{L_VIEW_PROJECTS}</a>
+                        <a className={pageStyles.promptBtn}>{actionViewProjects}</a>
                     </Link>
                     <Link href={RESUME_PATHS[locale]}>
-                        <a className={pageStyles.promptBtn} target="_blank">{L_DOWNLOAD_RESUME}</a>
+                        <a className={pageStyles.promptBtn} target="_blank">{actionDownloadResume}</a>
                     </Link>
                 </div>
 
-                {L_HOME_INTRO_TEACH}
+                {introTeach}
                 <div className={pageStyles.promptBox}>
                     <Link href="/teach">
-                        <a className={pageStyles.promptBtn}>{L_LEARN_MORE}</a>
+                        <a className={pageStyles.promptBtn}>{actionLearnMore}</a>
                     </Link>
                 </div>
             </section >
 
             <section>
-                <h2>{L_SKILLS_MAIN}</h2>
+                <h2>{titleMainSkills}</h2>
                 <Skillset skills={[
                     "html",
                     "css",
@@ -67,7 +54,7 @@ export default function Home() {
             </section>
 
             <section>
-                <h2>{L_SKILLS_OTHER}</h2>
+                <h2>{titleOtherSkills}</h2>
                 <Skillset skills={[
                     "php",
                     "ruby",
@@ -80,46 +67,6 @@ export default function Home() {
                     "seo",
                 ]} />
             </section>
-
-            {/* <section>
-                <h2>NEWS</h2>
-            </section> */}
-
-            {/* <section>
-                <h2>AVIS</h2>
-            </section> */}
-
-            {/* <section>
-                <SlideShow
-                    customStyles={{
-                        container: "base-slideshow-container",
-                        prevBtn: "base-slide-nav-btn left",
-                        nextBtn: "base-slide-nav-btn right",
-                    }}
-                    autoNextTime={4}
-                    slideList={[
-                        { text: L_HOME_SLIDE_PROMPT_1, link: "/dev" },
-                        { text: L_HOME_SLIDE_PROMPT_2, link: "/teach" },
-                        { text: L_HOME_SLIDE_PROMPT_3, link: "/translation" },
-                    ]}
-                    renderSlide={(obj, index) => {
-                        return (
-                            <div className="base-slide home-slide">
-                                <p>{obj.text}</p>
-                                <Link href={obj.link}><a>{L_LEARN_MORE}</a></Link>
-                            </div>
-                        );
-                    }}
-                />
-            </section> */}
-
-
-            {/* <section> */}
-                {/* <h2>{L_TIMELINE}</h2> */}
-                {/* <Timeline events={mapEventsFromData(events)
-                    .sort((a, b) => b.startDate - a.startDate)}
-                /> */}
-            {/* </section> */}
         </AppLayout>
     );
 }
