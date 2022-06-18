@@ -45,6 +45,8 @@ export default function LearnSubject({ subjectId, name, intro, coverImagePath, s
     const L_LESSONS_SUBJECT_TITLE = useLangTerm("LESSONS_SUBJECT_TITLE");
     const [content, setContent] = useState([]);
 
+    console.log({posts});
+
     useEffect(() => {
         setContent(Object.keys(sections).map((key) => {
             // const prevKeys = Object.keys(sections).slice(0, sectionIndex);

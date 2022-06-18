@@ -54,7 +54,7 @@ export async function getPosts({
 
         // Common filters
         entries = entries
-            .filter(post => process.env.NODE_ENV === "development" ? true : post.data.published && new Date(post.data.date) <= new Date())
+            .filter(post => process.env.NODE_ENV === "development" || post.data.published)
             .filter(post => category ? post.data.category === category : true)
             .filter(post => tag ? post.data.tags && post.data.tags.includes(tag) : true)
             .filter(post => !exclude.includes(post.slug))
