@@ -6,13 +6,19 @@ import BlogPostCard from "../../components/app/blog/BlogPostCard";
 import BlogToolbar from "../../components/app/blog/BlogToolbar";
 import { SITE_TITLE } from "../../data/constants";
 import { useLang } from "../../utils/lang";
-import { useStaticBlogPosts } from "../../utils/static-blog-hooks";
+import { getPosts } from "../../utils/static-blog";
+// import { useStaticBlogPosts } from "../../utils/static-blog-hooks";
 import pageStyles from "../../styles/pages/Page.module.css";
 import styles from "../../styles/pages/BlogHome.module.css";
 
-export default function BlogHome() {
-    const { locale } = useRouter();
-    const { posts } = useStaticBlogPosts({ pathname: `/data/blog_posts/${locale}`, locale });
+export async function getStaticProps({ locale }) {
+    const { posts } = await getPosts({ pathname: `/data/blog_posts/${locale}`, locale });
+    return { props: { posts } };
+}
+
+export default function BlogHome({ posts }) {
+    // const { locale } = useRouter();
+    // const { posts } = useStaticBlogPosts({ pathname: `/data/blog_posts/${locale}`, locale });
     const { titleBlogHome, titleRecentPosts, introBlogHome, noPosts } = useLang("blog");
 
     return (
