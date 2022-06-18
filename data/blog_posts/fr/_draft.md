@@ -31,62 +31,25 @@ A2 Trop de frameworks tue l'expertise
 
 
 
-
-## L'approche modulaire : les composants
-
-Que ce soit _React_, _Angular_ ou _Vue_...
-
-> "Ou **Svelte**."  
-> -- Un fan de Svelte vraiment relou
-
-... les frameworks vont utiliser une approche **modulaire**.
-
-Par approche modulaire, on entend que chaque partie de l'application opèrera **indépendamment** des autres et contiendra **sa propre logique**.
-
-> Exemple, un menu _burger_ sera dans un **fichier dédié** où seront réunis son contenu, son style et ses fonctions d'ouverture et fermeture.
-
-L'**application**, quant à elle, se chargera de **faire communiquer** ces composants entre eux au niveau global.
-
-Cette approche modulaire, à base de **composants**, n'est pas anodine : elle présente des **avantages** qui vont changer toute la donne quand on travaille avec un framework.
-
-
-## Avantage 1 : Réutiliser des éléments d'interface
-
-Une interface **complexe** aura un certain degré d'**uniformité** (menus, boutons, etc...).
-
-On aura donc besoin de **répéter** des éléments d'interface, de les **réutiliser** à travers l'application.
-
-> Par exemple, sur un réseau social, on affichera les informations d'un utilisateur sous forme d'une **photo de profil** et de **son nom** avec **un lien** vers sa page de profil.  
-> Et cet élément d'interface (qui est en réalité lui-même composé de plusieurs éléments) va se retrouver **un peu partout sur le site**.
-
-Pour réutiliser un élément, dans un système HTML/CSS/JavaScript **natif**, il faudra au choix :
-- **Copier/coller** du code HTML
-- **Générer le code** par une fonction JavaScript, et passer par un processus à **plusieurs étapes** pour l'insérer dans la page (voir plus bas).
-
-Dans un **framework**, ce sont justement les **composants** qui vont permettre de **réutiliser du code** à travers toute une application.
-
-On a juste à **insérer une ligne** dans le code de la page pour représenter le composant.
-
-```jsx
-<div>
-    <p>Bla bla bla</p>
-    <MonComposant />
-</div>
-```
-
 ## Avantage 2 : Isoler la logique propre aux composants
 
 Le composant n'est pas seulement **graphique**. On peut aussi y inclure sa **logique fonctionnelle propre**. 
 
 Le **JavaScript natif** nécessite de **"se greffer" sur le DOM**, en ajoutant des **écouteurs d'événements** (clic sur un bouton, remplissage d'un champ de texte...).
 
-> Oui, ça prend des plombes à coder...
+```html5
+<div>
+    <button onclick="">Bouton</button>
+</div>
+```
+
+> Je hais ce truc, ça prend des plombes à coder...
 
 Un **framework** va générer le code HTML avec **ses événements embarqués**.
 
 ```jsx
 <>
-    <MonBouton onClick={console.log("Coucou !")} />
+    <MonBouton onClick={() => console.log("Coucou !")} />
     <MonInput value={name} onChange={e => setName(e.target.value)} />
 </>
 ```

@@ -1,6 +1,6 @@
 ---
 title: Cinq problèmes avec le recrutement
-description: Quand une étape importante dans la carrière d'une personne tourne à la farce de mauvais goût. Cinq cas de figure à éradiquer au plus vite.
+description: Quand le processus de recrutement tourne à la farce de mauvais goût. Cinq cas de figure à éradiquer au plus vite.
 date: "2022-02-09"
 category: jobs
 author:
