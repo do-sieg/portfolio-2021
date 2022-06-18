@@ -1,45 +1,126 @@
+// Static blog utility functions
+// Last update: 2022-06-18
+
 import fs from "fs";
 import path from "path";
-import { mdLoad, mdToHtml } from "./markdown";
-import { getReadingTime } from "./text";
+import { mdLoad } from "./markdown";
 
-const POSTS_DIR = "data/blog_posts";
+const blogConfig = {
+    defaultAuthor: {
+        id: "default",
+        name: "Default",
+        picture: "/images/blog/authors/default.png",
+    },
+};
 
-export async function getPosts({ locale, category = null, limit = 0, current = null }) {
+export async function getSinglePost({ pathname, locale, slug }) {
+    const markdown = await mdLoad(path.join(pathname, `${slug}.md`), true);
+    markdown.data.readingTime = getReadingTime(locale, markdown.content);
+    markdown.data.tags = convertTags(markdown.data.tags);
+    return addDefaultAuthor(markdown);
+}
+
+export async function getPosts({ pathname, locale, limit = 0, page = 0, postsPerPage = 0, authorId = null, category = null, tag = null }) {
     try {
-        let entries = fs.readdirSync(path.join(process.cwd(), POSTS_DIR, locale));
+        // Get all entries from the folder
+        let entries = fs.readdirSync(path.join(process.cwd(), pathname));
 
-        entries = entries
-            .map((filename) => {
-                const data = mdLoad(path.join(POSTS_DIR, locale, filename));
-                data.data.readingTime = getReadingTime(locale, data.content);
+        // Get metadata from files
+        entries = await Promise.all(entries
+            .map(async (filename) => {
+                const markdown = await mdLoad(path.join(pathname, filename));
+                markdown.data.readingTime = getReadingTime(locale, markdown.content);
+                markdown.data.tags = convertTags(markdown.data.tags);
                 return {
                     slug: filename.substring(0, filename.indexOf(".md")),
-                    metaData: data.data,
-                }
-            });
+                    data: markdown.data,
+                };
+            }));
 
-        if (current) entries = entries.filter(post => post.slug !== current);
-
+        // Common filters
         entries = entries
-            .filter(post => post.metaData.published)
-            // .filter(post => post.metaData.published && new Date(post.metaData.date) <= new Date())
-            .filter(post => category ? post.metaData.category === category : true)
-            .sort((a, b) => new Date(b.metaData.date) - new Date(a.metaData.date));
+            .filter(post => process.env.NODE_ENV === "development" ? true : post.data.published && new Date(post.data.date) <= new Date())
+            .filter(post => category ? post.data.category === category : true)
+            .filter(post => tag ? post.data.tags && post.data.tags.includes(tag) : true)
+            .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+            .map(post => addDefaultAuthor(post));
 
-        if (limit) entries = entries.slice(0, limit);
+        // Author filter
+        let authorName = "";
+        if (authorId) {
+            entries = entries.filter(post => post.data.author.id === authorId);
+            authorName = entries[0].data.author.name;
+        }
 
-        return entries;
+        // Pagination data
+        const totalPosts = entries.length;
+        let maxPage = 1;
+        if (limit) {
+            page = 1;
+            postsPerPage = limit;
+        }
+        if (page && postsPerPage) {
+            entries = entries.slice(0, postsPerPage);
+            maxPage = Math.ceil(entries.length / postsPerPage);
+        }
+
+        return { posts: entries, totalPosts, maxPage, postsPerPage, authorName };
     } catch (err) {
-        console.error(`Error on loading blog posts for locale '${locale}'.`, err.message);
-        return [];
+        console.error(`Error on loading blog posts for pathname '${pathname}'.`, err.message);
+        return { posts: [], totalPosts: 0, maxPage: 1, postsPerPage: 0, authorName: "" };
     }
 }
 
-export async function getPost({ locale, slug }) {
-    const data = mdLoad(path.join(POSTS_DIR, locale, `${slug}.md`));
-    data.data.readingTime = getReadingTime(locale, data.content);
-    const htmlContent = await mdToHtml(data.content);
-    data.htmlContent = htmlContent;
-    return data;
+function getReadingTime(locale, text) {
+    if (!locale) {
+        console.error("getReadingTime: locale wasn't provided");
+        return undefined;
+    }
+
+    const averageWordsPerMinute = {
+        en: 228,
+        fr: 195,
+    }[locale ?? "en"];
+    const wordCount = text.replace(/[^\w ]/g, "").split(/\s+/).length;
+    return Math.ceil(wordCount / averageWordsPerMinute);
 }
+
+function convertTags(tags) {
+    if (!tags) return [];
+    if (Array.isArray(tags)) return tags;
+    return tags.split(",").map(tag => tag.trim());
+}
+
+function addDefaultAuthor(post) {
+    if (post.data && !post.data.author) {
+        post.data.author = blogConfig.defaultAuthor ?? { id: "", name: "", picture: "" };
+    }
+    return post;
+}
+
+// Static blog utility functions
+// Last update: 2022-05-03
+
+// export async function getPostsByAuthor(locale, authorId, limit) {
+//     const result = await getPosts({ locale, authorId, limit });
+//     if (result.posts.length > 0) {
+//         result.authorName = result.posts[0].data.author.name;
+//     }
+//     return result;
+// }
+
+// export async function getPostsByTag(locale, tag, limit) {
+//     return await getPosts({ locale, tag, limit });
+// }
+
+// export async function getPosts({ locale, limit = 0, authorId = null, tag = null, current = null }) {
+//     try {
+
+
+
+//         // if (current) entries = entries.filter(post => post.slug !== current);
+
+//     } catch (err) {
+//     }
+// }
+

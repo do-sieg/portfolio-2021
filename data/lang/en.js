@@ -132,6 +132,7 @@ export default {
         </>
     ),
     BLOG_NO_ARTICLES: "No articles yet. Coming soon.",
+    BLOG_DRAFT: "Draft",
     BLOG_RECENT_POSTS: "Latest Posts",
     // BLOG_SELECT_CATEGORY: "Select a category",
     BLOG_ALL_ARTICLES: "All articles",

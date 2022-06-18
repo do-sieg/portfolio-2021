@@ -24,8 +24,8 @@ export default function BlogCategoryCard({ category, featuredPosts, totalPosts }
                     return (
                         <li key={post.slug}>
                             <Link href={`/blog/${post.slug}`}><a>
-                                <h4>{post.metaData.title}</h4>
-                                <span>{renderDate(post.metaData.date, L_DATE_FORMAT, L_SHORT_MONTHS)} – {post.metaData.readingTime} {L_READING_TIME}</span>
+                                <h4>{post.data.title}</h4>
+                                <span>{renderDate(post.data.date, L_DATE_FORMAT, L_SHORT_MONTHS)} – {post.data.readingTime} {L_READING_TIME}</span>
                             </a></Link>
                         </li>
                     );

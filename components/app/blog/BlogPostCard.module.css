@@ -1,5 +1,6 @@
 .container {
     composes: card from "../../../styles/pages/Page.module.css";
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -7,6 +8,19 @@
 
 .container:hover, .container:active {
     box-shadow: var(--shadow-xl);
+}
+
+.draftTag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.25rem 0.75rem;
+    font-size: large;
+    font-weight: 500;
+    color: var(--orange-100);
+    background-color: var(--orange-600);
+    box-shadow: var(--shadow-md);
+    border-radius: 1rem 0;
 }
 
 .coverContainer {
