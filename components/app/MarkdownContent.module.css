@@ -6,6 +6,10 @@
     margin-top: 3rem;
 }
 
+.container p {
+    margin: 1.3rem 0;
+}
+
 .container blockquote {
     margin: 2.5rem 0;
     padding: 0.5rem 1rem 0.5rem 1.5rem;
@@ -33,7 +37,7 @@
 
 .container img {
     display: block;
-    margin: 0 auto;
+    margin: 2rem auto;
     max-width: 100%;
 }
 
