@@ -12,6 +12,8 @@ _S'il y a une chose dont l'écosystème JavaScript ne manque pas, ce sont bien l
 
 > Et on commence par la belle grosse phrase cliché... Mais encore ?
 
+(Sérieux je ne trouvais rien d'autre...)
+
 Je travaille avec **React** depuis 2018, et j'ai ajouté **NextJS** à mes outils en 2020. C'était la suite logique. J'ai pu expérimenter d'autres frameworks, notamment **VueJS**, mais je ne voyais pas l'intérêt de cumuler deux outils équivalents tant dans leur utilité que dans le temps nécessaire à investir pour les maîtriser.
 
 Ma politique est donc la suivante : si l'outil fonctionne, et qu'il y a suffisamment d'entreprises qui y font appel (et donc suffisamment d'offres d'emploi), inutile de s'éparpiller. Surtout quand on a au moins deux nouveaux frameworks par an...
@@ -20,7 +22,7 @@ Ma politique est donc la suivante : si l'outil fonctionne, et qu'il y a suffisam
 
 Quand **Svelte** a débarqué dans l'écosystème JavaScript, j'ai été interpellé par la simplicité apparente du code. J'ai donc gardé ce framework quelque part en tête, me disant que je m'y essaierai bien un jour.
 
-Un enfant et cinq déménagements plus tard, c'est enfin arrivé.
+**Un enfant et cinq déménagements plus tard**, c'est enfin arrivé.
 
 
 ## Comment tout a basculé
@@ -86,14 +88,14 @@ Même la phase d'**initialisation de projet** avec npm est l'affaire de **quelqu
 <script>
     let truc = 0;
 
-    function handleIncrease() {
+    function increment() {
         truc += 1;
     }
 </script>
 
 <p>Truc est égal à {truc}</p>
 
-<button on:click={handleIncrease}>Augmenter</button>
+<button on:click={increment}>Augmenter</button>
 ```
 
 - Une balise `<style>` contient le CSS du composant.
@@ -112,7 +114,9 @@ Même la phase d'**initialisation de projet** avec npm est l'affaire de **quelqu
 
 ![C'est comme chez nous !](/images/blog/posts/fr/rabbi-jacob-c-est-comme-chez-nous.png)
 
-Oui, et ça a ses avantages : pas besoin de fichier supplémentaire (vous pouvez, bien entendu), et... c'est du vrai CSS. Pas **du JS qui essaie de passer pour du CSS**, ou un [**_template literal_**](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Template_literals).
+(Oui.)
+
+Et ça a ses avantages : pas besoin de fichier supplémentaire (vous pouvez, bien entendu), et... c'est **du vrai CSS**. Pas **du JS qui essaie de passer pour du CSS**, ou un [**_template literal_**](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Template_literals).
 
 - Il existe des balises très simples pour **l'affichage conditionnel**. 
 
@@ -138,12 +142,12 @@ Oui, et ça a ses avantages : pas besoin de fichier supplémentaire (vous pouvez
 
 > C'est moche...
 
-Oui, mais on s'habitue. Ça aurait pu être pire...
+(Oui, mais on s'habitue. Ça aurait pu être pire...)
 
 
 ## 3/ Un travail plus rapide
 
-- Pas de **boilerplate** verbeux. Besoin d'une variable réactive ? Pas besoin de taper tout un useState à la React : `let truc = ...` dans la balise `<script>` suffit.
+- Pas de **boilerplate verbeux**. Besoin d'une variable réactive ? Pas besoin de taper tout un useState à la React : `let truc = ...` dans la balise `<script>` suffit.
 
 ```html
 <script>
@@ -153,11 +157,11 @@ Oui, mais on s'habitue. Ça aurait pu être pire...
 <p>Truc est égal à {truc}</p>
 ```
 
-- Besoin d'une **_prop_** ? Ajouter `export` devant fera l'affaire.
+- Besoin d'une **_prop_** (variable modifiable par un composant parent) ? Ajoutez `export` devant et ça fera l'affaire.
 
 ```html
 <script>
-    export let truc = 0; // Ceci est une variable modifiable par un composant parent
+    export let truc = 0; // Ceci est une variable de prop
 </script>
 
 <p>Truc est égal à {truc}</p>
@@ -179,7 +183,7 @@ Oui, mais on s'habitue. Ça aurait pu être pire...
 </script>
 ```
 
-Pour les utilisateurs de React, vous remarquerez qu'on n'a pas besoin de préciser les **dépendances** : Svelte comprend ce que vous essayez de faire (`truc` est impliqué ? pigé) !
+Pour les utilisateurs de React, vous remarquerez qu'on n'a pas besoin de préciser les **dépendances** : Svelte comprend ce que vous essayez de faire (_`truc` est impliqué ? pigé_) !
 
 
 ## Le mot de la fin
@@ -188,7 +192,13 @@ En temps normal, deux jours serait considéré très peu pour avoir un avis écl
 
 Il me reste encore à voir comment fonctionne le fetching, le SSR, etc... mais je peux déjà affirmer que côté client sur un projet statique, ce framework m'a **conquis**.
 
-J'ai eu quelques soucis mais c'était parce que je débute et il m'est arrivé de partir en antipatterns à cause d'habitudes prises sur d'autres frameworks. En fait, je perds plus de temps sur Svelte **à cause des réflexes pris sur d'autres frameworks**... 
+J'ai eu quelques soucis mais c'était parce que je débute et il m'est arrivé de partir en **antipatterns**...
+
+> Antipattern ?!
+
+(Les trucs à ne pas faire.)
+
+En antipatterns donc, à cause d'habitudes prises sur d'autres frameworks. En fait, je perds plus de temps sur Svelte **à cause des réflexes pris sur d'autres frameworks**... 
 
 Une fois les notions bien comprises, coder avec ce framework est du pur plaisir : on passe vraiment **moins de temps à définir les choses** qu'à tout simplement **coder le fonctionnement de l'appli**.
 
@@ -205,6 +215,6 @@ Et vous pouvez aussi consulter mon post à chaud, notamment **ce que d'autres d�
 
 > Dans six mois ?
 
-...
+(...)
 
 _Crédits photo : [XKCD](https://xkcd.com/927/)_
